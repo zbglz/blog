@@ -1,6 +1,7 @@
 ---
 title: 链接
 type: "flink"
+top_img: ../../../blog/static/butterfly/links_img.jpg
 ---
 
 {% flink %}

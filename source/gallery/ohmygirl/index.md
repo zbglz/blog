@@ -1,5 +1,6 @@
 ---
 title: ohmygirl
+top_img: https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg
 ---
 
 {% gallery %}

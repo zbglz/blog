@@ -1,6 +1,6 @@
 ---
 title: 音乐
-top_img: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/images/hexo/theme/butterfly/banner/music-banner.jpg
+top_img: ../../../blog/static/butterfly/music_img.jpg
 ---
 
 ## 网易云音乐

@@ -7,16 +7,35 @@
   color: inherit;
 }
 /*--------------------------------------------------------*/
-/*banner高度*/
+/*header：banner高度*/
 #page-header.full_page, /*首页*/
 #page-header.post-bg, /*文章页post*/
 #page-header.not-home-page { /*分类、归档、标签...以及之下的页面*/
   height: 300px;
+  /* background: transparent!important; */
 }
-/*banner高度设置导致...垂直居中问题*/
+#page-header.full_page{
+  background-position: 100% 50%;
+  background-attachment: inherit;
+}
+/*header：banner高度设置导致...垂直居中问题*/
 #page-header #page-site-info{ /*分类、归档、标签...以及之下的页面*/
   top: 50%;
   transform: translateY(-50%);
+}
+/*background：页面背景*/
+#web_bg{
+  
+}
+/*footer：页脚*/
+#footer:before,#footer{
+  background: none;
+}
+#footer-wrap{
+  color: var(--font-color);
+}
+#footer-wrap a{
+  color: var(--btn-bg);
 }
 /*--------------------------------------------------------*/
 .layout#content-inner{ /*内容区域，最大宽度1500*/
@@ -52,17 +71,6 @@
 #article-container.post-content h5:before, 
 #article-container.post-content h6:before{
   margin-top: 3px;
-}
-/*---------------------------------------------------*/
-/*footer*/
-#footer:before,#footer{
-  background: none;
-}
-#footer-wrap{
-  color: var(--font-color);
-}
-#footer-wrap a{
-  color: var(--btn-bg);
 }
 /*---------------------------------------------------*/
 /*头像*/

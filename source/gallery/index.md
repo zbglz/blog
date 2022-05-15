@@ -1,5 +1,6 @@
 ---
 title: 相册
+top_img: ../../../blog/static/butterfly/gallery_img.jpg
 ---
 
 <div class="gallery-group-main">

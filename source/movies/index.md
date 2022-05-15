@@ -1,6 +1,6 @@
 ---
 title: 视频
-top_img: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/images/hexo/theme/butterfly/banner/movies-banner.jpg
+top_img: ../../../blog/static/butterfly/movies_img.jpg
 ---
 
 {% raw %}
