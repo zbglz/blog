@@ -6,6 +6,10 @@
 #aside-content .card-announcement .item-headline i {
   color: inherit;
 }
+/**/
+#aside-content .card-info .card-info-social-icons i:hover{
+  color: var(--btn-bg);
+}
 /*--------------------------------------------------------*/
 /*header：banner高度*/
 #page-header.full_page, /*首页*/

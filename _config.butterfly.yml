@@ -643,7 +643,7 @@ aside:
       link: /
   card_announcement:  # 首页侧边栏，显示公告
     enable: true
-    content: <div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src="https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/20150404H5648_ZuzhL.gif"></div>
+    content: <div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src="../../../blog/static/site/comment.gif"></div>
   card_recent_post:  # 首页侧边栏，显示最新文章
     enable: true
     limit: 5 # if set 0 will show all
