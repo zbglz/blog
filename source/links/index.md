@@ -29,6 +29,28 @@ top_img: ../../../blog/static/butterfly/links_img.jpg
       avatar: https://hexo.io/icon/favicon-96x96.png
       descr: 版本控制系统
 
+- class_name: 图片类
+  class_desc: 图片类工具
+  link_list:
+    - name: CSS Sprites Generator
+      link: https://www.toptal.com/developers/css/sprite-generator
+      avatar: https://www.toptal.com/developers/css/sprite-generator/static/images/favicon.png
+      descr: 在线雪碧图制作工具
+
+    - name: SVG在线压缩合并
+      link: https://www.zhangxinxu.com/sp/svgo/
+      avatar: 
+      descr: SVG在线压缩合并
+      
+    - name: SVG在线编辑
+      link: https://c.runoob.com/more/svgeditor/
+      avatar: https://c.runoob.com/more/svgeditor/images/favicon.svg
+      descr: SVG在线编辑
+      
+    - name: imagecolorpicker
+      link: https://imagecolorpicker.com/
+      avatar: https://imagecolorpicker.com/icons/apple-icon-76x76.png
+      descr: 在线图片拾色器
 
 - class_name: 网页工具
   class_desc: 奇奇怪怪的一些网站
@@ -77,27 +99,4 @@ top_img: ../../../blog/static/butterfly/links_img.jpg
       link: http://www.haoweichi.com/
       avatar: http://www.haoweichi.com/Public/img/haoweichi.ico
       descr: 本站只做学习交流，请勿用于非法用途
-
-- class_name: 图片类
-  class_desc: 图片类工具
-  link_list:
-    - name: CSS Sprites Generator
-      link: https://www.toptal.com/developers/css/sprite-generator
-      avatar: https://www.toptal.com/developers/css/sprite-generator/static/images/favicon.png
-      descr: 在线雪碧图制作工具
-
-    - name: SVG在线压缩合并
-      link: https://www.zhangxinxu.com/sp/svgo/
-      avatar: 
-      descr: SVG在线压缩合并
-      
-    - name: SVG在线编辑
-      link: https://c.runoob.com/more/svgeditor/
-      avatar: https://c.runoob.com/more/svgeditor/images/favicon.svg
-      descr: SVG在线编辑
-      
-    - name: imagecolorpicker
-      link: https://imagecolorpicker.com/
-      avatar: https://imagecolorpicker.com/icons/apple-icon-76x76.png
-      descr: 在线图片拾色器
 {% endflink %}

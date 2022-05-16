@@ -6,7 +6,7 @@
 #aside-content .card-announcement .item-headline i {
   color: inherit;
 }
-/**/
+/*头像下方社交图标*/
 #aside-content .card-info .card-info-social-icons i:hover{
   color: var(--btn-bg);
 }
@@ -76,6 +76,10 @@
 #article-container.post-content h6:before{
   margin-top: 3px;
 }
+/*文章页超链接*/
+#article-container a{
+  color: var(--btn-bg);
+}
 /*---------------------------------------------------*/
 /*头像*/
 .avatar-img img{
@@ -88,7 +92,7 @@
 
 /*友情连接*/
 #article-container .flink .flink-name{
-  background-color: var(--tab-button-hover-bg);
+  background-color: var(--light-grey);
   text-align: center;
 }
 #article-container .flink .flink-desc{
