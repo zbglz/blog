@@ -134,8 +134,8 @@ cover:
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
-  flink: /static/site/img_404.gif
-  post_page: /static/site/img_404.gif
+  flink: /static/site/img_404.png
+  post_page: /static/site/img_404.png
 
 # A simple 404 page
 error_404:
@@ -857,7 +857,7 @@ CDN:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr
   # when set it to local, you need to install hexo-butterfly-extjs
-  third_party_provider: jsdelivr
+  third_party_provider: local
   option:
     # main_css:
     # main:
