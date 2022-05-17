@@ -101,3 +101,20 @@
 #article-container .flink .flink-list > .flink-list-item a .flink-item-icon img{
   object-fit: scale-down;
 }
+
+/*代码块工具栏*/
+.highlight-tools .toolsbar{
+  position: absolute;
+  right: 14px;
+  text-align: right;
+  user-select: none;
+}
+.highlight-tools .toolsbar i{
+  position: static!important;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.highlight-tools .toolsbar i:hover{
+  color: var(--btn-bg);
+}
