@@ -4,6 +4,7 @@ $(function(){
    */ 
   let figcaptions = $("figcaption")
   let clickArr = ["vue2","vue3","es","es6","es7","es8","es9","es10","es11","js","JavaScript","ts","html"]
+  let coderunurl = "https://zbglz.gitee.io/demos/"
   if(figcaptions.length > 0){
     for(let f of figcaptions){
       let fName = $(f).text().toUpperCase()
@@ -39,7 +40,7 @@ $(function(){
     
     let dtype = $(codeName).text()
     
-    let encodeStr = "http://127.0.0.1:8848/demos/index1.html?con=" + con + "&dtype=" + dtype
+    let encodeStr = coderunurl + "?con=" + con + "&dtype=" + dtype
     
     if(encodeStr.length > 8179){ //8179
       snackbarShow("代码过长，请复制代码，新开空窗口 <i class='fa fa-cog'></i> 粘贴运行")
@@ -48,6 +49,9 @@ $(function(){
     }
   })
   // 新开窗口
+  $(".toolsbar .fa-cog").click(function(e){
+    window.open(coderunurl)
+  })
 })
 /*
  * 消息框
