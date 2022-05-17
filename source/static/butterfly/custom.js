@@ -3,7 +3,7 @@ $(function(){
    * get all figcaption 代码块
    */ 
   let figcaptions = $("figcaption")
-  let clickArr = ["vue2","vue3","es","es6","es7","es8","es9","es10","es11"]
+  let clickArr = ["vue2","vue3","es","es6","es7","es8","es9","es10","es11","js","JavaScript","ts","html"]
   if(figcaptions.length > 0){
     for(let f of figcaptions){
       let fName = $(f).text().toUpperCase()
@@ -22,31 +22,32 @@ $(function(){
       }
     }
   }
+  // 运行代码
   $(".toolsbar .fa-play-circle").click(function(e){
     let preCode = e.target.parentNode.parentNode.parentNode.lastChild.firstChild.firstChild.firstChild.firstChild
     let codeName = e.target.parentNode.parentNode.parentNode.firstChild.firstChild
+
+    let selection = window.getSelection()
+    let range = document.createRange()
+    range.selectNodeContents(preCode)
+    selection.removeAllRanges()
+    selection.addRange(range)
+    let con = selection.toString()
+    selection.removeAllRanges()
     
-    let preCodeText = $(preCode).text()
-    preCodeText = preCodeText.replace(new RegExp("<","g"),"&lt;")
-                             .replace(new RegExp(">","g"),"&gt;")
-    let con = encodeURIComponent(preCodeText)
+    con = encodeURIComponent(con).replace(new RegExp("<","g"),"%3C").replace(new RegExp(">","g"),"%3E")
+    
     let dtype = $(codeName).text()
     
-    let encodeStr = "http://127.0.0.1:8080/demos/index.html?con=" + con + "&dtype=" + dtype
+    let encodeStr = "http://127.0.0.1:8848/demos/index1.html?con=" + con + "&dtype=" + dtype
     
     if(encodeStr.length > 8179){ //8179
       snackbarShow("代码过长，请复制代码，新开空窗口 <i class='fa fa-cog'></i> 粘贴运行")
-      // const prevEle = ctx.previousElementSibling
-      // prevEle.innerText = GLOBAL_CONFIG.copy.success
-      // prevEle.style.opacity = 1
-      // setTimeout(() => { prevEle.style.opacity = 0 }, 700)
     }else{
       window.open(encodeStr)
-      // console.log(decodeURIComponent(str))
-      // console.log(encodeStr);
     }
   })
-  
+  // 新开窗口
 })
 /*
  * 消息框
