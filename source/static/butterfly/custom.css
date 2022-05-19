@@ -118,3 +118,8 @@
 .highlight-tools .toolsbar i:hover{
   color: var(--btn-bg);
 }
+
+/*首页文章图片*/
+#recent-posts > .recent-post-item .post_cover img.post_bg{
+  object-fit: contain;
+}
