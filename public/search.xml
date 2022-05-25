@@ -1004,35 +1004,6 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
-    <title>(4)变量的解构赋值</title>
-    <url>/blog/ecmascript/4/</url>
-    <content><![CDATA[<hr>
-<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><p><strong>解构赋值</strong>：ES6允许按照一定模式从数组和对象中提取值，对变量进行赋值，这被称为解构赋值。可以简化代码的书写量。</p>
-<p><strong>数组的解构</strong>。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">NAMES</span> = [<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>]</span><br><span class="line">  <span class="keyword">let</span> [zhang, li, wang] = <span class="variable constant_">NAMES</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(zhang, li, wang)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>按照<code>对应的位置</code>对变量进行赋值，相比之下，写法比下面的方式简单了许多。当然这种方式用得也不是特别多，试想当一个数组足够长，而在定义时也还需要按照对应的位置，添加足够数量的变量。也是不现实的，所以我们很少对数组使用解构赋值的方式。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">NAMES</span> = [<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>]</span><br><span class="line">  <span class="keyword">let</span> zhang = <span class="variable constant_">NAMES</span>[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">let</span> li = <span class="variable constant_">NAMES</span>[<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">let</span> wang = <span class="variable constant_">NAMES</span>[<span class="number">2</span>]</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(zhang, li, wang) <span class="comment">// --&gt; 张三 李四 王五</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>对象的解构</strong>。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">22</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">180</span>,</span><br><span class="line">    <span class="attr">hobby</span>: [<span class="string">&quot;跑步&quot;</span>, <span class="string">&quot;打豆豆&quot;</span>],</span><br><span class="line">    <span class="attr">ability</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;倒退跑步&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> &#123;hobby, height, ability, name, age&#125; = <span class="variable constant_">PEOPLE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(name, age, height, hobby, ability)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><code>注意了</code>。</p>
-<p>1.对<code>对象</code>进行解构赋值时，<code>使用花括号</code>。<br>2.注意上例，声明的变量要和对象中的<code>属性名一致</code>。不一致，会得出undefined。<br>3.声明时，<code>没有顺序区分</code>！！，只要属性名一致，放在什么位置都可以。<br>4.声明时，不必声明全部的属性，<code>需要什么就声明什么</code>,如 let { height } &#x3D; PEOPLE，也是可以的。</p>
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=6">源：https://www.bilibili.com/video/BV1uK411H7on?p=6</a></p>
-]]></content>
-      <categories>
-        <category>ECMAScript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(3)const声明常量及特点</title>
     <url>/blog/ecmascript/3/</url>
     <content><![CDATA[<hr>
@@ -1079,29 +1050,25 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
-    <title>(6)简化对象写法</title>
-    <url>/blog/ecmascript/6/</url>
+    <title>(4)变量的解构赋值</title>
+    <url>/blog/ecmascript/4/</url>
     <content><![CDATA[<hr>
-<h3 id="简化对象写法"><a href="#简化对象写法" class="headerlink" title="简化对象写法"></a>简化对象写法</h3><p>ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法，这样书写更加简洁。</p>
-<p><strong>以前的写法</strong>。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 想定义一个对象</span></span><br><span class="line">  <span class="comment">// 而它的name属性和change属性和上面定义的一样。</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">change</span>: change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><p><strong>解构赋值</strong>：ES6允许按照一定模式从数组和对象中提取值，对变量进行赋值，这被称为解构赋值。可以简化代码的书写量。</p>
+<p><strong>数组的解构</strong>。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">NAMES</span> = [<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>]</span><br><span class="line">  <span class="keyword">let</span> [zhang, li, wang] = <span class="variable constant_">NAMES</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(zhang, li, wang)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
-<p><strong>简化写法</strong></p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,  <span class="comment">// 简化写法</span></span><br><span class="line">    change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>按照<code>对应的位置</code>对变量进行赋值，相比之下，写法比下面的方式简单了许多。当然这种方式用得也不是特别多，试想当一个数组足够长，而在定义时也还需要按照对应的位置，添加足够数量的变量。也是不现实的，所以我们很少对数组使用解构赋值的方式。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">NAMES</span> = [<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>]</span><br><span class="line">  <span class="keyword">let</span> zhang = <span class="variable constant_">NAMES</span>[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">let</span> li = <span class="variable constant_">NAMES</span>[<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">let</span> wang = <span class="variable constant_">NAMES</span>[<span class="number">2</span>]</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(zhang, li, wang) <span class="comment">// --&gt; 张三 李四 王五</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象的解构</strong>。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">22</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">180</span>,</span><br><span class="line">    <span class="attr">hobby</span>: [<span class="string">&quot;跑步&quot;</span>, <span class="string">&quot;打豆豆&quot;</span>],</span><br><span class="line">    <span class="attr">ability</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;倒退跑步&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> &#123;hobby, height, ability, name, age&#125; = <span class="variable constant_">PEOPLE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(name, age, height, hobby, ability)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
+<p><code>注意了</code>。</p>
+<p>1.对<code>对象</code>进行解构赋值时，<code>使用花括号</code>。<br>2.注意上例，声明的变量要和对象中的<code>属性名一致</code>。不一致，会得出undefined。<br>3.声明时，<code>没有顺序区分</code>！！，只要属性名一致，放在什么位置都可以。<br>4.声明时，不必声明全部的属性，<code>需要什么就声明什么</code>,如 let { height } &#x3D; PEOPLE，也是可以的。</p>
 <hr>
-<p>在对象中定义方法，也可以简化，想要在对象中定义一个方法。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="attr">say</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="comment">// 定义方法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>简化写法</strong>。将冒号:和function简化了，直接使用括号。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="title function_">say</span>(<span class="params"></span>)&#123; <span class="comment">// 简化写法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=8">源：https://www.bilibili.com/video/BV1uK411H7on?p=8</a></p>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=6">源：https://www.bilibili.com/video/BV1uK411H7on?p=6</a></p>
 ]]></content>
       <categories>
         <category>ECMAScript</category>
@@ -1132,6 +1099,39 @@ for(let i = 0; i &lt; items.length; i++)&#123;
 
 <hr>
 <p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=7">源：https://www.bilibili.com/video/BV1uK411H7on?p=7</a></p>
+]]></content>
+      <categories>
+        <category>ECMAScript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(6)简化对象写法</title>
+    <url>/blog/ecmascript/6/</url>
+    <content><![CDATA[<hr>
+<h3 id="简化对象写法"><a href="#简化对象写法" class="headerlink" title="简化对象写法"></a>简化对象写法</h3><p>ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法，这样书写更加简洁。</p>
+<p><strong>以前的写法</strong>。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 想定义一个对象</span></span><br><span class="line">  <span class="comment">// 而它的name属性和change属性和上面定义的一样。</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">change</span>: change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>简化写法</strong></p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,  <span class="comment">// 简化写法</span></span><br><span class="line">    change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p>在对象中定义方法，也可以简化，想要在对象中定义一个方法。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="attr">say</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="comment">// 定义方法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>简化写法</strong>。将冒号:和function简化了，直接使用括号。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="title function_">say</span>(<span class="params"></span>)&#123; <span class="comment">// 简化写法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=8">源：https://www.bilibili.com/video/BV1uK411H7on?p=8</a></p>
 ]]></content>
       <categories>
         <category>ECMAScript</category>
@@ -1260,22 +1260,6 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
-    <title>(1)git安装</title>
-    <url>/blog/git/1/</url>
-    <content><![CDATA[<p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发，而开发的一个开放源码的版本控制软件。</p>
-<h3 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h3><p>Git的<a href="https://git-scm.com/">下载地址</a>，按部就班的安装即可。</p>
-<h3 id="TortoiseGit"><a href="#TortoiseGit" class="headerlink" title="TortoiseGit"></a>TortoiseGit</h3><p>Git的使用基本都是在控制台(终端)中，输入命令操作。TortoiseGit是一款开源的git的版本控制系统，提供了人性化的图形化界面，不用像Git一样输入许多语句，像git init、git add、git commit这些语句就通通不用记了。轻松使用鼠标，就可以完成代码的提交和上传。对于使用本地Git的新手来说，TortoiseGit更加简便，更加容易上手。</p>
-<p>TortoiseGit的<a href="https://tortoisegit.org/download/">下载地址</a>，TortoiseGit的默认语言是英语，可以在该下载页的下方找到汉化语言包下载安装。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(9)rest参数和扩展运算符</title>
     <url>/blog/ecmascript/9/</url>
     <content><![CDATA[<hr>
@@ -1324,6 +1308,22 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       <tags>
         <tag>ECMAScript</tag>
         <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(1)git安装</title>
+    <url>/blog/git/1/</url>
+    <content><![CDATA[<p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发，而开发的一个开放源码的版本控制软件。</p>
+<h3 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h3><p>Git的<a href="https://git-scm.com/">下载地址</a>，按部就班的安装即可。</p>
+<h3 id="TortoiseGit"><a href="#TortoiseGit" class="headerlink" title="TortoiseGit"></a>TortoiseGit</h3><p>Git的使用基本都是在控制台(终端)中，输入命令操作。TortoiseGit是一款开源的git的版本控制系统，提供了人性化的图形化界面，不用像Git一样输入许多语句，像git init、git add、git commit这些语句就通通不用记了。轻松使用鼠标，就可以完成代码的提交和上传。对于使用本地Git的新手来说，TortoiseGit更加简便，更加容易上手。</p>
+<p>TortoiseGit的<a href="https://tortoisegit.org/download/">下载地址</a>，TortoiseGit的默认语言是英语，可以在该下载页的下方找到汉化语言包下载安装。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1861,6 +1861,27 @@ title: 音乐
 
 <p>例：</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;||有true，就返回靠前的true&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;1 || 2 =&quot;</span> + (<span class="number">1</span> || <span class="number">2</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;2 || 1 =&quot;</span> + (<span class="number">2</span> || <span class="number">1</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;0 || 1 =&quot;</span> + (<span class="number">0</span> || <span class="number">1</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;1 || 0 =&quot;</span> + (<span class="number">1</span> || <span class="number">0</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;||都为false，返回后面的false&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;NaN || 0 =&quot;</span> + (<span class="title class_">NaN</span> || <span class="number">0</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;0 || NaN =&quot;</span> + (<span class="number">0</span> || <span class="title class_">NaN</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(17)赋值运算符</title>
+    <url>/blog/javascript/17/</url>
+    <content><![CDATA[<hr>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p><strong>&#x3D; 可以将右侧的值赋值给左侧的变量</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;=等于符号，可以将右侧的值赋值给左侧的变量&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>这个其实是一种简写，不是必须的。 实在搞不清，可以直接用正常等式即可</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span></span><br><span class="line">  a += <span class="number">7</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a += 7等同于a = a + 7,这只是一种简写&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;同理：a -= 10等同于a = a - 10&quot;</span>)</span><br><span class="line">  a -= <span class="number">10</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a *= 2等同于a = a * 2&quot;</span>)</span><br><span class="line">  a *= <span class="number">2</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a /= 10等同于a = a / 10&quot;</span>)</span><br><span class="line">  a /= <span class="number">10</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a %= 5等同于a = a % 5&quot;</span>)</span><br><span class="line">  a %= <span class="number">5</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -2854,50 +2875,6 @@ obj3.sayName() //wangwu
       </tags>
   </entry>
   <entry>
-    <title>(4)字符串：String</title>
-    <url>/blog/javascript/4/</url>
-    <content><![CDATA[<hr>
-<h3 id="字符串：String"><a href="#字符串：String" class="headerlink" title="字符串：String"></a>字符串：String</h3><blockquote>
-<p>变量可以定义的数据类型</p>
-</blockquote>
-<p>变量可以定义的数据类型、或者说字面量有哪些数据类型。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;我是字符串str&quot;</span>  <span class="comment">// √双引号;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> str1 = <span class="string">&#x27;我是字符串str1&#x27;</span>;  <span class="comment">// √单引号;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  var str2 = &quot;这还是字符串str2吗&#x27;;</span></span><br><span class="line"><span class="language-xml">  console.log(str2);  // ×单双引号混用报错了</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>引号的使用</p>
-</blockquote>
-<p>双引号和双引号不能嵌套使用，单引号和单引号不能嵌套使用。但双引号和单引号可以嵌套使用。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;×：&quot;</span>这是一个字符串<span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str);  <span class="comment">//双引号嵌套双引号报错</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str1 = <span class="string">&#x27;×：&#x27;</span>这是一个字符串<span class="string">&#x27;&#x27;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);  <span class="comment">//单引号嵌套单引号报错</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str2 = <span class="string">&#x27;√：&quot;单、双嵌套，这才是一个字符串&quot;&#x27;</span>; </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str2);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str3 = <span class="string">&quot;√：&#x27;双、单嵌套，这也是一个字符串&#x27;&quot;</span>; </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str3);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>如果非要用相同的引号嵌套使用，可以使用\，作为转义字符。</p>
-</blockquote>
-<p>\“ 表示 &quot;<br>\‘ 表示 &#39;</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1：\&quot;这是一个字符串\&quot;&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">  <span class="comment">// 如果非要用同一种引号嵌套</span></span><br><span class="line">  <span class="comment">// 可以使用 \转义符号进行转义</span></span><br><span class="line">  <span class="comment">// 其中\&quot; 就表示这不是&quot;引号，只是单纯的一个字符串</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str1 = <span class="string">&quot;2：\&quot;这是\n一个字符串\&quot;&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 除了引号，其他特殊的字符</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 也可以使用转义符号转义</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 可以发现在\n的地方发生了换行</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<p>除此之外:<br>\t 制表符：相当于按了一下Tab键<br>\\ 表示 \</p>
-<hr>
-<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>关于重新赋值，例1：</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;我是字符串&quot;</span>;</span><br><span class="line">  a = <span class="literal">true</span>;</span><br><span class="line">  a = <span class="number">123</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">  <span class="comment">// a的值是最后一次赋的值。</span></span><br><span class="line">  <span class="comment">// 说明js是从上到下逐行执行。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>根据以上，可以看出js是从上到下，按顺序执行。例2：</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;我是字符串&quot;</span>;</span><br><span class="line">  a = <span class="literal">true</span>;</span><br><span class="line">  a = <span class="number">123</span>;</span><br><span class="line">  <span class="title function_">alert</span>(a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">  <span class="comment">//运行代码，alert弹出a的值以后，在你点击确定以前</span></span><br><span class="line">  <span class="comment">//console.log方法不会执行。因为alert方法尚未执行完毕。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(39)构造函数</title>
     <url>/blog/javascript/39/</url>
     <content><![CDATA[<hr>
@@ -2933,6 +2910,50 @@ obj3.sayName() //wangwu
 <hr>
 <h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>使用instanceof可以检查一个对象，是否是一个类的。</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, gender</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">gender</span> = gender</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> per2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;instanceof检查per2是否属于Person类&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;per2 instanceof Person : &quot;</span> + (per2 <span class="keyword">instanceof</span> <span class="title class_">Person</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;当然，即便是Person类的实例，它也是Object的后代&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;per2 instanceof Object : &quot;</span> + (per2 <span class="keyword">instanceof</span> <span class="title class_">Object</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(4)字符串：String</title>
+    <url>/blog/javascript/4/</url>
+    <content><![CDATA[<hr>
+<h3 id="字符串：String"><a href="#字符串：String" class="headerlink" title="字符串：String"></a>字符串：String</h3><blockquote>
+<p>变量可以定义的数据类型</p>
+</blockquote>
+<p>变量可以定义的数据类型、或者说字面量有哪些数据类型。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;我是字符串str&quot;</span>  <span class="comment">// √双引号;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> str1 = <span class="string">&#x27;我是字符串str1&#x27;</span>;  <span class="comment">// √单引号;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  var str2 = &quot;这还是字符串str2吗&#x27;;</span></span><br><span class="line"><span class="language-xml">  console.log(str2);  // ×单双引号混用报错了</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>引号的使用</p>
+</blockquote>
+<p>双引号和双引号不能嵌套使用，单引号和单引号不能嵌套使用。但双引号和单引号可以嵌套使用。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;×：&quot;</span>这是一个字符串<span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str);  <span class="comment">//双引号嵌套双引号报错</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str1 = <span class="string">&#x27;×：&#x27;</span>这是一个字符串<span class="string">&#x27;&#x27;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);  <span class="comment">//单引号嵌套单引号报错</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str2 = <span class="string">&#x27;√：&quot;单、双嵌套，这才是一个字符串&quot;&#x27;</span>; </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str2);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str3 = <span class="string">&quot;√：&#x27;双、单嵌套，这也是一个字符串&#x27;&quot;</span>; </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str3);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>如果非要用相同的引号嵌套使用，可以使用\，作为转义字符。</p>
+</blockquote>
+<p>\“ 表示 &quot;<br>\‘ 表示 &#39;</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1：\&quot;这是一个字符串\&quot;&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">  <span class="comment">// 如果非要用同一种引号嵌套</span></span><br><span class="line">  <span class="comment">// 可以使用 \转义符号进行转义</span></span><br><span class="line">  <span class="comment">// 其中\&quot; 就表示这不是&quot;引号，只是单纯的一个字符串</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> str1 = <span class="string">&quot;2：\&quot;这是\n一个字符串\&quot;&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 除了引号，其他特殊的字符</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 也可以使用转义符号转义</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 可以发现在\n的地方发生了换行</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p>除此之外:<br>\t 制表符：相当于按了一下Tab键<br>\\ 表示 \</p>
+<hr>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>关于重新赋值，例1：</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;我是字符串&quot;</span>;</span><br><span class="line">  a = <span class="literal">true</span>;</span><br><span class="line">  a = <span class="number">123</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">  <span class="comment">// a的值是最后一次赋的值。</span></span><br><span class="line">  <span class="comment">// 说明js是从上到下逐行执行。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>根据以上，可以看出js是从上到下，按顺序执行。例2：</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;我是字符串&quot;</span>;</span><br><span class="line">  a = <span class="literal">true</span>;</span><br><span class="line">  a = <span class="number">123</span>;</span><br><span class="line">  <span class="title function_">alert</span>(a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">  <span class="comment">//运行代码，alert弹出a的值以后，在你点击确定以前</span></span><br><span class="line">  <span class="comment">//console.log方法不会执行。因为alert方法尚未执行完毕。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 
 <hr>
 ]]></content>
@@ -3007,27 +3028,6 @@ obj3.sayName() //wangwu
 
 
 <p>以后我们创建构造函数时，就可以<strong>将这些对象共有的属性和方法</strong>。<strong>统一添加到构造函数的原型对象中</strong>。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(17)赋值运算符</title>
-    <url>/blog/javascript/17/</url>
-    <content><![CDATA[<hr>
-<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p><strong>&#x3D; 可以将右侧的值赋值给左侧的变量</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;=等于符号，可以将右侧的值赋值给左侧的变量&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>这个其实是一种简写，不是必须的。 实在搞不清，可以直接用正常等式即可</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span></span><br><span class="line">  a += <span class="number">7</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a += 7等同于a = a + 7,这只是一种简写&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;同理：a -= 10等同于a = a - 10&quot;</span>)</span><br><span class="line">  a -= <span class="number">10</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a *= 2等同于a = a * 2&quot;</span>)</span><br><span class="line">  a *= <span class="number">2</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a /= 10等同于a = a / 10&quot;</span>)</span><br><span class="line">  a /= <span class="number">10</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;a %= 5等同于a = a % 5&quot;</span>)</span><br><span class="line">  a %= <span class="number">5</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
 <hr>
 ]]></content>
       <categories>
@@ -4801,10 +4801,10 @@ btn01.attachEvent(“onclick”,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(81)Proxy</title>
+    <title>(81)代理Proxy</title>
     <url>/blog/javascript/81/</url>
     <content><![CDATA[<hr>
-<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p><strong>vue大概的基本原理</strong>：</p>
+<h3 id="代理Proxy"><a href="#代理Proxy" class="headerlink" title="代理Proxy"></a>代理Proxy</h3><p><strong>vue大概的基本原理</strong>：</p>
 <ol>
 <li>数据劫持—&gt;观察者—&gt;数据解析、指令、js对象，diff算法—&gt;dom。</li>
 </ol>
@@ -4820,7 +4820,7 @@ btn01.attachEvent(“onclick”,function()&#123;
 <p>直接的理解，Proxy就是<strong>代理</strong>的意思。它可以实现对，对象、数组、方法等的代理。</p>
 <p>proxy另一方面，还可以理解为<strong>拦截</strong>的意思。proxy提供了13中方法进行拦截。而Object.defineProperty只有两种，get&#x2F;set。</p>
 <hr>
-<h3 id="Proxy的参数"><a href="#Proxy的参数" class="headerlink" title="Proxy的参数"></a>Proxy的参数</h3><p><strong>Proxy:它有2个参数：</strong></p>
+<h3 id="Proxy的参数"><a href="#Proxy的参数" class="headerlink" title="Proxy的参数"></a>Proxy的参数</h3><p><strong>Proxy:它有2个参数</strong>：</p>
 <p>new Proxy(target,handler)</p>
 <ol>
 <li>target:目标对象</li>
@@ -4915,7 +4915,7 @@ btn01.attachEvent(“onclick”,function()&#123;
 Reflect.ownKeys(newTarget)
 </code></pre>
 <hr>
-<p>&#x2F;&#x2F;获取目标对象的属性描述器</p>
+<p>获取目标对象的属性描述器。</p>
 <pre><code>Reflect.getOwnPropertyDescriptor(newTarget, &#39;a&#39;)
 </code></pre>
 <p>包含：</p>
