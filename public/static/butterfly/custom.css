@@ -66,7 +66,11 @@
 #recent-posts > .recent-post-item .post_cover img.error{
   object-fit: contain;
 }
-
+/*首页文章列表，图片object-fit。侧边栏图片*/
+#recent-posts > .recent-post-item .post_cover img.post_bg,
+#aside-content .aside-list > .aside-list-item .thumbnail > img{
+  object-fit: contain;
+}
 
 /*-----------------------●文章页●----------------------------*/
 /*文章区域-loading图片高度设置*/

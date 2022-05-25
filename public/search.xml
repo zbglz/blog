@@ -4544,10 +4544,10 @@ console.log(res) // 123456
     <url>/blog/javascript/76/</url>
     <content><![CDATA[<hr>
 <h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><pre><code>&lt;body&gt;
-    &lt;div id=&quot;box1&quot;&gt;
-        我是box1
-        &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
-    &lt;/div&gt;
+    &lt;div id=&quot;box1&quot;&gt;
+        我是box1
+        &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+    &lt;/div&gt;
 &lt;/body&gt;
 </code></pre>
 <ol>
@@ -4654,10 +4654,10 @@ console.log(res) // 123456
 <p><strong>它就可以给元素的一个事件，绑定多个响应函数。</strong><code>但是，这个方法IE8及以下的浏览器不支持</code>。</p>
 <pre><code>var btn01 = document.getElementById(“btn01”)
 btn01.addEventListener(“click”,function()&#123;
-    console.log(1)
+    console.log(1)
 &#125;,false)
 btn01.addEventListener(“click”,function()&#123;
-    console.log(2)
+    console.log(2)
 &#125;,false)
 // 1, 2
 </code></pre>
@@ -4671,10 +4671,10 @@ btn01.addEventListener(“click”,function()&#123;
 <p>兼容IE8及以下浏览器的attachEvent()需要加on在前面</p>
 <pre><code>var btn01 = document.getElementById(“btn01”)
 btn01.attachEvent(“onclick”,function()&#123;
-    console.log(1)
+    console.log(1)
 &#125;)
 btn01.attachEvent(“onclick”,function()&#123;
-    console.log(2)
+    console.log(2)
 &#125;)
 // 2, 1
 </code></pre>
@@ -4738,13 +4738,13 @@ btn01.attachEvent(“onclick”,function()&#123;
 </blockquote>
 <p>可以将addEventListener()的第三个参数，设置为true。</p>
 <pre><code>function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-        obj.addEventListener(eventStr, callback, true)
-    &#125;else&#123;
-        obj.attachEvent(“on” + eventStr, function()&#123;
-            callback.call(obj)
-        &#125;)
-    &#125;
+    if(obj.addEventListener)&#123;
+        obj.addEventListener(eventStr, callback, true)
+    &#125;else&#123;
+        obj.attachEvent(“on” + eventStr, function()&#123;
+            callback.call(obj)
+        &#125;)
+    &#125;
 &#125;
 </code></pre>
 <p>例：</p>
@@ -4826,7 +4826,7 @@ vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 <p>handler的set拦截</p>
 </blockquote>
 <p>触发set拦截，就是对对象属性重新赋值时才会触发。set拦截有四个参数。我们来打印一下set拦截中的几个参数分别是什么。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;</span><br><span class="line">      <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">b</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> newTarget = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">      <span class="title function_">set</span>(<span class="params">target, p, value, receiver</span>)&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;set拦截的参数：&quot;</span>, target, p, value, receiver) </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 触发set拦截</span></span><br><span class="line">  newTarget.<span class="property">a</span> = <span class="number">10</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;</span><br><span class="line">      <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">b</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> newTarget = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">      <span class="title function_">set</span>(<span class="params">target, p, value, receiver</span>)&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;set拦截的参数：&quot;</span>, target, p, value, receiver) </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 触发set拦截</span></span><br><span class="line">  newTarget.<span class="property">a</span> = <span class="number">10</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <p><strong>根据console的情况可知：</strong></p>
@@ -4839,14 +4839,14 @@ vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 <p>实际测试时，添加，receiver怎么会循环触发get拦截。且receiver显示未定义。</p>
 <pre><code>&lt;script&gt;
   let obj = &#123;
-      a: 1,
-      b: 0
+      a: 1,
+      b: 0
   &#125;
   
   let newTarget = new Proxy(obj, &#123;
-      get(target, p, receiver)&#123;
-          console.log(&quot;get拦截的参数：&quot;, target, p, receiver) 
-      &#125;
+      get(target, p, receiver)&#123;
+          console.log(&quot;get拦截的参数：&quot;, target, p, receiver) 
+      &#125;
   &#125;)
   
   //触发get拦截
@@ -4854,7 +4854,7 @@ vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 &lt;/script&gt;
 </code></pre>
 <p>去掉receiver进行测试。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;</span><br><span class="line">      <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">b</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> newTarget = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">      <span class="title function_">get</span>(<span class="params">target, p</span>)&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;get拦截的参数：&quot;</span>, target, p) </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//触发get拦截</span></span><br><span class="line">  newTarget.<span class="property">a</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;</span><br><span class="line">      <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">b</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> newTarget = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">      <span class="title function_">get</span>(<span class="params">target, p</span>)&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;get拦截的参数：&quot;</span>, target, p) </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//触发get拦截</span></span><br><span class="line">  newTarget.<span class="property">a</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <p><strong>根据console的情况可知：</strong></p>
@@ -4894,8 +4894,8 @@ vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 <p>就能获取到相应key键的值。</p>
 <hr>
 <pre><code>ownKeys(target)&#123;
-    //ownKeys 拦截，返回对象所有key的数组[a, b]
-    return Reflect.ownKeys(target)
+    //ownKeys 拦截，返回对象所有key的数组[a, b]
+    return Reflect.ownKeys(target)
 &#125;
 
 Reflect.ownKeys(newTarget)
@@ -11335,6 +11335,37 @@ methods: &#123;
       </tags>
   </entry>
   <entry>
+    <title>(85)记录:fastclick</title>
+    <url>/blog/vue2/85/</url>
+    <content><![CDATA[<hr>
+<h3 id="记录-fastclick"><a href="#记录-fastclick" class="headerlink" title="记录:fastclick"></a>记录:fastclick</h3><p><strong>为什么需要fastclick</strong>？</p>
+<p><strong>移动端300毫秒延迟：</strong>在正常情况下，如果不进行特殊处理，移动端在触发点击事件时， 会有300ms的延迟。换句话说，当我们在点击移动端页面后不会立即做出反应， 而是会等待300ms才会触发click事件。在移动web兴起初期， 用户对300ms的延迟没有太大的感觉，但随着用户对交互体验的要求的提高， 如今，移动端的300ms延迟严重影响了用户体验。</p>
+<p><strong>300毫秒延迟的由来：</strong>07年，苹果公司发布首款Iphone前夕，遇到一个问题： 当时的网站都是为大屏设计，手机屏幕太小无法正常浏览，于是苹果工程师做了一些约定解决此类问题。 这些约定当中，最为有名的是双击缩放（double tap to zoom）,这是产生300ms延迟的根源。 用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。如果用户在 iOS Safari 里边点击了一个链接。由于用户可以进行双击缩放或者双击滚动的操作，当用户一次点击屏幕之后， 浏览器并不能立刻判断用户是确实要打开这个链接，还是想要进行双击操作。因此，iOS Safari 就等待 300 毫秒，以判断用户是否再次点击了屏幕。 鉴于iPhone的成功， 其他移动浏览器都复制了 iPhoneSafari 浏览器的多数约定，包括双击缩放， 几乎现在所有的移动端浏览器都有这个功能。 由此产生了300ms延迟问题。</p>
+<hr>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><pre><code>//禁用缩放user-scalable=no
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot; /&gt;
+
+//user-scalable=no表明这个页面不可缩放，也就是浏览器禁用的双击缩放事件并且同时会去掉300ms点击延迟。
+//但这个方案也有缺点，就是完全禁用了双击缩放，当我们需要放大文字或者图片时无法满足我们的需求。
+</code></pre>
+<hr>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><pre><code>//模块化使用
+npm install fastclick --save
+
+//在main.js中
+import FastClick from &quot;fastclick&quot;
+FastClick.attach(document.body)
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(86)记录:图片lazy-load</title>
     <url>/blog/vue2/86/</url>
     <content><![CDATA[<hr>
@@ -11400,37 +11431,6 @@ module.exports = &#123;
 </code></pre>
 <p><strong>有时间自行研究一下，记录这个主要是说明有这样的东西，可以做这样的事情。</strong></p>
 <p>除此之外还有px2rem等插件&#x2F;loader</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(85)记录:fastclick</title>
-    <url>/blog/vue2/85/</url>
-    <content><![CDATA[<hr>
-<h3 id="记录-fastclick"><a href="#记录-fastclick" class="headerlink" title="记录:fastclick"></a>记录:fastclick</h3><p><strong>为什么需要fastclick</strong>？</p>
-<p><strong>移动端300毫秒延迟：</strong>在正常情况下，如果不进行特殊处理，移动端在触发点击事件时， 会有300ms的延迟。换句话说，当我们在点击移动端页面后不会立即做出反应， 而是会等待300ms才会触发click事件。在移动web兴起初期， 用户对300ms的延迟没有太大的感觉，但随着用户对交互体验的要求的提高， 如今，移动端的300ms延迟严重影响了用户体验。</p>
-<p><strong>300毫秒延迟的由来：</strong>07年，苹果公司发布首款Iphone前夕，遇到一个问题： 当时的网站都是为大屏设计，手机屏幕太小无法正常浏览，于是苹果工程师做了一些约定解决此类问题。 这些约定当中，最为有名的是双击缩放（double tap to zoom）,这是产生300ms延迟的根源。 用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。如果用户在 iOS Safari 里边点击了一个链接。由于用户可以进行双击缩放或者双击滚动的操作，当用户一次点击屏幕之后， 浏览器并不能立刻判断用户是确实要打开这个链接，还是想要进行双击操作。因此，iOS Safari 就等待 300 毫秒，以判断用户是否再次点击了屏幕。 鉴于iPhone的成功， 其他移动浏览器都复制了 iPhoneSafari 浏览器的多数约定，包括双击缩放， 几乎现在所有的移动端浏览器都有这个功能。 由此产生了300ms延迟问题。</p>
-<hr>
-<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><pre><code>//禁用缩放user-scalable=no
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot; /&gt;
-
-//user-scalable=no表明这个页面不可缩放，也就是浏览器禁用的双击缩放事件并且同时会去掉300ms点击延迟。
-//但这个方案也有缺点，就是完全禁用了双击缩放，当我们需要放大文字或者图片时无法满足我们的需求。
-</code></pre>
-<hr>
-<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><pre><code>//模块化使用
-npm install fastclick --save
-
-//在main.js中
-import FastClick from &quot;fastclick&quot;
-FastClick.attach(document.body)
-</code></pre>
 <hr>
 ]]></content>
       <categories>
