@@ -1109,6 +1109,39 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
+    <title>(6)简化对象写法</title>
+    <url>/blog/ecmascript/6/</url>
+    <content><![CDATA[<hr>
+<h3 id="简化对象写法"><a href="#简化对象写法" class="headerlink" title="简化对象写法"></a>简化对象写法</h3><p>ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法，这样书写更加简洁。</p>
+<p><strong>以前的写法</strong>。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 想定义一个对象</span></span><br><span class="line">  <span class="comment">// 而它的name属性和change属性和上面定义的一样。</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">change</span>: change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>简化写法</strong></p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,  <span class="comment">// 简化写法</span></span><br><span class="line">    change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p>在对象中定义方法，也可以简化，想要在对象中定义一个方法。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="attr">say</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="comment">// 定义方法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>简化写法</strong>。将冒号:和function简化了，直接使用括号。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="title function_">say</span>(<span class="params"></span>)&#123; <span class="comment">// 简化写法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=8">源：https://www.bilibili.com/video/BV1uK411H7on?p=8</a></p>
+]]></content>
+      <categories>
+        <category>ECMAScript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(7)箭头函数及声明特点</title>
     <url>/blog/ecmascript/7/</url>
     <content><![CDATA[<hr>
@@ -1268,39 +1301,6 @@ for(let i = 0; i &lt; items.length; i++)&#123;
 
 <hr>
 <p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=12">源：https://www.bilibili.com/video/BV1uK411H7on?p=12</a></p>
-]]></content>
-      <categories>
-        <category>ECMAScript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(6)简化对象写法</title>
-    <url>/blog/ecmascript/6/</url>
-    <content><![CDATA[<hr>
-<h3 id="简化对象写法"><a href="#简化对象写法" class="headerlink" title="简化对象写法"></a>简化对象写法</h3><p>ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法，这样书写更加简洁。</p>
-<p><strong>以前的写法</strong>。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 想定义一个对象</span></span><br><span class="line">  <span class="comment">// 而它的name属性和change属性和上面定义的一样。</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">change</span>: change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>简化写法</strong></p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,  <span class="comment">// 简化写法</span></span><br><span class="line">    change</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p>在对象中定义方法，也可以简化，想要在对象中定义一个方法。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="attr">say</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="comment">// 定义方法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>简化写法</strong>。将冒号:和function简化了，直接使用括号。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;测试字符串&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">PEOPLE</span> = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="title function_">say</span>(<span class="params"></span>)&#123; <span class="comment">// 简化写法</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;你吃了么&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=8">源：https://www.bilibili.com/video/BV1uK411H7on?p=8</a></p>
 ]]></content>
       <categories>
         <category>ECMAScript</category>
@@ -2326,6 +2326,29 @@ document.write()  //浏览器提供的对象
       </tags>
   </entry>
   <entry>
+    <title>(3)数据类型</title>
+    <url>/blog/javascript/3/</url>
+    <content><![CDATA[<hr>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>变量可以定义的数据类型、或者说字面量有哪些数据类型。</li>
+<li>例如：变量名、函数名、属性名，都属于标识符。</li>
+<li>在JS中一共有6种数据类型。</li>
+</ul>
+<p>例：</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>; <span class="comment">// 字符串：String</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">123</span>;  <span class="comment">// 数值：Number</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> c = <span class="literal">true</span>;  <span class="comment">// 布尔值：Boolean</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> d = <span class="literal">null</span>;  <span class="comment">// 空值：Null</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> e = <span class="literal">undefined</span>;  <span class="comment">// 未定义：Undefined</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> f = &#123;&#125;;  <span class="comment">// 对象：Object</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a,b,c,d,e,f)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>其中，前五种属于基本数据类型。而Object属于引用数据类型。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(29)自定义对象</title>
     <url>/blog/javascript/29/</url>
     <content><![CDATA[<hr>
@@ -2388,29 +2411,6 @@ document.write()  //浏览器提供的对象
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">  <span class="keyword">var</span> key = <span class="string">&quot;dage&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key <span class="keyword">in</span> obj)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;会得到一个布尔值，为真说明存在该属性，为假说明不存在该属性。&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(3)数据类型</title>
-    <url>/blog/javascript/3/</url>
-    <content><![CDATA[<hr>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
-<li>变量可以定义的数据类型、或者说字面量有哪些数据类型。</li>
-<li>例如：变量名、函数名、属性名，都属于标识符。</li>
-<li>在JS中一共有6种数据类型。</li>
-</ul>
-<p>例：</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>; <span class="comment">// 字符串：String</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">123</span>;  <span class="comment">// 数值：Number</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> c = <span class="literal">true</span>;  <span class="comment">// 布尔值：Boolean</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> d = <span class="literal">null</span>;  <span class="comment">// 空值：Null</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> e = <span class="literal">undefined</span>;  <span class="comment">// 未定义：Undefined</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> f = &#123;&#125;;  <span class="comment">// 对象：Object</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a,b,c,d,e,f)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>其中，前五种属于基本数据类型。而Object属于引用数据类型。</p>
 <hr>
 ]]></content>
       <categories>
@@ -5395,21 +5395,6 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
-    <title>(1)vue的MVVM</title>
-    <url>/blog/vue2/1/</url>
-    <content><![CDATA[<hr>
-<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-1.png" alt="vue2-1"></p>
-<p>Model View ViewModel，Model是行为层(js)，View是视图层(html)，js不再直接控制html的DOM进行监听和数据绑定，而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听)，个人理解。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(10)computed的setter和getter</title>
     <url>/blog/vue2/10/</url>
     <content><![CDATA[<hr>
@@ -5422,6 +5407,21 @@ nvm alias default [node版本号] ##设置默认版本
 
 
 <p>在实际项目中，事实上我们并不希望用户随便对我们的数据设置值。大部分情况下我们都不需要实现set方法。而作为一个只读属性。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(1)vue的MVVM</title>
+    <url>/blog/vue2/1/</url>
+    <content><![CDATA[<hr>
+<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-1.png" alt="vue2-1"></p>
+<p>Model View ViewModel，Model是行为层(js)，View是视图层(html)，js不再直接控制html的DOM进行监听和数据绑定，而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听)，个人理解。</p>
 <hr>
 ]]></content>
       <categories>
@@ -8147,6 +8147,31 @@ output: &#123;
       </tags>
   </entry>
   <entry>
+    <title>(50)Vue-CLI的介绍和安装</title>
+    <url>/blog/vue2/50/</url>
+    <content><![CDATA[<hr>
+<h3 id="Vue-CLI的介绍"><a href="#Vue-CLI的介绍" class="headerlink" title="Vue-CLI的介绍"></a>Vue-CLI的介绍</h3><p>上一节讲了，webpack安装配置，但是在实际的项目开发中，我们一般不会从头到尾，全部自己来写webpack的配置的。一般会用一个叫做脚手架(CLI)的工具，自动生成webpack相关的配置。不管是进行vue开发，还是react开发，他们都是有对应的脚手架的。接下来将要学习的就是vue的脚手架，Vue-CLI。</p>
+<p>如果只是简单写几个vue的Demo程序，可能不需要用到Vue CLI，如果在开发大型项目，那么必然需要用到Vue CLI。在大型项目中 ，需要考虑代码目录结构、项目结构和部署，热加载、代码单元测试等等事情，如果这些工作都需要用手工去配置，那么效率无疑是低下的。所以通常我们会使用脚手架工具来完成这些事情。<code>CLI是Command-Line Interface</code>，翻译为命令行界面，但是俗称脚手架。</p>
+<p>Vue CLI使用的前提，也是基于Node的。因为它会自动生成vue项目的webpack配置，而webpack就是基于Node环境运行的。</p>
+<hr>
+<h3 id="Vue-CLI的安装"><a href="#Vue-CLI的安装" class="headerlink" title="Vue-CLI的安装"></a>Vue-CLI的安装</h3><p>脚手架的安装一般都是全局安装。默认情况下都是安装最新的脚手架版本。</p>
+<pre><code>F:\learnwebpack\webpack-start&gt; npm install -g @vue/cli
+#这是安装Vue CLI3。
+</code></pre>
+<p>可以全局安装一个桥接工具。这样既可以使用CLI2,也可以使用更新的版本，所以现在很少有人单独安装CLI2了。</p>
+<pre><code>F:\learnwebpack\webpack-start&gt; npm install -g @vue/cli-init
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>vue-cli</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(51)Vue-CLI2创建项目</title>
     <url>/blog/vue2/51/</url>
     <content><![CDATA[<hr>
@@ -8199,31 +8224,6 @@ are ONLY allowed in .vue files - render functions are required elsewhere
 <p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-68.png" alt="vue2-68"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-71.png" alt="vue2-71"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-72.png" alt="vue2-72"></p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>vue-cli</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(50)Vue-CLI的介绍和安装</title>
-    <url>/blog/vue2/50/</url>
-    <content><![CDATA[<hr>
-<h3 id="Vue-CLI的介绍"><a href="#Vue-CLI的介绍" class="headerlink" title="Vue-CLI的介绍"></a>Vue-CLI的介绍</h3><p>上一节讲了，webpack安装配置，但是在实际的项目开发中，我们一般不会从头到尾，全部自己来写webpack的配置的。一般会用一个叫做脚手架(CLI)的工具，自动生成webpack相关的配置。不管是进行vue开发，还是react开发，他们都是有对应的脚手架的。接下来将要学习的就是vue的脚手架，Vue-CLI。</p>
-<p>如果只是简单写几个vue的Demo程序，可能不需要用到Vue CLI，如果在开发大型项目，那么必然需要用到Vue CLI。在大型项目中 ，需要考虑代码目录结构、项目结构和部署，热加载、代码单元测试等等事情，如果这些工作都需要用手工去配置，那么效率无疑是低下的。所以通常我们会使用脚手架工具来完成这些事情。<code>CLI是Command-Line Interface</code>，翻译为命令行界面，但是俗称脚手架。</p>
-<p>Vue CLI使用的前提，也是基于Node的。因为它会自动生成vue项目的webpack配置，而webpack就是基于Node环境运行的。</p>
-<hr>
-<h3 id="Vue-CLI的安装"><a href="#Vue-CLI的安装" class="headerlink" title="Vue-CLI的安装"></a>Vue-CLI的安装</h3><p>脚手架的安装一般都是全局安装。默认情况下都是安装最新的脚手架版本。</p>
-<pre><code>F:\learnwebpack\webpack-start&gt; npm install -g @vue/cli
-#这是安装Vue CLI3。
-</code></pre>
-<p>可以全局安装一个桥接工具。这样既可以使用CLI2,也可以使用更新的版本，所以现在很少有人单独安装CLI2了。</p>
-<pre><code>F:\learnwebpack\webpack-start&gt; npm install -g @vue/cli-init
-</code></pre>
 <hr>
 ]]></content>
       <categories>

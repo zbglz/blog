@@ -638,7 +638,7 @@ subtitle:
   sub:
 
 # Loading Animation (网页预加载动画)
-preloader: true
+preloader: false
 
 # aside (側邊欄)
 # --------------------------------------
