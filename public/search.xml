@@ -3358,43 +3358,6 @@ var perArr = [per1, per2, per3]
       </tags>
   </entry>
   <entry>
-    <title>(5)数值：Number</title>
-    <url>/blog/javascript/5/</url>
-    <content><![CDATA[<hr>
-<h3 id="数值：Number"><a href="#数值：Number" class="headerlink" title="数值：Number"></a>数值：Number</h3><p>在js中所有的数值都是Number。包括整数、浮点数(有效的小数，不包括5.12.12，这不是有效的小数，它有2个小数点)</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span>+a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b = &quot;</span>+b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>以上输出的都是123，但他们的类型不一样。可以使用<code>typeof运算符</code>，获取变量类型。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(a) + <span class="string">&quot; ： a =&quot;</span> + a); </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(b) + <span class="string">&quot; ： b =&quot;</span> + b); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>最大值：<code>Number.MAX_VALUE</code>获取js中可以表达的最大数值。比Number.MAX_VALUE还大的数，在js中以<strong>Infinity</strong>表示，Infinity是一个字面量，<strong>专门用来表示</strong>无穷大的数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果比最大值还大，a会是什么？</span></span><br><span class="line">  a = a + a;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//Infinity表示无穷大,Infinity是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>最小值：<code>Number.MIN_VALUE</code>，可以获取js中可以表达的<strong>最小的小数</strong>。这个最小的数是：大于0小于1的最小的小数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MIN_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果a是比最小值还小的值，a会是什么？</span></span><br><span class="line">  a = -<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>*<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//-Infinity表示无穷小,-Infinity也是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查-Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Number类型的变量可以进行运算。如果使用字符串类型进行运算呢？</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;abc&quot;</span> * <span class="string">&quot;bcd&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值是：&quot;</span> + a); </span><br><span class="line">  <span class="comment">//得出a = NaN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//NaN是一个特殊的数字，表示 Not A Number。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;但NaN的类型也是：&quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//NaN也是一个字面量，可以直接赋值给变量</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="title class_">NaN</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b的值类型是：&quot;</span> + <span class="keyword">typeof</span> b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>数值类型的运算</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;在js中关于整数的运算，基本可以保证精确。常用数值位数以内的运算都不会有什么问题。&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">51415214</span> + <span class="number">54812544</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;整数计算a的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;但是浮点数的运算，可能得到一个不够精确的结果。事实上所有的语言都有这个问题。例：在十进制的数值中，如 1/3 ，是无法精确表达的。js中的表达式，转到二进制中进行运算时，二进制中，无法精确表达 1/10。所以浮点数在二进制中运算，都是不精确的。&quot;</span>)</span><br><span class="line">  a = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;小数计算0.1 + 0.2的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//toFixed四舍五入，保留一位小数。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般情况下，这种不精确的运算，我们可以舍去后面的值。但一些数据是不能舍去的，比如涉及到钱，或者对精确度要求很高的数据。这种结果一般通过服务器运算返回。&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值通过toFixed四舍五入保留1位是：&quot;</span> + a.<span class="title function_">toFixed</span>(<span class="number">1</span>));</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;如果知道浮点数的位数，可以把浮点数转为正整数的方式进行运算。&quot;</span>)</span><br><span class="line">  a = (<span class="number">0.1</span> * <span class="number">10</span> + <span class="number">0.2</span> * <span class="number">10</span>)/<span class="number">10</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;将小数变成整数计算再除以10，&quot;</span> + a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(50)this的情况</title>
     <url>/blog/javascript/50/</url>
     <content><![CDATA[<hr>
@@ -3603,6 +3566,43 @@ var perArr = [per1, per2, per3]
 
 <p>咋一看，没太看懂，需要注意的是，<strong>方法和属性</strong>只能<strong>添加给对象</strong>。<br>var声明的s不是对象，它只是一个基本数据类型Number，所以s是<strong>没有属性和方法的</strong>。<br>但是s.toString()，调用了toString()方法，还执行成功了，且将其转换成了String。</p>
 <p>所以，<strong>当我们用基本数据类型</strong>去<strong>调用属性和方法时</strong>。<br>浏览器会<strong>临时使用包装类</strong>，<strong>将其转换为对象</strong>，然后再调用对象的属性和方法。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(5)数值：Number</title>
+    <url>/blog/javascript/5/</url>
+    <content><![CDATA[<hr>
+<h3 id="数值：Number"><a href="#数值：Number" class="headerlink" title="数值：Number"></a>数值：Number</h3><p>在js中所有的数值都是Number。包括整数、浮点数(有效的小数，不包括5.12.12，这不是有效的小数，它有2个小数点)</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span>+a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b = &quot;</span>+b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以上输出的都是123，但他们的类型不一样。可以使用<code>typeof运算符</code>，获取变量类型。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(a) + <span class="string">&quot; ： a =&quot;</span> + a); </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(b) + <span class="string">&quot; ： b =&quot;</span> + b); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>最大值：<code>Number.MAX_VALUE</code>获取js中可以表达的最大数值。比Number.MAX_VALUE还大的数，在js中以<strong>Infinity</strong>表示，Infinity是一个字面量，<strong>专门用来表示</strong>无穷大的数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果比最大值还大，a会是什么？</span></span><br><span class="line">  a = a + a;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//Infinity表示无穷大,Infinity是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>最小值：<code>Number.MIN_VALUE</code>，可以获取js中可以表达的<strong>最小的小数</strong>。这个最小的数是：大于0小于1的最小的小数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MIN_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果a是比最小值还小的值，a会是什么？</span></span><br><span class="line">  a = -<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>*<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//-Infinity表示无穷小,-Infinity也是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查-Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Number类型的变量可以进行运算。如果使用字符串类型进行运算呢？</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;abc&quot;</span> * <span class="string">&quot;bcd&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值是：&quot;</span> + a); </span><br><span class="line">  <span class="comment">//得出a = NaN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//NaN是一个特殊的数字，表示 Not A Number。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;但NaN的类型也是：&quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//NaN也是一个字面量，可以直接赋值给变量</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="title class_">NaN</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b的值类型是：&quot;</span> + <span class="keyword">typeof</span> b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>数值类型的运算</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;在js中关于整数的运算，基本可以保证精确。常用数值位数以内的运算都不会有什么问题。&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">51415214</span> + <span class="number">54812544</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;整数计算a的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;但是浮点数的运算，可能得到一个不够精确的结果。事实上所有的语言都有这个问题。例：在十进制的数值中，如 1/3 ，是无法精确表达的。js中的表达式，转到二进制中进行运算时，二进制中，无法精确表达 1/10。所以浮点数在二进制中运算，都是不精确的。&quot;</span>)</span><br><span class="line">  a = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;小数计算0.1 + 0.2的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//toFixed四舍五入，保留一位小数。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般情况下，这种不精确的运算，我们可以舍去后面的值。但一些数据是不能舍去的，比如涉及到钱，或者对精确度要求很高的数据。这种结果一般通过服务器运算返回。&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值通过toFixed四舍五入保留1位是：&quot;</span> + a.<span class="title function_">toFixed</span>(<span class="number">1</span>));</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;如果知道浮点数的位数，可以把浮点数转为正整数的方式进行运算。&quot;</span>)</span><br><span class="line">  a = (<span class="number">0.1</span> * <span class="number">10</span> + <span class="number">0.2</span> * <span class="number">10</span>)/<span class="number">10</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;将小数变成整数计算再除以10，&quot;</span> + a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
 <hr>
 ]]></content>
       <categories>
@@ -4791,11 +4791,11 @@ btn01.attachEvent(“onclick”,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(81)代理proxy</title>
+    <title>(81)代理[proxy]</title>
     <url>/blog/javascript/81/</url>
     <content><![CDATA[<hr>
-<h3 id="代理proxy"><a href="#代理proxy" class="headerlink" title="代理proxy"></a>代理proxy</h3><p><strong>vue大概的基本原理</strong>：</p>
-<pre><code>数据劫持---\&gt;观察者---\&gt;数据解析、指令、js对象，diff算法---\&gt;dom。
+<h3 id="代理-proxy"><a href="#代理-proxy" class="headerlink" title="代理[proxy]"></a>代理[proxy]</h3><p><strong>vue大概的基本原理</strong>：</p>
+<pre><code>数据劫持---&gt;观察者---&gt;数据解析、指令、js对象，diff算法---&gt;dom。
 </code></pre>
 <p><strong>那么vue是通过什么进行数据劫持的呢</strong>？</p>
 <pre><code>vue2 是通过Object.defineProperty。IE8以下不兼容
@@ -4809,8 +4809,11 @@ vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 <p>proxy另一方面，还可以理解为<strong>拦截</strong>的意思。proxy提供了13中方法进行拦截。而Object.defineProperty只有两种，get&#x2F;set。</p>
 <hr>
 <h3 id="proxy的参数"><a href="#proxy的参数" class="headerlink" title="proxy的参数"></a>proxy的参数</h3><p><strong>Proxy:它有2个参数</strong>：</p>
-<p>new Proxy(target,handler)</p>
-<p>target:目标对象<br>handler：具体的操作，实际上是一个对象。</p>
+<pre><code>new Proxy(target,handler)
+
+target:目标对象
+handler：具体的操作，实际上是一个对象。
+</code></pre>
 <hr>
 <h3 id="proxy的拦截器"><a href="#proxy的拦截器" class="headerlink" title="proxy的拦截器"></a>proxy的拦截器</h3><blockquote>
 <p>handler的set拦截</p>
@@ -4930,10 +4933,10 @@ newTarget[&#39;c&#39;] = 100 // c并不会添加到对象中，因为阻止了�
       </tags>
   </entry>
   <entry>
-    <title>(82)理解proxy</title>
+    <title>(82)理解[proxy]</title>
     <url>/blog/javascript/82/</url>
     <content><![CDATA[<hr>
-<h3 id="理解proxy"><a href="#理解proxy" class="headerlink" title="理解proxy"></a>理解proxy</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
+<h3 id="理解-proxy"><a href="#理解-proxy" class="headerlink" title="理解[proxy]"></a>理解[proxy]</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
 <pre><code>//当我们需要获取对象中的a属性时。直接obj.a即可获取相应的值。
 let obj = &#123;
   a: 1,
@@ -11391,6 +11394,46 @@ Vue.use(VueLazyLoad, &#123;
       </tags>
   </entry>
   <entry>
+    <title>(87)记录:记录:px转化为vw转化插件</title>
+    <url>/blog/vue2/87/</url>
+    <content><![CDATA[<hr>
+<h3 id="记录-px转化为vw转化插件"><a href="#记录-px转化为vw转化插件" class="headerlink" title="记录:px转化为vw转化插件"></a>记录:px转化为vw转化插件</h3><p><strong>这类工具可能是一个插件或者loader， 这种工具不必纠结，它是开发时依赖，直接搜索可用的就可以了</strong>。</p>
+<pre><code>#插件：postcss-px-to-viewport
+npm install postcss-px-to-viewport --save-dev
+</code></pre>
+<p>postcss.config.js</p>
+<pre><code>//项目根文件夹下，有个postcss.config.js，中配置。
+module.exports = &#123;
+  plugins: &#123;
+    autoprefixer: &#123;&#125;,
+    &quot;postcss-px-to-vuewport&quot;: &#123;
+      viewportWidth: 375, //视窗宽度，对应设计稿的宽度
+      viewportHeight: 667, //视窗高度，对应设计稿的高度(也可以不配置)
+      unitPrecision: 5, //制定px转换为vw的小数位数(很多时候无法取整)
+      viewportUnit: &#39;vw&#39;, //制定需要转换成的视窗单位，建议使用vw
+      selectorBlackList: [&#39;ignore&#39;, &#39;tab-bar&#39;, &#39;tab-bar-item&#39;], //指定不需要转换的类(className)
+      //但是每一个都要手动写上去的话，很麻烦，可以在元素的class=&quot;ignore&quot; 加上ignore就可以了。
+      //注意：无论是添加类名，或者ignore，它们都不包括该样式下的子元素。
+      //可以按照组件文件进行添加排除。添加配置exclude: [/组件的文件名/]..感觉不好用呢。
+      
+      minPixerValue: 1, //小于等于1px不转换为vw
+      mediaQuery: false //允许在媒体查询中转换px
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p><strong>有时间自行研究一下，记录这个主要是说明有这样的东西，可以做这样的事情。</strong></p>
+<p>除此之外还有px2rem等插件&#x2F;loader</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(88)记录:服务器配置问题</title>
     <url>/blog/vue2/88/</url>
     <content><![CDATA[<hr>
@@ -11744,46 +11787,6 @@ const vm= app.mount(&#39;#app&#39;)
       </categories>
       <tags>
         <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(87)记录:记录:px转化为vw转化插件</title>
-    <url>/blog/vue2/87/</url>
-    <content><![CDATA[<hr>
-<h3 id="记录-px转化为vw转化插件"><a href="#记录-px转化为vw转化插件" class="headerlink" title="记录:px转化为vw转化插件"></a>记录:px转化为vw转化插件</h3><p><strong>这类工具可能是一个插件或者loader， 这种工具不必纠结，它是开发时依赖，直接搜索可用的就可以了</strong>。</p>
-<pre><code>#插件：postcss-px-to-viewport
-npm install postcss-px-to-viewport --save-dev
-</code></pre>
-<p>postcss.config.js</p>
-<pre><code>//项目根文件夹下，有个postcss.config.js，中配置。
-module.exports = &#123;
-  plugins: &#123;
-    autoprefixer: &#123;&#125;,
-    &quot;postcss-px-to-vuewport&quot;: &#123;
-      viewportWidth: 375, //视窗宽度，对应设计稿的宽度
-      viewportHeight: 667, //视窗高度，对应设计稿的高度(也可以不配置)
-      unitPrecision: 5, //制定px转换为vw的小数位数(很多时候无法取整)
-      viewportUnit: &#39;vw&#39;, //制定需要转换成的视窗单位，建议使用vw
-      selectorBlackList: [&#39;ignore&#39;, &#39;tab-bar&#39;, &#39;tab-bar-item&#39;], //指定不需要转换的类(className)
-      //但是每一个都要手动写上去的话，很麻烦，可以在元素的class=&quot;ignore&quot; 加上ignore就可以了。
-      //注意：无论是添加类名，或者ignore，它们都不包括该样式下的子元素。
-      //可以按照组件文件进行添加排除。添加配置exclude: [/组件的文件名/]..感觉不好用呢。
-      
-      minPixerValue: 1, //小于等于1px不转换为vw
-      mediaQuery: false //允许在媒体查询中转换px
-    &#125;
-  &#125;
-&#125;
-</code></pre>
-<p><strong>有时间自行研究一下，记录这个主要是说明有这样的东西，可以做这样的事情。</strong></p>
-<p>除此之外还有px2rem等插件&#x2F;loader</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
       </tags>
   </entry>
 </search>
