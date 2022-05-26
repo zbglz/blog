@@ -189,7 +189,7 @@ wordcount:
 # 3: auto_excerpt: ：只显示自动节选
 # false: 不显示文章内容
 index_post_content:
-  method: both
+  method: 2
   length: 150 # if you set method to 2 or 3, the length need to config
 
 # anchor
