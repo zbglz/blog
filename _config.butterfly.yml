@@ -638,7 +638,7 @@ subtitle:
   sub:
 
 # Loading Animation (网页预加载动画)
-preloader: false
+preloader: true
 
 # aside (側邊欄)
 # --------------------------------------
@@ -660,7 +660,7 @@ aside:
       link: /
   card_announcement:  # 首页侧边栏，显示公告
     enable: true
-    content: <div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src="../../../blog/static/site/comment.gif"></div>
+    content: <div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src="../../../../../../blog/static/site/comment.gif"></div>
   card_recent_post:  # 首页侧边栏，显示最新文章
     enable: true
     limit: 1 # if set 0 will show all
@@ -672,9 +672,9 @@ aside:
     expand: none # none/true/false
     sort_order: # Don't modify the setting unless you know how it works
   card_tags: # 首页侧边栏，不显示标签
-    enable: false
-    limit: 40 # if set 0 will show all
-    color: false
+    enable: true
+    limit: 0 # if set 0 will show all
+    color: true
     sort_order: # Don't modify the setting unless you know how it works
   card_archives:  # 首页侧边栏，不显示归档
     enable: false
@@ -858,10 +858,10 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <script src="../../../blog/static/butterfly/jquery3.6.0.min.js"></script>
-    - <link rel="stylesheet" href="../../../blog/static/butterfly/custom.css">
+    - <script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script>
+    - <link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css">
   bottom:
-    - <script src="../../../blog/static/butterfly/custom.js"></script>
+    - <script src="../../../../../../blog/static/butterfly/custom.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

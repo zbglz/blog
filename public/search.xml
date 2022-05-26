@@ -2185,33 +2185,6 @@ title: 音乐
       </tags>
   </entry>
   <entry>
-    <title>(26)数学</title>
-    <url>/blog/javascript/26/</url>
-    <content><![CDATA[<hr>
-<h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><blockquote>
-<p>水仙花数</p>
-</blockquote>
-<p>水仙花数，它是一个三位数，每一个位数上的数字，的三次方之和，等于它本身。abc &#x3D; a^3 + b^3 + c^3。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;100-1000之间的水仙花数：&quot;</span>)</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">    <span class="comment">//取百位数</span></span><br><span class="line">    <span class="keyword">var</span> bai = <span class="built_in">parseInt</span>(i/<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//取十位数</span></span><br><span class="line">    <span class="keyword">var</span> shi = <span class="built_in">parseInt</span>((i - bai*<span class="number">100</span>)/<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//取个位数</span></span><br><span class="line">    <span class="keyword">var</span> ge = i%<span class="number">10</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(bai*bai*bai+shi*shi*shi+ge*ge*ge == i)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>质数</p>
-</blockquote>
-<p>质数：只能被它自己和1整除的数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">//取出1-1000的质数</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;TimeConsuming&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> flag</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">    flag = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> g = <span class="number">2</span>; g&lt;i ; g++)&#123; </span><br><span class="line">      <span class="comment">//取出有可能整除i的数g</span></span><br><span class="line">      <span class="keyword">if</span>(i%g == <span class="number">0</span>)&#123;</span><br><span class="line">        flag = <span class="literal">false</span> </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;TimeConsuming&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(27)break和continue</title>
     <url>/blog/javascript/27/</url>
     <content><![CDATA[<hr>
@@ -2252,6 +2225,33 @@ title: 音乐
 
 
 <p>查看上面几个示例的TimeConsuming，发现耗时总是本次最低。说说明代码执行的效率更高。其实求1000以内的质数，还看不出太大的区别，如果将1000改成10000的话，你会发现效率将高出百倍。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(26)数学</title>
+    <url>/blog/javascript/26/</url>
+    <content><![CDATA[<hr>
+<h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><blockquote>
+<p>水仙花数</p>
+</blockquote>
+<p>水仙花数，它是一个三位数，每一个位数上的数字，的三次方之和，等于它本身。abc &#x3D; a^3 + b^3 + c^3。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;100-1000之间的水仙花数：&quot;</span>)</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">    <span class="comment">//取百位数</span></span><br><span class="line">    <span class="keyword">var</span> bai = <span class="built_in">parseInt</span>(i/<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//取十位数</span></span><br><span class="line">    <span class="keyword">var</span> shi = <span class="built_in">parseInt</span>((i - bai*<span class="number">100</span>)/<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//取个位数</span></span><br><span class="line">    <span class="keyword">var</span> ge = i%<span class="number">10</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(bai*bai*bai+shi*shi*shi+ge*ge*ge == i)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>质数</p>
+</blockquote>
+<p>质数：只能被它自己和1整除的数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">//取出1-1000的质数</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;TimeConsuming&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> flag</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">    flag = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> g = <span class="number">2</span>; g&lt;i ; g++)&#123; </span><br><span class="line">      <span class="comment">//取出有可能整除i的数g</span></span><br><span class="line">      <span class="keyword">if</span>(i%g == <span class="number">0</span>)&#123;</span><br><span class="line">        flag = <span class="literal">false</span> </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;TimeConsuming&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
 <hr>
 ]]></content>
       <categories>
@@ -2326,29 +2326,6 @@ document.write()  //浏览器提供的对象
       </tags>
   </entry>
   <entry>
-    <title>(3)数据类型</title>
-    <url>/blog/javascript/3/</url>
-    <content><![CDATA[<hr>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
-<li>变量可以定义的数据类型、或者说字面量有哪些数据类型。</li>
-<li>例如：变量名、函数名、属性名，都属于标识符。</li>
-<li>在JS中一共有6种数据类型。</li>
-</ul>
-<p>例：</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>; <span class="comment">// 字符串：String</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">123</span>;  <span class="comment">// 数值：Number</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> c = <span class="literal">true</span>;  <span class="comment">// 布尔值：Boolean</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> d = <span class="literal">null</span>;  <span class="comment">// 空值：Null</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> e = <span class="literal">undefined</span>;  <span class="comment">// 未定义：Undefined</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> f = &#123;&#125;;  <span class="comment">// 对象：Object</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a,b,c,d,e,f)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>其中，前五种属于基本数据类型。而Object属于引用数据类型。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(29)自定义对象</title>
     <url>/blog/javascript/29/</url>
     <content><![CDATA[<hr>
@@ -2411,6 +2388,29 @@ document.write()  //浏览器提供的对象
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">  <span class="keyword">var</span> key = <span class="string">&quot;dage&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key <span class="keyword">in</span> obj)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;会得到一个布尔值，为真说明存在该属性，为假说明不存在该属性。&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(3)数据类型</title>
+    <url>/blog/javascript/3/</url>
+    <content><![CDATA[<hr>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>变量可以定义的数据类型、或者说字面量有哪些数据类型。</li>
+<li>例如：变量名、函数名、属性名，都属于标识符。</li>
+<li>在JS中一共有6种数据类型。</li>
+</ul>
+<p>例：</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>; <span class="comment">// 字符串：String</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">123</span>;  <span class="comment">// 数值：Number</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> c = <span class="literal">true</span>;  <span class="comment">// 布尔值：Boolean</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> d = <span class="literal">null</span>;  <span class="comment">// 空值：Null</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> e = <span class="literal">undefined</span>;  <span class="comment">// 未定义：Undefined</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> f = &#123;&#125;;  <span class="comment">// 对象：Object</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a,b,c,d,e,f)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>其中，前五种属于基本数据类型。而Object属于引用数据类型。</p>
 <hr>
 ]]></content>
       <categories>
@@ -5395,6 +5395,21 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
+    <title>(1)vue的MVVM</title>
+    <url>/blog/vue2/1/</url>
+    <content><![CDATA[<hr>
+<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-1.png" alt="vue2-1"></p>
+<p>Model View ViewModel，Model是行为层(js)，View是视图层(html)，js不再直接控制html的DOM进行监听和数据绑定，而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听)，个人理解。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(10)computed的setter和getter</title>
     <url>/blog/vue2/10/</url>
     <content><![CDATA[<hr>
@@ -5407,21 +5422,6 @@ nvm alias default [node版本号] ##设置默认版本
 
 
 <p>在实际项目中，事实上我们并不希望用户随便对我们的数据设置值。大部分情况下我们都不需要实现set方法。而作为一个只读属性。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(1)vue的MVVM</title>
-    <url>/blog/vue2/1/</url>
-    <content><![CDATA[<hr>
-<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-1.png" alt="vue2-1"></p>
-<p>Model View ViewModel，Model是行为层(js)，View是视图层(html)，js不再直接控制html的DOM进行监听和数据绑定，而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听)，个人理解。</p>
 <hr>
 ]]></content>
       <categories>
