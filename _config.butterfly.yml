@@ -190,11 +190,11 @@ wordcount:
 # false: 不显示文章内容
 index_post_content:
   method: both
-  length: 50 # if you set method to 2 or 3, the length need to config
+  length: 150 # if you set method to 2 or 3, the length need to config
 
 # anchor
 # when you scroll in post, the URL will update according to header id.
-anchor: false
+anchor: true
 
 # Post
 # --------------------------------------
@@ -424,7 +424,7 @@ crisp:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2022
   custom_text: Hi, welcome to my <a href="/">blog</a>!
   copyright: true # Copyright of theme and framework
 
@@ -479,7 +479,6 @@ site_verification:
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
-# 不设置在css中进行修改
 
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
