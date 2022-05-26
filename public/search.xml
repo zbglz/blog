@@ -1545,7 +1545,7 @@ title: 音乐
     <url>/blog/hexo/4/</url>
     <content><![CDATA[<h2 id="music页面详细配置"><a href="#music页面详细配置" class="headerlink" title="music页面详细配置"></a>music页面详细配置</h2><p>懒得搬了：直接查看gihub中hexo-tag-aplayer的说明文档<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md">https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md</a></p>
 <hr>
-<h2 id="CDN方式使用"><a href="#CDN方式使用" class="headerlink" title="CDN方式使用"></a>CDN方式使用</h2><p>配来陪去太麻烦了，直接引入js用吧，直接在music文件夹下的index页面中。meting-js中的id，需要自己去netease(网易云音乐)、tencent, kugou, xiami, baidu等。。自己创建曲目播放列表，复制播放列表的ID替换即可。</p>
+<h2 id="CDN方式使用"><a href="#CDN方式使用" class="headerlink" title="CDN方式使用"></a>CDN方式使用</h2><p>配来配去太麻烦了，直接引入js用吧，直接在music文件夹下的index页面中。meting-js中的id，需要自己去netease(网易云音乐)、tencent, kugou, xiami, baidu等。。自己创建曲目播放列表，复制播放列表的ID替换即可。</p>
 <pre><code>## 网易云音乐
 
 &lt;!-- require APlayer --&gt;
@@ -3358,6 +3358,43 @@ var perArr = [per1, per2, per3]
       </tags>
   </entry>
   <entry>
+    <title>(5)数值：Number</title>
+    <url>/blog/javascript/5/</url>
+    <content><![CDATA[<hr>
+<h3 id="数值：Number"><a href="#数值：Number" class="headerlink" title="数值：Number"></a>数值：Number</h3><p>在js中所有的数值都是Number。包括整数、浮点数(有效的小数，不包括5.12.12，这不是有效的小数，它有2个小数点)</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span>+a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b = &quot;</span>+b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以上输出的都是123，但他们的类型不一样。可以使用<code>typeof运算符</code>，获取变量类型。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(a) + <span class="string">&quot; ： a =&quot;</span> + a); </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(b) + <span class="string">&quot; ： b =&quot;</span> + b); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>最大值：<code>Number.MAX_VALUE</code>获取js中可以表达的最大数值。比Number.MAX_VALUE还大的数，在js中以<strong>Infinity</strong>表示，Infinity是一个字面量，<strong>专门用来表示</strong>无穷大的数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果比最大值还大，a会是什么？</span></span><br><span class="line">  a = a + a;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//Infinity表示无穷大,Infinity是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>最小值：<code>Number.MIN_VALUE</code>，可以获取js中可以表达的<strong>最小的小数</strong>。这个最小的数是：大于0小于1的最小的小数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MIN_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果a是比最小值还小的值，a会是什么？</span></span><br><span class="line">  a = -<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>*<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//-Infinity表示无穷小,-Infinity也是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查-Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Number类型的变量可以进行运算。如果使用字符串类型进行运算呢？</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;abc&quot;</span> * <span class="string">&quot;bcd&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值是：&quot;</span> + a); </span><br><span class="line">  <span class="comment">//得出a = NaN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//NaN是一个特殊的数字，表示 Not A Number。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;但NaN的类型也是：&quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//NaN也是一个字面量，可以直接赋值给变量</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="title class_">NaN</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b的值类型是：&quot;</span> + <span class="keyword">typeof</span> b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>数值类型的运算</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;在js中关于整数的运算，基本可以保证精确。常用数值位数以内的运算都不会有什么问题。&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">51415214</span> + <span class="number">54812544</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;整数计算a的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;但是浮点数的运算，可能得到一个不够精确的结果。事实上所有的语言都有这个问题。例：在十进制的数值中，如 1/3 ，是无法精确表达的。js中的表达式，转到二进制中进行运算时，二进制中，无法精确表达 1/10。所以浮点数在二进制中运算，都是不精确的。&quot;</span>)</span><br><span class="line">  a = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;小数计算0.1 + 0.2的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//toFixed四舍五入，保留一位小数。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般情况下，这种不精确的运算，我们可以舍去后面的值。但一些数据是不能舍去的，比如涉及到钱，或者对精确度要求很高的数据。这种结果一般通过服务器运算返回。&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值通过toFixed四舍五入保留1位是：&quot;</span> + a.<span class="title function_">toFixed</span>(<span class="number">1</span>));</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;如果知道浮点数的位数，可以把浮点数转为正整数的方式进行运算。&quot;</span>)</span><br><span class="line">  a = (<span class="number">0.1</span> * <span class="number">10</span> + <span class="number">0.2</span> * <span class="number">10</span>)/<span class="number">10</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;将小数变成整数计算再除以10，&quot;</span> + a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(50)this的情况</title>
     <url>/blog/javascript/50/</url>
     <content><![CDATA[<hr>
@@ -3566,43 +3603,6 @@ var perArr = [per1, per2, per3]
 
 <p>咋一看，没太看懂，需要注意的是，<strong>方法和属性</strong>只能<strong>添加给对象</strong>。<br>var声明的s不是对象，它只是一个基本数据类型Number，所以s是<strong>没有属性和方法的</strong>。<br>但是s.toString()，调用了toString()方法，还执行成功了，且将其转换成了String。</p>
 <p>所以，<strong>当我们用基本数据类型</strong>去<strong>调用属性和方法时</strong>。<br>浏览器会<strong>临时使用包装类</strong>，<strong>将其转换为对象</strong>，然后再调用对象的属性和方法。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(5)数值：Number</title>
-    <url>/blog/javascript/5/</url>
-    <content><![CDATA[<hr>
-<h3 id="数值：Number"><a href="#数值：Number" class="headerlink" title="数值：Number"></a>数值：Number</h3><p>在js中所有的数值都是Number。包括整数、浮点数(有效的小数，不包括5.12.12，这不是有效的小数，它有2个小数点)</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span>+a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b = &quot;</span>+b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>以上输出的都是123，但他们的类型不一样。可以使用<code>typeof运算符</code>，获取变量类型。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(a) + <span class="string">&quot; ： a =&quot;</span> + a); </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(b) + <span class="string">&quot; ： b =&quot;</span> + b); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>最大值：<code>Number.MAX_VALUE</code>获取js中可以表达的最大数值。比Number.MAX_VALUE还大的数，在js中以<strong>Infinity</strong>表示，Infinity是一个字面量，<strong>专门用来表示</strong>无穷大的数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果比最大值还大，a会是什么？</span></span><br><span class="line">  a = a + a;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//Infinity表示无穷大,Infinity是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>最小值：<code>Number.MIN_VALUE</code>，可以获取js中可以表达的<strong>最小的小数</strong>。这个最小的数是：大于0小于1的最小的小数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="title class_">Number</span>.<span class="property">MIN_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//如果a是比最小值还小的值，a会是什么？</span></span><br><span class="line">  a = -<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>*<span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">  <span class="comment">//-Infinity表示无穷小,-Infinity也是一个字面量</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//使用typeof检查-Infinity时,也是Number类型</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;typeof a = &quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Number类型的变量可以进行运算。如果使用字符串类型进行运算呢？</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&quot;abc&quot;</span> * <span class="string">&quot;bcd&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值是：&quot;</span> + a); </span><br><span class="line">  <span class="comment">//得出a = NaN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//NaN是一个特殊的数字，表示 Not A Number。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;但NaN的类型也是：&quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//NaN也是一个字面量，可以直接赋值给变量</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="title class_">NaN</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b的值类型是：&quot;</span> + <span class="keyword">typeof</span> b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>数值类型的运算</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;在js中关于整数的运算，基本可以保证精确。常用数值位数以内的运算都不会有什么问题。&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">51415214</span> + <span class="number">54812544</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;整数计算a的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;但是浮点数的运算，可能得到一个不够精确的结果。事实上所有的语言都有这个问题。例：在十进制的数值中，如 1/3 ，是无法精确表达的。js中的表达式，转到二进制中进行运算时，二进制中，无法精确表达 1/10。所以浮点数在二进制中运算，都是不精确的。&quot;</span>)</span><br><span class="line">  a = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;小数计算0.1 + 0.2的值是：&quot;</span> + a);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//toFixed四舍五入，保留一位小数。</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般情况下，这种不精确的运算，我们可以舍去后面的值。但一些数据是不能舍去的，比如涉及到钱，或者对精确度要求很高的数据。这种结果一般通过服务器运算返回。&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值通过toFixed四舍五入保留1位是：&quot;</span> + a.<span class="title function_">toFixed</span>(<span class="number">1</span>));</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;如果知道浮点数的位数，可以把浮点数转为正整数的方式进行运算。&quot;</span>)</span><br><span class="line">  a = (<span class="number">0.1</span> * <span class="number">10</span> + <span class="number">0.2</span> * <span class="number">10</span>)/<span class="number">10</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;将小数变成整数计算再除以10，&quot;</span> + a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
 <hr>
 ]]></content>
       <categories>
@@ -4429,7 +4429,7 @@ console.log(res) // 123456
 <p>使用<code>CurrentStyle(元素).样式名</code>。</p>
 <p>使用<code>getComputedStyle()</code>与<code>currentStyle</code>效果差不多，不同的是，currentStyle获取未设置的样式值是，默认值。比如未设置宽度，则获取到auto。而getComputedStyle获取未设置的样式，则是获取元素的真实值，比如虽然未设置宽度，但元素在页面上是有宽度体现的，会获取到一个具体的宽度数值。</p>
 <p>通过CurrentStyle和getComputedStyle读取到的样式都是只读的，不能通过他们修改，如果要修改只能通过style修改。</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  #box1&#123;</span><br><span class="line">    <span class="attr">width</span>:100px;</span><br><span class="line">    <span class="attr">height</span>:100px;</span><br><span class="line">    background-<span class="attr">color</span>:lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// currentStyle只兼容IE，不兼容火狐和谷歌</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 这里只能对兼容性进行处理。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> <span class="title class_">CurrentStyle</span> = <span class="keyword">function</span> (<span class="params">element</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(<span class="variable language_">document</span>.<span class="property">defaultView</span>.<span class="property">getComputedStyle</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> <span class="variable language_">document</span>.<span class="property">defaultView</span>.<span class="title function_">getComputedStyle</span>(element, <span class="literal">null</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> element.<span class="property">currentStyle</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;元素.currentStyle.样式名&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">CurrentStyle</span>(box1).<span class="property">width</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;#box1&#123;<span class="attr">width</span>:100px;<span class="attr">height</span>:100px;background-<span class="attr">color</span>:lightblue;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// currentStyle只兼容IE，不兼容火狐和谷歌</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 这里只能对兼容性进行处理。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> <span class="title class_">CurrentStyle</span> = <span class="keyword">function</span> (<span class="params">element</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(<span class="variable language_">document</span>.<span class="property">defaultView</span>.<span class="property">getComputedStyle</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> <span class="variable language_">document</span>.<span class="property">defaultView</span>.<span class="title function_">getComputedStyle</span>(element, <span class="literal">null</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> element.<span class="property">currentStyle</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;元素.currentStyle.样式名&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">CurrentStyle</span>(box1).<span class="property">width</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -7885,6 +7885,60 @@ module.exports = &#123;
       </tags>
   </entry>
   <entry>
+    <title>(49)文件路径引用问题</title>
+    <url>/blog/vue2/49/</url>
+    <content><![CDATA[<hr>
+<h3 id="文件路径引用问题"><a href="#文件路径引用问题" class="headerlink" title="文件路径引用问题"></a>文件路径引用问题</h3><p>在webpack.base.conf.js(webpack.config.js)中配置</p>
+<pre><code>module.exports = &#123;
+  .....
+  resolve: &#123;
+    //导入文件时可不用输入文件后缀名。
+    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
+    alias: &#123;
+      //alias别名，给src取了一个别名(src是指项目文件夹src)，叫@，在项目中引用、导入路径时
+      //可以直接@/文件夹/文件夹/文件名.后缀名
+      &#39;@&#39;: resolve(&#39;src&#39;),
+    &#125;
+  &#125;
+  ....
+&#125;
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-115.png" alt="vue2-115"></p>
+<p>在CLI2中还可以配置</p>
+<pre><code>module.exports = &#123;
+  .....
+  resolve: &#123;
+    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
+    alias: &#123;
+      &#39;@&#39;: resolve(&#39;src&#39;),
+      //对图片资源文件夹取别名
+      &#39;assets&#39;: resolve(&#39;src/assets&#39;),
+      //对组件文件夹取别名
+      &#39;components&#39;: resolve(&#39;src/components&#39;)
+    &#125;
+  &#125;
+  ....
+&#125;
+</code></pre>
+<p>不过在引用时，需要在前面加~，即 ~别名+路径。</p>
+<pre><code>...
+&lt;img src=&quot;~assets/logo.png&quot; /&gt;
+...
+</code></pre>
+<p>但import组件时，路径可以直接写就可以了，别名+路径。</p>
+<pre><code>import Home from &quot;components/home&quot;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(48)webpack配置分离</title>
     <url>/blog/vue2/48/</url>
     <content><![CDATA[<hr>
@@ -8046,60 +8100,6 @@ output: &#123;
 &#125;
 
 //测试：npm run build成功，npm run dev成功。
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>webpack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(49)文件路径引用问题</title>
-    <url>/blog/vue2/49/</url>
-    <content><![CDATA[<hr>
-<h3 id="文件路径引用问题"><a href="#文件路径引用问题" class="headerlink" title="文件路径引用问题"></a>文件路径引用问题</h3><p>在webpack.base.conf.js(webpack.config.js)中配置</p>
-<pre><code>module.exports = &#123;
-  .....
-  resolve: &#123;
-    //导入文件时可不用输入文件后缀名。
-    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
-    alias: &#123;
-      //alias别名，给src取了一个别名(src是指项目文件夹src)，叫@，在项目中引用、导入路径时
-      //可以直接@/文件夹/文件夹/文件名.后缀名
-      &#39;@&#39;: resolve(&#39;src&#39;),
-    &#125;
-  &#125;
-  ....
-&#125;
-</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-115.png" alt="vue2-115"></p>
-<p>在CLI2中还可以配置</p>
-<pre><code>module.exports = &#123;
-  .....
-  resolve: &#123;
-    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
-    alias: &#123;
-      &#39;@&#39;: resolve(&#39;src&#39;),
-      //对图片资源文件夹取别名
-      &#39;assets&#39;: resolve(&#39;src/assets&#39;),
-      //对组件文件夹取别名
-      &#39;components&#39;: resolve(&#39;src/components&#39;)
-    &#125;
-  &#125;
-  ....
-&#125;
-</code></pre>
-<p>不过在引用时，需要在前面加~，即 ~别名+路径。</p>
-<pre><code>...
-&lt;img src=&quot;~assets/logo.png&quot; /&gt;
-...
-</code></pre>
-<p>但import组件时，路径可以直接写就可以了，别名+路径。</p>
-<pre><code>import Home from &quot;components/home&quot;
 </code></pre>
 <hr>
 ]]></content>
