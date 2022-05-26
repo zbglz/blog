@@ -4748,83 +4748,6 @@ btn01.attachEvent(“onclick”,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(82)proxy的理解</title>
-    <url>/blog/javascript/82/</url>
-    <content><![CDATA[<hr>
-<h3 id="proxy的理解"><a href="#proxy的理解" class="headerlink" title="proxy的理解"></a>proxy的理解</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
-<pre><code>//当我们需要获取对象中的a属性时。直接obj.a即可获取相应的值。
-let obj = &#123;
-  a: 1,
-  b: 2
-&#125;
-console.log(obj.a) // 1
-</code></pre>
-<p><strong>接下来我们看一看proxy代理可以对，对象做些什么。</strong>先看看proxy的语法。<br><strong><code>let proxy = new Proxy(target, handler)</code></strong><br><code>target</code>：参数是一个对象，表示要代理的对象。<br><code>handler</code>：参数也是一个对象，用来定制拦截行为。</p>
-<pre><code>//我们将obj代理以后，通过代理也可以获取、访问obj对象中的各种属性和方法。
-let obj = &#123;
-  a: 1,
-  b: 2
-&#125;
-let handler = &#123;
-  
-&#125;
-let proxy = new Proxy(obj,handler)
-console.log(proxy.a) // 1  (你会发现，这里和obj.a的效果一模一样)
-</code></pre>
-<p><code>那这个proxy代理有什么用</code>？<br>proxy除了代理的意思，其实还可以理解为拦截，这个拦截行为，具体就体现在了，它的第二个参数handler上。<br><code>这个handler对象中，支持的拦截行为，目前包括13种</code>。</p>
-<hr>
-<p>1、get(target, propKey, receiver)拦截对象属性的读取。</p>
-<pre><code>//get拦截。
-let obj = &#123;
-  a: 1,
-  b: 2
-&#125;
-let handler = &#123;
-  get(target, propKey, receiver) &#123;
-    
-  &#125;
-&#125;
-let proxy = new Proxy(obj,handler)
-//怎么触发这个get拦截呢，其实就是对对象obj属性的获取或方法的访问。
-
-console.log(proxy.a) // undefined  
-//get触发了吗？其实触发了，这个undefined就是get触发了的结果。
-//为什么是undefined，注意！！！
-//当我们没有对get进行拦截时，它默认是可以获取到对象中的各种属性的。
-//一旦！！我们进行了get拦截，那么我们需要自己去实现！拦截后的操作。
-//其他拦截器也是同样的操作。(一旦拦截需要自行实现拦截后返回的内容)
-//上面的代码中，我们只进行了拦截，但并没有返回相关key的值。
-//所以输出console.log(proxy.a)时，是undefined。
-</code></pre>
-<hr>
-<pre><code>//get拦截。
-let obj = &#123;
-  a: 1,
-  b: 2
-&#125;
-let handler = &#123;
-  get(target, propKey, receiver) &#123;
-    return target[propKey]
-  &#125;
-&#125;
-let proxy = new Proxy(obj,handler)
-
-console.log(proxy.a) // 1  
-//proxy.a触发了get拦截，且在get拦截中，返回了相应的值。
-//那么在return相关的值之前，我们就可以对其进行其他操作或判断。
-//这就是get拦截的作用了。
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(81)proxy代理</title>
     <url>/blog/javascript/81/</url>
     <content><![CDATA[<hr>
@@ -4954,6 +4877,98 @@ Reflect.preventExtensions(newTarget) // true
 Reflect.isExtensble(newTarget) // false
 newTarget[&#39;c&#39;] = 100 // c并不会添加到对象中，因为阻止了拓展。
 </code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(82)proxy的理解</title>
+    <url>/blog/javascript/82/</url>
+    <content><![CDATA[<hr>
+<h3 id="proxy的理解"><a href="#proxy的理解" class="headerlink" title="proxy的理解"></a>proxy的理解</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
+<pre><code>//当我们需要获取对象中的a属性时。直接obj.a即可获取相应的值。
+let obj = &#123;
+  a: 1,
+  b: 2
+&#125;
+console.log(obj.a) // 1
+</code></pre>
+<p><strong>接下来我们看一看proxy代理可以对，对象做些什么。</strong>先看看proxy的语法。<br><strong><code>let proxy = new Proxy(target, handler)</code></strong><br><code>target</code>：参数是一个对象，表示要代理的对象。<br><code>handler</code>：参数也是一个对象，用来定制拦截行为。</p>
+<pre><code>//我们将obj代理以后，通过代理也可以获取、访问obj对象中的各种属性和方法。
+let obj = &#123;
+  a: 1,
+  b: 2
+&#125;
+let handler = &#123;
+  
+&#125;
+let proxy = new Proxy(obj,handler)
+console.log(proxy.a) // 1  (你会发现，这里和obj.a的效果一模一样)
+</code></pre>
+<p><code>那这个proxy代理有什么用</code>？<br>proxy除了代理的意思，其实还可以理解为拦截，这个拦截行为，具体就体现在了，它的第二个参数handler上。<br><code>这个handler对象中，支持的拦截行为，目前包括13种</code>。</p>
+<hr>
+<p>1、get(target, propKey, receiver)拦截对象属性的读取。</p>
+<pre><code>//get拦截。
+let obj = &#123;
+  a: 1,
+  b: 2
+&#125;
+let handler = &#123;
+  get(target, propKey, receiver) &#123;
+    
+  &#125;
+&#125;
+let proxy = new Proxy(obj,handler)
+//怎么触发这个get拦截呢，其实就是对对象obj属性的获取或方法的访问。
+
+console.log(proxy.a) // undefined  
+//get触发了吗？其实触发了，这个undefined就是get触发了的结果。
+//为什么是undefined，注意！！！
+//当我们没有对get进行拦截时，它默认是可以获取到对象中的各种属性的。
+//一旦！！我们进行了get拦截，那么我们需要自己去实现！拦截后的操作。
+//其他拦截器也是同样的操作。(一旦拦截需要自行实现拦截后返回的内容)
+//上面的代码中，我们只进行了拦截，但并没有返回相关key的值。
+//所以输出console.log(proxy.a)时，是undefined。
+</code></pre>
+<hr>
+<pre><code>//get拦截。
+let obj = &#123;
+  a: 1,
+  b: 2
+&#125;
+let handler = &#123;
+  get(target, propKey, receiver) &#123;
+    return target[propKey]
+  &#125;
+&#125;
+let proxy = new Proxy(obj,handler)
+
+console.log(proxy.a) // 1  
+//proxy.a触发了get拦截，且在get拦截中，返回了相应的值。
+//那么在return相关的值之前，我们就可以对其进行其他操作或判断。
+//这就是get拦截的作用了。
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(83)...</title>
+    <url>/blog/javascript/83/</url>
+    <content><![CDATA[<hr>
+<h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3><p>……</p>
 <hr>
 ]]></content>
       <categories>
@@ -10312,55 +10327,6 @@ methods: &#123;
       </tags>
   </entry>
   <entry>
-    <title>(73)store文件夹的目录组织</title>
-    <url>/blog/vue2/73/</url>
-    <content><![CDATA[<hr>
-<h3 id="store文件夹的目录组织"><a href="#store文件夹的目录组织" class="headerlink" title="store文件夹的目录组织"></a>store文件夹的目录组织</h3><p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-123.png" alt="vue2-123"></p>
-<p>除了state以外，官方推荐，将store对象中的mutations、actions、getters抽离成一个单独的js文件，当然state可以抽离，也可以不抽离。而modules就需要新建一个文件夹，在文件夹内创建各个模块的js文件。</p>
-<pre><code>//比如：在新的js文件中。直接导出一个对象放mutations
-export default &#123;
-  //这里面就放mutations的方法。
-&#125;
-
-//再在index.js中导入
-import Vue from &#39;vue&#39;
-import Vuex from &#39;vuex&#39;
-import mutations from &#39;./mutations.js&#39;
-import actions from &#39;./actions.js&#39;
-import getters from &#39;./getters.js&#39;
-import modulesA from &#39;./modules/modulesA.js&#39;
-import modulesB from &#39;./modules/modulesB.js&#39;
-
-Vue.use(Vuex)
-
-const state = &#123;
-  name: &#39;zhangsan&#39;
-&#125;
-
-const store = new Vuex.Store(&#123;
-  state,
-  mutations,
-  actions,
-  getters,
-  modules: &#123;
-    modulesA,
-    modulesB
-  &#125;
-&#125;)
-
-export default store
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>vuex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(72)vuex的modules</title>
     <url>/blog/vue2/72/</url>
     <content><![CDATA[<hr>
@@ -10543,6 +10509,55 @@ const moduleA = &#123;
     &#125;
   &#125;
 &#125;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>vuex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(73)store文件夹的目录组织</title>
+    <url>/blog/vue2/73/</url>
+    <content><![CDATA[<hr>
+<h3 id="store文件夹的目录组织"><a href="#store文件夹的目录组织" class="headerlink" title="store文件夹的目录组织"></a>store文件夹的目录组织</h3><p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-123.png" alt="vue2-123"></p>
+<p>除了state以外，官方推荐，将store对象中的mutations、actions、getters抽离成一个单独的js文件，当然state可以抽离，也可以不抽离。而modules就需要新建一个文件夹，在文件夹内创建各个模块的js文件。</p>
+<pre><code>//比如：在新的js文件中。直接导出一个对象放mutations
+export default &#123;
+  //这里面就放mutations的方法。
+&#125;
+
+//再在index.js中导入
+import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+import mutations from &#39;./mutations.js&#39;
+import actions from &#39;./actions.js&#39;
+import getters from &#39;./getters.js&#39;
+import modulesA from &#39;./modules/modulesA.js&#39;
+import modulesB from &#39;./modules/modulesB.js&#39;
+
+Vue.use(Vuex)
+
+const state = &#123;
+  name: &#39;zhangsan&#39;
+&#125;
+
+const store = new Vuex.Store(&#123;
+  state,
+  mutations,
+  actions,
+  getters,
+  modules: &#123;
+    modulesA,
+    modulesB
+  &#125;
+&#125;)
+
+export default store
 </code></pre>
 <hr>
 ]]></content>
