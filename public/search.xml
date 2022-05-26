@@ -2034,32 +2034,6 @@ title: 音乐
       </tags>
   </entry>
   <entry>
-    <title>(21)运算符的优先级</title>
-    <url>/blog/javascript/21/</url>
-    <content><![CDATA[<hr>
-<p>在此之前先了解一个, 逗号运算符。使用逗号可以分割多个语句。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// ， 逗号</span></span><br><span class="line">  <span class="keyword">var</span> a, b, c, d</span><br><span class="line">  <span class="keyword">var</span> e, f=<span class="number">1</span>, g, h</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h3><p>和数学中一样，在JS中运算符也有优先级，比如先乘除后加减。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span> + <span class="number">2</span> * <span class="number">3</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;测试&amp;&amp;和||的优先级，如果||的优先级高，或者两个一样高，应该返回3。如果&amp;&amp;的优先级高，应该返回1&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span> || <span class="number">2</span> &amp;&amp; <span class="number">3</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/js1.png" alt="js1"></p>
-<p><strong>在这张表中，越靠前，优先级越高，优先级一样，则从左往右计算</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般不需要记忆这张表，确实是拿不准的，可以使用()括号来改变优先级。&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;(1 || 2) &amp;&amp; 3 先算||结果：&quot;</span> + ((<span class="number">1</span> || <span class="number">2</span>) &amp;&amp; <span class="number">3</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;1 || (2 &amp;&amp; 3) 先算&amp;&amp;结果：&quot;</span> + (<span class="number">1</span> || (<span class="number">2</span> &amp;&amp; <span class="number">3</span>)))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(22)代码块</title>
     <url>/blog/javascript/22/</url>
     <content><![CDATA[<hr>
@@ -2129,6 +2103,32 @@ title: 音乐
 
 <p>例：</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> num = +<span class="title function_">prompt</span>(<span class="string">&quot;请输入成绩&quot;</span>)</span><br><span class="line">  <span class="keyword">switch</span>(<span class="built_in">parseInt</span>(num/<span class="number">10</span>))&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;合格&#x27;</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;不合格&#x27;</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(21)运算符的优先级</title>
+    <url>/blog/javascript/21/</url>
+    <content><![CDATA[<hr>
+<p>在此之前先了解一个, 逗号运算符。使用逗号可以分割多个语句。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// ， 逗号</span></span><br><span class="line">  <span class="keyword">var</span> a, b, c, d</span><br><span class="line">  <span class="keyword">var</span> e, f=<span class="number">1</span>, g, h</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h3><p>和数学中一样，在JS中运算符也有优先级，比如先乘除后加减。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span> + <span class="number">2</span> * <span class="number">3</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;测试&amp;&amp;和||的优先级，如果||的优先级高，或者两个一样高，应该返回3。如果&amp;&amp;的优先级高，应该返回1&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span> || <span class="number">2</span> &amp;&amp; <span class="number">3</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/js1.png" alt="js1"></p>
+<p><strong>在这张表中，越靠前，优先级越高，优先级一样，则从左往右计算</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般不需要记忆这张表，确实是拿不准的，可以使用()括号来改变优先级。&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;(1 || 2) &amp;&amp; 3 先算||结果：&quot;</span> + ((<span class="number">1</span> || <span class="number">2</span>) &amp;&amp; <span class="number">3</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;1 || (2 &amp;&amp; 3) 先算&amp;&amp;结果：&quot;</span> + (<span class="number">1</span> || (<span class="number">2</span> &amp;&amp; <span class="number">3</span>)))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -4381,35 +4381,6 @@ console.log(res) // 123456
       </tags>
   </entry>
   <entry>
-    <title>(72)通过DOM操作内联样式</title>
-    <url>/blog/javascript/72/</url>
-    <content><![CDATA[<hr>
-<h3 id="通过DOM操作内联样式"><a href="#通过DOM操作内联样式" class="headerlink" title="通过DOM操作内联样式"></a>通过DOM操作内联样式</h3><p>设置样式</p>
-<ol>
-<li>元素.style.样式名 &#x3D; 样式值</li>
-<li>如果css样式名有 减号 - ，需要改成驼峰式命名法</li>
-<li>注意：通过style修改的样式，都是修改的内联样式,而内联样式有较高的优先级,所以通过js修改的样式通常会立即显示。但是如果在样式中，写了 !important,通过js修改会无效。因为增加了!important的样式，优先级更高于内联样式。</li>
-</ol>
-<p>读取样式</p>
-<ol>
-<li>元素.style.样式名</li>
-<li><code>通过style读取样式时，只能读取内联样式</code>！！！！,无法读取样式表中的样式。</li>
-</ol>
-<p>例:</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  #box1&#123;</span><br><span class="line">    <span class="attr">width</span>:100px;</span><br><span class="line">    <span class="attr">height</span>:100px;</span><br><span class="line">    background-<span class="attr">color</span>:lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>修改样式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>读取样式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 点击按钮以后修改box1的大小。元素.style.样式名 = 样式值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box1.<span class="property">style</span>.<span class="property">width</span> = <span class="string">&quot;150px&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box1.<span class="property">style</span>.<span class="property">height</span> = <span class="string">&quot;150px&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 如果css样式名有 减号 - ，需要改成驼峰式命名法</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box1.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&quot;yellow&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 注意：通过style修改的样式，都是修改的内联样式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 而内联样式有较高的优先级</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 所以通过js修改的样式通常会立即显示。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn02.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;读取样式，元素.style.样式名，注意：带单位的样式，读取出来也会带单位。&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box1.<span class="property">style</span>.<span class="property">width</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(73)获取元素样式</title>
     <url>/blog/javascript/73/</url>
     <content><![CDATA[<hr>
@@ -4531,6 +4502,35 @@ console.log(res) // 123456
 <p><strong>event &#x3D; event || window.evnet</strong><br><strong>var scrollH &#x3D; document.body.scrollTop || document.documentElement.scrollTop</strong><br><strong>var scrollW &#x3D; document.body.scrollLeft || document.documentElement.scrollLeft</strong><br><strong>var left &#x3D; event.clientX + scrollH</strong><br><strong>var top &#x3D; event.clientY + scrollW</strong></p>
 <p>例：</p>
 <figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  body&#123;<span class="attr">height</span>:1000px;<span class="attr">width</span>:1000px;&#125;</span><br><span class="line">  #followDiv&#123;<span class="attr">width</span>:50px;<span class="attr">height</span>:50px;background-<span class="attr">color</span>:lightblue;<span class="attr">position</span>:absolute;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;followDiv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> followDiv = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;followDiv&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="property">onmousemove</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">evnet</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> scrollW = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollLeft</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollLeft</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> scrollH = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollTop</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> left = event.<span class="property">clientX</span> + scrollW</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> top = event.<span class="property">clientY</span> + scrollH</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    followDiv.<span class="property">style</span>.<span class="property">left</span> = left + <span class="string">&quot;px&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    followDiv.<span class="property">style</span>.<span class="property">top</span> = top + <span class="string">&quot;px&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(72)通过DOM操作内联样式</title>
+    <url>/blog/javascript/72/</url>
+    <content><![CDATA[<hr>
+<h3 id="通过DOM操作内联样式"><a href="#通过DOM操作内联样式" class="headerlink" title="通过DOM操作内联样式"></a>通过DOM操作内联样式</h3><p>设置样式</p>
+<ol>
+<li>元素.style.样式名 &#x3D; 样式值</li>
+<li>如果css样式名有 减号 - ，需要改成驼峰式命名法</li>
+<li>注意：通过style修改的样式，都是修改的内联样式,而内联样式有较高的优先级,所以通过js修改的样式通常会立即显示。但是如果在样式中，写了 !important,通过js修改会无效。因为增加了!important的样式，优先级更高于内联样式。</li>
+</ol>
+<p>读取样式</p>
+<ol>
+<li>元素.style.样式名</li>
+<li><code>通过style读取样式时，只能读取内联样式</code>！！！！,无法读取样式表中的样式。</li>
+</ol>
+<p>例:</p>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  #box1&#123;</span><br><span class="line">    <span class="attr">width</span>:100px;</span><br><span class="line">    <span class="attr">height</span>:100px;</span><br><span class="line">    background-<span class="attr">color</span>:lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>修改样式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>读取样式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 点击按钮以后修改box1的大小。元素.style.样式名 = 样式值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box1.<span class="property">style</span>.<span class="property">width</span> = <span class="string">&quot;150px&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box1.<span class="property">style</span>.<span class="property">height</span> = <span class="string">&quot;150px&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 如果css样式名有 减号 - ，需要改成驼峰式命名法</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box1.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&quot;yellow&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 注意：通过style修改的样式，都是修改的内联样式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 而内联样式有较高的优先级</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 所以通过js修改的样式通常会立即显示。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn02.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;读取样式，元素.style.样式名，注意：带单位的样式，读取出来也会带单位。&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box1.<span class="property">style</span>.<span class="property">width</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 
 
 <hr>
@@ -4791,10 +4791,10 @@ btn01.attachEvent(“onclick”,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(81)代理[proxy]</title>
+    <title>(81)代理</title>
     <url>/blog/javascript/81/</url>
     <content><![CDATA[<hr>
-<h3 id="代理-proxy"><a href="#代理-proxy" class="headerlink" title="代理[proxy]"></a>代理[proxy]</h3><p><strong>vue大概的基本原理</strong>：</p>
+<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p><strong>vue大概的基本原理</strong>：</p>
 <pre><code>数据劫持---&gt;观察者---&gt;数据解析、指令、js对象，diff算法---&gt;dom。
 </code></pre>
 <p><strong>那么vue是通过什么进行数据劫持的呢</strong>？</p>
@@ -4933,10 +4933,10 @@ newTarget[&#39;c&#39;] = 100 // c并不会添加到对象中，因为阻止了�
       </tags>
   </entry>
   <entry>
-    <title>(82)理解[proxy]</title>
+    <title>(82)代理的理解</title>
     <url>/blog/javascript/82/</url>
     <content><![CDATA[<hr>
-<h3 id="理解-proxy"><a href="#理解-proxy" class="headerlink" title="理解[proxy]"></a>理解[proxy]</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
+<h3 id="代理的理解"><a href="#代理的理解" class="headerlink" title="代理的理解"></a>代理的理解</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
 <pre><code>//当我们需要获取对象中的a属性时。直接obj.a即可获取相应的值。
 let obj = &#123;
   a: 1,
@@ -7885,60 +7885,6 @@ module.exports = &#123;
       </tags>
   </entry>
   <entry>
-    <title>(49)文件路径引用问题</title>
-    <url>/blog/vue2/49/</url>
-    <content><![CDATA[<hr>
-<h3 id="文件路径引用问题"><a href="#文件路径引用问题" class="headerlink" title="文件路径引用问题"></a>文件路径引用问题</h3><p>在webpack.base.conf.js(webpack.config.js)中配置</p>
-<pre><code>module.exports = &#123;
-  .....
-  resolve: &#123;
-    //导入文件时可不用输入文件后缀名。
-    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
-    alias: &#123;
-      //alias别名，给src取了一个别名(src是指项目文件夹src)，叫@，在项目中引用、导入路径时
-      //可以直接@/文件夹/文件夹/文件名.后缀名
-      &#39;@&#39;: resolve(&#39;src&#39;),
-    &#125;
-  &#125;
-  ....
-&#125;
-</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-115.png" alt="vue2-115"></p>
-<p>在CLI2中还可以配置</p>
-<pre><code>module.exports = &#123;
-  .....
-  resolve: &#123;
-    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
-    alias: &#123;
-      &#39;@&#39;: resolve(&#39;src&#39;),
-      //对图片资源文件夹取别名
-      &#39;assets&#39;: resolve(&#39;src/assets&#39;),
-      //对组件文件夹取别名
-      &#39;components&#39;: resolve(&#39;src/components&#39;)
-    &#125;
-  &#125;
-  ....
-&#125;
-</code></pre>
-<p>不过在引用时，需要在前面加~，即 ~别名+路径。</p>
-<pre><code>...
-&lt;img src=&quot;~assets/logo.png&quot; /&gt;
-...
-</code></pre>
-<p>但import组件时，路径可以直接写就可以了，别名+路径。</p>
-<pre><code>import Home from &quot;components/home&quot;
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>webpack</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(48)webpack配置分离</title>
     <url>/blog/vue2/48/</url>
     <content><![CDATA[<hr>
@@ -8100,6 +8046,60 @@ output: &#123;
 &#125;
 
 //测试：npm run build成功，npm run dev成功。
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(49)文件路径引用问题</title>
+    <url>/blog/vue2/49/</url>
+    <content><![CDATA[<hr>
+<h3 id="文件路径引用问题"><a href="#文件路径引用问题" class="headerlink" title="文件路径引用问题"></a>文件路径引用问题</h3><p>在webpack.base.conf.js(webpack.config.js)中配置</p>
+<pre><code>module.exports = &#123;
+  .....
+  resolve: &#123;
+    //导入文件时可不用输入文件后缀名。
+    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
+    alias: &#123;
+      //alias别名，给src取了一个别名(src是指项目文件夹src)，叫@，在项目中引用、导入路径时
+      //可以直接@/文件夹/文件夹/文件名.后缀名
+      &#39;@&#39;: resolve(&#39;src&#39;),
+    &#125;
+  &#125;
+  ....
+&#125;
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-115.png" alt="vue2-115"></p>
+<p>在CLI2中还可以配置</p>
+<pre><code>module.exports = &#123;
+  .....
+  resolve: &#123;
+    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],
+    alias: &#123;
+      &#39;@&#39;: resolve(&#39;src&#39;),
+      //对图片资源文件夹取别名
+      &#39;assets&#39;: resolve(&#39;src/assets&#39;),
+      //对组件文件夹取别名
+      &#39;components&#39;: resolve(&#39;src/components&#39;)
+    &#125;
+  &#125;
+  ....
+&#125;
+</code></pre>
+<p>不过在引用时，需要在前面加~，即 ~别名+路径。</p>
+<pre><code>...
+&lt;img src=&quot;~assets/logo.png&quot; /&gt;
+...
+</code></pre>
+<p>但import组件时，路径可以直接写就可以了，别名+路径。</p>
+<pre><code>import Home from &quot;components/home&quot;
 </code></pre>
 <hr>
 ]]></content>
