@@ -1079,36 +1079,6 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
-    <title>(5)模板字符串</title>
-    <url>/blog/ecmascript/5/</url>
-    <content><![CDATA[<hr>
-<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
-<p><strong>&#96;</strong></p>
-</blockquote>
-<p>ES6引入了新的声明字符串的方式, 就是模板字符串``, 符号是反引号。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`这也是一个字符串!`</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str, <span class="keyword">typeof</span> str)</span><br><span class="line">  <span class="comment">// --&gt; 这也是一个字符串! string</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="模板字符串的特性"><a href="#模板字符串的特性" class="headerlink" title="模板字符串的特性"></a>模板字符串的特性</h3><p><strong>1.内容中可以直接出现换行符</strong></p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表1&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表2&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以出现换行</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>2.直接进行变量拼接${}</strong></p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> zhang = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> lisi = <span class="string">&quot;李四&quot;</span></span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;zhang&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;lisi&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以使用$&#123;&#125;对变量进行拼接</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=7">源：https://www.bilibili.com/video/BV1uK411H7on?p=7</a></p>
-]]></content>
-      <categories>
-        <category>ECMAScript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(6)简化对象写法</title>
     <url>/blog/ecmascript/6/</url>
     <content><![CDATA[<hr>
@@ -1208,6 +1178,36 @@ for(let i = 0; i &lt; items.length; i++)&#123;
 </ol>
 <hr>
 <p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=9">源：https://www.bilibili.com/video/BV1uK411H7on?p=9</a></p>
+]]></content>
+      <categories>
+        <category>ECMAScript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(5)模板字符串</title>
+    <url>/blog/ecmascript/5/</url>
+    <content><![CDATA[<hr>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
+<p><strong>&#96;</strong></p>
+</blockquote>
+<p>ES6引入了新的声明字符串的方式, 就是模板字符串``, 符号是反引号。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`这也是一个字符串!`</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str, <span class="keyword">typeof</span> str)</span><br><span class="line">  <span class="comment">// --&gt; 这也是一个字符串! string</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="模板字符串的特性"><a href="#模板字符串的特性" class="headerlink" title="模板字符串的特性"></a>模板字符串的特性</h3><p><strong>1.内容中可以直接出现换行符</strong></p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表1&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表2&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以出现换行</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>2.直接进行变量拼接${}</strong></p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> zhang = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> lisi = <span class="string">&quot;李四&quot;</span></span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;zhang&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;lisi&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以使用$&#123;&#125;对变量进行拼接</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=7">源：https://www.bilibili.com/video/BV1uK411H7on?p=7</a></p>
 ]]></content>
       <categories>
         <category>ECMAScript</category>
