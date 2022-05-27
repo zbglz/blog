@@ -1079,36 +1079,6 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
-    <title>(5)模板字符串</title>
-    <url>/blog/ecmascript/5/</url>
-    <content><![CDATA[<hr>
-<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
-<p><strong>&#96;</strong></p>
-</blockquote>
-<p>ES6引入了新的声明字符串的方式，就是模板字符串``，符号是反引号。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`这也是一个字符串!`</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str, <span class="keyword">typeof</span> str)</span><br><span class="line">  <span class="comment">// --&gt; 这也是一个字符串! string</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="模板字符串的特性"><a href="#模板字符串的特性" class="headerlink" title="模板字符串的特性"></a>模板字符串的特性</h3><p><strong>1.内容中可以直接出现换行符</strong></p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表1&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表2&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以出现换行</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>2.直接进行变量拼接${}</strong></p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> zhang = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> lisi = <span class="string">&quot;李四&quot;</span></span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;zhang&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;lisi&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以使用$&#123;&#125;对变量进行拼接</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=7">源：https://www.bilibili.com/video/BV1uK411H7on?p=7</a></p>
-]]></content>
-      <categories>
-        <category>ECMAScript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(6)简化对象写法</title>
     <url>/blog/ecmascript/6/</url>
     <content><![CDATA[<hr>
@@ -1324,253 +1294,6 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </categories>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(1)hexo博客练成</title>
-    <url>/blog/hexo/1/</url>
-    <content><![CDATA[<hr>
-<h2 id="前置软件的安装"><a href="#前置软件的安装" class="headerlink" title="前置软件的安装"></a>前置软件的安装</h2><blockquote>
-<p>nodejs安装</p>
-</blockquote>
-<p>一切的一切都要从nodehjs说起(省略一万字…)，hexo项目运行编译依赖于nodejs，所以先安装nodejs。</p>
-<p><a href="https://nodejs.org/en/">nodejs下载地址</a>，<code>注意！</code>，如果你是重度nodejs使用者，请先！参照下方的nvm安装。</p>
-<blockquote>
-<p>nvm安装</p>
-</blockquote>
-<p>nvm是nodejs版本管理工具，可以安装多个nodejs版本，可以随意且方便的切换nodejs版本。</p>
-<p><code>如果你没有安装多个nodejs版本的需求，请跳过nvm的安装步骤，回到nodejs的安装步骤。</code></p>
-<p>nvm下载地址：<a href="https://github.com/coreybutler/nvm-windows/releases">github下载地址</a>，有时候页面可能打不开，多刷新几次，或者科学上网。</p>
-<p><strong>下载安装说明：</strong></p>
-<p>1.在页面的下方找到nvm-setup.zip版本下载安装。</p>
-<p>2.安装完成后就可以通过命令行工具安装nodejs了，为防止安装缓慢或失败，在安装nodejs之前先做一个配置，找到C:\Users\Administrator\AppData\Roaming\nvm\settings.txt文件，并在文本文件中增加这两行配置。</p>
-<pre><code>node_mirror: https://npm.taobao.org/mirrors/node/
-npm_mirror: https://npm.taobao.org/mirrors/npm/
-</code></pre>
-<p>3.然后通过命令行工具安装nodejs：nvm install node+版本，例：</p>
-<pre><code>nvm install node12.14.1
-</code></pre>
-<p>4.nvm常用命令</p>
-<pre><code>nvm off                 //禁用node.js版本管理(不卸载任何东西)
-nvm on                  //启用node.js版本管理
-nvm install &lt;version&gt;   //安装node.js的命名 version是版本号,例如：nvm install 10.15.3
-nvm install latest      //安装最新版本node
-nvm uninstall &lt;version&gt; //卸载node.js是的命令，卸载指定版本的nodejs，当安装失败时卸载使用
-nvm list                //显示所有安装的node.js版本
-nvm list available      //显示可以安装的所有node.js的版本
-nvm use &lt;version&gt;       //切换到使用指定的nodejs版本
-</code></pre>
-<blockquote>
-<p>git安装</p>
-</blockquote>
-<p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发，而开发的一个开放源码的版本控制软件。</p>
-<p><a href="https://git-scm.com/">Git的下载地址</a>，按部就班的安装即可。</p>
-<blockquote>
-<p>TortoiseGit安装</p>
-</blockquote>
-<p>Git的使用基本都是在控制台(终端)中，输入命令操作。TortoiseGit是一款开源的git的版本控制系统，提供了人性化的图形化界面，不用像Git一样输入许多语句，像git init、git add、git commit这些语句就通通不用记了。轻松使用鼠标，就可以完成代码的提交和上传。对于使用本地Git的新手来说，TortoiseGit更加简便，更加容易上手。</p>
-<p><a href="https://tortoisegit.org/download/">TortoiseGit下载地址</a>，TortoiseGit的默认语言是英语，可以在该下载页的下方找到汉化语言包下载安装。</p>
-<blockquote>
-<p>hexo cli的安装</p>
-</blockquote>
-<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。npm？对！npm就是附带在nodejs中的一个包管理工具。前面安装nodejs时，已经同时安装了npm。</p>
-<pre><code>npm install -g hexo-cli
-</code></pre>
-<hr>
-<h2 id="hexo博客项目"><a href="#hexo博客项目" class="headerlink" title="hexo博客项目"></a>hexo博客项目</h2><p>在安装了hexo cli以后，我们就可以创建hexo项目了。以blog博客为例。</p>
-<blockquote>
-<p>初始化hexo项目</p>
-</blockquote>
-<p>在个人工作目录(自己平时存放项目的文件夹)，新建文件夹(例：blog)，进入该文件夹，鼠标右键选择Git Bash here，输入<code>hexo init</code>，初始化项目。(这么操作是因为，我个人在IDE编辑器中初始化时，多半会因为github很慢的原因创建失败)</p>
-<pre><code>├── .github
-├── node_modules
-├── _config.yml
-├── gitignore
-├── package.json
-├── scaffolds
-├── source
-|   └── _posts
-└── themes
-</code></pre>
-<p><strong>_config.yml</strong></p>
-<p>网站的 配置 信息，您可以在此配置大部分的参数。<br>但一般情况下，不直接在_config中修改配置参数。<br>而是创建对应主题的_config文件，进行配置，方便后期升级维护等。</p>
-<p><strong>package.json</strong></p>
-<p>站点的应用程序的信息和依赖。一般不用操作。</p>
-<p><strong>scaffolds</strong></p>
-<p>模版文件夹。当我们新建文章时，Hexo会根据 scaffold中的模板来建立文件。<br>例如，如果您修改scaffold&#x2F;post.md中的Front-matter内容，<br>那么每次新建一篇文章时都会包含这个修改。</p>
-<p><strong>source</strong></p>
-<p>资源文件夹是存放用户资源的地方。<br>除 _posts 文件夹之外，<br>开头命名为 _ (下划线)的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。<br>Markdown 和 HTML 文件会被解析并放到 public 文件夹，<br>而其他文件会被拷贝过去。</p>
-<p><strong>themes</strong></p>
-<p>主题文件夹。Hexo 会根据主题来生成静态页面。</p>
-<blockquote>
-<p>预览与编译</p>
-</blockquote>
-<p>使用编辑器打开blog项目，打开编辑器终端，输入hexo s，即可预览博客项目。</p>
-<p>其他常用指令</p>
-<pre><code>hexo s // blog预览
-hexo g // 生成，文件在source文件夹中，将里面的文件部署到服务器即可。
-hexo cl // 清除生成的文件。
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(2)hexo更换主题</title>
-    <url>/blog/hexo/2/</url>
-    <content><![CDATA[<h2 id="默认主题"><a href="#默认主题" class="headerlink" title="默认主题"></a>默认主题</h2><p>在hexo init初始化完成后，发现themes文件夹下，已经有一个主题了，叫landscape。当然也可以找一些其他的主题替换。</p>
-<hr>
-<h2 id="其他主题"><a href="#其他主题" class="headerlink" title="其他主题"></a>其他主题</h2><p><strong>hexo-theme-butterfly</strong></p>
-<p>网上找的一个还挺好看的主题：<a href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a></p>
-<p><a href="https://butterfly.js.org/">官方展示</a></p>
-<p>安装方式一，在项目文件夹根目录，打开终端。(有问题)</p>
-<pre><code>## npm安装方式，只支持hexo5.0.0以上版本
-npm i hexo-theme-butterfly
-## 但是测试安装后，在themes文件夹下找不到相关主题文件，我放弃了。
-</code></pre>
-<p>安装方式二，git克隆下载。在该项目的根目录下打开终端，使用git下载。</p>
-<pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
-## 下载完成后，可以看到在themes文件夹下，多了一个butterfly文件夹。这就是新的主题了。
-## 克隆github的仓库容易失败，可以使用gitee的镜像仓库
-git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly
-</code></pre>
-<hr>
-<h2 id="主题切换与管理"><a href="#主题切换与管理" class="headerlink" title="主题切换与管理"></a>主题切换与管理</h2><p><strong>主题切换</strong></p>
-<p>默认情况下hexo的主题是landscape，如果需要切换主题，则修改根目录下的_config.yml文件。</p>
-<p>找到theme: landscape，修改为theme: butterfly</p>
-<p><strong>主题管理</strong></p>
-<p>正如hexo初始化以后，根目录下的_config.landscape.yml文件一样。<br>我们不需要直接修改主题文件夹下的_config.yml配置文件。</p>
-<p>直接修改主题配置文件，对于主题的后期升级维护，并不友好。<br>所以，当切换了主题后，我们可以在根目录下创建，<br>新的对应主题配置文件。_config.butterfly.yml，<br>当需要修改配置时，直接在_config.butterfly.yml修改设置就可以了。<br>尽量不要直接修改主题文件夹下的文件！！</p>
-<p><strong>其他问题</strong></p>
-<p>测试项目时</p>
-<pre><code>hexo s
-</code></pre>
-<p>报错：extends includes&#x2F;layout.pug block content include .&#x2F;includes&#x2F;mixins&#x2F;post-ui.pug #recent-posts.recent-posts +postUI include includes&#x2F;pagination.pug</p>
-<p>因为你在使用butterfly主题时，没有pug 和 stylus 的解析器，你需要安装:</p>
-<pre><code>## 在项目根目录下
-npm install hexo-renderer-pug hexo-renderer-stylus
-</code></pre>
-<p>再次测试</p>
-<pre><code>hexo s
-</code></pre>
-<p>项目正常运行了</p>
-<hr>
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>Hexo全局配置_config.yml详解：<a href="https://www.dazhuanlan.com/lhymn/topics/1378049">https://www.dazhuanlan.com/lhymn/topics/1378049</a></p>
-<hr>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(3)butterfly主题设置与优化</title>
-    <url>/blog/hexo/3/</url>
-    <content><![CDATA[<h2 id="butterfly主题设置与优化"><a href="#butterfly主题设置与优化" class="headerlink" title="butterfly主题设置与优化"></a>butterfly主题设置与优化</h2><p>在项目根目录下，创建一个_config.butterfly.yml文件(复制_config.landscape.yml，修改文件名即可)</p>
-<p><strong>_config.butterfly.yml</strong>，<code>注意修改配置文件需要重启服务才能看到效果</code>，hexo s</p>
-<pre><code>menu:
-  首页: / || fas fa-home
-  目录||fa-fw fas fa-compass:
-    归档: /archives/ || fas fa-archive
-    标签: /tags/ || fas fa-tags
-    分类: /categories/ || fas fa-folder-open
-  列表||fas fa-list:
-    音乐: /music/ || fas fa-music
-    视频: /movies/ || fas fa-video
-  链接: /link/ || fas fa-link
-  关于: /about/ || fas fa-heart
-  ...
-</code></pre>
-<p><a href="https://butterfly.js.org/posts/4aa8abbe/">查看主题文档配置</a></p>
-<hr>
-<h2 id="menu页面配置"><a href="#menu页面配置" class="headerlink" title="menu页面配置"></a>menu页面配置</h2><p><strong>标签: &#x2F;tags&#x2F; || fas fa-tags</strong></p>
-<pre><code>tags-&gt;index.md
-&lt;!-- 在source文件夹下创建tags文件夹 --&gt;
-&lt;!-- 并在该文件夹下新建一个index.md文件，内容如下： --&gt;
-
----
-title: 标签
-type: &quot;tags&quot;
----
-</code></pre>
-<p><strong>分类: &#x2F;categories&#x2F; || fas fa-folder-open</strong><br>categories分类页面。</p>
-<pre><code>categories-&gt;index.md
-&lt;!-- 在source文件夹下创建categories文件夹 --&gt;
-&lt;!-- 并在该文件夹下新建一个index.md文件，内容如下： --&gt;
-
----
-title: 分类
-type: &quot;categories&quot;
----
-</code></pre>
-<hr>
-<p><strong>音乐.视频.链接.关于…..</strong></p>
-<p>其他页面需创建页面，自己书写结构和样式。</p>
-<p>如：音乐: &#x2F;music&#x2F; || fas fa-music</p>
-<pre><code>music-&gt;index.md
-&lt;!-- 在source文件夹下创建music文件夹 --&gt;
-&lt;!-- 并在该文件夹下新建一个index.md文件，内容如下： --&gt;
-
----
-title: 音乐
----
-
-&lt;!-- 我的音乐 --&gt;
-
-&lt;!-- .....本页结构样式.... --&gt;
-</code></pre>
-<p>在source文件夹下创建什么文件，<br>是由，音乐: &#x2F;music&#x2F; || fas fa-music配置的路径决定的(<code>||后面是配置的图标</code>)。</p>
-<p>如果它是：&#x2F;nav&#x2F;list&#x2F;links&#x2F;</p>
-<p>那么页面就会去，source文件夹下的nav文件夹下，找list文件夹下，找links文件夹下，找index.md文件。</p>
-<p>其他自定义页面都可以根据这个情况自行创建。</p>
-<p>具体请参照<a href="https://butterfly.js.org/posts/4073eda/">butterfly进阶教程</a></p>
-<hr>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(4)music页面详细配置</title>
-    <url>/blog/hexo/4/</url>
-    <content><![CDATA[<h2 id="music页面详细配置"><a href="#music页面详细配置" class="headerlink" title="music页面详细配置"></a>music页面详细配置</h2><p>懒得搬了：直接查看gihub中hexo-tag-aplayer的说明文档<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md">https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md</a></p>
-<hr>
-<h2 id="CDN方式使用"><a href="#CDN方式使用" class="headerlink" title="CDN方式使用"></a>CDN方式使用</h2><p>配来配去太麻烦了，直接引入js用吧，直接在music文件夹下的index页面中。meting-js中的id，需要自己去netease(网易云音乐)、tencent, kugou, xiami, baidu等。。自己创建曲目播放列表，复制播放列表的ID替换即可。</p>
-<pre><code>## 网易云音乐
-
-&lt;!-- require APlayer --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&quot;&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;
-&lt;!-- require MetingJS --&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;!-- id：song id / playlist id / album id / search keyword --&gt;
-&lt;!-- server：网易云音乐netease、tencent, kugou, xiami, baidu --&gt;
-&lt;!-- type：song, playlist, album, search, artist --&gt;
-
-&lt;meting-js
-    server=&quot;netease&quot;
-    type=&quot;playlist&quot;
-    id=&quot;7313912744&quot;&gt;
-&lt;/meting-js&gt;
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -5457,46 +5180,6 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
-    <title>(11)事件监听v-on</title>
-    <url>/blog/vue2/11/</url>
-    <content><![CDATA[<hr>
-<h3 id="事件监听v-on"><a href="#事件监听v-on" class="headerlink" title="事件监听v-on"></a>事件监听v-on</h3><p>前端交互，用于监听如点击、拖拽、提交、键盘事件等等</p>
-<pre><code>语法：&lt;div v-on:click=&quot;方法名&quot;&gt;&lt;/div&gt;
-语法糖：&lt;div @click=&quot;方法名&quot;&gt;&lt;/div&gt;
-</code></pre>
-<p>传递参数</p>
-<pre><code>语法：&lt;div v-on:click=&quot;方法名(参数)&quot;&gt;&lt;/div&gt;
-语法糖：&lt;div @click=&quot;方法名(参数)&quot;&gt;&lt;/div&gt;
-</code></pre>
-<hr>
-<h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>计数器：&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;counterAdd&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;counterSub&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counter</span>:<span class="number">0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterAdd</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>++;     </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,                    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterSub</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>--;     </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>不加括号，默认传递原生事件event</p>
-</blockquote>
-<p>上面在使用加和减的方法时，因为没有参数，所以没有加小括号。但其实它是有一个默认的参数，<strong>原生事件的event</strong>。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>计数器：&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;counterAdd&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;counterSub&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counter</span>:<span class="number">0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterAdd</span>:<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>++   </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,                    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterSub</span>:<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>--</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>使用括号，$event传递事件</p>
-</blockquote>
-<p>如果使用括号，需要手动添加$event参数，才能正确传递event事件，如果不需要使用到原生事件也可以不传，其他参数正常传递即可。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;crement(1)&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;crement(-1)&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counter</span>:<span class="number">0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">crement</span>(<span class="params">num</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span> += num</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(12)v-on的修饰符</title>
     <url>/blog/vue2/12/</url>
     <content><![CDATA[<hr>
@@ -5550,6 +5233,46 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
+    <title>(11)事件监听v-on</title>
+    <url>/blog/vue2/11/</url>
+    <content><![CDATA[<hr>
+<h3 id="事件监听v-on"><a href="#事件监听v-on" class="headerlink" title="事件监听v-on"></a>事件监听v-on</h3><p>前端交互，用于监听如点击、拖拽、提交、键盘事件等等</p>
+<pre><code>语法：&lt;div v-on:click=&quot;方法名&quot;&gt;&lt;/div&gt;
+语法糖：&lt;div @click=&quot;方法名&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>传递参数</p>
+<pre><code>语法：&lt;div v-on:click=&quot;方法名(参数)&quot;&gt;&lt;/div&gt;
+语法糖：&lt;div @click=&quot;方法名(参数)&quot;&gt;&lt;/div&gt;
+</code></pre>
+<hr>
+<h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>计数器：&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;counterAdd&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;counterSub&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counter</span>:<span class="number">0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterAdd</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>++;     </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,                    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterSub</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>--;     </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>不加括号，默认传递原生事件event</p>
+</blockquote>
+<p>上面在使用加和减的方法时，因为没有参数，所以没有加小括号。但其实它是有一个默认的参数，<strong>原生事件的event</strong>。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>计数器：&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;counterAdd&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;counterSub&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counter</span>:<span class="number">0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterAdd</span>:<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>++   </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,                    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counterSub</span>:<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span>--</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>使用括号，$event传递事件</p>
+</blockquote>
+<p>如果使用括号，需要手动添加$event参数，才能正确传递event事件，如果不需要使用到原生事件也可以不传，其他参数正常传递即可。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;crement(1)&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;crement(-1)&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">counter</span>:<span class="number">0</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">crement</span>(<span class="params">num</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">counter</span> += num</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(13)v-if</title>
     <url>/blog/vue2/13/</url>
     <content><![CDATA[<hr>
@@ -5579,25 +5302,6 @@ nvm alias default [node版本号] ##设置默认版本
 
 
 
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(14)v-show</title>
-    <url>/blog/vue2/14/</url>
-    <content><![CDATA[<hr>
-<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>v-show与v-if一样，它的值也是一个布尔值，为true时，会显示该元素。为false时，不会显示该元素</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span>我会显示1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!-- 注意这里是v-show不是v-if --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;!isShow&quot;</span>&gt;</span>我会显示2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;isShow=!isShow&quot;</span> <span class="attr">v-text</span>=<span class="string">&quot;&#x27;修改isShow的值：&#x27;+isShow&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">isShow</span>:<span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h3 id="v-show和v-if的区别"><a href="#v-show和v-if的区别" class="headerlink" title="v-show和v-if的区别"></a>v-show和v-if的区别</h3><p>v-show的条件不满足时，是将元素的display属性设置为none。v-if的条件不满足时，是将该元素从dom中移除。满足时又重新渲染。所以，一般情况下，我们需要将某元素，频繁的显示隐藏时，都是使用v-show。只有元素不需要频繁的显示隐藏时，才会用到v-if。</p>
 <hr>
 ]]></content>
       <categories>
@@ -5639,6 +5343,25 @@ nvm alias default [node版本号] ##设置默认版本
   &lt;/ul&gt;
 &lt;/div&gt;
 </code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(14)v-show</title>
+    <url>/blog/vue2/14/</url>
+    <content><![CDATA[<hr>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>v-show与v-if一样，它的值也是一个布尔值，为true时，会显示该元素。为false时，不会显示该元素</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span>我会显示1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!-- 注意这里是v-show不是v-if --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;!isShow&quot;</span>&gt;</span>我会显示2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;isShow=!isShow&quot;</span> <span class="attr">v-text</span>=<span class="string">&quot;&#x27;修改isShow的值：&#x27;+isShow&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">isShow</span>:<span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="v-show和v-if的区别"><a href="#v-show和v-if的区别" class="headerlink" title="v-show和v-if的区别"></a>v-show和v-if的区别</h3><p>v-show的条件不满足时，是将元素的display属性设置为none。v-if的条件不满足时，是将该元素从dom中移除。满足时又重新渲染。所以，一般情况下，我们需要将某元素，频繁的显示隐藏时，都是使用v-show。只有元素不需要频繁的显示隐藏时，才会用到v-if。</p>
 <hr>
 ]]></content>
       <categories>
@@ -5761,44 +5484,6 @@ Vue.set(要修改的对象,索引值,修改后的值)
       </tags>
   </entry>
   <entry>
-    <title>(19)v-model修饰符</title>
-    <url>/blog/vue2/19/</url>
-    <content><![CDATA[<hr>
-<h3 id="v-model修饰符"><a href="#v-model修饰符" class="headerlink" title="v-model修饰符"></a>v-model修饰符</h3><blockquote>
-<p>lazy</p>
-</blockquote>
-<p>我们知道双向绑定的效果，是在修改input值的时候，实时的修改data中msg的值。这种实时修改频率太高，lazy修饰符的作用就是，在修改input值的时候，并不实时修改msg的值。而是在按了回车，或者input失去焦点以后(一般这种行为，表示用户已经输入完成)，再修改data中msg的值。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.lazy</span>=<span class="string">&quot;msg&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 只有在input失去焦点，或按了回车才会更改msg的值 --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>msg的值：&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">msg</span>:<span class="string">&quot;hello&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>number</p>
-</blockquote>
-<p>在双向绑定中，即便是input类型设置了number，但data数据在修改时，也会自动变成string<br>number修饰符的作用就是，让input的值发生变化时，仍然保持number类型。<br>本例中，尝试修改上方的input值会变成string，修改下方的input值会变成number类型。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;number&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;num1&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>num1的值是：&#123;&#123;num1&#125;&#125;，值类型是：&#123;&#123;typeof num1&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 即便input设置为number类型，但data数据在修改时，也会自动变成string --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">&quot;num2&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>num2的值是：&#123;&#123;num2&#125;&#125;，值类型是：&#123;&#123;typeof num2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 我们需要使用v-model的number修饰符，让num2始终保持number的数据类型 --&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">num1</span>: <span class="number">18</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">num2</span>: <span class="number">18</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<blockquote>
-<p>trim</p>
-</blockquote>
-<p>有时用户在输入时，可能由于习惯问题,会不自觉的在内容的两侧输入很多的空格。除了字符串中间的空格，两边的空格可能是用户刻意而为之，字符串两侧的空格大部分情况下都是无意义的，使用trim修饰符可以自动去掉字符串两边的空格。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.trim</span>=<span class="string">&quot;userInput&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>用户输入的是：&#123;&#123;userInput&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">userInput</span>: <span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(2)初识vue</title>
     <url>/blog/vue2/2/</url>
     <content><![CDATA[<hr>
@@ -5851,17 +5536,32 @@ Vue.set(要修改的对象,索引值,修改后的值)
       </tags>
   </entry>
   <entry>
-    <title>(21)组件的基本使用方法</title>
-    <url>/blog/vue2/21/</url>
+    <title>(19)v-model修饰符</title>
+    <url>/blog/vue2/19/</url>
     <content><![CDATA[<hr>
-<h3 id="组件的基本使用方法"><a href="#组件的基本使用方法" class="headerlink" title="组件的基本使用方法"></a>组件的基本使用方法</h3><p>在应用开发的过程中，可能有很多部分的代码雷同，可能会复用多次。我们就可以将其抽象成一个组件。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="number">3</span>、使用组件，多次复用 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 1、创建组件构造器对象</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> cpnC = <span class="title class_">Vue</span>.<span class="title function_">extend</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;h4&gt;我是标题&lt;/h4&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;p&gt;我是内容&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;/div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">             `</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 2、注册组件Vue.component(&#x27;组件的标签名&#x27;,组件构造器)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;my-cpn&#x27;</span>,cpnC)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="v-model修饰符"><a href="#v-model修饰符" class="headerlink" title="v-model修饰符"></a>v-model修饰符</h3><blockquote>
+<p>lazy</p>
+</blockquote>
+<p>我们知道双向绑定的效果，是在修改input值的时候，实时的修改data中msg的值。这种实时修改频率太高，lazy修饰符的作用就是，在修改input值的时候，并不实时修改msg的值。而是在按了回车，或者input失去焦点以后(一般这种行为，表示用户已经输入完成)，再修改data中msg的值。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.lazy</span>=<span class="string">&quot;msg&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 只有在input失去焦点，或按了回车才会更改msg的值 --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>msg的值：&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">msg</span>:<span class="string">&quot;hello&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
-<p><strong>事实上</strong>，<strong>这种写法</strong>在Vue2.x的文档几乎<strong>已经看不到了</strong>，<code>这里只是说明组件思维的一种实现</code>。在构造器中的template里写html代码其实是很不方便的。</p>
-<hr>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>组件只在Vue实例挂载的app元素内有效。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 在Vue实例挂载的app元素内有效 --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 在Vue实例挂载的app元素内有效 --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 在<span class="title class_">Vue</span>实例挂载的app元素外无效 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> cpnC = <span class="title class_">Vue</span>.<span class="title function_">extend</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;h4&gt;我是标题&lt;/h4&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;p&gt;我是内容&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;/div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">             `</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;my-cpn&#x27;</span>,cpnC)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>number</p>
+</blockquote>
+<p>在双向绑定中，即便是input类型设置了number，但data数据在修改时，也会自动变成string<br>number修饰符的作用就是，让input的值发生变化时，仍然保持number类型。<br>本例中，尝试修改上方的input值会变成string，修改下方的input值会变成number类型。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;number&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;num1&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>num1的值是：&#123;&#123;num1&#125;&#125;，值类型是：&#123;&#123;typeof num1&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 即便input设置为number类型，但data数据在修改时，也会自动变成string --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">&quot;num2&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>num2的值是：&#123;&#123;num2&#125;&#125;，值类型是：&#123;&#123;typeof num2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 我们需要使用v-model的number修饰符，让num2始终保持number的数据类型 --&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">num1</span>: <span class="number">18</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">num2</span>: <span class="number">18</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<blockquote>
+<p>trim</p>
+</blockquote>
+<p>有时用户在输入时，可能由于习惯问题,会不自觉的在内容的两侧输入很多的空格。除了字符串中间的空格，两边的空格可能是用户刻意而为之，字符串两侧的空格大部分情况下都是无意义的，使用trim修饰符可以自动去掉字符串两边的空格。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.trim</span>=<span class="string">&quot;userInput&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>用户输入的是：&#123;&#123;userInput&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">userInput</span>: <span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 
 
 <hr>
@@ -5921,18 +5621,19 @@ Vue.set(要修改的对象,索引值,修改后的值)
       </tags>
   </entry>
   <entry>
-    <title>(24)组件的语法糖注册方式</title>
-    <url>/blog/vue2/24/</url>
+    <title>(21)组件的基本使用方法</title>
+    <url>/blog/vue2/21/</url>
     <content><![CDATA[<hr>
-<h3 id="全局组件注册"><a href="#全局组件注册" class="headerlink" title="全局组件注册"></a>全局组件注册</h3><figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// const cpnc1 = Vue.extend()</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 1、直接将构造器作为component的第二个参数。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;my-cpn&#x27;</span>,&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;h4&gt;我是标题my-cpn&lt;/h4&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;p&gt;我是内容my-cpn&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;/div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">    `</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="组件的基本使用方法"><a href="#组件的基本使用方法" class="headerlink" title="组件的基本使用方法"></a>组件的基本使用方法</h3><p>在应用开发的过程中，可能有很多部分的代码雷同，可能会复用多次。我们就可以将其抽象成一个组件。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="number">3</span>、使用组件，多次复用 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 1、创建组件构造器对象</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> cpnC = <span class="title class_">Vue</span>.<span class="title function_">extend</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;h4&gt;我是标题&lt;/h4&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;p&gt;我是内容&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;/div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">             `</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 2、注册组件Vue.component(&#x27;组件的标签名&#x27;,组件构造器)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;my-cpn&#x27;</span>,cpnC)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
+<p><strong>事实上</strong>，<strong>这种写法</strong>在Vue2.x的文档几乎<strong>已经看不到了</strong>，<code>这里只是说明组件思维的一种实现</code>。在构造器中的template里写html代码其实是很不方便的。</p>
 <hr>
-<h3 id="局部组件注册"><a href="#局部组件注册" class="headerlink" title="局部组件注册"></a>局部组件注册</h3><figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  const app = new Vue(&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    el: &quot;#app&quot;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    data: &#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    components:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      cpn:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">        template:`</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">          <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">            <span class="tag">&lt;<span class="name">h4</span>&gt;</span>我是标题cpn<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是内容cpn<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">        `</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  &#125;)</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>组件只在Vue实例挂载的app元素内有效。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 在Vue实例挂载的app元素内有效 --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 在Vue实例挂载的app元素内有效 --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 在<span class="title class_">Vue</span>实例挂载的app元素外无效 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> cpnC = <span class="title class_">Vue</span>.<span class="title function_">extend</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;h4&gt;我是标题&lt;/h4&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;p&gt;我是内容&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;/div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">             `</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;my-cpn&#x27;</span>,cpnC)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
-
-<p><strong>即便语法糖的方式注册，简化了流程，但是在js中写html，这种写法仍然不友好</strong>。</p>
 <hr>
 ]]></content>
       <categories>
@@ -6034,22 +5735,18 @@ Vue.set(要修改的对象,索引值,修改后的值)
       </tags>
   </entry>
   <entry>
-    <title>(28)组件通信-子传父</title>
-    <url>/blog/vue2/28/</url>
+    <title>(24)组件的语法糖注册方式</title>
+    <url>/blog/vue2/24/</url>
     <content><![CDATA[<hr>
-<h3 id="组件通信-子传父"><a href="#组件通信-子传父" class="headerlink" title="组件通信-子传父"></a>组件通信-子传父</h3><p>有父组件向子组件传值的情况，当然也有子组件需要向父组件传值的情况。试想，子组件是一个表单，那么在用户输入了信息最后，我们需要将获取到的用户信息传递给父组件(根组件)，让父组件拿着信息去进行网络请求。</p>
-<blockquote>
-<p>this.$emit(‘自定义事件名’,携带的参数)</p>
-</blockquote>
-<p>子组件使用 this.$emit(‘自定义事件名’,携带的参数)发送自定义事件并携带参数，在父组件中监听自定义事件即可。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 在此处就可以监听自定义事件，再在父组件定义的函数中进行处理 --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 组件中的自定义事件，省略掉参数，默认参数是，emit发送的参数，而不是原生event --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">mycpn</span> <span class="attr">:childrencategories</span>=<span class="string">&quot;categories&quot;</span> @<span class="attr">itemclick</span>=<span class="string">&quot;mycpnclick&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mycpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">&quot;cpn&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-for</span>=<span class="string">&quot;item in childrencategories&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">click</span>=<span class="string">&quot;btnclick(item)&quot;</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> mycpn = &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">&quot;#cpn&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">props</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">childrencategories</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">type</span>:<span class="title class_">Array</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="title function_">default</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">return</span> []</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">required</span>:<span class="literal">false</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">btnclick</span>(<span class="params">item</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//从这里开始向父组件发送数据，当前组件(this)向外发射(emit)一个自定义事件。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//这个事件我们需要自己取名字，如 itemClick。同时携带参数item。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.$emit(<span class="string">&#x27;itemclick&#x27;</span>, item)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//而在父组件中就可以通过 v-on:自定义事件名 = &quot;处理函数&quot; 进行监听。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//这个监听事件是写在，子组件的标签上的。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">categories</span>:[</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;aaa&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;苹果&quot;</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;bbb&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;香蕉&quot;</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;ccc&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;榴莲&quot;</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;ddd&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;梨子&quot;</span>&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      ]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">components</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      mycpn</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">mycpnclick</span>(<span class="params">item</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(item.<span class="property">name</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="全局组件注册"><a href="#全局组件注册" class="headerlink" title="全局组件注册"></a>全局组件注册</h3><figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// const cpnc1 = Vue.extend()</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 1、直接将构造器作为component的第二个参数。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;my-cpn&#x27;</span>,&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;h4&gt;我是标题my-cpn&lt;/h4&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">        &lt;p&gt;我是内容my-cpn&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">      &lt;/div&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="language-javascript"><span class="language-xml">    `</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
-<p><strong>注意：</strong>子组件props中的变量，是来自于父组件的传递，如果在子组件内部进行<strong>v-model双向绑定时</strong>，<strong>不要直接绑定props中的变量</strong>(因为v-model涉及修改变量的值，但你并不能直接修改父组件传来的值)，而要通过子组件的data或者计算属性获取props中的属性值，再双向绑定data变量或计算属性。否则会报错。<br><strong>不推荐这么做</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-4.png" alt="vue2-4"></p>
-<p><strong>正确做法</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-5.png" alt="vue2-5"></p>
-<p>当然还有其他的方法实现，比如子组件使用<strong>计算属性</strong>获取props的变量值，操作方法跟上图一样。另外也可以通过<strong>watch</strong>实现。</p>
+<hr>
+<h3 id="局部组件注册"><a href="#局部组件注册" class="headerlink" title="局部组件注册"></a>局部组件注册</h3><figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">cpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  const app = new Vue(&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    el: &quot;#app&quot;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    data: &#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    components:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      cpn:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">        template:`</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">          <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">            <span class="tag">&lt;<span class="name">h4</span>&gt;</span>我是标题cpn<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是内容cpn<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">        `</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  &#125;)</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>即便语法糖的方式注册，简化了流程，但是在js中写html，这种写法仍然不友好</strong>。</p>
 <hr>
 ]]></content>
       <categories>
@@ -6799,25 +6496,22 @@ module: &#123;
       </tags>
   </entry>
   <entry>
-    <title>(4)vue插值</title>
-    <url>/blog/vue2/4/</url>
+    <title>(28)组件通信-子传父</title>
+    <url>/blog/vue2/28/</url>
     <content><![CDATA[<hr>
-<h3 id="vue插值"><a href="#vue插值" class="headerlink" title="vue插值"></a>vue插值</h3><p><code>mustache插值</code>。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>拼接操作1：&#123;&#123;Msg1&#125;&#125;&#123;&#123;Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>拼接操作2：&#123;&#123;Msg1 + &quot;&quot; + Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>加法运算：&#123;&#123;Msg1 + Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>减法运算：&#123;&#123;Msg1 - Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title class_">Msg1</span>:<span class="number">50</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title class_">Msg2</span>:<span class="number">20</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="组件通信-子传父"><a href="#组件通信-子传父" class="headerlink" title="组件通信-子传父"></a>组件通信-子传父</h3><p>有父组件向子组件传值的情况，当然也有子组件需要向父组件传值的情况。试想，子组件是一个表单，那么在用户输入了信息最后，我们需要将获取到的用户信息传递给父组件(根组件)，让父组件拿着信息去进行网络请求。</p>
+<blockquote>
+<p>this.$emit(‘自定义事件名’,携带的参数)</p>
+</blockquote>
+<p>子组件使用 this.$emit(‘自定义事件名’,携带的参数)发送自定义事件并携带参数，在父组件中监听自定义事件即可。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 在此处就可以监听自定义事件，再在父组件定义的函数中进行处理 --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- 组件中的自定义事件，省略掉参数，默认参数是，emit发送的参数，而不是原生event --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">mycpn</span> <span class="attr">:childrencategories</span>=<span class="string">&quot;categories&quot;</span> @<span class="attr">itemclick</span>=<span class="string">&quot;mycpnclick&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mycpn</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">&quot;cpn&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-for</span>=<span class="string">&quot;item in childrencategories&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">click</span>=<span class="string">&quot;btnclick(item)&quot;</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> mycpn = &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">template</span>:<span class="string">&quot;#cpn&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">props</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">childrencategories</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">type</span>:<span class="title class_">Array</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="title function_">default</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">return</span> []</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">required</span>:<span class="literal">false</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">btnclick</span>(<span class="params">item</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//从这里开始向父组件发送数据，当前组件(this)向外发射(emit)一个自定义事件。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//这个事件我们需要自己取名字，如 itemClick。同时携带参数item。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.$emit(<span class="string">&#x27;itemclick&#x27;</span>, item)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//而在父组件中就可以通过 v-on:自定义事件名 = &quot;处理函数&quot; 进行监听。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//这个监听事件是写在，子组件的标签上的。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">categories</span>:[</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;aaa&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;苹果&quot;</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;bbb&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;香蕉&quot;</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;ccc&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;榴莲&quot;</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123;<span class="attr">id</span>:<span class="string">&quot;ddd&quot;</span>,<span class="attr">name</span>:<span class="string">&quot;梨子&quot;</span>&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      ]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">components</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      mycpn</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">mycpnclick</span>(<span class="params">item</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(item.<span class="property">name</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
-<p>mustache插值方式只用于dom元素的content内，可以支持一些简单的表达式运算，包括三元表达式。</p>
-<p>以上两种方式可以合并两条数据，虽然Msg1和Msg2都是数值类型，但第一种没有运算符，都作为字符串拼接处理。第二种虽然用到了运算符+号，但中间还加了个””空的字符串，被隐式转换成了字符串。</p>
-<p><code>v-text插值</code>。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-text</span>=<span class="string">&quot;Msg3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  const app = new Vue(&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    el:&quot;#app&quot;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    data:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      Msg3: &#x27;<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&#x27;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  &#125;)</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<p>此种方式使用较少，不够灵活。 v-text不会解析字符串中包含的html标签。</p>
-<p><code>v-html插值</code>。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">&quot;Msg3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  const app = new Vue(&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    el:&quot;#app&quot;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    data:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      Msg3: &#x27;<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&#x27;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  &#125;)</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<p>v-html会解析字符串中包含的html标签。</p>
+<p><strong>注意：</strong>子组件props中的变量，是来自于父组件的传递，如果在子组件内部进行<strong>v-model双向绑定时</strong>，<strong>不要直接绑定props中的变量</strong>(因为v-model涉及修改变量的值，但你并不能直接修改父组件传来的值)，而要通过子组件的data或者计算属性获取props中的属性值，再双向绑定data变量或计算属性。否则会报错。<br><strong>不推荐这么做</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-4.png" alt="vue2-4"></p>
+<p><strong>正确做法</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-5.png" alt="vue2-5"></p>
+<p>当然还有其他的方法实现，比如子组件使用<strong>计算属性</strong>获取props的变量值，操作方法跟上图一样。另外也可以通过<strong>watch</strong>实现。</p>
 <hr>
 ]]></content>
       <categories>
@@ -11819,6 +11513,312 @@ const vm= app.mount(&#39;#app&#39;)
       </categories>
       <tags>
         <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(1)hexo博客练成</title>
+    <url>/blog/hexo/1/</url>
+    <content><![CDATA[<hr>
+<h2 id="前置软件的安装"><a href="#前置软件的安装" class="headerlink" title="前置软件的安装"></a>前置软件的安装</h2><blockquote>
+<p>nodejs安装</p>
+</blockquote>
+<p>一切的一切都要从nodehjs说起(省略一万字…)，hexo项目运行编译依赖于nodejs，所以先安装nodejs。</p>
+<p><a href="https://nodejs.org/en/">nodejs下载地址</a>，<code>注意！</code>，如果你是重度nodejs使用者，请先！参照下方的nvm安装。</p>
+<blockquote>
+<p>nvm安装</p>
+</blockquote>
+<p>nvm是nodejs版本管理工具，可以安装多个nodejs版本，可以随意且方便的切换nodejs版本。</p>
+<p><code>如果你没有安装多个nodejs版本的需求，请跳过nvm的安装步骤，回到nodejs的安装步骤。</code></p>
+<p>nvm下载地址：<a href="https://github.com/coreybutler/nvm-windows/releases">github下载地址</a>，有时候页面可能打不开，多刷新几次，或者科学上网。</p>
+<p><strong>下载安装说明：</strong></p>
+<p>1.在页面的下方找到nvm-setup.zip版本下载安装。</p>
+<p>2.安装完成后就可以通过命令行工具安装nodejs了，为防止安装缓慢或失败，在安装nodejs之前先做一个配置，找到C:\Users\Administrator\AppData\Roaming\nvm\settings.txt文件，并在文本文件中增加这两行配置。</p>
+<pre><code>node_mirror: https://npm.taobao.org/mirrors/node/
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+</code></pre>
+<p>3.然后通过命令行工具安装nodejs：nvm install node+版本，例：</p>
+<pre><code>nvm install node12.14.1
+</code></pre>
+<p>4.nvm常用命令</p>
+<pre><code>nvm off                 //禁用node.js版本管理(不卸载任何东西)
+nvm on                  //启用node.js版本管理
+nvm install &lt;version&gt;   //安装node.js的命名 version是版本号,例如：nvm install 10.15.3
+nvm install latest      //安装最新版本node
+nvm uninstall &lt;version&gt; //卸载node.js是的命令，卸载指定版本的nodejs，当安装失败时卸载使用
+nvm list                //显示所有安装的node.js版本
+nvm list available      //显示可以安装的所有node.js的版本
+nvm use &lt;version&gt;       //切换到使用指定的nodejs版本
+</code></pre>
+<blockquote>
+<p>git安装</p>
+</blockquote>
+<p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发，而开发的一个开放源码的版本控制软件。</p>
+<p><a href="https://git-scm.com/">Git的下载地址</a>，按部就班的安装即可。</p>
+<blockquote>
+<p>TortoiseGit安装</p>
+</blockquote>
+<p>Git的使用基本都是在控制台(终端)中，输入命令操作。TortoiseGit是一款开源的git的版本控制系统，提供了人性化的图形化界面，不用像Git一样输入许多语句，像git init、git add、git commit这些语句就通通不用记了。轻松使用鼠标，就可以完成代码的提交和上传。对于使用本地Git的新手来说，TortoiseGit更加简便，更加容易上手。</p>
+<p><a href="https://tortoisegit.org/download/">TortoiseGit下载地址</a>，TortoiseGit的默认语言是英语，可以在该下载页的下方找到汉化语言包下载安装。</p>
+<blockquote>
+<p>hexo cli的安装</p>
+</blockquote>
+<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。npm？对！npm就是附带在nodejs中的一个包管理工具。前面安装nodejs时，已经同时安装了npm。</p>
+<pre><code>npm install -g hexo-cli
+</code></pre>
+<hr>
+<h2 id="hexo博客项目"><a href="#hexo博客项目" class="headerlink" title="hexo博客项目"></a>hexo博客项目</h2><p>在安装了hexo cli以后，我们就可以创建hexo项目了。以blog博客为例。</p>
+<blockquote>
+<p>初始化hexo项目</p>
+</blockquote>
+<p>在个人工作目录(自己平时存放项目的文件夹)，新建文件夹(例：blog)，进入该文件夹，鼠标右键选择Git Bash here，输入<code>hexo init</code>，初始化项目。(这么操作是因为，我个人在IDE编辑器中初始化时，多半会因为github很慢的原因创建失败)</p>
+<pre><code>├── .github
+├── node_modules
+├── _config.yml
+├── gitignore
+├── package.json
+├── scaffolds
+├── source
+|   └── _posts
+└── themes
+</code></pre>
+<p><strong>_config.yml</strong></p>
+<p>网站的 配置 信息，您可以在此配置大部分的参数。<br>但一般情况下，不直接在_config中修改配置参数。<br>而是创建对应主题的_config文件，进行配置，方便后期升级维护等。</p>
+<p><strong>package.json</strong></p>
+<p>站点的应用程序的信息和依赖。一般不用操作。</p>
+<p><strong>scaffolds</strong></p>
+<p>模版文件夹。当我们新建文章时，Hexo会根据 scaffold中的模板来建立文件。<br>例如，如果您修改scaffold&#x2F;post.md中的Front-matter内容，<br>那么每次新建一篇文章时都会包含这个修改。</p>
+<p><strong>source</strong></p>
+<p>资源文件夹是存放用户资源的地方。<br>除 _posts 文件夹之外，<br>开头命名为 _ (下划线)的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。<br>Markdown 和 HTML 文件会被解析并放到 public 文件夹，<br>而其他文件会被拷贝过去。</p>
+<p><strong>themes</strong></p>
+<p>主题文件夹。Hexo 会根据主题来生成静态页面。</p>
+<blockquote>
+<p>预览与编译</p>
+</blockquote>
+<p>使用编辑器打开blog项目，打开编辑器终端，输入hexo s，即可预览博客项目。</p>
+<p>其他常用指令</p>
+<pre><code>hexo s // blog预览
+hexo g // 生成，文件在source文件夹中，将里面的文件部署到服务器即可。
+hexo cl // 清除生成的文件。
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(2)hexo更换主题</title>
+    <url>/blog/hexo/2/</url>
+    <content><![CDATA[<h2 id="默认主题"><a href="#默认主题" class="headerlink" title="默认主题"></a>默认主题</h2><p>在hexo init初始化完成后，发现themes文件夹下，已经有一个主题了，叫landscape。当然也可以找一些其他的主题替换。</p>
+<hr>
+<h2 id="其他主题"><a href="#其他主题" class="headerlink" title="其他主题"></a>其他主题</h2><p><strong>hexo-theme-butterfly</strong></p>
+<p>网上找的一个还挺好看的主题：<a href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a></p>
+<p><a href="https://butterfly.js.org/">官方展示</a></p>
+<p>安装方式一，在项目文件夹根目录，打开终端。(有问题)</p>
+<pre><code>## npm安装方式，只支持hexo5.0.0以上版本
+npm i hexo-theme-butterfly
+## 但是测试安装后，在themes文件夹下找不到相关主题文件，我放弃了。
+</code></pre>
+<p>安装方式二，git克隆下载。在该项目的根目录下打开终端，使用git下载。</p>
+<pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+## 下载完成后，可以看到在themes文件夹下，多了一个butterfly文件夹。这就是新的主题了。
+## 克隆github的仓库容易失败，可以使用gitee的镜像仓库
+git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly
+</code></pre>
+<hr>
+<h2 id="主题切换与管理"><a href="#主题切换与管理" class="headerlink" title="主题切换与管理"></a>主题切换与管理</h2><p><strong>主题切换</strong></p>
+<p>默认情况下hexo的主题是landscape，如果需要切换主题，则修改根目录下的_config.yml文件。</p>
+<p>找到theme: landscape，修改为theme: butterfly</p>
+<p><strong>主题管理</strong></p>
+<p>正如hexo初始化以后，根目录下的_config.landscape.yml文件一样。<br>我们不需要直接修改主题文件夹下的_config.yml配置文件。</p>
+<p>直接修改主题配置文件，对于主题的后期升级维护，并不友好。<br>所以，当切换了主题后，我们可以在根目录下创建，<br>新的对应主题配置文件。_config.butterfly.yml，<br>当需要修改配置时，直接在_config.butterfly.yml修改设置就可以了。<br>尽量不要直接修改主题文件夹下的文件！！</p>
+<p><strong>其他问题</strong></p>
+<p>测试项目时</p>
+<pre><code>hexo s
+</code></pre>
+<p>报错：extends includes&#x2F;layout.pug block content include .&#x2F;includes&#x2F;mixins&#x2F;post-ui.pug #recent-posts.recent-posts +postUI include includes&#x2F;pagination.pug</p>
+<p>因为你在使用butterfly主题时，没有pug 和 stylus 的解析器，你需要安装:</p>
+<pre><code>## 在项目根目录下
+npm install hexo-renderer-pug hexo-renderer-stylus
+</code></pre>
+<p>再次测试</p>
+<pre><code>hexo s
+</code></pre>
+<p>项目正常运行了</p>
+<hr>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>Hexo全局配置_config.yml详解：<a href="https://www.dazhuanlan.com/lhymn/topics/1378049">https://www.dazhuanlan.com/lhymn/topics/1378049</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(3)butterfly主题设置与优化</title>
+    <url>/blog/hexo/3/</url>
+    <content><![CDATA[<h2 id="butterfly主题设置与优化"><a href="#butterfly主题设置与优化" class="headerlink" title="butterfly主题设置与优化"></a>butterfly主题设置与优化</h2><p>在项目根目录下，创建一个_config.butterfly.yml文件(复制_config.landscape.yml，修改文件名即可)</p>
+<p><strong>_config.butterfly.yml</strong>，<code>注意修改配置文件需要重启服务才能看到效果</code>，hexo s</p>
+<pre><code>menu:
+  首页: / || fas fa-home
+  目录||fa-fw fas fa-compass:
+    归档: /archives/ || fas fa-archive
+    标签: /tags/ || fas fa-tags
+    分类: /categories/ || fas fa-folder-open
+  列表||fas fa-list:
+    音乐: /music/ || fas fa-music
+    视频: /movies/ || fas fa-video
+  链接: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
+  ...
+</code></pre>
+<p><a href="https://butterfly.js.org/posts/4aa8abbe/">查看主题文档配置</a></p>
+<hr>
+<h2 id="menu页面配置"><a href="#menu页面配置" class="headerlink" title="menu页面配置"></a>menu页面配置</h2><p><strong>标签: &#x2F;tags&#x2F; || fas fa-tags</strong></p>
+<pre><code>tags-&gt;index.md
+&lt;!-- 在source文件夹下创建tags文件夹 --&gt;
+&lt;!-- 并在该文件夹下新建一个index.md文件，内容如下： --&gt;
+
+---
+title: 标签
+type: &quot;tags&quot;
+---
+</code></pre>
+<p><strong>分类: &#x2F;categories&#x2F; || fas fa-folder-open</strong><br>categories分类页面。</p>
+<pre><code>categories-&gt;index.md
+&lt;!-- 在source文件夹下创建categories文件夹 --&gt;
+&lt;!-- 并在该文件夹下新建一个index.md文件，内容如下： --&gt;
+
+---
+title: 分类
+type: &quot;categories&quot;
+---
+</code></pre>
+<hr>
+<p><strong>音乐.视频.链接.关于…..</strong></p>
+<p>其他页面需创建页面，自己书写结构和样式。</p>
+<p>如：音乐: &#x2F;music&#x2F; || fas fa-music</p>
+<pre><code>music-&gt;index.md
+&lt;!-- 在source文件夹下创建music文件夹 --&gt;
+&lt;!-- 并在该文件夹下新建一个index.md文件，内容如下： --&gt;
+
+---
+title: 音乐
+---
+
+&lt;!-- 我的音乐 --&gt;
+
+&lt;!-- .....本页结构样式.... --&gt;
+</code></pre>
+<p>在source文件夹下创建什么文件，<br>是由，音乐: &#x2F;music&#x2F; || fas fa-music配置的路径决定的(<code>||后面是配置的图标</code>)。</p>
+<p>如果它是：&#x2F;nav&#x2F;list&#x2F;links&#x2F;</p>
+<p>那么页面就会去，source文件夹下的nav文件夹下，找list文件夹下，找links文件夹下，找index.md文件。</p>
+<p>其他自定义页面都可以根据这个情况自行创建。</p>
+<p>具体请参照<a href="https://butterfly.js.org/posts/4073eda/">butterfly进阶教程</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(4)music页面详细配置</title>
+    <url>/blog/hexo/4/</url>
+    <content><![CDATA[<h2 id="music页面详细配置"><a href="#music页面详细配置" class="headerlink" title="music页面详细配置"></a>music页面详细配置</h2><p>懒得搬了：直接查看gihub中hexo-tag-aplayer的说明文档<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md">https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md</a></p>
+<hr>
+<h2 id="CDN方式使用"><a href="#CDN方式使用" class="headerlink" title="CDN方式使用"></a>CDN方式使用</h2><p>配来配去太麻烦了，直接引入js用吧，直接在music文件夹下的index页面中。meting-js中的id，需要自己去netease(网易云音乐)、tencent, kugou, xiami, baidu等。。自己创建曲目播放列表，复制播放列表的ID替换即可。</p>
+<pre><code>## 网易云音乐
+
+&lt;!-- require APlayer --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- require MetingJS --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- id：song id / playlist id / album id / search keyword --&gt;
+&lt;!-- server：网易云音乐netease、tencent, kugou, xiami, baidu --&gt;
+&lt;!-- type：song, playlist, album, search, artist --&gt;
+
+&lt;meting-js
+    server=&quot;netease&quot;
+    type=&quot;playlist&quot;
+    id=&quot;7313912744&quot;&gt;
+&lt;/meting-js&gt;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(4)vue插值</title>
+    <url>/blog/vue2/4/</url>
+    <content><![CDATA[<hr>
+<h3 id="vue插值"><a href="#vue插值" class="headerlink" title="vue插值"></a>vue插值</h3><p><code>mustache插值</code>。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>拼接操作1：&#123;&#123;Msg1&#125;&#125;&#123;&#123;Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>拼接操作2：&#123;&#123;Msg1 + &quot;&quot; + Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>加法运算：&#123;&#123;Msg1 + Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>减法运算：&#123;&#123;Msg1 - Msg2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title class_">Msg1</span>:<span class="number">50</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title class_">Msg2</span>:<span class="number">20</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p>mustache插值方式只用于dom元素的content内，可以支持一些简单的表达式运算，包括三元表达式。</p>
+<p>以上两种方式可以合并两条数据，虽然Msg1和Msg2都是数值类型，但第一种没有运算符，都作为字符串拼接处理。第二种虽然用到了运算符+号，但中间还加了个””空的字符串，被隐式转换成了字符串。</p>
+<p><code>v-text插值</code>。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-text</span>=<span class="string">&quot;Msg3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  const app = new Vue(&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    el:&quot;#app&quot;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    data:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      Msg3: &#x27;<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&#x27;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  &#125;)</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p>此种方式使用较少，不够灵活。 v-text不会解析字符串中包含的html标签。</p>
+<p><code>v-html插值</code>。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">&quot;Msg3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  const app = new Vue(&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    el:&quot;#app&quot;,</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    data:&#123;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">      Msg3: &#x27;<span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&#x27;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">    &#125;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  &#125;)</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p>v-html会解析字符串中包含的html标签。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(5)模板字符串</title>
+    <url>/blog/ecmascript/5/</url>
+    <content><![CDATA[<hr>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
+<p><strong>&#96;</strong></p>
+</blockquote>
+<p>ES6引入了新的声明字符串的方式，就是模板字符串``，符号是反引号。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`这也是一个字符串!`</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str, <span class="keyword">typeof</span> str)</span><br><span class="line">  <span class="comment">// --&gt; 这也是一个字符串! string</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="模板字符串的特性"><a href="#模板字符串的特性" class="headerlink" title="模板字符串的特性"></a>模板字符串的特性</h3><p><strong>1.内容中可以直接出现换行符</strong></p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表1&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;列表2&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以出现换行</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>2.直接进行变量拼接${}</strong></p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> zhang = <span class="string">&quot;张三&quot;</span></span><br><span class="line">  <span class="keyword">let</span> lisi = <span class="string">&quot;李四&quot;</span></span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;zhang&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;<span class="subst">$&#123;lisi&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span></span><br><span class="line">  <span class="comment">// 可以使用$&#123;&#125;对变量进行拼接</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=7">源：https://www.bilibili.com/video/BV1uK411H7on?p=7</a></p>
+]]></content>
+      <categories>
+        <category>ECMAScript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>ES6</tag>
       </tags>
   </entry>
 </search>
