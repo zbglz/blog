@@ -4431,214 +4431,43 @@ console.log(res) // 123456
 <p>通过CurrentStyle和getComputedStyle读取到的样式都是只读的, 不能通过他们修改, 如果要修改只能通过style修改。</p>
 <figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;#box1&#123;<span class="attr">width</span>:100px;<span class="attr">height</span>:100px;background-<span class="attr">color</span>:lightblue;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// currentStyle只兼容IE, 不兼容火狐和谷歌</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// 这里只能对兼容性进行处理。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> <span class="title class_">CurrentStyle</span> = <span class="keyword">function</span> (<span class="params">element</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(<span class="variable language_">document</span>.<span class="property">defaultView</span>.<span class="property">getComputedStyle</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> <span class="variable language_">document</span>.<span class="property">defaultView</span>.<span class="title function_">getComputedStyle</span>(element, <span class="literal">null</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">return</span> element.<span class="property">currentStyle</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;元素.currentStyle.样式名&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">CurrentStyle</span>(box1).<span class="property">width</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-
 <hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(74)其他相关的属性</title>
-    <url>/blog/javascript/74/</url>
-    <content><![CDATA[<hr>
 <h3 id="其他相关的属性"><a href="#其他相关的属性" class="headerlink" title="其他相关的属性"></a>其他相关的属性</h3><blockquote>
 <p>只读属性clientWidth  clientHeight</p>
 </blockquote>
 <p>clientWidth、clientHeight与style 、currentStyle、getComputedStyle获取样式值不同, 后者获取的样式是什么, 值是多少就是多少。<code>而clientWidth和clientHeight</code>, 如果元素还有padding之类的设置。如例子中, 元素的宽高都是100.如果设置了padding:10px; 那么在页面中元素的实际宽高其实是120, 而clientWidth和clientHeight就会获取到包含padding的宽高, 也就是120。</p>
 <p>所以，clientWidth、clientHeight获取到的值是<code>内容区 + 内边距(padding)</code>。</p>
 <blockquote>
-<p>只读属性 offsetWidth  offsetHeight</p>
+<p>只读属性clientWidth  clientHeight</p>
 </blockquote>
 <p>offsetWidth、offsetHeight获取到的值是<code>内容区 + 内边距(padding) + 边框(border)</code>。</p>
-<pre><code>&lt;style&gt;button&#123;margin-bottom:10px;&#125;#box1&#123;width:100px;height:100px;background-color:lightblue;padding:10px;border:10px solid blue;&#125;&lt;/style&gt;
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;button&#123;margin-<span class="attr">bottom</span>:10px;&#125;#box1&#123;<span class="attr">width</span>:100px;<span class="attr">height</span>:100px;background-<span class="attr">color</span>:lightblue;<span class="attr">padding</span>:10px;<span class="attr">border</span>:10px solid blue;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>clientWidth和clientHeight<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>offsetWidth和offsetHeight<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn01, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;clientWidth,clientHeight元素的可见宽度和高度(内容区 + 内边距)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box1.<span class="property">clientWidth</span>, box1.<span class="property">clientHeight</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn02, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;offsetWidth,offsetHeight元素的宽度和高度(内容区 + 内边距 + 边框)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box1.<span class="property">offsetWidth</span>, box1.<span class="property">offsetHeight</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-&lt;button id=&quot;btn01&quot;&gt;clientWidth和clientHeight&lt;/button&gt;
-&lt;button id=&quot;btn02&quot;&gt;offsetWidth和offsetHeight&lt;/button&gt;
-
-&lt;div id=&quot;box1&quot;&gt;box1&lt;/div&gt;
-
-&lt;script&gt;
-  var btn01 = document.getElementById(&quot;btn01&quot;);
-  var btn02 = document.getElementById(&quot;btn02&quot;);
-  var box1 = document.getElementById(&quot;box1&quot;);
-  
-  bind(btn01, &quot;click&quot;, function()&#123;
-    console.warn(&quot;clientWidth,clientHeight元素的可见宽度和高度(内容区 + 内边距)&quot;)
-    console.log(box1.clientWidth, box1.clientHeight)
-  &#125;)
-  
-  bind(btn02, &quot;click&quot;, function()&#123;
-    console.warn(&quot;offsetWidth,offsetHeight元素的宽度和高度(内容区 + 内边距 + 边框)&quot;)
-    console.log(box1.offsetWidth, box1.offsetHeight)
-  &#125;)
-  
-  function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-      obj.addEventListener(eventStr, callback, false)
-    &#125;else&#123;
-      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
-        callback.call(obj)
-      &#125;)
-    &#125;
-  &#125;
-&lt;/script&gt;
-</code></pre>
 <blockquote>
 <p>offsetParent 获取离当前元素最近的、开启了定位的祖先元素</p>
 </blockquote>
 <p>offsetParent返回元素的偏移容器, 它可以获取离当前元素最近的、开启了定位的祖先元素, 只要该祖先元素的position不是static, 就是开启了定位。</p>
 <p>下例中, box1的祖先元素未开启定位时,无论box1有多少祖先元素, offsetParent获取到的都是body。当box1的某一祖先元素开启定位时, box1获取到的offsetParent就是开启定位的那个元素。(多个祖先元素都开启时, 获取到的是最近的祖先元素)。</p>
-<pre><code>&lt;style&gt;button&#123;margin-bottom:10px;&#125;#box1,#box4&#123;width:100px;height:100px;background-color:lightblue;&#125;&lt;/style&gt;
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;button&#123;margin-<span class="attr">bottom</span>:10px;&#125;#box1,#box4&#123;<span class="attr">width</span>:100px;<span class="attr">height</span>:100px;background-<span class="attr">color</span>:lightblue;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>offsetParent祖先元素未定位<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box3&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box2&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>offsetParent祖先元素有定位<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box6&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box5&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box4&quot;</span>&gt;</span>box4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn01, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box1.<span class="property">offsetParent</span>.<span class="property">nodeName</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box4 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box4&quot;</span>);  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn02, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box4.<span class="property">offsetParent</span>.<span class="property">id</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-&lt;button id=&quot;btn01&quot;&gt;offsetParent祖先元素未定位&lt;/button&gt;
-&lt;div id=&quot;box3&quot;&gt;
-  &lt;div id=&quot;box2&quot;&gt;
-    &lt;div id=&quot;box1&quot;&gt;box1&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;hr /&gt;
-&lt;button id=&quot;btn02&quot;&gt;offsetParent祖先元素有定位&lt;/button&gt;
-&lt;div id=&quot;box6&quot; style=&quot;position:relative;&quot;&gt;
-  &lt;div id=&quot;box5&quot; style=&quot;position:relative;&quot;&gt;
-    &lt;div id=&quot;box4&quot;&gt;box4&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-  var btn01 = document.getElementById(&quot;btn01&quot;);
-  var box1 = document.getElementById(&quot;box1&quot;);
-  bind(btn01, &quot;click&quot;, function()&#123;
-    console.log(box1.offsetParent.nodeName)
-  &#125;)
-  
-  var btn02 = document.getElementById(&quot;btn02&quot;);
-  var box4 = document.getElementById(&quot;box4&quot;);  
-  bind(btn02, &quot;click&quot;, function()&#123;
-    console.log(box4.offsetParent.id)
-  &#125;)
-  
-  function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-      obj.addEventListener(eventStr, callback, false)
-    &#125;else&#123;
-      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
-        callback.call(obj)
-      &#125;)
-    &#125;
-  &#125;
-&lt;/script&gt;
-</code></pre>
 <blockquote>
 <p>offsetLeft  offsetTop</p>
 </blockquote>
-<p>offsetLeft, 当前元素相对于<strong>其定位元素</strong>水平的偏移量。offsetTop, 当前元素相对于<strong>其定位元素</strong>垂直的偏移量。<br>注：其定位元素, 就是指它的offsetParent。</p>
-<pre><code>&lt;style&gt;button&#123;margin-bottom:10px;&#125;#box1,#box4&#123;width:110px;height:110px;background-color:lightblue;word-break:break-all;font-size:12px;&#125;&lt;/style&gt;
+<p>offsetLeft, 当前元素相对于<strong>其定位元素</strong>水平的偏移量。offsetTop, 当前元素相对于<strong>其定位元素</strong>垂直的偏移量。注：其定位元素, 就是指它的offsetParent。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;button&#123;margin-<span class="attr">bottom</span>:10px;&#125;#box1,#box4&#123;<span class="attr">width</span>:110px;<span class="attr">height</span>:110px;background-<span class="attr">color</span>:lightblue;word-<span class="attr">break</span>:<span class="keyword">break</span>-all;font-<span class="attr">size</span>:12px;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>box1的offsetLeft<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box3&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box2&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>box1的祖先元素未定位, 那它的offsetParent是body, 那么它的offsetLeft就是相对于body来说的<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>box4的offsetLeft<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box6&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box5&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box4&quot;</span>&gt;</span>box4祖先元素有定位, 它的offsetParent是离它最近开启定位的box5, 它的offsetLeft就是相对于box5来说的<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn01, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box1.<span class="property">offsetLeft</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box4 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box4&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn02, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(box4.<span class="property">offsetLeft</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-&lt;button id=&quot;btn01&quot;&gt;box1的offsetLeft&lt;/button&gt;
-&lt;div id=&quot;box3&quot;&gt;
-  &lt;div id=&quot;box2&quot;&gt;
-    &lt;div id=&quot;box1&quot;&gt;box1的祖先元素未定位, 那它的offsetParent是body, 那么它的offsetLeft就是相对于body来说的&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;hr /&gt;
-&lt;button id=&quot;btn02&quot;&gt;box4的offsetLeft&lt;/button&gt;
-&lt;div id=&quot;box6&quot; style=&quot;position:relative;&quot;&gt;
-  &lt;div id=&quot;box5&quot; style=&quot;position:relative;&quot;&gt;
-    &lt;div id=&quot;box4&quot;&gt;box4祖先元素有定位, 它的offsetParent是离它最近开启定位的box5, 它的offsetLeft就是相对于box5来说的&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-  var btn01 = document.getElementById(&quot;btn01&quot;);
-  var box1 = document.getElementById(&quot;box1&quot;);
-  bind(btn01, &quot;click&quot;, function()&#123;
-    console.log(box1.offsetLeft)
-  &#125;)
-  
-  var btn02 = document.getElementById(&quot;btn02&quot;);
-  var box4 = document.getElementById(&quot;box4&quot;);
-  bind(btn02, &quot;click&quot;, function()&#123;
-    console.log(box4.offsetLeft)
-  &#125;)
-  
-  function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-      obj.addEventListener(eventStr, callback, false)
-    &#125;else&#123;
-      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
-        callback.call(obj)
-      &#125;)
-    &#125;
-  &#125;
-&lt;/script&gt;
-</code></pre>
 <blockquote>
 <p>scrollWidth scrollHeight scrollLeft scrollTop</p>
 </blockquote>
 <p>scrollWidth 返回元素的整体宽度。scrollHeight 返回元素的整体高度。scrollLeft 返回元素左边缘与视图之间的距离。scrollTop 返回元素上边缘与视图之间的距离。</p>
 <p>当scrollHeight-scrollTop &#x3D; clientHeight时, 说明垂直滚动条滚到底了。<br>当scrollWidth-scrollLeft&#x3D;clientWidth时, 说明水平滚动条滚到最右侧了。</p>
-<pre><code>&lt;style&gt;button&#123;margin-bottom:10px;&#125;#box1&#123;width:200px;height:120px;overflow:auto;&#125;#box2&#123;width:300px;height:300px;background-color:lightgreen;&#125;&lt;/style&gt;
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;button&#123;margin-<span class="attr">bottom</span>:10px;&#125;#box1&#123;<span class="attr">width</span>:200px;<span class="attr">height</span>:120px;<span class="attr">overflow</span>:auto;&#125;#box2&#123;<span class="attr">width</span>:300px;<span class="attr">height</span>:300px;background-<span class="attr">color</span>:lightgreen;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>box1的offsetLeft<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box2&quot;</span>&gt;</span>box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn01, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;box1.clientHeight = 滚动区域的可见高度-滚动条高度 =&quot;</span>, box1.<span class="property">clientHeight</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;box1.scrollHeight = 内部box2可滚动的高度 =&quot;</span>, box1.<span class="property">scrollHeight</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;box1.scrollTop = 内部box2已滚动的高度 =&quot;</span>, box1.<span class="property">scrollTop</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-&lt;button id=&quot;btn01&quot;&gt;box1的offsetLeft&lt;/button&gt;
-&lt;div id=&quot;box1&quot;&gt;
-  &lt;div id=&quot;box2&quot;&gt;box2&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-  var btn01 = document.getElementById(&quot;btn01&quot;);
-  var box1 = document.getElementById(&quot;box1&quot;);
-  bind(btn01, &quot;click&quot;, function()&#123;
-    console.log(&quot;box1.clientHeight = 滚动区域的可见高度-滚动条高度 =&quot;, box1.clientHeight)
-    console.log(&quot;box1.scrollHeight = 内部box2可滚动的高度 =&quot;, box1.scrollHeight)
-    console.log(&quot;box1.scrollTop = 内部box2已滚动的高度 =&quot;, box1.scrollTop)
-  &#125;)
-  
-  function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-      obj.addEventListener(eventStr, callback, false)
-    &#125;else&#123;
-      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
-        callback.call(obj)
-      &#125;)
-    &#125;
-  &#125;
-&lt;/script&gt;
-</code></pre>
+<hr>
 <p>例子，滚动条滚到最底判断。</p>
-<pre><code>&lt;style&gt;button&#123;margin-bottom:10px;&#125;label&#123;user-select:none;&#125;#info&#123;height:80px;overflow:auto;background-color:lightblue;&#125;&lt;/style&gt;
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;button&#123;margin-<span class="attr">bottom</span>:10px;&#125;label&#123;user-<span class="attr">select</span>:none;&#125;#info&#123;<span class="attr">height</span>:80px;<span class="attr">overflow</span>:auto;background-<span class="attr">color</span>:lightblue;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>请仔细阅读用户注册协议<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;info&quot;</span>&gt;</span>你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;label&gt;<span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> /&gt;</span></span>同意&lt;/lebal&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span> <span class="attr">disabled</span>=<span class="string">&quot;disabled&quot;</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> info = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;info&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(info, <span class="string">&quot;scroll&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(info.<span class="property">scrollHeight</span>-info.<span class="property">scrollTop</span>==info.<span class="property">clientHeight</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(info.<span class="property">scrollHeight</span>-info.<span class="property">scrollTop</span>==info.<span class="property">clientHeight</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      btn01.<span class="property">disabled</span> = <span class="literal">false</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      btn01.<span class="property">disabled</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-&lt;h4&gt;请仔细阅读用户注册协议&lt;/h4&gt;
-&lt;div id=&quot;info&quot;&gt;你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。你必须仔细阅读注册协议才能注册(将滚动条拉到底)。&lt;/div&gt;
-&lt;label&gt;&lt;input type=&quot;checkbox&quot; /&gt;同意&lt;/lebal&gt;
-&lt;button id=&quot;btn01&quot; disabled=&quot;disabled&quot;&gt;注册&lt;/button&gt;
 
-&lt;script&gt;
-  var btn01 = document.getElementById(&quot;btn01&quot;);
-  var info = document.getElementById(&quot;info&quot;);
-  bind(info, &quot;scroll&quot;, function()&#123;
-    console.log(info.scrollHeight-info.scrollTop==info.clientHeight)
-    if(info.scrollHeight-info.scrollTop==info.clientHeight)&#123;
-      btn01.disabled = false
-    &#125;else&#123;
-      btn01.disabled = true
-    &#125;
-  &#125;)
-  
-  function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-      obj.addEventListener(eventStr, callback, false)
-    &#125;else&#123;
-      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
-        callback.call(obj)
-      &#125;)
-    &#125;
-  &#125;
-&lt;/script&gt;
-</code></pre>
 <hr>
 ]]></content>
       <categories>
@@ -4649,8 +4478,8 @@ console.log(res) // 123456
       </tags>
   </entry>
   <entry>
-    <title>(75)事件对象</title>
-    <url>/blog/javascript/75/</url>
+    <title>(74)事件对象</title>
+    <url>/blog/javascript/74/</url>
     <content><![CDATA[<hr>
 <h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>事件对象：当事件的响应函数被触发时, 浏览器每次都会将一个事件对象作为实参传递进响应函数。可以用argument获取该参数, 但一般情况下, 我们都会自己定义一个形参, 方便使用。</p>
 <p>!!<code>但是在IE8及以下浏览器中</code>, 相应函数被触发时, 浏览器不会传递事件对象, 是将事件对象作为window对象的属性保存的。只能通过window.event.clientX获取, 但火狐又不兼容这种写法, 这时就只能判断了。</p>
@@ -4737,18 +4566,6 @@ var top = event.clientY + scrollW
 &lt;/script&gt;
 </code></pre>
 <hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(76)事件冒泡</title>
-    <url>/blog/javascript/76/</url>
-    <content><![CDATA[<hr>
 <h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>事件冒泡：<br>元素绑定事件：<strong>span div  body</strong>, 都绑定了单击响应函数。<br>元素之间关系：<strong>子级 父级 祖先</strong>。<code>点击span的响应函数时。三个元素的点击事件都被触发</code>。<br>事件触发顺序：<strong>span div  body</strong>。</p>
 <pre><code>&lt;body&gt;
     &lt;div id=&quot;box1&quot;&gt;
@@ -4881,9 +4698,132 @@ var top = event.clientY + scrollW
       </tags>
   </entry>
   <entry>
-    <title>(77)事件的委派</title>
-    <url>/blog/javascript/77/</url>
+    <title>(75)事件冒泡</title>
+    <url>/blog/javascript/75/</url>
     <content><![CDATA[<hr>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>事件冒泡：<br>元素绑定事件：<strong>span div  body</strong>, 都绑定了单击响应函数。<br>元素之间关系：<strong>子级 父级 祖先</strong>。<code>点击span的响应函数时。三个元素的点击事件都被触发</code>。<br>事件触发顺序：<strong>span div  body</strong>。</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;box1&quot;&gt;
+        我是box1
+        &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>这种现象就叫做<code>事件冒泡(Bubble)。</code>所谓的冒泡指的就是, 事件向上传导, 当后代元素上的时间被触发时, 其祖先元素上相同的事件也会触发。</p>
+<pre><code>&lt;style&gt;#box1&#123;width:200px;height:100px;background-color:lightblue;&#125;#s1&#123;background-color:lightyellow;&#125;&lt;/style&gt;
+
+&lt;div id=&quot;box1&quot;&gt;
+  我是box1
+  &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var s1 = document.getElementById(&quot;s1&quot;)
+  var box1 = document.getElementById(&quot;box1&quot;)
+  bind(s1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;span被点击了&quot;)
+  &#125;)
+  bind(box1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;div被点击了&quot;)
+  &#125;)
+  bind(document.body, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;body被点击了&quot;)
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p><strong>从开发的角度讲</strong>。<br>大部分情况冒泡都是有用的。比如上一节的div跟随鼠标移动。试想, 页面中还有一个静止的div, 当鼠标移动到该div的内部时, 跟随鼠标的那个div还会跟着移动吗？要知道此时鼠标已经是在那么div中移动了, 并不是在document中移动(移动事件是绑定给document的。), 但是跟随鼠标移动的那个div还是会跟着鼠标移动, 这就是冒泡带来的好处了。</p>
+<p><strong>但是在上一个例子中</strong>, 很明显, 我们点击span时, 只希望span的点击事件被触发, 不希望它的父级乃至祖先元素被触发, 这个时候就需要取消冒泡。</p>
+<pre><code>event.cancelBubble = true
+</code></pre>
+<p>cancelBubble这个属性本身是IE的属性, 但现在很多浏览器也都支持, 包括chrome等。所以cancelBubble基本不会有什么兼容性问题。</p>
+<p>例：</p>
+<pre><code>&lt;style&gt;#box1&#123;width:200px;height:100px;background-color:lightblue;&#125;#s1&#123;background-color:lightyellow;&#125;&lt;/style&gt;
+
+&lt;div id=&quot;box1&quot;&gt;
+  我是box1
+  &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var s1 = document.getElementById(&quot;s1&quot;)
+  var box1 = document.getElementById(&quot;box1&quot;)
+  bind(s1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;span被点击了&quot;)
+    event = event || window.event
+    event.cancelBubble = true
+  &#125;)
+  bind(box1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;div被点击了&quot;)
+    event = event || window.event
+    event.cancelBubble = true
+  &#125;)
+  bind(document.body, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;body被点击了&quot;)
+    event = event || window.event
+    event.cancelBubble = true
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>div跟随鼠标示例中, 取消冒泡, 再移动鼠标到里面试试。</p>
+<pre><code>&lt;style&gt;body&#123;height:1000px;width:1000px;&#125;#followDiv&#123;width:50px;height:50px;background-color:lightblue;position:absolute;&#125;#s1,#s2&#123;padding:10px;background-color:lightgreen&#125;&lt;/style&gt;
+
+&lt;span id=&quot;s1&quot;&gt;取消冒泡&lt;/span&gt;
+&lt;span id=&quot;s2&quot;&gt;没取消冒泡&lt;/span&gt;
+&lt;div id=&quot;followDiv&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  var followDiv = document.getElementById(&quot;followDiv&quot;);
+  var s1 = document.getElementById(&quot;s1&quot;);
+  
+  bind(document, &quot;mousemove&quot;, function(event)&#123;
+    event = event || window.evnet
+    var scrollW = document.body.scrollLeft || document.documentElement.scrollLeft
+    var scrollH = document.body.scrollTop || document.documentElement.scrollTop
+    
+    var left = event.clientX + scrollW
+    var top = event.clientY + scrollH
+    
+    followDiv.style.left = left + &quot;px&quot;
+    followDiv.style.top = top + &quot;px&quot;
+  &#125;)
+  
+  bind(s1, &quot;mousemove&quot;, function(event)&#123;
+    event = event || window.evnet
+    event.cancelBubble = true
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<hr>
 <h3 id="动态绑定事件"><a href="#动态绑定事件" class="headerlink" title="动态绑定事件"></a>动态绑定事件</h3><p>我们有一些超链接, 在初始化页面的时候就给他们绑定了单击响应函数。还有一个按钮可以动态添加超链接。但是新添加的超链接是没绑定点击事件的, 还需要去重新绑定。</p>
 <pre><code>&lt;button id=&quot;btn_a&quot;&gt;点击添加超链接&lt;/button&gt;
 &lt;ul id=&quot;ul_a&quot;&gt;
@@ -4995,18 +4935,6 @@ var top = event.clientY + scrollW
 &lt;/script&gt;
 </code></pre>
 <hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(78)事件的绑定</title>
-    <url>/blog/javascript/78/</url>
-    <content><![CDATA[<hr>
 <h3 id="事件的绑定"><a href="#事件的绑定" class="headerlink" title="事件的绑定"></a>事件的绑定</h3><p><strong>对象.事件 &#x3D; 函数</strong>。</p>
 <p>我们给按钮绑定了2个onclick事件, 但是第一个绑定的事件被第二个绑定的事件覆盖了。它只能同时为一个元素的一个事件绑定一个响应函数, 不能绑定多个。</p>
 <p><strong>但是有时候我们就需要为元素的一个事件, 绑定多个函数, 这种方式绑定就不够灵活了</strong>。<code>addEventListener()</code> 通过这个方法, 也可以为元素绑定响应函数。</p>
@@ -5092,8 +5020,8 @@ btn01.attachEvent(&quot;onclick&quot;,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(79)事件的传播</title>
-    <url>/blog/javascript/79/</url>
+    <title>(76)事件的传播</title>
+    <url>/blog/javascript/76/</url>
     <content><![CDATA[<hr>
 <h3 id="事件的传播"><a href="#事件的传播" class="headerlink" title="事件的传播"></a>事件的传播</h3><p>关于事件的传播, 网景公司和微软有不同的理解。微软公司认为事件应该是由内向外传播, 也就是当事件触发时, 应该先触发当前元素上的事件, 然后再向当前元素的祖先元素传播。<strong>也就是说, 事件应该在冒泡阶段就执行</strong>。<br>网景公司认为, 事件应该是由外向内传播的。也就是说应该先触发, 当前元素最外层的祖先元素的事件。然后再向内传播给后代元素。<strong>称为事件的捕获阶段</strong>。<br>最终W3C综合了两个公司的方案, 将事件的传播分成了三个阶段。</p>
 <p><strong>捕获阶段：在捕获阶段, 从最外层的祖先元素, 向目标元素进行事件的捕获, 但是默认此时不会触发事件。</strong>(祖先元素：W3C默认设计的是document, 但是大部分浏览器都设计成了从window开始)。<br><strong>目标阶段：事件捕获到了目标元素。捕获结束, 开始在目标元素上触发事件</strong>。<br><strong>冒泡阶段：事件从目标元素, 开始向它的祖先元素传递。依次触发祖先元素上的事件</strong>。</p>
@@ -5128,25 +5056,8 @@ btn01.attachEvent(&quot;onclick&quot;,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(8)未定义：Undefined</title>
-    <url>/blog/javascript/8/</url>
-    <content><![CDATA[<hr>
-<h3 id="未定义：Undefined"><a href="#未定义：Undefined" class="headerlink" title="未定义：Undefined"></a>未定义：Undefined</h3><p>Undefined的值类型也只有一个。就一个undefined。<strong>当我们声明一个变量, 但是并不给这个变量赋值时, 它的值就是undefined</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值是：&quot;</span> + a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值类型是：&quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(80)拖拽练习</title>
-    <url>/blog/javascript/80/</url>
+    <title>(77)拖拽练习</title>
+    <url>/blog/javascript/77/</url>
     <content><![CDATA[<hr>
 <h3 id="拖拽练习"><a href="#拖拽练习" class="headerlink" title="拖拽练习"></a>拖拽练习</h3><p>当鼠标在目标元素上按下时, 开始拖拽。onmousedown<br>当鼠标移动时, 目标元素跟着鼠标移动。onmousemove<br>当鼠标松开时, 目标元素固定在当前位置。onmouseup</p>
 <p>点击拖拽一个div, 跟着鼠标移动。</p>
@@ -5163,8 +5074,8 @@ btn01.attachEvent(&quot;onclick&quot;,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>(81)proxy代理</title>
-    <url>/blog/javascript/81/</url>
+    <title>(78)proxy代理</title>
+    <url>/blog/javascript/78/</url>
     <content><![CDATA[<hr>
 <h3 id="proxy代理"><a href="#proxy代理" class="headerlink" title="proxy代理"></a>proxy代理</h3><p><strong>vue大概的基本原理</strong>：</p>
 <pre><code>数据劫持---&gt;观察者---&gt;数据解析、指令、js对象, diff算法---&gt;dom。
@@ -5303,8 +5214,8 @@ newTarget[&#39;c&#39;] = 100 // c并不会添加到对象中, 因为阻止了拓
       </tags>
   </entry>
   <entry>
-    <title>(82)proxy的理解</title>
-    <url>/blog/javascript/82/</url>
+    <title>(79)proxy的理解</title>
+    <url>/blog/javascript/79/</url>
     <content><![CDATA[<hr>
 <h3 id="proxy的理解"><a href="#proxy的理解" class="headerlink" title="proxy的理解"></a>proxy的理解</h3><p><strong>首先我们来看一看对象的操作</strong>。</p>
 <pre><code>//当我们需要获取对象中的a属性时。直接obj.a即可获取相应的值。
@@ -5376,6 +5287,23 @@ console.log(proxy.a) // 1
       </categories>
       <tags>
         <tag>ECMAScript</tag>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(8)未定义：Undefined</title>
+    <url>/blog/javascript/8/</url>
+    <content><![CDATA[<hr>
+<h3 id="未定义：Undefined"><a href="#未定义：Undefined" class="headerlink" title="未定义：Undefined"></a>未定义：Undefined</h3><p>Undefined的值类型也只有一个。就一个undefined。<strong>当我们声明一个变量, 但是并不给这个变量赋值时, 它的值就是undefined</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值是：&quot;</span> + a);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a的值类型是：&quot;</span> + <span class="keyword">typeof</span> a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
         <tag>javascript</tag>
       </tags>
   </entry>
@@ -5946,46 +5874,6 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
-    <title>(16)数组的响应式</title>
-    <url>/blog/vue2/16/</url>
-    <content><![CDATA[<hr>
-<h3 id="数组的响应式"><a href="#数组的响应式" class="headerlink" title="数组的响应式"></a>数组的响应式</h3><blockquote>
-<p>非响应式</p>
-</blockquote>
-<p>直接通过索引修改数组元素不是响应式。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;letters&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;resetLetters&quot;</span>&gt;</span>通过索引修改数组的第一个值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">letters</span>:[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">resetLetters</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>[<span class="number">0</span>] = <span class="number">1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">letters</span>, <span class="string">&quot;letters数组发生了变化, 但页面中绑定的值没有响应式变化。&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<p>根据索引修改数组, 虽然data中的数据会改变, 但页面无法做到响应式。</p>
-<pre><code>Vue提供了一种通过索引修改数组的方法, 可以做到响应式。
-Vue.set(要修改的对象,索引值,修改后的值)
-如：Vue.set(this.letters, 0, 1)
-</code></pre>
-<blockquote>
-<p>支持响应式的操作</p>
-</blockquote>
-<p>其他可以做到响应式的数组方法包括： push、pop、shift、unshift、splice、sort、reverse…。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;letters&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrPush&quot;</span>&gt;</span>push:在数组的最后追加元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrPop&quot;</span>&gt;</span>pop:删除数组最后一个元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrUnshift&quot;</span>&gt;</span>unshift:在数组的最前面添加元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrShift&quot;</span>&gt;</span>shift:删除数组第一个元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice&quot;</span>&gt;</span>splice:从位置1开始, 删除2个元素, 添加2个元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSort&quot;</span>&gt;</span>sort:对数组进行排序<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrReverse&quot;</span>&gt;</span>reverse:对数组进行反转<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">letters</span>:[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrPush</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">push</span>(<span class="string">&quot;push&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrPop</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">pop</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrUnshift</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">unshift</span>(<span class="string">&quot;unshift&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrShift</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">shift</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;n&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSort</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">sort</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrReverse</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">reverse</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>splice</p>
-</blockquote>
-<p>使用splice操作数组(练习)。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;letters&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice1&quot;</span>&gt;</span>splice(1,2)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice2&quot;</span>&gt;</span>splice(1)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice3&quot;</span>&gt;</span>splice(1,2,&quot;m&quot;,&quot;n&quot;)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice4&quot;</span>&gt;</span>splice(1,0,&quot;m&quot;,&quot;n&quot;)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">letters</span>:[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice1</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 删除后面的2个元素&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice2</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 删除后面所有元素&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice3</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;n&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 删除2个元素, 添加2个新元素(删除和添加的元素个数一样, 可以理解为替换)&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice4</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">0</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;n&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 不需要删除, 直接插入2个元素(m和n)&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(15)v-for遍历</title>
     <url>/blog/vue2/15/</url>
     <content><![CDATA[<hr>
@@ -6017,6 +5905,46 @@ Vue.set(要修改的对象,索引值,修改后的值)
   &lt;/ul&gt;
 &lt;/div&gt;
 </code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(16)数组的响应式</title>
+    <url>/blog/vue2/16/</url>
+    <content><![CDATA[<hr>
+<h3 id="数组的响应式"><a href="#数组的响应式" class="headerlink" title="数组的响应式"></a>数组的响应式</h3><blockquote>
+<p>非响应式</p>
+</blockquote>
+<p>直接通过索引修改数组元素不是响应式。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;letters&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;resetLetters&quot;</span>&gt;</span>通过索引修改数组的第一个值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">letters</span>:[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">resetLetters</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>[<span class="number">0</span>] = <span class="number">1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">letters</span>, <span class="string">&quot;letters数组发生了变化, 但页面中绑定的值没有响应式变化。&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p>根据索引修改数组, 虽然data中的数据会改变, 但页面无法做到响应式。</p>
+<pre><code>Vue提供了一种通过索引修改数组的方法, 可以做到响应式。
+Vue.set(要修改的对象,索引值,修改后的值)
+如：Vue.set(this.letters, 0, 1)
+</code></pre>
+<blockquote>
+<p>支持响应式的操作</p>
+</blockquote>
+<p>其他可以做到响应式的数组方法包括： push、pop、shift、unshift、splice、sort、reverse…。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;letters&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrPush&quot;</span>&gt;</span>push:在数组的最后追加元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrPop&quot;</span>&gt;</span>pop:删除数组最后一个元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrUnshift&quot;</span>&gt;</span>unshift:在数组的最前面添加元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrShift&quot;</span>&gt;</span>shift:删除数组第一个元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice&quot;</span>&gt;</span>splice:从位置1开始, 删除2个元素, 添加2个元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSort&quot;</span>&gt;</span>sort:对数组进行排序<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrReverse&quot;</span>&gt;</span>reverse:对数组进行反转<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">letters</span>:[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrPush</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">push</span>(<span class="string">&quot;push&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrPop</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">pop</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrUnshift</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">unshift</span>(<span class="string">&quot;unshift&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrShift</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">shift</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;n&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSort</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">sort</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrReverse</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">reverse</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>splice</p>
+</blockquote>
+<p>使用splice操作数组(练习)。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;letters&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice1&quot;</span>&gt;</span>splice(1,2)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice2&quot;</span>&gt;</span>splice(1)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice3&quot;</span>&gt;</span>splice(1,2,&quot;m&quot;,&quot;n&quot;)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;arrSplice4&quot;</span>&gt;</span>splice(1,0,&quot;m&quot;,&quot;n&quot;)<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">letters</span>:[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice1</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 删除后面的2个元素&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice2</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 删除后面所有元素&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice3</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;n&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 删除2个元素, 添加2个新元素(删除和添加的元素个数一样, 可以理解为替换)&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">arrSplice4</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">letters</span>.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">0</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;n&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;从位置1开始, 不需要删除, 直接插入2个元素(m和n)&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
 <hr>
 ]]></content>
       <categories>
