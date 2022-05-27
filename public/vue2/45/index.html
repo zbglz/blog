@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(45)vue文件的使用 | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="vue文件的使用上一节中，我们已经把html中vue实例挂载的div，用tempalte替换掉了。 import Vue from &quot;vue&quot; new Vue(&amp;#123;   el: &quot;#app&quot;,   template: &#96;     &lt;div&gt;       &lt;div&gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&lt;">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(45)vue文件的使用 | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="vue文件的使用上一节中, 我们已经把html中vue实例挂载的div, 用tempalte替换掉了。 import Vue from &quot;vue&quot; new Vue(&amp;#123;   el: &quot;#app&quot;,   template: &#96;     &lt;div&gt;       &lt;div&gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(45)vue文件的使用">
 <meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/45/index.html">
 <meta property="og:site_name" content="LaoGao&#39;s Blog">
-<meta property="og:description" content="vue文件的使用上一节中，我们已经把html中vue实例挂载的div，用tempalte替换掉了。 import Vue from &quot;vue&quot; new Vue(&amp;#123;   el: &quot;#app&quot;,   template: &#96;     &lt;div&gt;       &lt;div&gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&lt;">
+<meta property="og:description" content="vue文件的使用上一节中, 我们已经把html中vue实例挂载的div, 用tempalte替换掉了。 import Vue from &quot;vue&quot; new Vue(&amp;#123;   el: &quot;#app&quot;,   template: &#96;     &lt;div&gt;       &lt;div&gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;l">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-60.png">
 <meta property="article:published_time" content="2022-05-24T03:15:10.996Z">
-<meta property="article:modified_time" content="2022-05-26T02:27:27.815Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:07.099Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="webpack">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:27:27'
+  postUpdate: '2022-05-27 09:42:07'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,8 +143,8 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(45)vue文件的使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T03:15:10.996Z" title="发表于 2022-05-24 11:15:10">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:27:27.815Z" title="更新于 2022-05-26 10:27:27">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h3 id="vue文件的使用"><a href="#vue文件的使用" class="headerlink" title="vue文件的使用"></a>vue文件的使用</h3><p><strong>上一节中，我们已经把html中vue实例挂载的div，用tempalte替换掉了</strong>。</p>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(45)vue文件的使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T03:15:10.996Z" title="发表于 2022-05-24 11:15:10">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:07.099Z" title="更新于 2022-05-27 09:42:07">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="vue文件的使用"><a href="#vue文件的使用" class="headerlink" title="vue文件的使用"></a>vue文件的使用</h3><p><strong>上一节中, 我们已经把html中vue实例挂载的div, 用tempalte替换掉了</strong>。</p>
 <pre><code>import Vue from &quot;vue&quot;
 new Vue(&#123;
   el: &quot;#app&quot;,
@@ -158,8 +158,8 @@ new Vue(&#123;
   &#125;
 &#125;)
 </code></pre>
-<p>但是，在vue实例中的tempalte直接编辑页面内容，仍然是不友好的。</p>
-<p>&#x2F;&#x2F;用单独的一个组件，替换template。<br>&#x2F;&#x2F;既然是一个组件，data也可以不使用vue实例的data了。<br>&#x2F;&#x2F;在vue实例中注册子组件App<br>&#x2F;&#x2F;然后直接在vue实例的template中直接使用App子组件就可以了。</p>
+<p>但是, 在vue实例中的tempalte直接编辑页面内容, 仍然是不友好的。</p>
+<p>&#x2F;&#x2F;用单独的一个组件, 替换template。<br>&#x2F;&#x2F;既然是一个组件, data也可以不使用vue实例的data了。<br>&#x2F;&#x2F;在vue实例中注册子组件App<br>&#x2F;&#x2F;然后直接在vue实例的template中直接使用App子组件就可以了。</p>
 <pre><code>import Vue from &quot;vue&quot;
 
 const App = &#123;
@@ -183,14 +183,14 @@ new Vue(&#123;
   &#125;
 &#125;)
 </code></pre>
-<p>编译一下，成功。</p>
+<p>编译一下, 成功。</p>
 <pre><code>F:\learnwebpack\webpack-start&gt; npm run build
 </code></pre>
-<p><strong>当然，页面代码仍然在main.js中。我们将组件App内的东西单独用一个js文件来放</strong>。</p>
+<p><strong>当然, 页面代码仍然在main.js中。我们将组件App内的东西单独用一个js文件来放</strong>。</p>
 <p>main.js</p>
 <pre><code>import Vue from &quot;vue&quot;
 
-//导入app.js，因为appjs是用export default导出的。
+//导入app.js, 因为appjs是用export default导出的。
 //所以这里导入可以自定义导入名：App
 import App from &quot;./vue/app.js&quot;
 
@@ -216,13 +216,13 @@ new Vue(&#123;
   &#125;
 &#125;
 </code></pre>
-<p>ain.js内的代码立即就变得，清晰简洁了。</p>
-<pre><code>#编译一下，成功。
+<p>ain.js内的代码立即就变得, 清晰简洁了。</p>
+<pre><code>#编译一下, 成功。
 F:\learnwebpack\webpack-start&gt; npm run build
 </code></pre>
-<p>不过以后html页面代码，难道要在js文件中编辑么，这肯定是不行的</p>
+<p>不过以后html页面代码, 难道要在js文件中编辑么, 这肯定是不行的</p>
 <blockquote>
-<p>在vue文件夹下，创建一个.vue的文件！！！</p>
+<p>在vue文件夹下, 创建一个.vue的文件！！！</p>
 </blockquote>
 <p><code>创建.vue文件</code>。</p>
 <pre><code>&lt;template&gt;
@@ -253,7 +253,7 @@ F:\learnwebpack\webpack-start&gt; npm run build
 <p>修改main.js中的内容。</p>
 <pre><code>import Vue from &quot;vue&quot;
 
-//导入app.js，因为appjs是用export default导出的。
+//导入app.js, 因为appjs是用export default导出的。
 //所以这里导入可以自定义导入名：App
 //import App from &quot;./vue/app.js&quot;
 import App from &quot;./vue/App.vue&quot;
@@ -266,18 +266,18 @@ new Vue(&#123;
   &#125;
 &#125;)
 </code></pre>
-<p>编译一下，看看呢。</p>
+<p>编译一下, 看看呢。</p>
 <pre><code>F:\learnwebpack\webpack-start&gt; npm run build
 
 #这个时候报错了。
 You may need an appropriate loader to handle this file type.
 
-#我们知道webpack打包文件，不同的文件需要不同的包来处理。
-#前面连css文件我们都需要一个css-loader来处理，更何况
+#我们知道webpack打包文件, 不同的文件需要不同的包来处理。
+#前面连css文件我们都需要一个css-loader来处理, 更何况
 #我们这里多了一个.vue类型的文件。所以我们需要新的loader来处理它。
 
 F:\learnwebpack\webpack-start&gt; npm install --save-dev vue-loader vue-template-compiler
-#安装成功，然后在webpack.config.js中进行配置。
+#安装成功, 然后在webpack.config.js中进行配置。
 </code></pre>
 <p>webpack.config.js</p>
 <pre><code>module.exports = &#123;
@@ -298,17 +298,17 @@ F:\learnwebpack\webpack-start&gt; npm install --save-dev vue-loader vue-template
     ]
   &#125;,
   plugins: [
-      //为vue-loader配置，注意，如果vue-loader的版本低于14，可不用配置此项。
+      //为vue-loader配置, 注意, 如果vue-loader的版本低于14, 可不用配置此项。
       new VueLoaderPlugin()
   ]
   ......
 &#125;
 </code></pre>
-<p>再重新编译，成功。</p>
+<p>再重新编译, 成功。</p>
 <pre><code>F:\learnwebpack\webpack-start&gt; npm run build
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-59.png" alt="vue2-59"></p>
-<p><strong>终于一步一步的把组件抽离成了一个.vue的单文件。所以在以后的开发中，页面是一个组件，页面中某一个模块也是一个组件。都是由最根上的组件App.vue发散成一颗组件树。</strong></p>
+<p><strong>终于一步一步的把组件抽离成了一个.vue的单文件。所以在以后的开发中, 页面是一个组件, 页面中某一个模块也是一个组件。都是由最根上的组件App.vue发散成一颗组件树。</strong></p>
 <hr>
 <h3 id="例"><a href="#例" class="headerlink" title="例"></a>例</h3><p>在vue文件夹下新建一个Djcpn.vue组件。</p>
 <pre><code>&lt;template&gt;
@@ -332,7 +332,7 @@ F:\learnwebpack\webpack-start&gt; npm install --save-dev vue-loader vue-template
   .page&#123;background-color: #D5FFD8;&#125;
 &lt;/style&gt;
 </code></pre>
-<p>在根组件App.vue中注册，使用。</p>
+<p>在根组件App.vue中注册, 使用。</p>
 <pre><code>&lt;template&gt;
   &lt;div&gt;
     &lt;div&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;
@@ -342,7 +342,7 @@ F:\learnwebpack\webpack-start&gt; npm install --save-dev vue-loader vue-template
 
 &lt;script&gt;
   import Djcpn from &quot;./Djcpn.vue&quot;
-  //import 的文件后缀名可以省略，具体看下方拓展。
+  //import 的文件后缀名可以省略, 具体看下方拓展。
   export default &#123;
     name: &quot;App&quot;,
     data()&#123;
@@ -363,9 +363,9 @@ F:\learnwebpack\webpack-start&gt; npm install --save-dev vue-loader vue-template
 <pre><code>F:\learnwebpack\webpack-start&gt; npm run build
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-60.png" alt="vue2-60"></p>
-<p><strong>拓展：导入文件，省略后缀名的问题</strong>。</p>
-<pre><code>//在一些ide编辑器，或者脚手架搭建的项目中
-//导入文件时，可以省略掉文件的后缀名。
+<p><strong>拓展：导入文件, 省略后缀名的问题</strong>。</p>
+<pre><code>//在一些ide编辑器, 或者脚手架搭建的项目中
+//导入文件时, 可以省略掉文件的后缀名。
 //这里也可以通过配置webpack.config.js文件来实现。
 
 ......
@@ -382,7 +382,7 @@ module.exports = &#123;
   ],
   resolve: &#123;
     extensions: [&quot;.js&quot;,&quot;.css&quot;,&quot;.vue&quot;]
-    //在这里设置需要忽略后缀名的文件，即可。
+    //在这里设置需要忽略后缀名的文件, 即可。
     alias: &#123;
       &quot;vue$&quot;: &quot;vue/dist/vue.esm.js&quot;
     &#125;

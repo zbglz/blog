@@ -48,7 +48,7 @@ $(function(){
     let encodeStr = coderunurl + "?con=" + con + "&dtype=" + dtype
     
     if(encodeStr.length > 8179){ //8179
-      snackbarShow("代码过长，请复制代码，新开空窗口 <i class='fa fa-cog'></i> 粘贴运行")
+      snackbarShow("代码过长, 请复制代码, 新开空窗口 <i class='fa fa-cog'></i> 粘贴运行")
     }else{
       window.open(encodeStr)
     }

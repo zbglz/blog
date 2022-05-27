@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(47)搭建本地服务器 | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="搭建本地服务器在前面的学习测试中，每当项目出现更改，我们都需要使用npm run build对项目进行重新编译，这种开发效率其实是非常低的。 这个时候可以搭建一个基于node的本地服务器(内部使用express框架)。可以实现让浏览器自动刷新显示，修改的结果。不过它是一个单独的模块，在webpack中使用要先安装。 F:\learnwebpack\webpack-start&gt; npm in">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(47)搭建本地服务器 | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="搭建本地服务器在前面的学习测试中, 每当项目出现更改, 我们都需要使用npm run build对项目进行重新编译, 这种开发效率其实是非常低的。 这个时候可以搭建一个基于node的本地服务器(内部使用express框架)。可以实现让浏览器自动刷新显示, 修改的结果。不过它是一个单独的模块, 在webpack中使用要先安装。 F:\learnwebpack\webpack-start&gt; n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(47)搭建本地服务器">
 <meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/47/index.html">
 <meta property="og:site_name" content="LaoGao&#39;s Blog">
-<meta property="og:description" content="搭建本地服务器在前面的学习测试中，每当项目出现更改，我们都需要使用npm run build对项目进行重新编译，这种开发效率其实是非常低的。 这个时候可以搭建一个基于node的本地服务器(内部使用express框架)。可以实现让浏览器自动刷新显示，修改的结果。不过它是一个单独的模块，在webpack中使用要先安装。 F:\learnwebpack\webpack-start&gt; npm in">
+<meta property="og:description" content="搭建本地服务器在前面的学习测试中, 每当项目出现更改, 我们都需要使用npm run build对项目进行重新编译, 这种开发效率其实是非常低的。 这个时候可以搭建一个基于node的本地服务器(内部使用express框架)。可以实现让浏览器自动刷新显示, 修改的结果。不过它是一个单独的模块, 在webpack中使用要先安装。 F:\learnwebpack\webpack-start&gt; n">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-65.png">
 <meta property="article:published_time" content="2022-05-24T03:26:33.426Z">
-<meta property="article:modified_time" content="2022-05-26T02:27:27.399Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:07.175Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="webpack">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:27:27'
+  postUpdate: '2022-05-27 09:42:07'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,21 +143,21 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(47)搭建本地服务器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T03:26:33.426Z" title="发表于 2022-05-24 11:26:33">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:27:27.399Z" title="更新于 2022-05-26 10:27:27">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h3 id="搭建本地服务器"><a href="#搭建本地服务器" class="headerlink" title="搭建本地服务器"></a>搭建本地服务器</h3><p>在前面的学习测试中，每当项目出现更改，我们都需要使用npm run build对项目进行重新编译，这种开发效率其实是非常低的。</p>
-<p>这个时候可以搭建一个基于node的本地服务器(内部使用express框架)。可以实现让浏览器自动刷新显示，修改的结果。不过它是一个单独的模块，在webpack中使用要先安装。</p>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(47)搭建本地服务器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T03:26:33.426Z" title="发表于 2022-05-24 11:26:33">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:07.175Z" title="更新于 2022-05-27 09:42:07">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="搭建本地服务器"><a href="#搭建本地服务器" class="headerlink" title="搭建本地服务器"></a>搭建本地服务器</h3><p>在前面的学习测试中, 每当项目出现更改, 我们都需要使用npm run build对项目进行重新编译, 这种开发效率其实是非常低的。</p>
+<p>这个时候可以搭建一个基于node的本地服务器(内部使用express框架)。可以实现让浏览器自动刷新显示, 修改的结果。不过它是一个单独的模块, 在webpack中使用要先安装。</p>
 <pre><code>F:\learnwebpack\webpack-start&gt; npm install --save-dev webpack-dev-server@2.9.1
 </code></pre>
-<p>设置版本是为了让插件与使用的webpack有一个对应。因为在vue的脚手架2中，使用的webpack就是3.6.0，本地devserver就是2.9.1。</p>
-<pre><code>//devserver也是作为webpack配置中的一个选项，可以设置以下属性。
-//1、contentBase：为哪一个文件夹提供本地服务，默认是跟文件夹，这里要填写./dist
+<p>设置版本是为了让插件与使用的webpack有一个对应。因为在vue的脚手架2中, 使用的webpack就是3.6.0, 本地devserver就是2.9.1。</p>
+<pre><code>//devserver也是作为webpack配置中的一个选项, 可以设置以下属性。
+//1、contentBase：为哪一个文件夹提供本地服务, 默认是跟文件夹, 这里要填写./dist
 //2、port：端口号
 //3、inline：页面实时刷新
-//4、historyApiFallback：在单页面富应用中(SPA)，依赖HTML5的history模式。
+//4、historyApiFallback：在单页面富应用中(SPA), 依赖HTML5的history模式。
 
-//注意：本地服务在运行时，将项目的改动实时在页面刷新显示
-//并没有改动dist文件夹下的文件，而是将编译的文件放到了内存中。
-//而项目需要真正发布的时候，我们只需要执行一次npm run build即可。
+//注意：本地服务在运行时, 将项目的改动实时在页面刷新显示
+//并没有改动dist文件夹下的文件, 而是将编译的文件放到了内存中。
+//而项目需要真正发布的时候, 我们只需要执行一次npm run build即可。
 
 //安装完成后在webpack配置文件中进行配置。
 
@@ -180,11 +180,11 @@ module.exports = &#123;
   &#125;
 &#125;
 </code></pre>
-<p>那么运行就需要通过webpack-dev-server来运行。<br>但是会报错哦，没通过npm run映射，直接运行口令都是在全局运行。<br>但是全局我们并没有安装webpack-dev-server。<br>刚才的安装并没有加-g参数，只在项目中进行了局部安装。<br>所以我们还需要在package.json中配置映射。</p>
+<p>那么运行就需要通过webpack-dev-server来运行。<br>但是会报错哦, 没通过npm run映射, 直接运行口令都是在全局运行。<br>但是全局我们并没有安装webpack-dev-server。<br>刚才的安装并没有加-g参数, 只在项目中进行了局部安装。<br>所以我们还需要在package.json中配置映射。</p>
 <pre><code>&quot;scripts&quot;: &#123;
   &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
   &quot;build&quot;: &quot;webpack&quot;,
-  //在这里配置，就可以通过npm run dev来运行本地服务器了。
+  //在这里配置, 就可以通过npm run dev来运行本地服务器了。
   &quot;dev&quot;: &quot;webpack-dev-server&quot;
 &#125;
 </code></pre>
@@ -193,14 +193,14 @@ module.exports = &#123;
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-65.png" alt="vue2-65"></p>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-g1.gif" alt="vue2-g1"></p>
-<p><strong>上面我们已经实现了搭建本地服务器，并在修改项目的时候，页面自动更新</strong>。</p>
-<pre><code>//但是，启动本地服务器后
-//只是生成了一个本地链接，还需要手动去打开网页。
-//在配置package.json时，可以设置。
+<p><strong>上面我们已经实现了搭建本地服务器, 并在修改项目的时候, 页面自动更新</strong>。</p>
+<pre><code>//但是, 启动本地服务器后
+//只是生成了一个本地链接, 还需要手动去打开网页。
+//在配置package.json时, 可以设置。
 
 &quot;dev&quot;: &quot;webpack-dev-server --open&quot;
 
-//即可在启动本地服务器时，自动打开页面。
+//即可在启动本地服务器时, 自动打开页面。
 //停止本地服务Ctrl+c即可。
 //终止批处理操作吗(Y/N)? y
 </code></pre>

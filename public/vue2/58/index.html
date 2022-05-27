@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(58)router-link的其他属性补充 | LaoGao's Blog</title><meta name="keywords" content="vue2,vue-router"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="tagtag：在Vue Router 4.x中，tag已经被移除，请使用v-slot代替 &lt;router-link to&#x3D;&quot;&#x2F;home&quot;&gt;首页&lt;&#x2F;router-link&gt; &lt;!-- 页面的router-link中，我们就用了一个to属性，里面放的是路径 --&gt;  &lt;!-- 除此之外，它还有一个tag属性。 --&gt; &lt;!--">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(58)router-link的其他属性补充 | LaoGao's Blog</title><meta name="keywords" content="vue2,vue-router"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="tagtag：在Vue Router 4.x中, tag已经被移除, 请使用v-slot代替 &lt;router-link to&#x3D;&quot;&#x2F;home&quot;&gt;首页&lt;&#x2F;router-link&gt; &lt;!-- 页面的router-link中, 我们就用了一个to属性, 里面放的是路径 --&gt;  &lt;!-- 除此之外, 它还有一个tag属性。 --&gt; &amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(58)router-link的其他属性补充">
 <meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/58/index.html">
 <meta property="og:site_name" content="LaoGao&#39;s Blog">
-<meta property="og:description" content="tagtag：在Vue Router 4.x中，tag已经被移除，请使用v-slot代替 &lt;router-link to&#x3D;&quot;&#x2F;home&quot;&gt;首页&lt;&#x2F;router-link&gt; &lt;!-- 页面的router-link中，我们就用了一个to属性，里面放的是路径 --&gt;  &lt;!-- 除此之外，它还有一个tag属性。 --&gt; &lt;!--">
+<meta property="og:description" content="tagtag：在Vue Router 4.x中, tag已经被移除, 请使用v-slot代替 &lt;router-link to&#x3D;&quot;&#x2F;home&quot;&gt;首页&lt;&#x2F;router-link&gt; &lt;!-- 页面的router-link中, 我们就用了一个to属性, 里面放的是路径 --&gt;  &lt;!-- 除此之外, 它还有一个tag属性。 --&gt; &amp;l">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-100.png">
 <meta property="article:published_time" content="2022-05-24T06:20:18.651Z">
-<meta property="article:modified_time" content="2022-05-26T02:27:25.482Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:07.649Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="vue-router">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:27:25'
+  postUpdate: '2022-05-27 09:42:07'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,13 +143,13 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(58)router-link的其他属性补充</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T06:20:18.651Z" title="发表于 2022-05-24 14:20:18">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:27:25.482Z" title="更新于 2022-05-26 10:27:25">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>tag：在Vue Router 4.x中，tag已经被移除，请使用v-slot代替</p>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(58)router-link的其他属性补充</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T06:20:18.651Z" title="发表于 2022-05-24 14:20:18">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:07.649Z" title="更新于 2022-05-27 09:42:07">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>tag：在Vue Router 4.x中, tag已经被移除, 请使用v-slot代替</p>
 <pre><code>&lt;router-link to=&quot;/home&quot;&gt;首页&lt;/router-link&gt;
-&lt;!-- 页面的router-link中，我们就用了一个to属性，里面放的是路径 --&gt;
+&lt;!-- 页面的router-link中, 我们就用了一个to属性, 里面放的是路径 --&gt;
 
-&lt;!-- 除此之外，它还有一个tag属性。 --&gt;
-&lt;!-- 在默认情况下router-link会被渲染成一个a标签，tag可以指定标签。 --&gt;
+&lt;!-- 除此之外, 它还有一个tag属性。 --&gt;
+&lt;!-- 在默认情况下router-link会被渲染成一个a标签, tag可以指定标签。 --&gt;
 &lt;router-link to=&quot;/home&quot; tag=&quot;button&quot;&gt;首页&lt;/router-link&gt;
 &lt;!-- 这样router-link就会被渲染成button按钮 --&gt;
 </code></pre>
@@ -157,20 +157,20 @@
 <blockquote>
 <p>replace</p>
 </blockquote>
-<p>前面我们讲了”栈”，我们在首页和关于来回跳转的时候，就是在进行history.pushState的入栈操作。因为，来回跳转以后，浏览器上方的返回按钮可以点击进行返回。</p>
+<p>前面我们讲了”栈”, 我们在首页和关于来回跳转的时候, 就是在进行history.pushState的入栈操作。因为, 来回跳转以后, 浏览器上方的返回按钮可以点击进行返回。</p>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-99.png" alt="vue2-99"></p>
 <pre><code>&lt;!-- 在首页和关于来回跳转时。 --&gt;
-&lt;!-- 如果我们不希望它进行入栈操作，也就是浏览器使用history.replaceState模式。 --&gt;
-&lt;!-- 用户必须点击页面中的首页才能回到首页，必须点击关于才能去到关于。 --&gt;
-&lt;!-- 只需要给router-link增加一个replace属性就行了。这样在首页和关于来回跳转时，就不会有返回记录了。 --&gt;
+&lt;!-- 如果我们不希望它进行入栈操作, 也就是浏览器使用history.replaceState模式。 --&gt;
+&lt;!-- 用户必须点击页面中的首页才能回到首页, 必须点击关于才能去到关于。 --&gt;
+&lt;!-- 只需要给router-link增加一个replace属性就行了。这样在首页和关于来回跳转时, 就不会有返回记录了。 --&gt;
 &lt;router-link to=&quot;/home&quot; tag=&quot;button&quot; replace&gt;首页&lt;/router-link&gt;
 </code></pre>
 <blockquote>
 <p>active-class</p>
 </blockquote>
-<p>在进行组件之间跳转的时候。发现，哪个按钮被点击，在它的样式中就会多一个router-link-active样式。</p>
+<p>在进行组件之间跳转的时候。发现, 哪个按钮被点击, 在它的样式中就会多一个router-link-active样式。</p>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-100.png" alt="vue2-100"></p>
-<pre><code>&lt;!-- 我们在App.vue中增加一个这个样式，再来回点即按钮看看什么效果。 --&gt;
+<pre><code>&lt;!-- 我们在App.vue中增加一个这个样式, 再来回点即按钮看看什么效果。 --&gt;
 &lt;template&gt;
   &lt;div id=&quot;app&quot;&gt;
 
@@ -194,11 +194,11 @@ export default &#123;
 &lt;/style&gt;
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-101.png" alt="vue2-101"></p>
-<p>没错了，这就是选项的激活样式。一般设置激活样式，直接设置router-link-active就可以了。</p>
-<p>但是它仍然有个属性叫，active-class，可以通过它修改默认激活样式的名称。如下，这样，这个button的激活样式就不是router-link-active，而是active。</p>
+<p>没错了, 这就是选项的激活样式。一般设置激活样式, 直接设置router-link-active就可以了。</p>
+<p>但是它仍然有个属性叫, active-class, 可以通过它修改默认激活样式的名称。如下, 这样, 这个button的激活样式就不是router-link-active, 而是active。</p>
 <pre><code>&lt;router-link to=&quot;/home&quot; tag=&quot;button&quot; active-class=&quot;active&quot;&gt;首页&lt;/router-link&gt;
 </code></pre>
-<p>如果希望所有的router-link激活样式都是active，那么可以在路由中进行配置。</p>
+<p>如果希望所有的router-link激活样式都是active, 那么可以在路由中进行配置。</p>
 <pre><code>export default new Router(&#123;
   routes: [
     &#123;
@@ -215,7 +215,7 @@ export default &#123;
     &#125;
   ],
   mode: &quot;history&quot;,
-  linkActiveClass: &quot;active&quot; //在路由中增加一个linkActiveClass属性，并设置自定义的激活样式名
+  linkActiveClass: &quot;active&quot; //在路由中增加一个linkActiveClass属性, 并设置自定义的激活样式名
 &#125;)
 </code></pre>
 <hr>

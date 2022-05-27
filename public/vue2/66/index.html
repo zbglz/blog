@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(66)Vuex的概念和作用解析 | LaoGao's Blog</title><meta name="keywords" content="vue2,vuex"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Vuex的概念和作用解析Vuex就是一个状态管理的工具。 怎么去理解呢。试想，如果我们有若干个组件，需要使用同一个变量(状态，比如登录状态)， 那么这个变量，我们是定义到哪一个组件中呢，很明显，不管定义到哪一个组件都是不合适的。 一般情况下我们会定义一个全局变量来存放。而Vuex就是对这些全局变量进行管理的大管家。Vuex管理的状态， 在组件对这些状态进行修改时，它还是响应式的！！！ 一般情况下">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(66)Vuex的概念和作用解析 | LaoGao's Blog</title><meta name="keywords" content="vue2,vuex"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Vuex的概念和作用解析Vuex就是一个状态管理的工具。 怎么去理解呢。试想, 如果我们有若干个组件, 需要使用同一个变量(状态, 比如登录状态),  那么这个变量, 我们是定义到哪一个组件中呢, 很明显, 不管定义到哪一个组件都是不合适的。 一般情况下我们会定义一个全局变量来存放。而Vuex就是对这些全局变量进行管理的大管家。Vuex管理的状态,  在组件对这些状态进行修改时, 它还是响应式的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(66)Vuex的概念和作用解析">
 <meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/66/index.html">
 <meta property="og:site_name" content="LaoGao&#39;s Blog">
-<meta property="og:description" content="Vuex的概念和作用解析Vuex就是一个状态管理的工具。 怎么去理解呢。试想，如果我们有若干个组件，需要使用同一个变量(状态，比如登录状态)， 那么这个变量，我们是定义到哪一个组件中呢，很明显，不管定义到哪一个组件都是不合适的。 一般情况下我们会定义一个全局变量来存放。而Vuex就是对这些全局变量进行管理的大管家。Vuex管理的状态， 在组件对这些状态进行修改时，它还是响应式的！！！ 一般情况下">
+<meta property="og:description" content="Vuex的概念和作用解析Vuex就是一个状态管理的工具。 怎么去理解呢。试想, 如果我们有若干个组件, 需要使用同一个变量(状态, 比如登录状态),  那么这个变量, 我们是定义到哪一个组件中呢, 很明显, 不管定义到哪一个组件都是不合适的。 一般情况下我们会定义一个全局变量来存放。而Vuex就是对这些全局变量进行管理的大管家。Vuex管理的状态,  在组件对这些状态进行修改时, 它还是响应式的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-116.png">
 <meta property="article:published_time" content="2022-05-24T07:28:50.408Z">
-<meta property="article:modified_time" content="2022-05-26T02:28:12.290Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:07.993Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="vuex">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:28:12'
+  postUpdate: '2022-05-27 09:42:07'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,20 +143,20 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(66)Vuex的概念和作用解析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T07:28:50.408Z" title="发表于 2022-05-24 15:28:50">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:28:12.290Z" title="更新于 2022-05-26 10:28:12">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(66)Vuex的概念和作用解析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T07:28:50.408Z" title="发表于 2022-05-24 15:28:50">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:07.993Z" title="更新于 2022-05-27 09:42:07">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
 <h3 id="Vuex的概念和作用解析"><a href="#Vuex的概念和作用解析" class="headerlink" title="Vuex的概念和作用解析"></a>Vuex的概念和作用解析</h3><p><strong>Vuex就是一个状态管理的工具</strong>。</p>
-<p>怎么去理解呢。试想，如果我们有若干个组件，需要使用同一个变量(状态，比如登录状态)， 那么这个变量，我们是定义到哪一个组件中呢，很明显，不管定义到哪一个组件都是不合适的。 一般情况下我们会定义一个全局变量来存放。而Vuex就是对这些全局变量进行管理的大管家。Vuex管理的状态， 在组件对这些状态进行修改时，它还是响应式的！！！</p>
-<p>一般情况下，什么状态需要共享，而要放到Vuex里面呢，比如：用户登录状态、用户信息、地理位置信息、商品收藏、购物车中的物品等等。</p>
+<p>怎么去理解呢。试想, 如果我们有若干个组件, 需要使用同一个变量(状态, 比如登录状态),  那么这个变量, 我们是定义到哪一个组件中呢, 很明显, 不管定义到哪一个组件都是不合适的。 一般情况下我们会定义一个全局变量来存放。而Vuex就是对这些全局变量进行管理的大管家。Vuex管理的状态,  在组件对这些状态进行修改时, 它还是响应式的！！！</p>
+<p>一般情况下, 什么状态需要共享, 而要放到Vuex里面呢, 比如：用户登录状态、用户信息、地理位置信息、商品收藏、购物车中的物品等等。</p>
 <hr>
-<h3 id="单页面状态树"><a href="#单页面状态树" class="headerlink" title="单页面状态树"></a>单页面状态树</h3><p>在此之前，我们先了解一下什么是单界面状态管理。</p>
+<h3 id="单页面状态树"><a href="#单页面状态树" class="headerlink" title="单页面状态树"></a>单页面状态树</h3><p>在此之前, 我们先了解一下什么是单界面状态管理。</p>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-116.png" alt="vue2-116"></p>
-<p>在单个组件中，进行状态管理是非常简单的。上面的State就是vue示例中的data数据，这些数据绑定在View视图中，即template中的元素，Action则是对这些数据进行操作的方法。在vue实例中的State都是响应式的。</p>
+<p>在单个组件中, 进行状态管理是非常简单的。上面的State就是vue示例中的data数据, 这些数据绑定在View视图中, 即template中的元素, Action则是对这些数据进行操作的方法。在vue实例中的State都是响应式的。</p>
 <hr>
-<h3 id="从单页面状态到多页面状态"><a href="#从单页面状态到多页面状态" class="headerlink" title="从单页面状态到多页面状态"></a>从单页面状态到多页面状态</h3><p>要使用vuex就要先安装，当然在创建项目的时候也可以选择vuex为项目依赖项。</p>
+<h3 id="从单页面状态到多页面状态"><a href="#从单页面状态到多页面状态" class="headerlink" title="从单页面状态到多页面状态"></a>从单页面状态到多页面状态</h3><p>要使用vuex就要先安装, 当然在创建项目的时候也可以选择vuex为项目依赖项。</p>
 <pre><code>npm install vuex --save
 </code></pre>
 <p>安装完成后就可以对vuex进行配置了。</p>
-<pre><code>//在项目文件夹src下，新建一个store文件夹，在文件夹内新建一个index.js
+<pre><code>//在项目文件夹src下, 新建一个store文件夹, 在文件夹内新建一个index.js
 //然后在index.js中进行配置
 
 import Vue from &quot;vue&quot;
@@ -184,7 +184,7 @@ new Vue(&#123;
   render: h =&gt; h(App)
 &#125;).$mount(&#39;#app&#39;)
 //这样它会自动在Vue中增加一个$store
-//在其他组件中，可以直接通过$store访问Vuex中配置的所有状态。
+//在其他组件中, 可以直接通过$store访问Vuex中配置的所有状态。
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-117.png" alt="vue2-117"></p>
 <hr>
@@ -200,8 +200,8 @@ const store = new Vuex.Store(&#123;
   mutations: &#123;
     
   &#125;,
-  //当有一些异步操作的时候，就不要在mutations处理了，要在actions中进行处理。
-  //在actions里处理完毕后，再通过mutations对状态进行修改。
+  //当有一些异步操作的时候, 就不要在mutations处理了, 要在actions中进行处理。
+  //在actions里处理完毕后, 再通过mutations对状态进行修改。
   actions: &#123;
     
   &#125;,
@@ -209,8 +209,8 @@ const store = new Vuex.Store(&#123;
   getters: &#123;
     
   &#125;,
-  //对状态划分模块，一个项目涉及到的状态可能很多，都放在一个state中，会显得混乱。
-  //所以modules的作用就是对，不同模块中的状态进行划分。
+  //对状态划分模块, 一个项目涉及到的状态可能很多, 都放在一个state中, 会显得混乱。
+  //所以modules的作用就是对, 不同模块中的状态进行划分。
   modules: &#123;
     
   &#125;
@@ -220,15 +220,15 @@ export default store
 <blockquote>
 <p>state</p>
 </blockquote>
-<p>Vuex提出使用<strong>单一状态树</strong>，英文名称是Single Source of Truth，也可以翻译成<strong>单一数据源</strong>。</p>
-<p>这里有个例子，每个人都有很多信息，比如户口信息，社保记录，结婚信息，医疗信息，教育信息等等， 都是在不同的管理部门中的，虽然这种方式保存数据，能一定程度保证大部分信息的安全性。但是如果需要办理某一个业务时， 需要以上各种证明时，就需要跑个各个部门去办理。这种保存信息的方案，不仅仅效率低，而且不方便，以后维护也是一个庞大的工程。</p>
-<p>在前面的例子中，我们只new了一个Vuex.Store，在其中配置状态，那么可不可以new多个Vuex.Store对象呢，就像上面的多个部门一样。当然是可以，但后期管理和维护会变得困难。在Vuex设计 的时候就提出单一状态树，不管有再多的状态，我们只需要new一个Vuex.Store对象 ，项目中涉及的所有状态 都放在这个new出的对象中即可。这样，在项目的任何地方，请求或修改状态时，都通过这一个对象进行管理。而不至于混乱。</p>
+<p>Vuex提出使用<strong>单一状态树</strong>, 英文名称是Single Source of Truth, 也可以翻译成<strong>单一数据源</strong>。</p>
+<p>这里有个例子, 每个人都有很多信息, 比如户口信息, 社保记录, 结婚信息, 医疗信息, 教育信息等等,  都是在不同的管理部门中的, 虽然这种方式保存数据, 能一定程度保证大部分信息的安全性。但是如果需要办理某一个业务时,  需要以上各种证明时, 就需要跑个各个部门去办理。这种保存信息的方案, 不仅仅效率低, 而且不方便, 以后维护也是一个庞大的工程。</p>
+<p>在前面的例子中, 我们只new了一个Vuex.Store, 在其中配置状态, 那么可不可以new多个Vuex.Store对象呢, 就像上面的多个部门一样。当然是可以, 但后期管理和维护会变得困难。在Vuex设计 的时候就提出单一状态树, 不管有再多的状态, 我们只需要new一个Vuex.Store对象 , 项目中涉及的所有状态 都放在这个new出的对象中即可。这样, 在项目的任何地方, 请求或修改状态时, 都通过这一个对象进行管理。而不至于混乱。</p>
 <blockquote>
 <p>其他补充</p>
 </blockquote>
 <p>全局css样式。</p>
 <pre><code>在App.vue中的css是全局的样式。
-可以单独写一个css文件，在App.vue的style中引用就可以了。
+可以单独写一个css文件, 在App.vue的style中引用就可以了。
 @import &quot;global.css的路径&quot;
 </code></pre>
 <hr>

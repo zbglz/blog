@@ -13,12 +13,12 @@
   background-position: 100% 50%;
   background-attachment: inherit;
 }
-/*其他页banner高度设置，导致标题垂直居中问题。（分类、归档、标签...以及之下的页面）*/
+/*其他页banner高度设置, 导致标题垂直居中问题。（分类、归档、标签...以及之下的页面）*/
 #page-header #page-site-info{
   top: 50%;
   transform: translateY(-50%);
 }
-/*main区域，最大宽度1500*/
+/*main区域, 最大宽度1500*/
 .layout#content-inner{
   max-width: 1500px;
   display: flex;
@@ -62,11 +62,11 @@
 .avatar-img img:hover{
   transform: scale3d(.5,.5,.8);
 }
-/*首页文章列表，图片加载失败替换背景后，图片样式重置*/
+/*首页文章列表, 图片加载失败替换背景后, 图片样式重置*/
 #recent-posts > .recent-post-item .post_cover img.error{
   object-fit: contain;
 }
-/*首页文章列表，图片object-fit。侧边栏图片*/
+/*首页文章列表, 图片object-fit。侧边栏图片*/
 #recent-posts > .recent-post-item .post_cover img.post_bg,
 #aside-content .aside-list > .aside-list-item .thumbnail > img{
   object-fit: contain;
@@ -82,11 +82,11 @@
   content: url("../../../blog/static/site/img_404.svg");
   height: 240px;
 }
-/*pagination上一页下一页，图片加载失败替换背景后，图片样式重置*/
+/*pagination上一页下一页, 图片加载失败替换背景后, 图片样式重置*/
 #pagination.pagination-post div a img[data-ll-status="error"]{
   object-fit: contain;
 }
-/*相关推荐，图片加载错误，替换*/
+/*相关推荐, 图片加载错误, 替换*/
 .relatedPosts .relatedPosts-list div a img[data-ll-status="error"]{
   content: url("../../../blog/static/site/img_404.svg");
   object-fit: contain;
@@ -125,7 +125,7 @@
 #article-container a{
   color: var(--btn-bg);
 }
-/*TOC目录标题过长，显示省略号*/
+/*TOC目录标题过长, 显示省略号*/
 #aside-content #card-toc .toc-content li .toc-link{
   white-space: nowrap;
   overflow: hidden;

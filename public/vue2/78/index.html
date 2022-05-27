@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg">
 <meta property="article:published_time" content="2022-05-25T01:00:15.340Z">
-<meta property="article:modified_time" content="2022-05-26T02:27:28.023Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:08.493Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="axios">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:27:28'
+  postUpdate: '2022-05-27 09:42:08'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,7 +143,7 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(78)封装与取消请求</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-25T01:00:15.340Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:27:28.023Z" title="更新于 2022-05-26 10:27:28">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(78)封装与取消请求</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-25T01:00:15.340Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:08.493Z" title="更新于 2022-05-27 09:42:08">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
 <h3 id="请求封装与请求取消"><a href="#请求封装与请求取消" class="headerlink" title="请求封装与请求取消"></a>请求封装与请求取消</h3><p>request.js封装</p>
 <pre><code>//导入axios
 import axios from &quot;axios&quot;
@@ -160,7 +160,7 @@ const instance = axios.create(&#123;
 //拦截器 - 请求拦截
 instance.interceptors.request.use(config =&gt; &#123;
   
-  //给每次请求实例化一个 取消请求的方法，并将其保存至window.axiosCancel全局数组中。
+  //给每次请求实例化一个 取消请求的方法, 并将其保存至window.axiosCancel全局数组中。
   config.cancelToken = new axios.CancelToken(cancel =&gt; &#123;
     window.axiosCancel.push(&#123;
       cancel
@@ -186,7 +186,7 @@ export &#123;instance&#125;
 <pre><code>//将request.js导入
 import &#123;instance&#125; from &#39;./request.js&#39;
 
-//前面定义的全局window.axiosCancel，无差别取消所有请求。
+//前面定义的全局window.axiosCancel, 无差别取消所有请求。
 const cancel = msg =&gt; &#123;
   let cancelArr = window.axiosCancel
   cancelArr.forEach((ele, index) =&gt; &#123;
@@ -202,7 +202,7 @@ const GetAllList = () =&gt; instance.get(&#39;/apiurl&#39;)
 //请求详细信息
 const GetSubject = (SubjectId) =&gt; instance.get(&#39;/apiurl&#39;)
 
-//导出所有网络请求api，以及取消所有请求的cancel方法。
+//导出所有网络请求api, 以及取消所有请求的cancel方法。
 export &#123;GetAllList, GetSubject, cancel&#125;
 </code></pre>
 <p>在组件中的使用。</p>
@@ -213,7 +213,7 @@ export &#123;GetAllList, GetSubject, cancel&#125;
 &lt;/template&gt;
 
 &lt;script&gt;
-  //用到什么请求，就导入什么请求。
+  //用到什么请求, 就导入什么请求。
   import &#123;GetAllList, cancel&#125; from &#39;../network/api.js&#39;
   export default &#123;
     name: &#39;Home&#39;,
@@ -223,7 +223,7 @@ export &#123;GetAllList, GetSubject, cancel&#125;
     &#125;,
     methods: &#123;
       initList() &#123;
-        //在请求之前，取消前面所有未完成的请求。
+        //在请求之前, 取消前面所有未完成的请求。
         cancel()
         //发起新的请求
         GetAllList().then(res =&gt; &#123;

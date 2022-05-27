@@ -98,5 +98,5 @@ top_img: ../../../blog/static/butterfly/links_img.jpg
     - name: 地区虚拟身份信息
       link: http://www.haoweichi.com/
       avatar: http://www.haoweichi.com/Public/img/haoweichi.ico
-      descr: 本站只做学习交流，请勿用于非法用途
+      descr: 本站只做学习交流, 请勿用于非法用途
 {% endflink %}

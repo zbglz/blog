@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(72)vuex的modules | LaoGao's Blog</title><meta name="keywords" content="vue2,vuex"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="vuex的modules随着项目的开发，页面的状态state可能越来越多，而vuex又推荐使用单一状态树，modules的作用就是对，不同模块中的状态state进行划分，形成单独的模块。而每个模块又可以有自己单独的state、getters、mutations、actios、甚至modules，当然，一般模块内的modules，一般就不用了。这种嵌套反而使项目变得复杂。 import Vue f">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(72)vuex的modules | LaoGao's Blog</title><meta name="keywords" content="vue2,vuex"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="vuex的modules随着项目的开发, 页面的状态state可能越来越多, 而vuex又推荐使用单一状态树, modules的作用就是对, 不同模块中的状态state进行划分, 形成单独的模块。而每个模块又可以有自己单独的state、getters、mutations、actios、甚至modules, 当然, 一般模块内的modules, 一般就不用了。这种嵌套反而使项目变得复杂。 impo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(72)vuex的modules">
 <meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/72/index.html">
 <meta property="og:site_name" content="LaoGao&#39;s Blog">
-<meta property="og:description" content="vuex的modules随着项目的开发，页面的状态state可能越来越多，而vuex又推荐使用单一状态树，modules的作用就是对，不同模块中的状态state进行划分，形成单独的模块。而每个模块又可以有自己单独的state、getters、mutations、actios、甚至modules，当然，一般模块内的modules，一般就不用了。这种嵌套反而使项目变得复杂。 import Vue f">
+<meta property="og:description" content="vuex的modules随着项目的开发, 页面的状态state可能越来越多, 而vuex又推荐使用单一状态树, modules的作用就是对, 不同模块中的状态state进行划分, 形成单独的模块。而每个模块又可以有自己单独的state、getters、mutations、actios、甚至modules, 当然, 一般模块内的modules, 一般就不用了。这种嵌套反而使项目变得复杂。 impo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-121.png">
 <meta property="article:published_time" content="2022-05-24T08:00:20.777Z">
-<meta property="article:modified_time" content="2022-05-26T02:27:27.274Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:08.272Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="vuex">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:27:27'
+  postUpdate: '2022-05-27 09:42:08'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,8 +143,8 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(72)vuex的modules</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T08:00:20.777Z" title="发表于 2022-05-24 16:00:20">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:27:27.274Z" title="更新于 2022-05-26 10:27:27">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h3 id="vuex的modules"><a href="#vuex的modules" class="headerlink" title="vuex的modules"></a>vuex的modules</h3><p>随着项目的开发，页面的状态state可能越来越多，而vuex又推荐使用单一状态树，modules的作用就是对，不同模块中的状态state进行划分，形成单独的模块。而每个模块又可以有自己单独的state、getters、mutations、actios、甚至modules，当然，一般模块内的modules，一般就不用了。这种嵌套反而使项目变得复杂。</p>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(72)vuex的modules</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T08:00:20.777Z" title="发表于 2022-05-24 16:00:20">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:08.272Z" title="更新于 2022-05-27 09:42:08">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="vuex的modules"><a href="#vuex的modules" class="headerlink" title="vuex的modules"></a>vuex的modules</h3><p>随着项目的开发, 页面的状态state可能越来越多, 而vuex又推荐使用单一状态树, modules的作用就是对, 不同模块中的状态state进行划分, 形成单独的模块。而每个模块又可以有自己单独的state、getters、mutations、actios、甚至modules, 当然, 一般模块内的modules, 一般就不用了。这种嵌套反而使项目变得复杂。</p>
 <pre><code>import Vue from &#39;vue&#39;
 import Vuex from &#39;vuex&#39;
 Vue.use(Vuex)
@@ -172,7 +172,7 @@ const store = new Vuex.Store(&#123;
 export default store
 </code></pre>
 <hr>
-<h3 id="modules中的mutations"><a href="#modules中的mutations" class="headerlink" title="modules中的mutations"></a>modules中的mutations</h3><p>当然，我们也可以对它进行抽离。</p>
+<h3 id="modules中的mutations"><a href="#modules中的mutations" class="headerlink" title="modules中的mutations"></a>modules中的mutations</h3><p>当然, 我们也可以对它进行抽离。</p>
 <pre><code>import Vue from &#39;vue&#39;
 import Vuex from &#39;vuex&#39;
 Vue.use(Vuex)
@@ -201,7 +201,7 @@ const store = new Vuex.Store(&#123;
   state: &#123;
   &#125;,
   modules: &#123;
-    a: moduleA, //这个模块，最终会被放到store中的state中。
+    a: moduleA, //这个模块, 最终会被放到store中的state中。
     b: moduleB
   &#125;
 &#125;)
@@ -211,7 +211,7 @@ export default store
 <pre><code>&lt;div&gt;&#123;&#123;$store.state.a&#125;&#125;&lt;/div&gt;
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-121.png" alt="vue2-121"></p>
-<p>那模块中的mutations该如何提交呢，跟前面是一样的。但是注意，模块中的mutations定义的名字，不要和store中mutations定义的名字一样。它的原理是，先从store中mutations找，找不到再去模块中找。</p>
+<p>那模块中的mutations该如何提交呢, 跟前面是一样的。但是注意, 模块中的mutations定义的名字, 不要和store中mutations定义的名字一样。它的原理是, 先从store中mutations找, 找不到再去模块中找。</p>
 <pre><code>methods: &#123;
   update()&#123;
     this.$store.commit(&#39;updateName&#39;, &#39;lisi&#39;)
@@ -219,7 +219,7 @@ export default store
 &#125;
 </code></pre>
 <hr>
-<h3 id="modules中的getters"><a href="#modules中的getters" class="headerlink" title="modules中的getters"></a>modules中的getters</h3><p>调用模块中的getters，也和mutations一样，只需要注意模块中的getters名，不要和store中的getters名重复即可。它的原理也是，先从store中的getters找，找不到再去模块中找。前面我们知道，getters中可以传入两个变量state和getters。</p>
+<h3 id="modules中的getters"><a href="#modules中的getters" class="headerlink" title="modules中的getters"></a>modules中的getters</h3><p>调用模块中的getters, 也和mutations一样, 只需要注意模块中的getters名, 不要和store中的getters名重复即可。它的原理也是, 先从store中的getters找, 找不到再去模块中找。前面我们知道, getters中可以传入两个变量state和getters。</p>
 <pre><code>import Vue from &#39;vue&#39;
 import Vuex from &#39;vuex&#39;
 Vue.use(Vuex)
@@ -235,7 +235,7 @@ const moduleA = &#123;
     fullname2(state, getters)&#123;
       return getters.fullname1 + &#39;222&#39;
     &#125;,
-    //在模块中，getters可以有第三个参数rootState
+    //在模块中, getters可以有第三个参数rootState
     //传入store对象中的state
     fullname3(state, getters, rootState)&#123;
       return getters.fullname2 + rootState.age
@@ -254,7 +254,7 @@ const store = new Vuex.Store(&#123;
 export default store
 </code></pre>
 <hr>
-<h3 id="modules中的actios"><a href="#modules中的actios" class="headerlink" title="modules中的actios"></a>modules中的actios</h3><p>我们知道，actions中有个context(上下文的意思)，在store中的actions，context是指store。但在模块中的context，表示在moduleA中。而它commit的mutations只会在moduleA中找。打印这个context，里面除了commit，还有dispatch、getters、rootGetters、rootState、state。</p>
+<h3 id="modules中的actios"><a href="#modules中的actios" class="headerlink" title="modules中的actios"></a>modules中的actios</h3><p>我们知道, actions中有个context(上下文的意思), 在store中的actions, context是指store。但在模块中的context, 表示在moduleA中。而它commit的mutations只会在moduleA中找。打印这个context, 里面除了commit, 还有dispatch、getters、rootGetters、rootState、state。</p>
 <pre><code>import Vue from &#39;vue&#39;
 import Vuex from &#39;vuex&#39;
 Vue.use(Vuex)
@@ -291,7 +291,7 @@ export default store
 <pre><code>this.$store.dispatch(&#39;updateName&#39;)
 </code></pre>
 <hr>
-<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>前面说明了模块中actions的context，还包含了其他很多东西commit、dispatch、getters、rootGetters、rootState、state。</p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>前面说明了模块中actions的context, 还包含了其他很多东西commit、dispatch、getters、rootGetters、rootState、state。</p>
 <pre><code>const moduleA = &#123;
   state: &#123;
     name: &#39;zhangsan&#39;
@@ -304,10 +304,10 @@ export default store
     &#125;
   &#125;
 &#125;
-//在ES6中，还可以用另一种写法，叫做对象的解构。
+//在ES6中, 还可以用另一种写法, 叫做对象的解构。
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-122.png" alt="vue2-122"></p>
-<pre><code>//它跟变量名一一对应，跟顺序无关
+<pre><code>//它跟变量名一一对应, 跟顺序无关
 //所以上面的的context还可以这样写。
 
 const moduleA = &#123;

@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(41)url-loader | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="url-loader在项目开发过程中，除了js、css什么sass、less等等，我们还会用到图片资源。先在项目中创建一个图片文件夹img，找两张大小不一的图片(不同文件大小的图片webpack可以做一些不同的处理)。  然后在样式中使用图片。  试想一下：webpack打包的逻辑，是从入口文件main.js开始，在js中发现它依赖了哪些模块，就会将其一起打包。当打包到base.css的时候，发">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(41)url-loader | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="url-loader在项目开发过程中, 除了js、css什么sass、less等等, 我们还会用到图片资源。先在项目中创建一个图片文件夹img, 找两张大小不一的图片(不同文件大小的图片webpack可以做一些不同的处理)。  然后在样式中使用图片。  试想一下：webpack打包的逻辑, 是从入口文件main.js开始, 在js中发现它依赖了哪些模块, 就会将其一起打包。当打包到base.cs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(41)url-loader">
 <meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/41/index.html">
 <meta property="og:site_name" content="LaoGao&#39;s Blog">
-<meta property="og:description" content="url-loader在项目开发过程中，除了js、css什么sass、less等等，我们还会用到图片资源。先在项目中创建一个图片文件夹img，找两张大小不一的图片(不同文件大小的图片webpack可以做一些不同的处理)。  然后在样式中使用图片。  试想一下：webpack打包的逻辑，是从入口文件main.js开始，在js中发现它依赖了哪些模块，就会将其一起打包。当打包到base.css的时候，发">
+<meta property="og:description" content="url-loader在项目开发过程中, 除了js、css什么sass、less等等, 我们还会用到图片资源。先在项目中创建一个图片文件夹img, 找两张大小不一的图片(不同文件大小的图片webpack可以做一些不同的处理)。  然后在样式中使用图片。  试想一下：webpack打包的逻辑, 是从入口文件main.js开始, 在js中发现它依赖了哪些模块, 就会将其一起打包。当打包到base.cs">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-40.png">
 <meta property="article:published_time" content="2022-05-24T02:11:55.883Z">
-<meta property="article:modified_time" content="2022-05-26T02:28:12.515Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:06.942Z">
 <meta property="article:author" content="LaoGao">
 <meta property="article:tag" content="vue2">
 <meta property="article:tag" content="webpack">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2022-05-26 10:28:12'
+  postUpdate: '2022-05-27 09:42:06'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,36 +143,36 @@
       }
     }
     detectApple()
-    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(41)url-loader</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T02:11:55.883Z" title="发表于 2022-05-24 10:11:55">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T02:28:12.515Z" title="更新于 2022-05-26 10:28:12">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h3 id="url-loader"><a href="#url-loader" class="headerlink" title="url-loader"></a>url-loader</h3><p>在项目开发过程中，除了js、css什么sass、less等等，我们还会用到图片资源。先在项目中创建一个图片文件夹img，找两张大小不一的图片(不同文件大小的图片webpack可以做一些不同的处理)。</p>
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">207</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(41)url-loader</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T02:11:55.883Z" title="发表于 2022-05-24 10:11:55">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:06.942Z" title="更新于 2022-05-27 09:42:06">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="url-loader"><a href="#url-loader" class="headerlink" title="url-loader"></a>url-loader</h3><p>在项目开发过程中, 除了js、css什么sass、less等等, 我们还会用到图片资源。先在项目中创建一个图片文件夹img, 找两张大小不一的图片(不同文件大小的图片webpack可以做一些不同的处理)。</p>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-40.png" alt="vue2-40"></p>
 <p>然后在样式中使用图片。</p>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-41.png" alt="vue2-41"></p>
-<p><strong>试想一下：webpack打包的逻辑，是从入口文件main.js开始，在js中发现它依赖了哪些模块，就会将其一起打包。当打包到base.css的时候，发现里面还依赖了一张图片。这个时候，wbpack也会将这张图片当成模块一起打包。</strong></p>
-<pre><code>#但是，当前项目还没有处理图片模块的包
-#先来试试，看看打包会不还报错，报什么样的错。
+<p><strong>试想一下：webpack打包的逻辑, 是从入口文件main.js开始, 在js中发现它依赖了哪些模块, 就会将其一起打包。当打包到base.css的时候, 发现里面还依赖了一张图片。这个时候, wbpack也会将这张图片当成模块一起打包。</strong></p>
+<pre><code>#但是, 当前项目还没有处理图片模块的包
+#先来试试, 看看打包会不还报错, 报什么样的错。
 F:\learnwebpack\webpack-start&gt;npm run build
 
 ERROR in ./src/img/2.jpg
 Module parse failed: ....\webpack-start\src\img\2.jpg ......
 You may need an appropriate loader to handle this file type.
 #提示我们需要一个合适的loader去处理图片资源。
-#又需要去webpack网站，找相关的loader了，不过这个load与前面的略有不同。
+#又需要去webpack网站, 找相关的loader了, 不过这个load与前面的略有不同。
 #是一个叫url的loader
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-42.png" alt="vue2-42"></p>
 <pre><code>#根据提示安装url-loader
-#为防止编译报错，这里需要指定一下版本。
+#为防止编译报错, 这里需要指定一下版本。
 #教程中的版本是1.1.2
 F:\learnwebpack\webpack-start&gt; npm install --save-dev url-loader@1.1.2
 
 #安装完成以后在webpack.config.js进行配置
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-43.png" alt="vue2-43"></p>
-<pre><code>//在配置中的test表示，
+<pre><code>//在配置中的test表示, 
 //可以匹配的文件有png、jpg还有gif三种格式。
 //我们再加一种jpeg格式
-//这种格式的图片在开发中也很常见，它和jpg是一样的，只是后缀不同。
+//这种格式的图片在开发中也很常见, 它和jpg是一样的, 只是后缀不同。
 
 &#123;
   test: /\.(png|jpg|gif|jpeg)$/,
@@ -186,9 +186,9 @@ F:\learnwebpack\webpack-start&gt; npm install --save-dev url-loader@1.1.2
   ]
 &#125;
 
-//注意！！！在它的options中有个limit参数，默认是8192。
-//意思是 小于 8192/1024=8kb 的图片，会特殊处理。
-//还记得我们的2.jpg吗。只有6kb多一点，小于限值。
+//注意！！！在它的options中有个limit参数, 默认是8192。
+//意思是 小于 8192/1024=8kb 的图片, 会特殊处理。
+//还记得我们的2.jpg吗。只有6kb多一点, 小于限值。
 //怎么特殊处理？我们来编译一下项目。
 
 F:\learnwebpack\webpack-start&gt;npm run build
@@ -196,9 +196,9 @@ F:\learnwebpack\webpack-start&gt;npm run build
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-44.png" alt="vue2-44"></p>
 <pre><code>//因为安装配置了url-loader
 //webpack编译通过了。图片也显示了。
-//但是样式中可以发现，body样式的背景图片处。
-//不是一个地址，是一串base64编码字符串。而在dist打包文件夹中也找不到该图片。
-//这就是url-loader配置中，limit参数的特殊处理结果了。
+//但是样式中可以发现, body样式的背景图片处。
+//不是一个地址, 是一串base64编码字符串。而在dist打包文件夹中也找不到该图片。
+//这就是url-loader配置中, limit参数的特殊处理结果了。
 
 //！！！！！小于限值的图片会被编译成base64编码。
 
@@ -218,22 +218,22 @@ Module build failed: Error: Cannot find module &#39;file-loader&#39;
 ......
 
 //他说找不到file-loader模块。
-//也就是说，在处理大于限值的图片时还需要另一个loader去处理。
-//注意报错信息，跟前面的不一样。
+//也就是说, 在处理大于限值的图片时还需要另一个loader去处理。
+//注意报错信息, 跟前面的不一样。
 //不是项目依赖包时提示的：你需要一个什么什么loader来处理这种文件
 //而是直接提示：找不到file-loader模块。
-//这里我们直接安装，无需配置。
+//这里我们直接安装, 无需配置。
 
 //教程项目中使用的file-loader是3.0.1
-//为防止编译出错，安装时指定一下版本。
+//为防止编译出错, 安装时指定一下版本。
 </code></pre>
 <p>安装file-loader</p>
 <pre><code>F:\learnwebpack\webpack-start&gt; npm install --save-dev file-loader@3.0.1
 
-#安装完成后，我们再重新编译一下
+#安装完成后, 我们再重新编译一下
 F:\learnwebpack\webpack-start&gt;npm run build
 #编译通过没有报错。
-#我们来看一下页面，发现页面没有图片。
+#我们来看一下页面, 发现页面没有图片。
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-46.png" alt="vue2-46"></p>
 <pre><code>//但是！打包文件夹下多了一个hash随机名的图片。
@@ -245,7 +245,7 @@ F:\learnwebpack\webpack-start&gt;npm run build
 //我们一直是在用根目录下的index.html进行测试。并没有将其打包到dist文件夹下。
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-47.png" alt="vue2-47"></p>
-<p><strong>可以看出，这里不显示图片，是路径的问题。可以在webpack.config.js中进行配置</strong></p>
+<p><strong>可以看出, 这里不显示图片, 是路径的问题。可以在webpack.config.js中进行配置</strong></p>
 <pre><code>//在webpack配置文件中
         
 output: &#123;
@@ -255,19 +255,19 @@ output: &#123;
 &#125;
 
 //在output项中,增加一个publicPath:&quot;dist/&quot;
-//此后在webpack打包时，只要是涉及到url的，都会自动在前面拼接一个路径。
+//此后在webpack打包时, 只要是涉及到url的, 都会自动在前面拼接一个路径。
 </code></pre>
 <p>.</p>
-<pre><code>#编译项目，运行就正常了。
+<pre><code>#编译项目, 运行就正常了。
 F:\learnwebpack\webpack-start&gt;npm run build
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-48.png" alt="vue2-48"></p>
-<p><strong>当前，这只是为了项目运行正常的一个测试，但是最终，我们还是要将html文件一起打包到dist文件夹的。前面就讲过dist文件夹下的文件，是经webpack打包生成的文件，并可以直接上传至服务器运行的，这当然包括html文件，到时候就可以删掉publicPath:”dist&#x2F;“配置了。这个后面再说，先来看另一个需求。</strong></p>
+<p><strong>当前, 这只是为了项目运行正常的一个测试, 但是最终, 我们还是要将html文件一起打包到dist文件夹的。前面就讲过dist文件夹下的文件, 是经webpack打包生成的文件, 并可以直接上传至服务器运行的, 这当然包括html文件, 到时候就可以删掉publicPath:”dist&#x2F;“配置了。这个后面再说, 先来看另一个需求。</strong></p>
 <pre><code>//打包重命名的图片名字太复杂(hash-32)
-//打包后图片不要乱扔，最好放到一个img文件夹里。
+//打包后图片不要乱扔, 最好放到一个img文件夹里。
 
-//最终需求，希望打包后的图片，能以以下方式进行保存。
-//--&gt;  img/原来的图片名. + hash-8.原拓展名 (原来的hash-32太长，只想要8位)
+//最终需求, 希望打包后的图片, 能以以下方式进行保存。
+//--&gt;  img/原来的图片名. + hash-8.原拓展名 (原来的hash-32太长, 只想要8位)
 //需要到webpack的配置文件去设置。
 
 &#123;
@@ -286,12 +286,12 @@ F:\learnwebpack\webpack-start&gt;npm run build
 //在url-loader的options中增加了name: &quot;img/[name].[hash:8].[ext]&quot;
 
 //其中img/表示dist下的img文件夹(没有就自动创建)
-//而[name]表示一个变量，会取出图片文件原来的名字。
-//另外[hash:8] 也是一个变量，表示只取8位hash值。
-//最后[ext]也是一个变量，表示原来图片的拓展名。
+//而[name]表示一个变量, 会取出图片文件原来的名字。
+//另外[hash:8] 也是一个变量, 表示只取8位hash值。
+//最后[ext]也是一个变量, 表示原来图片的拓展名。
 </code></pre>
 <p>.</p>
-<pre><code>#编译项目，查看效果。
+<pre><code>#编译项目, 查看效果。
 F:\learnwebpack\webpack-start&gt;npm run build
 </code></pre>
 <p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-49.png" alt="vue2-49"></p>
