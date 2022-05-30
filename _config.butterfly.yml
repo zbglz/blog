@@ -663,7 +663,7 @@ aside:
     content: <div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src="../../../../../../blog/static/site/comment.gif"></div>
   card_recent_post:  # 首页侧边栏，显示最新文章
     enable: true
-    limit: 4 # if set 0 will show all
+    limit: 3 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
   card_categories: # 首页侧边栏，显示分类
