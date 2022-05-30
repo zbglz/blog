@@ -783,6 +783,53 @@ p.then(value =&gt; &#123;
       </tags>
   </entry>
   <entry>
+    <title>(19)Map的介绍与API</title>
+    <url>/blog/ecmascript/19/</url>
+    <content><![CDATA[<hr>
+<h3 id="Map的介绍与API"><a href="#Map的介绍与API" class="headerlink" title="Map的介绍与API"></a>Map的介绍与API</h3><table>
+<thead>
+<tr>
+<th>属性&#x2F;方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>size</td>
+<td>返回Map的元素个数</td>
+</tr>
+<tr>
+<td>set</td>
+<td>增加一个新元素, 返回当前Map</td>
+</tr>
+<tr>
+<td>get</td>
+<td>返回键名对象的键值</td>
+</tr>
+<tr>
+<td>has</td>
+<td>检测Map中是否包含某个元素, 返回boolean</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>清空Map集合, 返回undefined</td>
+</tr>
+</tbody></table>
+<pre><code>&lt;script&gt;
+  
+&lt;/script&gt;
+</code></pre>
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=32">源：https://www.bilibili.com/video/BV1uK411H7on?p=32</a></p>
+]]></content>
+      <categories>
+        <category>ECMAScript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(18)集合介绍与API</title>
     <url>/blog/ecmascript/18/</url>
     <content><![CDATA[<hr>
@@ -869,53 +916,6 @@ p.then(value =&gt; &#123;
 
 <hr>
 <p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=30">源：https://www.bilibili.com/video/BV1uK411H7on?p=30</a></p>
-]]></content>
-      <categories>
-        <category>ECMAScript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(19)Map的介绍与API</title>
-    <url>/blog/ecmascript/19/</url>
-    <content><![CDATA[<hr>
-<h3 id="Map的介绍与API"><a href="#Map的介绍与API" class="headerlink" title="Map的介绍与API"></a>Map的介绍与API</h3><table>
-<thead>
-<tr>
-<th>属性&#x2F;方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>size</td>
-<td>返回Map的元素个数</td>
-</tr>
-<tr>
-<td>set</td>
-<td>增加一个新元素, 返回当前Map</td>
-</tr>
-<tr>
-<td>get</td>
-<td>返回键名对象的键值</td>
-</tr>
-<tr>
-<td>has</td>
-<td>检测Map中是否包含某个元素, 返回boolean</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>清空Map集合, 返回undefined</td>
-</tr>
-</tbody></table>
-<pre><code>&lt;script&gt;
-  
-&lt;/script&gt;
-</code></pre>
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=32">源：https://www.bilibili.com/video/BV1uK411H7on?p=32</a></p>
 ]]></content>
       <categories>
         <category>ECMAScript</category>
@@ -1327,6 +1327,56 @@ for(let i = 0; i &lt; items.length; i++)&#123;
       </tags>
   </entry>
   <entry>
+    <title>(2)hexo更换主题</title>
+    <url>/blog/hexo/2/</url>
+    <content><![CDATA[<h2 id="默认主题"><a href="#默认主题" class="headerlink" title="默认主题"></a>默认主题</h2><p>在hexo init初始化完成后, 发现themes文件夹下, 已经有一个主题了, 叫landscape。当然也可以找一些其他的主题替换。</p>
+<hr>
+<h2 id="其他主题"><a href="#其他主题" class="headerlink" title="其他主题"></a>其他主题</h2><p><strong>hexo-theme-butterfly</strong></p>
+<p>网上找的一个还挺好看的主题：<a href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a></p>
+<p><a href="https://butterfly.js.org/">官方展示</a></p>
+<p>安装方式一, 在项目文件夹根目录, 打开终端。(有问题)</p>
+<pre><code>## npm安装方式, 只支持hexo5.0.0以上版本
+npm i hexo-theme-butterfly
+## 但是测试安装后, 在themes文件夹下找不到相关主题文件, 我放弃了。
+</code></pre>
+<p>安装方式二, git克隆下载。在该项目的根目录下打开终端, 使用git下载。</p>
+<pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+## 下载完成后, 可以看到在themes文件夹下, 多了一个butterfly文件夹。这就是新的主题了。
+## 克隆github的仓库容易失败, 可以使用gitee的镜像仓库
+git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly
+</code></pre>
+<hr>
+<h2 id="主题切换与管理"><a href="#主题切换与管理" class="headerlink" title="主题切换与管理"></a>主题切换与管理</h2><p><strong>主题切换</strong></p>
+<p>默认情况下hexo的主题是landscape, 如果需要切换主题, 则修改根目录下的_config.yml文件。</p>
+<p>找到theme: landscape, 修改为theme: butterfly</p>
+<p><strong>主题管理</strong></p>
+<p>正如hexo初始化以后, 根目录下的_config.landscape.yml文件一样。<br>我们不需要直接修改主题文件夹下的_config.yml配置文件。</p>
+<p>直接修改主题配置文件, 对于主题的后期升级维护, 并不友好。<br>所以, 当切换了主题后, 我们可以在根目录下创建,<br>新的对应主题配置文件。_config.butterfly.yml,<br>当需要修改配置时, 直接在_config.butterfly.yml修改设置就可以了。<br>尽量不要直接修改主题文件夹下的文件！！</p>
+<p><strong>其他问题</strong></p>
+<p>测试项目时</p>
+<pre><code>hexo s
+</code></pre>
+<p>报错：extends includes&#x2F;layout.pug block content include .&#x2F;includes&#x2F;mixins&#x2F;post-ui.pug #recent-posts.recent-posts +postUI include includes&#x2F;pagination.pug</p>
+<p>因为你在使用butterfly主题时, 没有pug 和 stylus 的解析器, 你需要安装:</p>
+<pre><code>## 在项目根目录下
+npm install hexo-renderer-pug hexo-renderer-stylus
+</code></pre>
+<p>再次测试</p>
+<pre><code>hexo s
+</code></pre>
+<p>项目正常运行了</p>
+<hr>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>Hexo全局配置_config.yml详解：<a href="https://www.dazhuanlan.com/lhymn/topics/1378049">https://www.dazhuanlan.com/lhymn/topics/1378049</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(1)hexo博客练成</title>
     <url>/blog/hexo/1/</url>
     <content><![CDATA[<hr>
@@ -1411,56 +1461,6 @@ nvm use &lt;version&gt;       //切换到使用指定的nodejs版本
 hexo g // 生成, 文件在source文件夹中, 将里面的文件部署到服务器即可。
 hexo cl // 清除生成的文件。
 </code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(2)hexo更换主题</title>
-    <url>/blog/hexo/2/</url>
-    <content><![CDATA[<h2 id="默认主题"><a href="#默认主题" class="headerlink" title="默认主题"></a>默认主题</h2><p>在hexo init初始化完成后, 发现themes文件夹下, 已经有一个主题了, 叫landscape。当然也可以找一些其他的主题替换。</p>
-<hr>
-<h2 id="其他主题"><a href="#其他主题" class="headerlink" title="其他主题"></a>其他主题</h2><p><strong>hexo-theme-butterfly</strong></p>
-<p>网上找的一个还挺好看的主题：<a href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a></p>
-<p><a href="https://butterfly.js.org/">官方展示</a></p>
-<p>安装方式一, 在项目文件夹根目录, 打开终端。(有问题)</p>
-<pre><code>## npm安装方式, 只支持hexo5.0.0以上版本
-npm i hexo-theme-butterfly
-## 但是测试安装后, 在themes文件夹下找不到相关主题文件, 我放弃了。
-</code></pre>
-<p>安装方式二, git克隆下载。在该项目的根目录下打开终端, 使用git下载。</p>
-<pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
-## 下载完成后, 可以看到在themes文件夹下, 多了一个butterfly文件夹。这就是新的主题了。
-## 克隆github的仓库容易失败, 可以使用gitee的镜像仓库
-git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly
-</code></pre>
-<hr>
-<h2 id="主题切换与管理"><a href="#主题切换与管理" class="headerlink" title="主题切换与管理"></a>主题切换与管理</h2><p><strong>主题切换</strong></p>
-<p>默认情况下hexo的主题是landscape, 如果需要切换主题, 则修改根目录下的_config.yml文件。</p>
-<p>找到theme: landscape, 修改为theme: butterfly</p>
-<p><strong>主题管理</strong></p>
-<p>正如hexo初始化以后, 根目录下的_config.landscape.yml文件一样。<br>我们不需要直接修改主题文件夹下的_config.yml配置文件。</p>
-<p>直接修改主题配置文件, 对于主题的后期升级维护, 并不友好。<br>所以, 当切换了主题后, 我们可以在根目录下创建,<br>新的对应主题配置文件。_config.butterfly.yml,<br>当需要修改配置时, 直接在_config.butterfly.yml修改设置就可以了。<br>尽量不要直接修改主题文件夹下的文件！！</p>
-<p><strong>其他问题</strong></p>
-<p>测试项目时</p>
-<pre><code>hexo s
-</code></pre>
-<p>报错：extends includes&#x2F;layout.pug block content include .&#x2F;includes&#x2F;mixins&#x2F;post-ui.pug #recent-posts.recent-posts +postUI include includes&#x2F;pagination.pug</p>
-<p>因为你在使用butterfly主题时, 没有pug 和 stylus 的解析器, 你需要安装:</p>
-<pre><code>## 在项目根目录下
-npm install hexo-renderer-pug hexo-renderer-stylus
-</code></pre>
-<p>再次测试</p>
-<pre><code>hexo s
-</code></pre>
-<p>项目正常运行了</p>
-<hr>
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>Hexo全局配置_config.yml详解：<a href="https://www.dazhuanlan.com/lhymn/topics/1378049">https://www.dazhuanlan.com/lhymn/topics/1378049</a></p>
 <hr>
 ]]></content>
       <categories>
@@ -2017,23 +2017,6 @@ title: 音乐
       </tags>
   </entry>
   <entry>
-    <title>(20)条件运算符</title>
-    <url>/blog/javascript/20/</url>
-    <content><![CDATA[<hr>
-<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><p><strong>条件运算符也叫三元运算符：条件?语句1:语句2</strong><br><strong>运算时, 先对条件进行运算, 如果条件为true, 执行语句1, 如果为false, 执行语句2</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="literal">true</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  <span class="literal">false</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;获取最大值&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> max = a &gt; b? <span class="attr">a</span>: b</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;max = &quot;</span> + max)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;var max = a &gt; b? (还可以嵌套三元运算): (还可以嵌套三元运算),但不推荐这么写,不利于阅读。&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(21)运算符的优先级</title>
     <url>/blog/javascript/21/</url>
     <content><![CDATA[<hr>
@@ -2048,6 +2031,23 @@ title: 音乐
 <p><img src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/js1.png" alt="js1"></p>
 <p><strong>在这张表中, 越靠前, 优先级越高, 优先级一样, 则从左往右计算</strong>。</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般不需要记忆这张表, 确实是拿不准的, 可以使用()括号来改变优先级。&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;(1 || 2) &amp;&amp; 3 先算||结果：&quot;</span> + ((<span class="number">1</span> || <span class="number">2</span>) &amp;&amp; <span class="number">3</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;1 || (2 &amp;&amp; 3) 先算&amp;&amp;结果：&quot;</span> + (<span class="number">1</span> || (<span class="number">2</span> &amp;&amp; <span class="number">3</span>)))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(20)条件运算符</title>
+    <url>/blog/javascript/20/</url>
+    <content><![CDATA[<hr>
+<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><p><strong>条件运算符也叫三元运算符：条件?语句1:语句2</strong><br><strong>运算时, 先对条件进行运算, 如果条件为true, 执行语句1, 如果为false, 执行语句2</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="literal">true</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  <span class="literal">false</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;获取最大值&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> max = a &gt; b? <span class="attr">a</span>: b</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;max = &quot;</span> + max)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;var max = a &gt; b? (还可以嵌套三元运算): (还可以嵌套三元运算),但不推荐这么写,不利于阅读。&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -2509,6 +2509,68 @@ document.write()  //浏览器提供的对象
       </tags>
   </entry>
   <entry>
+    <title>(33)函数的参数</title>
+    <url>/blog/javascript/33/</url>
+    <content><![CDATA[<hr>
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p>形参：形式上的参数, 没有值。</p>
+<pre><code>&lt;script&gt;
+  function func(...形参)&#123;
+
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>实参：在调用函数时, 传入的参数。</p>
+<pre><code>func(...实参)
+</code></pre>
+<p>实参与形参一一对应。</p>
+<blockquote>
+<p>例1</p>
+</blockquote>
+<p>需求：定义一个求和的函数。</p>
+<pre><code>&lt;script&gt;
+  function sum(a, b)&#123;
+    console.log(a + b)
+  &#125;
+  sum(3, 7) // 10
+  
+  // 其中a和3对应, b和7对应。
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>注意1</p>
+</blockquote>
+<p>调用函数时, 解析器不会检查实参的类型。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">sum</span>(<span class="string">&quot;3&quot;</span>, <span class="number">7</span>) <span class="comment">// &quot;37&quot;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 得到字符串37</span></span><br><span class="line">  <span class="comment">// 相加的操作变成了字符串拼接的操作。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>注意2 </p>
+</blockquote>
+<p>调用函数时解析器也不会检查实参的数量。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">sum</span>(<span class="number">3</span>, <span class="number">7</span>, <span class="number">11</span>, hello, <span class="literal">true</span>) <span class="comment">// 10</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 得到数值10</span></span><br><span class="line">  <span class="comment">// a对应3, b对应7, 而多余的参数不影响结果。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>注意3</p>
+</blockquote>
+<p>参数不足也会导致结果异常。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">sum</span>(<span class="number">3</span>) <span class="comment">// NaN</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// a对应3, b未传入为undefined</span></span><br><span class="line">  <span class="comment">// number + undefined = NaN (not a number)</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>注意4：</p>
+</blockquote>
+<p>函数的形参, 可以是任意数据类型。甚至可以是一个函数。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(32)函数的简介</title>
     <url>/blog/javascript/32/</url>
     <content><![CDATA[<hr>
@@ -2569,68 +2631,6 @@ document.write()  //浏览器提供的对象
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">//创建函数</span></span><br><span class="line">  <span class="keyword">var</span> funcName = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;这是函数表达式创建的函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//调用函数</span></span><br><span class="line">  <span class="title function_">funcName</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(33)函数的参数</title>
-    <url>/blog/javascript/33/</url>
-    <content><![CDATA[<hr>
-<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p>形参：形式上的参数, 没有值。</p>
-<pre><code>&lt;script&gt;
-  function func(...形参)&#123;
-
-  &#125;
-&lt;/script&gt;
-</code></pre>
-<p>实参：在调用函数时, 传入的参数。</p>
-<pre><code>func(...实参)
-</code></pre>
-<p>实参与形参一一对应。</p>
-<blockquote>
-<p>例1</p>
-</blockquote>
-<p>需求：定义一个求和的函数。</p>
-<pre><code>&lt;script&gt;
-  function sum(a, b)&#123;
-    console.log(a + b)
-  &#125;
-  sum(3, 7) // 10
-  
-  // 其中a和3对应, b和7对应。
-&lt;/script&gt;
-</code></pre>
-<blockquote>
-<p>注意1</p>
-</blockquote>
-<p>调用函数时, 解析器不会检查实参的类型。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">sum</span>(<span class="string">&quot;3&quot;</span>, <span class="number">7</span>) <span class="comment">// &quot;37&quot;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 得到字符串37</span></span><br><span class="line">  <span class="comment">// 相加的操作变成了字符串拼接的操作。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>注意2 </p>
-</blockquote>
-<p>调用函数时解析器也不会检查实参的数量。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">sum</span>(<span class="number">3</span>, <span class="number">7</span>, <span class="number">11</span>, hello, <span class="literal">true</span>) <span class="comment">// 10</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 得到数值10</span></span><br><span class="line">  <span class="comment">// a对应3, b对应7, 而多余的参数不影响结果。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>注意3</p>
-</blockquote>
-<p>参数不足也会导致结果异常。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">sum</span>(<span class="number">3</span>) <span class="comment">// NaN</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// a对应3, b未传入为undefined</span></span><br><span class="line">  <span class="comment">// number + undefined = NaN (not a number)</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>注意4：</p>
-</blockquote>
-<p>函数的形参, 可以是任意数据类型。甚至可以是一个函数。</p>
 <hr>
 ]]></content>
       <categories>
@@ -2795,86 +2795,6 @@ b = 123
       </tags>
   </entry>
   <entry>
-    <title>(37)this</title>
-    <url>/blog/javascript/37/</url>
-    <content><![CDATA[<hr>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>解析器每次在调用函数时, 都会向函数内部传递进一个隐含的参数, 这个隐含的参数就是<strong>this</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">func</span>() </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>this指向的是一个对象, 这个对象称为, 函数执行的上下文对象</strong>。<br>根据函数的<strong>调用方式不同</strong>, this会指向<strong>不同的对象</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">func</span>()  <span class="comment">// window对象</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//创建一个对象</span></span><br><span class="line">  <span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;zhangsan&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: func</span><br><span class="line">  &#125;</span><br><span class="line">  obj.<span class="title function_">sayName</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>注意, 这里说的是调用方式不同, 跟函数的创建方式没关系。<br>1、以函数的形式调用时, this永远都是window, 事实上函数形式调用就是, window.func()<br>2、以方法的形式调用时, this就是调用方法的对象！！。<br><strong>那么前面总结的两个点, 可以直接归纳为, 函数作为谁的方法调用, this就指向谁。</strong></p>
-<hr>
-<h3 id="this-1"><a href="#this-1" class="headerlink" title="this"></a>this</h3><p>this补充</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">&quot;全局的name&quot;</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1的name : zhangsan&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: func</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1的name : lisi&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: func</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">  obj1.<span class="title function_">sayName</span>() </span><br><span class="line">  obj2.<span class="title function_">sayName</span>() </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>再次重申！！函数作为哪个对象的方法被调用, this就指向哪个对象！！</strong>。<br>**另外！！当以构造函数调用时, this就是新创建的那个对象。var xxx &#x3D; new Xxx()**。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(38)工厂方法创建对象</title>
-    <url>/blog/javascript/38/</url>
-    <content><![CDATA[<hr>
-<h3 id="工厂方法创建对象"><a href="#工厂方法创建对象" class="headerlink" title="工厂方法创建对象"></a>工厂方法创建对象</h3><p>如果我们需要大量创建结构类似的对象时, 按以前的方式。</p>
-<pre><code>var obj1 = &#123;
-  name: &quot;zhangsan&quot;,
-  age: 18,
-  gender: &quot;男&quot;,
-  sayName: function()&#123;
-    console.log(this.name)
-  &#125;
-&#125;
-obj1.sayName() //zhangsan
-
-var obj2 = &#123;
-  name: &quot;lisi&quot;,
-  age: 18,
-  gender: &quot;男&quot;,
-  sayName: function()&#123;
-    console.log(this.name)
-  &#125;
-&#125;
-obj2.sayName() //lisi
-
-var obj3 = &#123;
-  name: &quot;wangwu&quot;,
-  age: 18,
-  gender: &quot;男&quot;,
-  sayName: function()&#123;
-    console.log(this.name)
-  &#125;
-&#125;
-obj3.sayName() //wangwu
-</code></pre>
-<p>这种需要创建多个差不多的对象的方式(大量的重复代码), 显得麻烦。不方便大批量对象的生成。</p>
-<hr>
-<h3 id="使用工厂方法创建对象"><a href="#使用工厂方法创建对象" class="headerlink" title="使用工厂方法创建对象"></a>使用工厂方法创建对象</h3><p>使用工厂方法创建对象。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> createPerson = <span class="keyword">function</span>(<span class="params">name, age, gender</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">    obj.<span class="property">name</span> = name</span><br><span class="line">    obj.<span class="property">age</span> = age</span><br><span class="line">    obj.<span class="property">gender</span> = gender</span><br><span class="line">    obj.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj1 = <span class="title function_">createPerson</span>(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> obj2 = <span class="title function_">createPerson</span>(<span class="string">&quot;lisi&quot;</span>, <span class="number">28</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> obj3 = <span class="title function_">createPerson</span>(<span class="string">&quot;wangwu&quot;</span>, <span class="number">38</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  obj1.<span class="title function_">sayName</span>()</span><br><span class="line">  obj2.<span class="title function_">sayName</span>()</span><br><span class="line">  obj3.<span class="title function_">sayName</span>()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(obj1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>这样在需要创建一个新的对象时, 就方便了许多。但这种方式也用得不多。<br><strong>新的需求, 有了创建人的对象, 还需要一个创建狗的对象</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> createDog = <span class="keyword">function</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">    obj.<span class="property">name</span> = name</span><br><span class="line">    obj.<span class="property">age</span> = age</span><br><span class="line">    obj.<span class="property">wangWang</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;汪汪~~&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj4 = <span class="title function_">createDog</span>(<span class="string">&quot;旺财&quot;</span>, <span class="number">3</span>)</span><br><span class="line">  obj4.<span class="title function_">wangWang</span>()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(obj4)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>发现了没, 无论是创建人的对象, 还是狗的对象, 他们的类型都是object, 如果仅从类型上去判断, 是难以区分, 哪个对象是人, 而哪个是狗子, 因为工厂函数中new的就是object, 导致无法区分多种不同的对象。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(39)构造函数</title>
     <url>/blog/javascript/39/</url>
     <content><![CDATA[<hr>
@@ -2911,6 +2831,32 @@ obj3.sayName() //wangwu
 <h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>使用instanceof可以检查一个对象, 是否是一个类的。</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, gender</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">gender</span> = gender</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> per2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;instanceof检查per2是否属于Person类&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;per2 instanceof Person : &quot;</span> + (per2 <span class="keyword">instanceof</span> <span class="title class_">Person</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;当然, 即便是Person类的实例, 它也是Object的后代&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;per2 instanceof Object : &quot;</span> + (per2 <span class="keyword">instanceof</span> <span class="title class_">Object</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(37)this</title>
+    <url>/blog/javascript/37/</url>
+    <content><![CDATA[<hr>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>解析器每次在调用函数时, 都会向函数内部传递进一个隐含的参数, 这个隐含的参数就是<strong>this</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">func</span>() </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>this指向的是一个对象, 这个对象称为, 函数执行的上下文对象</strong>。<br>根据函数的<strong>调用方式不同</strong>, this会指向<strong>不同的对象</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">func</span>()  <span class="comment">// window对象</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//创建一个对象</span></span><br><span class="line">  <span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;zhangsan&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: func</span><br><span class="line">  &#125;</span><br><span class="line">  obj.<span class="title function_">sayName</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>注意, 这里说的是调用方式不同, 跟函数的创建方式没关系。<br>1、以函数的形式调用时, this永远都是window, 事实上函数形式调用就是, window.func()<br>2、以方法的形式调用时, this就是调用方法的对象！！。<br><strong>那么前面总结的两个点, 可以直接归纳为, 函数作为谁的方法调用, this就指向谁。</strong></p>
+<hr>
+<h3 id="this-1"><a href="#this-1" class="headerlink" title="this"></a>this</h3><p>this补充</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">&quot;全局的name&quot;</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1的name : zhangsan&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: func</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1的name : lisi&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: func</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">  obj1.<span class="title function_">sayName</span>() </span><br><span class="line">  obj2.<span class="title function_">sayName</span>() </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>再次重申！！函数作为哪个对象的方法被调用, this就指向哪个对象！！</strong>。<br>**另外！！当以构造函数调用时, this就是新创建的那个对象。var xxx &#x3D; new Xxx()**。</p>
 <hr>
 ]]></content>
       <categories>
@@ -3075,6 +3021,60 @@ obj3.sayName() //wangwu
 </code></pre>
 <p>可知object原型对象后面, 没有原型对象了。object的原型对象就已经是祖先原型对象了。祖先原型对象不再有祖先。这么一看, hasOwnProperty其实就是object中的方法。</p>
 <p><strong>所以！！！</strong>, 当我们访问<strong>对象的一个属性或方法</strong>时, 它会现在对象的<code>自身中找</code>, 如果有就使用。如果没有, 还会去<code>对象的原型对象中找</code>, 如果有也会直接使用。如果原型中没有, 则会去<code>原型的原型中去寻找</code>。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(38)工厂方法创建对象</title>
+    <url>/blog/javascript/38/</url>
+    <content><![CDATA[<hr>
+<h3 id="工厂方法创建对象"><a href="#工厂方法创建对象" class="headerlink" title="工厂方法创建对象"></a>工厂方法创建对象</h3><p>如果我们需要大量创建结构类似的对象时, 按以前的方式。</p>
+<pre><code>var obj1 = &#123;
+  name: &quot;zhangsan&quot;,
+  age: 18,
+  gender: &quot;男&quot;,
+  sayName: function()&#123;
+    console.log(this.name)
+  &#125;
+&#125;
+obj1.sayName() //zhangsan
+
+var obj2 = &#123;
+  name: &quot;lisi&quot;,
+  age: 18,
+  gender: &quot;男&quot;,
+  sayName: function()&#123;
+    console.log(this.name)
+  &#125;
+&#125;
+obj2.sayName() //lisi
+
+var obj3 = &#123;
+  name: &quot;wangwu&quot;,
+  age: 18,
+  gender: &quot;男&quot;,
+  sayName: function()&#123;
+    console.log(this.name)
+  &#125;
+&#125;
+obj3.sayName() //wangwu
+</code></pre>
+<p>这种需要创建多个差不多的对象的方式(大量的重复代码), 显得麻烦。不方便大批量对象的生成。</p>
+<hr>
+<h3 id="使用工厂方法创建对象"><a href="#使用工厂方法创建对象" class="headerlink" title="使用工厂方法创建对象"></a>使用工厂方法创建对象</h3><p>使用工厂方法创建对象。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> createPerson = <span class="keyword">function</span>(<span class="params">name, age, gender</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">    obj.<span class="property">name</span> = name</span><br><span class="line">    obj.<span class="property">age</span> = age</span><br><span class="line">    obj.<span class="property">gender</span> = gender</span><br><span class="line">    obj.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj1 = <span class="title function_">createPerson</span>(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> obj2 = <span class="title function_">createPerson</span>(<span class="string">&quot;lisi&quot;</span>, <span class="number">28</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> obj3 = <span class="title function_">createPerson</span>(<span class="string">&quot;wangwu&quot;</span>, <span class="number">38</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  obj1.<span class="title function_">sayName</span>()</span><br><span class="line">  obj2.<span class="title function_">sayName</span>()</span><br><span class="line">  obj3.<span class="title function_">sayName</span>()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(obj1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>这样在需要创建一个新的对象时, 就方便了许多。但这种方式也用得不多。<br><strong>新的需求, 有了创建人的对象, 还需要一个创建狗的对象</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> createDog = <span class="keyword">function</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">    obj.<span class="property">name</span> = name</span><br><span class="line">    obj.<span class="property">age</span> = age</span><br><span class="line">    obj.<span class="property">wangWang</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;汪汪~~&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj4 = <span class="title function_">createDog</span>(<span class="string">&quot;旺财&quot;</span>, <span class="number">3</span>)</span><br><span class="line">  obj4.<span class="title function_">wangWang</span>()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(obj4)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>发现了没, 无论是创建人的对象, 还是狗的对象, 他们的类型都是object, 如果仅从类型上去判断, 是难以区分, 哪个对象是人, 而哪个是狗子, 因为工厂函数中new的就是object, 导致无法区分多种不同的对象。</p>
 <hr>
 ]]></content>
       <categories>
@@ -4560,11 +4560,11 @@ var top = event.clientY + scrollW
     &lt;/div&gt;
 &lt;/body&gt;
 </code></pre>
-<p>这种现象就叫做<code>事件Bubble(Bubble)。</code>所谓的Bubble指的就是, 事件向上传导, 当后代元素上的时间被触发时, 其祖先元素上相同的事件也会触发。</p>
+<p>这种现象就叫做<code>事件冒泡(Bubble)。</code>所谓的冒泡指的就是, 事件向上传导, 当后代元素上的时间被触发时, 其祖先元素上相同的事件也会触发。</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;#box1&#123;<span class="attr">width</span>:200px;<span class="attr">height</span>:100px;background-<span class="attr">color</span>:lightblue;&#125;#s1&#123;background-<span class="attr">color</span>:lightyellow;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  我是box1</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;s1&quot;</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> s1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;s1&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(s1, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;span被点击了&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(box1, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;div被点击了&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(<span class="variable language_">document</span>.<span class="property">body</span>, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;body被点击了&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p><strong>从开发的角度讲</strong>。<br>大部分情况Bubble都是有用的。比如上一节的div跟随鼠标移动。试想, 页面中还有一个静止的div, 当鼠标移动到该div的内部时, 跟随鼠标的那个div还会跟着移动吗？要知道此时鼠标已经是在那么div中移动了, 并不是在document中移动(移动事件是绑定给document的。), 但是跟随鼠标移动的那个div还是会跟着鼠标移动, 这就是Bubble带来的好处了。</p>
-<p><strong>但是在上一个例子中</strong>, 很明显, 我们点击span时, 只希望span的点击事件被触发, 不希望它的父级乃至祖先元素被触发, 这个时候就需要取消Bubble。</p>
+<p><strong>从开发的角度讲</strong>。<br>大部分情况冒泡都是有用的。比如上一节的div跟随鼠标移动。试想, 页面中还有一个静止的div, 当鼠标移动到该div的内部时, 跟随鼠标的那个div还会跟着移动吗？要知道此时鼠标已经是在那么div中移动了, 并不是在document中移动(移动事件是绑定给document的。), 但是跟随鼠标移动的那个div还是会跟着鼠标移动, 这就是冒泡带来的好处了。</p>
+<p><strong>但是在上一个例子中</strong>, 很明显, 我们点击span时, 只希望span的点击事件被触发, 不希望它的父级乃至祖先元素被触发, 这个时候就需要取消冒泡。</p>
 <pre><code>event.cancelBubble = true
 </code></pre>
 <p>cancelBubble这个属性本身是IE的属性, 但现在很多浏览器也都支持, 包括chrome等。所以cancelBubble基本不会有什么兼容性问题。</p>
@@ -4572,8 +4572,8 @@ var top = event.clientY + scrollW
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;#box1&#123;<span class="attr">width</span>:200px;<span class="attr">height</span>:100px;background-<span class="attr">color</span>:lightblue;&#125;#s1&#123;background-<span class="attr">color</span>:lightyellow;&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  我是box1</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;s1&quot;</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> s1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;s1&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> box1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box1&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(s1, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;span被点击了&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">event</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event.<span class="property">cancelBubble</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(box1, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;div被点击了&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">event</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event.<span class="property">cancelBubble</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(<span class="variable language_">document</span>.<span class="property">body</span>, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;body被点击了&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">event</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event.<span class="property">cancelBubble</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
-<p>div跟随鼠标示例中, 取消Bubble, 再移动鼠标到里面试试。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;body&#123;<span class="attr">height</span>:1000px;<span class="attr">width</span>:1000px;&#125;#followDiv&#123;<span class="attr">width</span>:50px;<span class="attr">height</span>:50px;background-<span class="attr">color</span>:lightblue;<span class="attr">position</span>:absolute;&#125;#s1,#s2&#123;<span class="attr">padding</span>:10px;background-<span class="attr">color</span>:lightgreen&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;s1&quot;</span>&gt;</span>取消Bubble<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;s2&quot;</span>&gt;</span>没取消Bubble<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;followDiv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> followDiv = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;followDiv&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> s1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;s1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(<span class="variable language_">document</span>, <span class="string">&quot;mousemove&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">evnet</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> scrollW = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollLeft</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollLeft</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> scrollH = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollTop</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> left = event.<span class="property">clientX</span> + scrollW</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> top = event.<span class="property">clientY</span> + scrollH</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    followDiv.<span class="property">style</span>.<span class="property">left</span> = left + <span class="string">&quot;px&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    followDiv.<span class="property">style</span>.<span class="property">top</span> = top + <span class="string">&quot;px&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(s1, <span class="string">&quot;mousemove&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">evnet</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event.<span class="property">cancelBubble</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>div跟随鼠标示例中, 取消冒泡, 再移动鼠标到里面试试。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;body&#123;<span class="attr">height</span>:1000px;<span class="attr">width</span>:1000px;&#125;#followDiv&#123;<span class="attr">width</span>:50px;<span class="attr">height</span>:50px;background-<span class="attr">color</span>:lightblue;<span class="attr">position</span>:absolute;&#125;#s1,#s2&#123;<span class="attr">padding</span>:10px;background-<span class="attr">color</span>:lightgreen&#125;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;s1&quot;</span>&gt;</span>取消冒泡<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;s2&quot;</span>&gt;</span>没取消冒泡<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;followDiv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> followDiv = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;followDiv&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> s1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;s1&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(<span class="variable language_">document</span>, <span class="string">&quot;mousemove&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">evnet</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> scrollW = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollLeft</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollLeft</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> scrollH = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollTop</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> left = event.<span class="property">clientX</span> + scrollW</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> top = event.<span class="property">clientY</span> + scrollH</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    followDiv.<span class="property">style</span>.<span class="property">left</span> = left + <span class="string">&quot;px&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    followDiv.<span class="property">style</span>.<span class="property">top</span> = top + <span class="string">&quot;px&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(s1, <span class="string">&quot;mousemove&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">evnet</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event.<span class="property">cancelBubble</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="动态绑定事件"><a href="#动态绑定事件" class="headerlink" title="动态绑定事件"></a>动态绑定事件</h3><p>我们有一些超链接, 在初始化页面的时候就给他们绑定了单击响应函数。还有一个按钮可以动态添加超链接。但是新添加的超链接是没绑定点击事件的, 还需要去重新绑定。</p>
@@ -4582,15 +4582,15 @@ var top = event.clientY + scrollW
 
 
 <p>需求:我们希望只绑定一次事件, 即可应用到多个元素上, 即使元素是动态添加的。</p>
-<p>事件的委派:我们可以尝试将其绑定给元素的共同祖先元素ul上, 这样点击任意a标签, 会一直Bubble到祖先元素上的点击事件。从而通过祖先元素的响应函数来处理事件。事件的委派是利用了Bubble, 可以减少事件绑定的次数, 提高出现的性能。</p>
+<p>事件的委派:我们可以尝试将其绑定给元素的共同祖先元素ul上, 这样点击任意a标签, 会一直冒泡到祖先元素上的点击事件。从而通过祖先元素的响应函数来处理事件。事件的委派是利用了冒泡, 可以减少事件绑定的次数, 提高出现的性能。</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;btn_b&quot;</span>&gt;点击添加超链接&lt;/button&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;u1_b&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span>&gt;</span>超链接一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span>&gt;</span>超链接二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span>&gt;</span>超链接三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> u1_b = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;u1_b&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn_b = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn_b&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(u1_b, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是ul的单击响应函数&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn_b, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;li&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    li.<span class="property">innerHTML</span> = <span class="string">&quot;&lt;a href=&#x27;javascript:;&#x27;&gt;超链接&lt;/a&gt;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    u1_b.<span class="title function_">appendChild</span>(li)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>但是点击除了a以外的其他部分, 也会触发ul的点击事件, 不仅点击a会Bubble到ul的点击事件上, 点击li也会Bubble到ul的点击事件上, 我们期望的是, 触发事件的对象是我们期望的元素则执行, 不是的话就不执行。这就需要判断当前点击的元素, 我们知道”onclick”事件是绑定在ul上的, 那点击时的this就是ul, 则不能通过this获取当前点击的元素。</p>
+<p>但是点击除了a以外的其他部分, 也会触发ul的点击事件, 不仅点击a会冒泡到ul的点击事件上, 点击li也会冒泡到ul的点击事件上, 我们期望的是, 触发事件的对象是我们期望的元素则执行, 不是的话就不执行。这就需要判断当前点击的元素, 我们知道”onclick”事件是绑定在ul上的, 那点击时的this就是ul, 则不能通过this获取当前点击的元素。</p>
 <hr>
 <h3 id="target"><a href="#target" class="headerlink" title="target"></a>target</h3><p>可以返回触发事件的元素target。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;btn_c&quot;</span>&gt;点击添加超链接&lt;/button&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;u1_c&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> u1_c = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;u1_c&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn_c = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn_c&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(u1_c, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">event</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 当然a的class可能不仅仅有link, 还可能有多的className, 这里还需要进行判断。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 这就利用Bubble, 实现事件的委派, 而不需要对期望的元素进行多次事件绑定。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(event.<span class="property">target</span>.<span class="property">className</span> == <span class="string">&quot;link&quot;</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>.<span class="property">firstChild</span>.<span class="property">nodeValue</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn_c, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;li&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    li.<span class="property">innerHTML</span> = <span class="string">&quot;&lt;a href=&#x27;javascript:;&#x27; class=&#x27;link&#x27;&gt;超链接&lt;/a&gt;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    u1_c.<span class="title function_">appendChild</span>(li)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;btn_c&quot;</span>&gt;点击添加超链接&lt;/button&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;u1_c&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> u1_c = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;u1_c&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn_c = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn_c&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(u1_c, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    event = event || <span class="variable language_">window</span>.<span class="property">event</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 当然a的class可能不仅仅有link, 还可能有多的className, 这里还需要进行判断。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 这就利用冒泡, 实现事件的委派, 而不需要对期望的元素进行多次事件绑定。</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(event.<span class="property">target</span>.<span class="property">className</span> == <span class="string">&quot;link&quot;</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>.<span class="property">firstChild</span>.<span class="property">nodeValue</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">bind</span>(btn_c, <span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;li&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    li.<span class="property">innerHTML</span> = <span class="string">&quot;&lt;a href=&#x27;javascript:;&#x27; class=&#x27;link&#x27;&gt;超链接&lt;/a&gt;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    u1_c.<span class="title function_">appendChild</span>(li)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj, eventStr, callback</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">addEventListener</span>(eventStr, callback, <span class="literal">false</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;<span class="keyword">else</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span> + eventStr, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        callback.<span class="title function_">call</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="事件的绑定"><a href="#事件的绑定" class="headerlink" title="事件的绑定"></a>事件的绑定</h3><p><strong>对象.事件 &#x3D; 函数</strong>。</p>
