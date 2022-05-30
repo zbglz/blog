@@ -109,16 +109,16 @@ tag_img: /static/butterfly/tags_img.jpg
 
 # tag 子页面的 top_img，可配置每个 tag 的 top_img
 tag_per_img:
-  ECMAScript: ../../../../../../../../../../blog/static/blog/md/ES.svg
-  git: ../../../../../../../../../../blog/static/blog/md/git.svg
-  hexo: ../../../../../../../../../../blog/static/blog/md/hexo.svg
-  html: ../../../../../../../../../../blog/static/blog/md/html.svg
-  javascript: ../../../../../../../../../../blog/static/blog/md/javascript.svg
-  # markdown: ../../../../../../../../../../blog/static/blog/md/markdown.svg
-  nodejs: ../../../../../../../../../../blog/static/blog/md/nodejs.svg
-  vue2: ../../../../../../../../../../blog/static/blog/md/vue2.svg
-  vue3: ../../../../../../../../../../blog/static/blog/md/vue3.svg
-  windows: ../../../../../../../../../../blog/static/blog/md/windows.svg
+  ECMAScript: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/ES.svg
+  git: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/git.svg
+  hexo: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/hexo.svg
+  html: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/html.svg
+  javascript: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg
+  # markdown: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/markdown.svg
+  nodejs: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/nodejs.svg
+  vue2: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg
+  vue3: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue3.svg
+  windows: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/windows.svg
 
 # category 子页面 的 默认 top_img
 # 注意: category page, not categories page (子分類頁面的 top_img)
@@ -126,16 +126,16 @@ category_img: /static/butterfly/categories_img.jpg
 
 # category 子页面的 top_img，可配置每个 category 的 top_img
 category_per_img:
-  ECMAScript: ../../../../../../../../../../blog/static/blog/md/ES.svg
-  git: ../../../../../../../../../../blog/static/blog/md/git.svg
-  hexo: ../../../../../../../../../../blog/static/blog/md/hexo.svg
-  html: ../../../../../../../../../../blog/static/blog/md/html.svg
-  javascript: ../../../../../../../../../../blog/static/blog/md/javascript.svg
-  # markdown: ../../../../../../../../../../blog/static/blog/md/markdown.svg
-  nodejs: ../../../../../../../../../../blog/static/blog/md/nodejs.svg
-  vue2: ../../../../../../../../../../blog/static/blog/md/vue2.svg
-  vue3: ../../../../../../../../../../blog/static/blog/md/vue3.svg
-  windows: ../../../../../../../../../../blog/static/blog/md/windows.svg
+  ECMAScript: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/ES.svg
+  git: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/git.svg
+  hexo: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/hexo.svg
+  html: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/html.svg
+  javascript: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg
+  # markdown: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/markdown.svg
+  nodejs: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/nodejs.svg
+  vue2: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg
+  vue3: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue3.svg
+  windows: https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/windows.svg
 
 cover:
   # display the cover or not (是否顯示文章封面)
