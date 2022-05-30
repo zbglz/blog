@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(56)Vue-Router的安装和配置 | LaoGao's Blog</title><meta name="keywords" content="vue2,vue-router"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Vue-Router目前前端流行的三大框架, 都有自己的路由实现  Angula的ngRouter React的ReactRouter Vue的vue-Router  vue-Router是vuejs官方的路由插件, 它和vuejs是深度集成的, 适合用于构建单页面应用。vue-Router是基于路由和组件的。路由用于设定访问路径, 将路径和组件按映射起来。在vue-Router单页面应用中,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(56)Vue-Router的安装和配置">
+<meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/56/index.html">
+<meta property="og:site_name" content="LaoGao&#39;s Blog">
+<meta property="og:description" content="Vue-Router目前前端流行的三大框架, 都有自己的路由实现  Angula的ngRouter React的ReactRouter Vue的vue-Router  vue-Router是vuejs官方的路由插件, 它和vuejs是深度集成的, 适合用于构建单页面应用。vue-Router是基于路由和组件的。路由用于设定访问路径, 将路径和组件按映射起来。在vue-Router单页面应用中,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-87.png">
+<meta property="article:published_time" content="2022-05-24T06:02:17.783Z">
+<meta property="article:modified_time" content="2022-05-27T01:42:07.580Z">
+<meta property="article:author" content="LaoGao">
+<meta property="article:tag" content="vue2">
+<meta property="article:tag" content="vue-router">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-87.png"><link rel="shortcut icon" href="/blog/static/site/favicon.png"><link rel="canonical" href="https://zbglz.gitee.io/blog/vue2/56/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="/blog/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaoGao","link":"链接: ","source":"来源: LaoGao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '(56)Vue-Router的安装和配置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-05-27 09:42:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(56)Vue-Router的安装和配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T06:02:17.783Z" title="发表于 2022-05-24 14:02:17">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T01:42:07.580Z" title="更新于 2022-05-27 09:42:07">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue-Router"></a>Vue-Router</h3><p>目前前端流行的三大框架, 都有自己的路由实现</p>
+<ul>
+<li>Angula的ngRouter</li>
+<li>React的ReactRouter</li>
+<li>Vue的vue-Router</li>
+</ul>
+<p><strong>vue-Router是vuejs官方的路由插件, 它和vuejs是深度集成的, 适合用于构建单页面应用</strong>。<br><strong>vue-Router是基于路由和组件的</strong>。<br><strong>路由用于设定访问路径, 将路径和组件按映射起来</strong>。<br>在vue-Router单页面应用中, <code>页面的路径的改变就是组件的切换</code>。</p>
+<blockquote>
+<p>vue-Router安装</p>
+</blockquote>
+<p>在前面的项目创建时, 已经安装好了vue-router, 可以看到, src文件夹下多了一个叫router的文件夹。</p>
+<pre><code>F:\learn\vuerouterpro&gt; npm install vue-router --save
+</code></pre>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-87.png" alt="vue2-87"></p>
+<blockquote>
+<p>配置路由信息</p>
+</blockquote>
+<p>router文件夹下有一个index.js, 我们将index.js的内容清空。将main.js中的路由配置也删除了。学习一下手动配置路由。</p>
+<pre><code>//在router文件夹下的`index.js`中开始配置路由信息。
+//第一步：导入路由对象
+import Router from &#39;vue-router&#39;
+
+//第二步：通过Vue.use(插件), 安装插件。
+//但是这里面没有Vue, 我们还需要导入vue
+import Vue from &#39;vue&#39;
+Vue.use(Router)
+
+//第三步：创建路由对象。
+const router = new Router(&#123;
+  //在这里配置路由和组件之间的映射关系。
+  routers:[
+    
+  ]
+&#125;)
+
+//第四步：导出路由实例router
+export default router
+
+//第五步：在main.js中, 导入前面导出的router实例
+import router from &quot;./router/index.js&quot;
+
+//第六步：在main.js的vue实例中挂载router。
+new Vue(&#123;
+  el: &#39;#app&#39;,
+  router,
+  render: h =&gt; h(App)
+&#125;)
+
+//这样, 路由配置就完成了, 但是要想路由生效。
+//还需要回到第三步中的routers, 配置路由和组件的映射关系。
+const router = new Router(&#123;
+  routers:[
+    
+  ]
+&#125;)
+</code></pre>
+<blockquote>
+<p>路由配置映射</p>
+</blockquote>
+<p>先删除项目默认的组件。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-88.png" alt="vue2-88"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-89.png" alt="vue2-89"></p>
+<p>没有组件就无法配置映射关系, 所以第一步需要创建一个新组件, 在components文件夹中, 创建两个组件 *.vue。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-90.png" alt="vue2-90"></p>
+<p>组件创建完成后, 有了组件就可以配置路由和组件的映射关系了。回到router文件夹下的index.js中。</p>
+<p>一个映射关系就是一个对象。这里需要添加2个对象(因为前面新建了2个组件)。对象里面有2个基本属性path和component。</p>
+<pre><code>export default new Router(&#123;
+  routes: [
+    &#123;
+      path: 路径,
+      component: 组件
+    &#125;,
+    &#123;
+      path: 路径,
+      component: 组件
+    &#125;
+  ]
+&#125;)
+
+//第一个：path, 在path中, 配置路径信息。
+export default new Router(&#123;
+  routes: [
+    &#123;
+      path: &quot;/home&quot;, //意思是只要url里面出现了/home就会加载下面的组件。
+      component: 组件
+    &#125;,
+    &#123;
+      path: &quot;/about&quot;, //意思是只要url里面出现了/about就会加载下面的组件。
+      component: 组件
+    &#125;
+  ]
+&#125;)
+
+//第二个：component, 配置组件。要使用组件就需要先导入
+import Home from &quot;../components/home.vue&quot;
+import About from &quot;../components/about.vue&quot;
+export default new Router(&#123;
+  routes: [
+    &#123;
+      path: &quot;/home&quot;, 
+      component: Home
+    &#125;,
+    &#123;
+      path: &quot;/about&quot;, 
+      component: About
+    &#125;
+  ]
+&#125;)
+</code></pre>
+<p>配置完路由, 新建的组件并不会显示。</p>
+<blockquote>
+<p>router-link</p>
+</blockquote>
+<p>在main.js中render了App组件, 页面现在只会显示App组件。 在App中新建两个按钮, 点击按钮时去切换url, 来加载不同的组件。使用router中注册的标签router-link, 它最终会被渲染成a标签。</p>
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+
+    &lt;router-link to=&quot;/home&quot;&gt;首页&lt;/router-link&gt;
+    &lt;router-link to=&quot;/about&quot;&gt;关于&lt;/router-link&gt;
+
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default &#123;
+  name: &#39;App&#39;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+
+&lt;/style&gt;
+</code></pre>
+<p>编译一下项目看看。</p>
+<pre><code>F:\learn\vuerouterpro&gt; npm run dev
+</code></pre>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-91.png" alt="vue2-91"></p>
+<blockquote>
+<p>router-view</p>
+</blockquote>
+<p>正常编译。且页面显示了增加的两个标签。点击标签, 路径可以正常切换。但是组件内容还没有展示这里需要用到router中的第二个标签, router-view。</p>
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+
+    &lt;router-link to=&quot;/home&quot;&gt;首页&lt;/router-link&gt;
+    &lt;router-link to=&quot;/about&quot;&gt;关于&lt;/router-link&gt;
+    
+    &lt;!-- 决定, 渲染的组件 首页/关于, 显示在什么位置。 --&gt;
+    &lt;!-- 它相当于一个占位, 组件渲染出来后, 会替换router-view。 --&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default &#123;
+  name: &#39;App&#39;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+
+&lt;/style&gt;
+</code></pre>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-92.png" alt="vue2-92"></p>
+<p>这个时候再在页面中点击标签, 就能根据路由映射中的设置, 就能切换显示不同组件的内容。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-93.png" alt="vue2-93"></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog">LaoGao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog/vue2/56/">https://zbglz.gitee.io/blog/vue2/56/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zbglz.gitee.io/blog" target="_blank">LaoGao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/vue2/">vue2</a><a class="post-meta__tags" href="/blog/tags/vue-router/">vue-router</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-87.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/blog/pluginsSrc/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/blog/pluginsSrc/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/vue2/55/"><img class="prev-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-85.png" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">(55)url的hash和html5的history</div></div></a></div><div class="next-post pull-right"><a href="/blog/vue2/57/"><img class="next-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-95.png" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(57)路由的默认值和修改为history</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/vue2/54/" title="(54)路由的认识"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-84.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(54)路由的认识</div></div></a></div><div><a href="/blog/vue2/55/" title="(55)url的hash和html5的history"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(55)url的hash和html5的history</div></div></a></div><div><a href="/blog/vue2/57/" title="(57)路由的默认值和修改为history"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-95.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(57)路由的默认值和修改为history</div></div></a></div><div><a href="/blog/vue2/58/" title="(58)router-link的其他属性补充"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-100.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(58)router-link的其他属性补充</div></div></a></div><div><a href="/blog/vue2/59/" title="(59)通过代码的方式修改路由"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-102.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(59)通过代码的方式修改路由</div></div></a></div><div><a href="/blog/vue2/60/" title="(60)动态路由的使用"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2-104.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(60)动态路由的使用</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="avatar"/></div><div class="author-info__name">LaoGao</div><div class="author-info__description">学习笔记</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" href="/"><i></i><span>回到首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/blog/about/" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src= "/blog/static/site/loadding.gif" data-lazy-src="../../../../../../blog/static/site/comment.gif"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-Router"><span class="toc-text">Vue-Router</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/86/" title="(86)记录:图片lazy-load"><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(86)记录:图片lazy-load"/></a><div class="content"><a class="title" href="/blog/vue2/86/" title="(86)记录:图片lazy-load">(86)记录:图片lazy-load</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/87/" title="(87)记录:记录:px转化为vw转化插件"><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(87)记录:记录:px转化为vw转化插件"/></a><div class="content"><a class="title" href="/blog/vue2/87/" title="(87)记录:记录:px转化为vw转化插件">(87)记录:记录:px转化为vw转化插件</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/88/" title="(88)记录:服务器配置问题"><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(88)记录:服务器配置问题"/></a><div class="content"><a class="title" href="/blog/vue2/88/" title="(88)记录:服务器配置问题">(88)记录:服务器配置问题</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By LaoGao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/blog/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="../../../../../../blog/static/butterfly/custom.js"></script><script defer="defer" id="ribbon" src="/blog/pluginsSrc/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script></div></body></html>
