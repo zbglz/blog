@@ -803,7 +803,7 @@ pjax:
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
 
 # Snackbar (Toast Notification 彈窗)
@@ -832,7 +832,7 @@ pangu:
 lazyload:
   enable: true
   field: site # site/post
-  placeholder: static/site/loadding.gif
+  placeholder: /static/site/loadding.gif
   blur: false
 
 # PWA
