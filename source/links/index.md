@@ -27,7 +27,7 @@ top_img: ../../../blog/static/butterfly/links_img.jpg
     - name: hexo
       link: https://hexo.io/zh-cn/
       avatar: https://hexo.io/icon/favicon-96x96.png
-      descr: 版本控制系统
+      descr: Hexo是一个基于nodejs的静态博客网站生成器。
 
 - class_name: 图片类
   class_desc: 图片类工具

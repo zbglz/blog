@@ -1,8 +1,3 @@
-/*网络图片地址替换*/
-var GitHubPicBaseUrl = "https://cdn.jsdelivr.net/gh/zbglz/cdn@master/" + "blog/md/";
-var dcloudPicBaseUrl = "https://7463-tcb-lvks3mdyb2dd1d-5d1wm59697f2e-1306125175.tcb.qcloud.la/" + "blog/md/";
-/**/
-
 $(function(){
   /*
    * get all figcaption 代码块

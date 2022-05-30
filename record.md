@@ -3,10 +3,17 @@ Twikoo评论系统管理
 新:5231480
 
 
-图床baseURL:https://cdn.jsdelivr.net/gh/zbglz/cdn@master/
+
+
+
 
 github：生成的token：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
 
+### 图片地址
+
+本地baseURL：../../../../../../../../../../blog/static/blog/md/
+
+GitHubPicBaseUrl = https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/
 
 
 ### gitee pages失败记录：
