@@ -11,13 +11,13 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="ffffff">
     <meta name="description"
-      content="为什么要用proxy去替换Object.defineProperty, 这是因为Object.defineProperty不能对数组进行监听, 我们用到的如push, pop一类的操作方法能够实现响应式, 是因为, vue本身对该方法进行了重写。">
+      content="为什么要用proxy去替换Object.defineProperty, 这是因为Object.defineProperty不能对数组进行jianting, 我们用到的如push, pop一类的操作方法能够实现响应式, 是因为, vue本身对该方法进行了重写。">
     <meta property="og:type" content="article">
     <meta property="og:title" content="(78)proxy代理">
     <meta property="og:url" content="https://zbglz.gitee.io/blog/javascript/78/index.html">
     <meta property="og:site_name" content="LaoGao&#39;s Blog">
     <meta property="og:description"
-      content="为什么要用proxy去替换Object.defineProperty, 这是因为Object.defineProperty不能对数组进行监听, 我们用到的如push, pop一类的操作方法能够实现响应式, 是因为, vue本身对该方法进行了重写。">
+      content="为什么要用proxy去替换Object.defineProperty, 这是因为Object.defineProperty不能对数组进行jianting, 我们用到的如push, pop一类的操作方法能够实现响应式, 是因为, vue本身对该方法进行了重写。">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg">
     <meta property="article:published_time" content="2022-05-19T06:10:18.366Z">
@@ -341,15 +341,15 @@
             <hr>
             <h3 id="proxy代理"><a href="#proxy代理" class="headerlink" title="proxy代理"></a>proxy代理</h3>
             <p><strong>vue大概的基本原理</strong>：</p>
-            <pre><code>数据jiechi---&gt;观察者---&gt;数据解析、指令、js对象, diff算法---&gt;dom
+            <pre><code>数据劫持---&gt;观察者---&gt;数据解析、指令、js对象, diff算法---&gt;dom
 </code></pre>
-            <p><strong>那么vue是通过什么进行数据jiechi的呢</strong>？</p>
+            <p><strong>那么vue是通过什么进行数据劫持的呢</strong>？</p>
             <pre><code>vue2 是通过Object.defineProperty。IE8以下不兼容
 vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 </code></pre>
             <p><strong>为什么要用vue3去取代vue2</strong>, 或者说, 为什么要用proxy去替换Object.defineProperty,
-              这是因为Object.defineProperty不能对数组进行监听, 我们用到的如push, pop一类的操作方法能够实现响应式, 是因为, vue本身对该方法进行了重写。诸如arr[0] &#x3D;
-              1,这种写法就无法实现监听了。而Proxy可以实现对数组的监听。</p>
+              这是因为Object.defineProperty不能对数组进行jianting, 我们用到的如push, pop一类的操作方法能够实现响应式, 是因为, vue本身对该方法进行了重写。诸如arr[0] &#x3D;
+              1,这种写法就无法实现jianting了。而Proxy可以实现对数组的jianting。</p>
             <p><strong>什么是proxy？</strong></p>
             <p>直接的理解, Proxy就是<strong>代理</strong>的意思。它可以实现对, 对象、数组、方法等的代理。</p>
             <p>proxy另一方面, 还可以理解为<strong>拦截</strong>的意思。proxy提供了13中方法进行拦截。而Object.defineProperty只有两种, get&#x2F;set。</p>
