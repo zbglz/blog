@@ -7,6 +7,9 @@ Twikoo评论系统管理
 
 github：生成的token：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
 
-gitee pages失败记录：
 
-1."冒泡" --> 导致部署失败
+
+### gitee pages失败记录：
+
+1."冒泡" --> 导致部署失败。
+1.因为文章标题"事件冒泡"、修改过"事件bubble"等.. --> 导致74/75/78部署失败(上一页下一页中也有标题- -！)。
