@@ -1,0 +1,467 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(75)事件冒泡 | LaoGao's Blog</title><meta name="keywords" content="javascript"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="所谓的冒泡指的就是, 事件向上传导, 当后代元素上的时间被触发时, 其祖先元素上相同的事件也会触发。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(75)事件冒泡">
+<meta property="og:url" content="https://zbglz.gitee.io/blog/javascript/75/index.html">
+<meta property="og:site_name" content="LaoGao&#39;s Blog">
+<meta property="og:description" content="所谓的冒泡指的就是, 事件向上传导, 当后代元素上的时间被触发时, 其祖先元素上相同的事件也会触发。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg">
+<meta property="article:published_time" content="2022-05-19T06:03:10.351Z">
+<meta property="article:modified_time" content="2022-05-30T01:27:37.078Z">
+<meta property="article:author" content="LaoGao">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg"><link rel="shortcut icon" href="/blog/static/site/favicon.png"><link rel="canonical" href="https://zbglz.gitee.io/blog/javascript/75/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="/blog/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaoGao","link":"链接: ","source":"来源: LaoGao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '(75)事件冒泡',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2022-05-30 09:27:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(75)事件冒泡</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-19T06:03:10.351Z" title="发表于 2022-05-19 14:03:10">2022-05-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-30T01:27:37.078Z" title="更新于 2022-05-30 09:27:37">2022-05-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/javascript/">javascript</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>事件冒泡：<br>元素绑定事件：<strong>span div  body</strong>, 都绑定了单击响应函数。<br>元素之间关系：<strong>子级 父级 祖先</strong>。<code>点击span的响应函数时。三个元素的点击事件都被触发</code>。<br>事件触发顺序：<strong>span div  body</strong>。</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;box1&quot;&gt;
+        我是box1
+        &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>这种现象就叫做<code>事件冒泡(Bubble)。</code>所谓的冒泡指的就是, 事件向上传导, 当后代元素上的时间被触发时, 其祖先元素上相同的事件也会触发。</p>
+<pre><code>&lt;style&gt;#box1&#123;width:200px;height:100px;background-color:lightblue;&#125;#s1&#123;background-color:lightyellow;&#125;&lt;/style&gt;
+
+&lt;div id=&quot;box1&quot;&gt;
+  我是box1
+  &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var s1 = document.getElementById(&quot;s1&quot;)
+  var box1 = document.getElementById(&quot;box1&quot;)
+  bind(s1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;span被点击了&quot;)
+  &#125;)
+  bind(box1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;div被点击了&quot;)
+  &#125;)
+  bind(document.body, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;body被点击了&quot;)
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p><strong>从开发的角度讲</strong>。<br>大部分情况冒泡都是有用的。比如上一节的div跟随鼠标移动。试想, 页面中还有一个静止的div, 当鼠标移动到该div的内部时, 跟随鼠标的那个div还会跟着移动吗？要知道此时鼠标已经是在那么div中移动了, 并不是在document中移动(移动事件是绑定给document的。), 但是跟随鼠标移动的那个div还是会跟着鼠标移动, 这就是冒泡带来的好处了。</p>
+<p><strong>但是在上一个例子中</strong>, 很明显, 我们点击span时, 只希望span的点击事件被触发, 不希望它的父级乃至祖先元素被触发, 这个时候就需要取消冒泡。</p>
+<pre><code>event.cancelBubble = true
+</code></pre>
+<p>cancelBubble这个属性本身是IE的属性, 但现在很多浏览器也都支持, 包括chrome等。所以cancelBubble基本不会有什么兼容性问题。</p>
+<p>例：</p>
+<pre><code>&lt;style&gt;#box1&#123;width:200px;height:100px;background-color:lightblue;&#125;#s1&#123;background-color:lightyellow;&#125;&lt;/style&gt;
+
+&lt;div id=&quot;box1&quot;&gt;
+  我是box1
+  &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var s1 = document.getElementById(&quot;s1&quot;)
+  var box1 = document.getElementById(&quot;box1&quot;)
+  bind(s1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;span被点击了&quot;)
+    event = event || window.event
+    event.cancelBubble = true
+  &#125;)
+  bind(box1, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;div被点击了&quot;)
+    event = event || window.event
+    event.cancelBubble = true
+  &#125;)
+  bind(document.body, &quot;click&quot;, function(event)&#123;
+    console.log(&quot;body被点击了&quot;)
+    event = event || window.event
+    event.cancelBubble = true
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>div跟随鼠标示例中, 取消冒泡, 再移动鼠标到里面试试。</p>
+<pre><code>&lt;style&gt;body&#123;height:1000px;width:1000px;&#125;#followDiv&#123;width:50px;height:50px;background-color:lightblue;position:absolute;&#125;#s1,#s2&#123;padding:10px;background-color:lightgreen&#125;&lt;/style&gt;
+
+&lt;span id=&quot;s1&quot;&gt;取消冒泡&lt;/span&gt;
+&lt;span id=&quot;s2&quot;&gt;没取消冒泡&lt;/span&gt;
+&lt;div id=&quot;followDiv&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  var followDiv = document.getElementById(&quot;followDiv&quot;);
+  var s1 = document.getElementById(&quot;s1&quot;);
+  
+  bind(document, &quot;mousemove&quot;, function(event)&#123;
+    event = event || window.evnet
+    var scrollW = document.body.scrollLeft || document.documentElement.scrollLeft
+    var scrollH = document.body.scrollTop || document.documentElement.scrollTop
+    
+    var left = event.clientX + scrollW
+    var top = event.clientY + scrollH
+    
+    followDiv.style.left = left + &quot;px&quot;
+    followDiv.style.top = top + &quot;px&quot;
+  &#125;)
+  
+  bind(s1, &quot;mousemove&quot;, function(event)&#123;
+    event = event || window.evnet
+    event.cancelBubble = true
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<hr>
+<h3 id="动态绑定事件"><a href="#动态绑定事件" class="headerlink" title="动态绑定事件"></a>动态绑定事件</h3><p>我们有一些超链接, 在初始化页面的时候就给他们绑定了单击响应函数。还有一个按钮可以动态添加超链接。但是新添加的超链接是没绑定点击事件的, 还需要去重新绑定。</p>
+<pre><code>&lt;button id=&quot;btn_a&quot;&gt;点击添加超链接&lt;/button&gt;
+&lt;ul id=&quot;ul_a&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;超链接一&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;超链接二&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;超链接三&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  var allA = document.getElementsByTagName(&quot;a&quot;)
+  var btn_a = document.getElementById(&quot;btn_a&quot;)
+  var ul_a = document.getElementById(&quot;ul_a&quot;)
+  
+  Object.keys(allA).forEach(key =&gt;&#123;
+    bind(allA[key], &quot;click&quot;, function()&#123;
+      console.log(&quot;我是a的单击响应函数&quot;)
+    &#125;)
+  &#125;)
+  bind(btn_a, &quot;click&quot;, function()&#123;
+    var li = document.createElement(&quot;li&quot;)
+    li.innerHTML = &quot;&lt;a href=&#39;javascript:;&#39;&gt;超链接&lt;/a&gt;&quot;
+    bind(li.firstChild, &quot;click&quot;, function()&#123;
+      console.log(&quot;我是a的单击响应函数&quot;)
+    &#125;)
+    ul_a.appendChild(li)
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>需求:我们希望只绑定一次事件, 即可应用到多个元素上, 即使元素是动态添加的。</p>
+<p>事件的委派:我们可以尝试将其绑定给元素的共同祖先元素ul上, 这样点击任意a标签, 会一直冒泡到祖先元素上的点击事件。从而通过祖先元素的响应函数来处理事件。事件的委派是利用了冒泡, 可以减少事件绑定的次数, 提高出现的性能。</p>
+<pre><code>&lt;button id=&quot;btn_b&quot;&gt;点击添加超链接&lt;/button&gt;
+&lt;ul id=&quot;u1_b&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;超链接一&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;超链接二&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;超链接三&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  var u1_b = document.getElementById(&quot;u1_b&quot;)
+  var btn_b = document.getElementById(&quot;btn_b&quot;)
+  
+  bind(u1_b, &quot;click&quot;, function()&#123;
+    console.log(&quot;我是ul的单击响应函数&quot;)
+  &#125;)
+  bind(btn_b, &quot;click&quot;, function()&#123;
+    var li = document.createElement(&quot;li&quot;)
+    li.innerHTML = &quot;&lt;a href=&#39;javascript:;&#39;&gt;超链接&lt;/a&gt;&quot;
+    u1_b.appendChild(li)
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>但是点击除了a以外的其他部分, 也会触发ul的点击事件, 不仅点击a会冒泡到ul的点击事件上, 点击li也会冒泡到ul的点击事件上, 我们期望的是, 触发事件的对象是我们期望的元素则执行, 不是的话就不执行。这就需要判断当前点击的元素, 我们知道”onclick”事件是绑定在ul上的, 那点击时的this就是ul, 则不能通过this获取当前点击的元素。</p>
+<hr>
+<h3 id="target"><a href="#target" class="headerlink" title="target"></a>target</h3><p>可以返回触发事件的元素target。</p>
+<pre><code>&lt;button id=&quot;btn_c&quot;&gt;点击添加超链接&lt;/button&gt;
+&lt;ul id=&quot;u1_c&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接一&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接二&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接三&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  var u1_c = document.getElementById(&quot;u1_c&quot;)
+  var btn_c = document.getElementById(&quot;btn_c&quot;)
+  
+  bind(u1_c, &quot;click&quot;, function(event)&#123;
+    event = event || window.event
+    // 当然a的class可能不仅仅有link, 还可能有多的className, 这里还需要进行判断。
+    // 这就利用冒泡, 实现事件的委派, 而不需要对期望的元素进行多次事件绑定。
+    if(event.target.className == &quot;link&quot;)&#123;
+      console.log(event.target.firstChild.nodeValue)
+    &#125;
+  &#125;)
+  bind(btn_c, &quot;click&quot;, function()&#123;
+    var li = document.createElement(&quot;li&quot;)
+    li.innerHTML = &quot;&lt;a href=&#39;javascript:;&#39; class=&#39;link&#39;&gt;超链接&lt;/a&gt;&quot;
+    u1_c.appendChild(li)
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<hr>
+<h3 id="事件的绑定"><a href="#事件的绑定" class="headerlink" title="事件的绑定"></a>事件的绑定</h3><p><strong>对象.事件 &#x3D; 函数</strong>。</p>
+<p>我们给按钮绑定了2个onclick事件, 但是第一个绑定的事件被第二个绑定的事件覆盖了。它只能同时为一个元素的一个事件绑定一个响应函数, 不能绑定多个。</p>
+<p><strong>但是有时候我们就需要为元素的一个事件, 绑定多个函数, 这种方式绑定就不够灵活了</strong>。<code>addEventListener()</code> 通过这个方法, 也可以为元素绑定响应函数。</p>
+<p><strong>参数</strong>:</p>
+<p>事件类型：不要on<br>回调函数, 当事件被触发时该函数会被调用。<br>是否在捕获阶段触发事件。需要一个布尔值, 一般都传false。</p>
+<p><strong>它就可以给元素的一个事件, 绑定多个响应函数。</strong><code>但是, 这个方法IE8及以下的浏览器不支持</code>。</p>
+<pre><code>var btn01 = document.getElementById(&quot;btn01&quot;)
+btn01.addEventListener(&quot;click&quot;,function()&#123;
+    console.log(1)
+&#125;,false)
+btn01.addEventListener(&quot;click&quot;,function()&#123;
+    console.log(2)
+&#125;,false)
+// 1, 2
+</code></pre>
+<p>如果需要兼容IE8及以下的浏览器, 就不能直接使用addEventListener。</p>
+<p>使用<code>attachEvent()</code> IE5以上浏览器支持。它也可以为元素的一个事件绑定多个响应函数。</p>
+<p><strong>参数</strong></p>
+<p>事件类型：<strong>它要on</strong><br>回调函数。</p>
+<p>兼容IE8及以下浏览器的attachEvent()需要加on在前面。</p>
+<pre><code>var btn01 = document.getElementById(&quot;btn01&quot;)
+btn01.attachEvent(&quot;onclick&quot;,function()&#123;
+    console.log(1)
+&#125;)
+btn01.attachEvent(&quot;onclick&quot;,function()&#123;
+    console.log(2)
+&#125;)
+// 2, 1
+</code></pre>
+<p>attachEvent与addEventListener不同的是, <strong>它是后绑定, 先执行</strong>, 和addEventListener方式绑定的执行顺序不同。当然既然已经用不同的响应事件分开处理了, 大部分情况下他们的执行顺序不同, 不会有太大的影响。</p>
+<p><strong>虽然IE支持了</strong>, 但是火狐和chrome又不支持attachEvent了。</p>
+<hr>
+<p><strong>定义一个函数, 用来为制定元素绑定响应函数</strong>。<br>涉及几个参数：</p>
+<p>obj 要绑定事件的对象<br>eventStr 事件类型的字符串, 不要on<br>callback 回调函数<br>需要注意addEventListener()中的this, 是绑定事件的对象, attachEvent()中的this是window对象, 需要统一两个方法中的this。</p>
+<pre><code>function bind(obj, eventStr, callback)&#123;
+  if(obj.addEventListener)&#123;
+    // 大部分浏览器的情况
+    obj.addEventListener(eventStr, callback, false)
+  &#125;else&#123;
+    // IE8及以下:obj.attachEvent(&quot;on&quot; + eventStr, callback)
+    // 统一this：我们知道了attachEvent()中的this是window对象
+    // 这个回调函数是由浏览器去调用的。我们需要拿回，调用回调函数的权利。
+    // 利用callback.call(obj)的方式, 指定this对象。
+    // 可以先让浏览器去回调一个匿名函数, 而在匿名函数中
+    // 我们就可以重新指定回调函数的调用方式
+    obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+      callback.call(obj)
+    &#125;)
+  &#125;
+&#125;
+</code></pre>
+<p>例：</p>
+<pre><code>&lt;button id=&quot;btn01&quot;&gt;点我一下&lt;/button&gt;
+
+&lt;script&gt;
+  var btn01 = document.getElementById(&quot;btn01&quot;)
+  
+  bind(btn01, &quot;click&quot;, function()&#123;
+    console.log(1)
+  &#125;)
+  bind(btn01, &quot;click&quot;, function()&#123;
+    console.log(2)
+  &#125;)
+  
+  function bind(obj, eventStr, callback)&#123;
+    if(obj.addEventListener)&#123;
+      obj.addEventListener(eventStr, callback, false)
+    &#125;else&#123;
+      obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
+        callback.call(obj)
+      &#125;)
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog">LaoGao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog/javascript/75/">https://zbglz.gitee.io/blog/javascript/75/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zbglz.gitee.io/blog" target="_blank">LaoGao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/javascript/">javascript</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/blog/pluginsSrc/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/blog/pluginsSrc/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/javascript/74/"><img class="prev-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">(74)事件对象</div></div></a></div><div class="next-post pull-right"><a href="/blog/javascript/78/"><img class="next-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(78)proxy代理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/javascript/1/" title="(1)javascript基本语法"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(1)javascript基本语法</div></div></a></div><div><a href="/blog/javascript/10/" title="(10)强制类型转换Number"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(10)强制类型转换Number</div></div></a></div><div><a href="/blog/javascript/11/" title="(11)转换为Boolean"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(11)转换为Boolean</div></div></a></div><div><a href="/blog/javascript/12/" title="(12)其他进制的数字"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(12)其他进制的数字</div></div></a></div><div><a href="/blog/javascript/13/" title="(13)运算符"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(13)运算符</div></div></a></div><div><a href="/blog/javascript/14/" title="(14)一元运算符"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/javascript.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(14)一元运算符</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="avatar"/></div><div class="author-info__name">LaoGao</div><div class="author-info__description">学习笔记</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" href="/"><i></i><span>回到首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/blog/about/" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src= "/blog/static/site/loadding.gif" data-lazy-src="../../../../../../blog/static/site/comment.gif"></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/86/" title="(86)记录:图片lazy-load"><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(86)记录:图片lazy-load"/></a><div class="content"><a class="title" href="/blog/vue2/86/" title="(86)记录:图片lazy-load">(86)记录:图片lazy-load</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/87/" title="(87)记录:记录:px转化为vw转化插件"><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(87)记录:记录:px转化为vw转化插件"/></a><div class="content"><a class="title" href="/blog/vue2/87/" title="(87)记录:记录:px转化为vw转化插件">(87)记录:记录:px转化为vw转化插件</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/88/" title="(88)记录:服务器配置问题"><img src= "/blog/static/site/loadding.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/zbglz/cdn@master/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(88)记录:服务器配置问题"/></a><div class="content"><a class="title" href="/blog/vue2/88/" title="(88)记录:服务器配置问题">(88)记录:服务器配置问题</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By LaoGao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/blog/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="../../../../../../blog/static/butterfly/custom.js"></script><script defer="defer" id="ribbon" src="/blog/pluginsSrc/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script></div></body></html>
