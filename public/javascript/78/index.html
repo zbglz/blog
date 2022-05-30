@@ -341,9 +341,9 @@
             <hr>
             <h3 id="proxy代理"><a href="#proxy代理" class="headerlink" title="proxy代理"></a>proxy代理</h3>
             <p><strong>vue大概的基本原理</strong>：</p>
-            <pre><code>数据劫持---&gt;观察者---&gt;数据解析、指令、js对象, diff算法---&gt;dom
+            <pre><code>数据jiechi---&gt;观察者---&gt;数据解析、指令、js对象, diff算法---&gt;dom
 </code></pre>
-            <p><strong>那么vue是通过什么进行数据劫持的呢</strong>？</p>
+            <p><strong>那么vue是通过什么进行数据jiechi的呢</strong>？</p>
             <pre><code>vue2 是通过Object.defineProperty。IE8以下不兼容
 vue3 则是通过proxy。IE9以下都不兼容。Edge 12+
 </code></pre>
@@ -576,7 +576,7 @@ newTarget[&#39;c&#39;] = 100 // c并不会添加到对象中, 因为阻止了拓
                   onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post">
                 <div class="pagination-info">
                   <div class="label">上一篇</div>
-                  <div class="prev_info">(75)事件</div>
+                  <div class="prev_info">(75)事件Bubble</div>
                 </div>
               </a></div>
             <div class="next-post pull-right"><a href="/blog/javascript/76/"><img class="next-cover"
