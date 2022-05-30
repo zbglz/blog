@@ -6,3 +6,7 @@ Twikoo评论系统管理
 图床baseURL:https://cdn.jsdelivr.net/gh/zbglz/cdn@master/
 
 github：生成的token：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
+
+gitee pages失败记录：
+
+1."冒泡" --> 导致部署失败
