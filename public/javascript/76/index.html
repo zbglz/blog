@@ -337,12 +337,12 @@
           <article class="post-content" id="article-container">
             <hr>
             <h3 id="事件的传播"><a href="#事件的传播" class="headerlink" title="事件的传播"></a>事件的传播</h3>
-            <p>关于事件的传播, 网景公司和微软有不同的理解。微软公司认为事件应该是由内向外传播, 也就是当事件时, 应该先当前元素上的事件, 然后再向当前元素的祖先元素传播。<strong>也就是说,
-                事件应该在Bubble阶段就执行</strong>。<br>网景公司认为, 事件应该是由外向内传播的。也就是说应该先,
+            <p>关于事件的传播, 网景公司和微软有不同的理解。微软公司认为事件应该是由内向外传播, 也就是当事件触发时, 应该先触发当前元素上的事件, 然后再向当前元素的祖先元素传播。<strong>也就是说,
+                事件应该在Bubble阶段就执行</strong>。<br>网景公司认为, 事件应该是由外向内传播的。也就是说应该先触发,
               当前元素最外层的祖先元素的事件。然后再向内传播给后代元素。<strong>称为事件的捕获阶段</strong>。<br>最终W3C综合了两个公司的方案, 将事件的传播分成了三个阶段。</p>
-            <p><strong>捕获阶段</strong>：在捕获阶段, 从最外层的祖先元素, 向目标元素进行事件的捕获, 但是默认此时不会事件。(祖先元素：W3C默认设计的是document,
+            <p><strong>捕获阶段</strong>：在捕获阶段, 从最外层的祖先元素, 向目标元素进行事件的捕获, 但是默认此时不会触发事件。(祖先元素：W3C默认设计的是document,
               但是大部分浏览器都设计成了从window开始)。<br><strong>目标阶段</strong>：事件捕获到了目标元素。捕获结束,
-              开始在目标元素上事件。<br><strong>Bubble阶段</strong>：事件从目标元素, 开始向它的祖先元素传递。依次祖先元素上的事件。</p>
+              开始在目标元素上触发事件。<br><strong>Bubble阶段</strong>：事件从目标元素, 开始向它的祖先元素传递。依次触发祖先元素上的事件。</p>
             <p>例：</p>
             <figure class="highlight js">
               <figcaption><span>js</span></figcaption>
@@ -357,18 +357,6 @@
 
 
 
-            <p><strong>如果希望在捕获阶段就事件</strong></p>
-            <p>可以将addEventListener()的第三个参数, 设置为true。</p>
-            <pre><code>function bind(obj, eventStr, callback)&#123;
-    if(obj.addEventListener)&#123;
-        obj.addEventListener(eventStr, callback, true)
-    &#125;else&#123;
-        obj.attachEvent(&quot;on&quot; + eventStr, function()&#123;
-            callback.call(obj)
-        &#125;)
-    &#125;
-&#125;
-</code></pre>
             <p>例：</p>
             <figure class="highlight js">
               <figcaption><span>js</span></figcaption>
@@ -383,7 +371,7 @@
 
 
 
-            <p><strong>但是一般情况下, 我们不会希望在捕获阶段事件。</strong>(IE8及以下浏览器, 没有捕获阶段)。</p>
+            <p><strong>但是一般情况下, 我们不会希望在捕获阶段触发事件。</strong>(IE8及以下浏览器, 没有捕获阶段)。</p>
             <hr>
           </article>
           <div class="post-copyright">
