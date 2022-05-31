@@ -7,7 +7,7 @@
 <h3 id="ECMAScript相关介绍"><a href="#ECMAScript相关介绍" class="headerlink" title="ECMAScript相关介绍"></a>ECMAScript相关介绍</h3><blockquote>
 <p>ECMA</p>
 </blockquote>
-<p>ECMA全称European Computer Manufacturers Association, ECMA中文名为欧洲计算机制造商协会, 这个组织的目标是评估、开发和认可电信和计算机标准, 1994年后该组织该改为Ecma国际。</p>
+<p>ECMA全称European Computer Manufacturers Association,ECMA中文名为欧洲计算机制造商协会, 这个组织的目标是评估、开发和认可电信和计算机标准, 1994年后该组织该改为Ecma国际。</p>
 <blockquote>
 <p>ECMAScript</p>
 </blockquote>
@@ -932,7 +932,7 @@ p.then(value =&gt; &#123;
 <h3 id="let变量声明及声明特性"><a href="#let变量声明及声明特性" class="headerlink" title="let变量声明及声明特性"></a>let变量声明及声明特性</h3><blockquote>
 <p>let声明格式</p>
 </blockquote>
-<p>let声明格式, 与var关键字差不多。</p>
+<p>let声明格式,与var关键字差不多。</p>
 <figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> a; <span class="comment">// 声明一个</span></span><br><span class="line">  <span class="keyword">let</span> b,c,d; <span class="comment">// 声明多个</span></span><br><span class="line">  <span class="keyword">let</span> e = <span class="number">100</span>, f = <span class="string">&quot;hello&quot;</span>; <span class="comment">// 声明多个, 赋初始值</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a,b,c,d,e,f)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -1007,7 +1007,7 @@ for(let i = 0; i &lt; items.length; i++)&#123;
     <title>(3)const声明常量及特点</title>
     <url>/blog/ecmascript/3/</url>
     <content><![CDATA[<hr>
-<h3 id="const声明常量及特点"><a href="#const声明常量及特点" class="headerlink" title="const声明常量及特点"></a>const声明常量及特点</h3><p>const用于声明常量, 所谓常量就是值不能修改的量, <strong>const声明格式, 与let和var是一样的</strong>。</p>
+<h3 id="const声明常量及特点"><a href="#const声明常量及特点" class="headerlink" title="const声明常量及特点"></a>const声明常量及特点</h3><p>const用于声明常量, 所谓常量就是值不能修改的量,<strong>const声明格式, 与let和var是一样的</strong>。</p>
 <figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">NAME</span> = <span class="string">&quot;saner&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable constant_">NAME</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -3509,66 +3509,6 @@ var perArr = [per1, per2, per3]
       </tags>
   </entry>
   <entry>
-    <title>(53)数学运算相关的属性和方法</title>
-    <url>/blog/javascript/53/</url>
-    <content><![CDATA[<hr>
-<h3 id="数学运算相关的属性和方法"><a href="#数学运算相关的属性和方法" class="headerlink" title="数学运算相关的属性和方法"></a>数学运算相关的属性和方法</h3><p>数学运算相关的属性和方法math对象和其他对象不同,它不是一个构造函数,它属于工具类,不用创建对象。它里面封装了数学运算相关的属性和方法。</p>
-<hr>
-<h3 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h3><p>Math.E | Math.LN2 | Math.LN10 | Math.LOG2E</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.E返回算术常量e,即自然对数的底数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN2返回2的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN10返回10的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG2E返回以2为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG2E</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.LOG10E | Math.PI | Math.SQRT1_2 | Math.SQRT2</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG10E返回以10为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG10E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.PI返回圆周率&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">PI</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.SQRT1_2返回2的平方根的倒数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">SQRT1_2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.SQRT2返回2的平方根&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">SQRT2</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h3 id="对象的方法"><a href="#对象的方法" class="headerlink" title="对象的方法"></a>对象的方法</h3><p>Math.abs(x) 返回数的绝对值</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.abs返回数的绝对值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="number">1</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(-<span class="number">1</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.ceil(x) 对数进行上舍入, 向上取整, 小数位只要有值就进位</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.ceil(x) 对数进行上舍入, 向上取整, 小数位只要有值就进位&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.01</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.99</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.floor(x) 对数进行下舍入, 向下取整, 不管小数位有没有值都舍去</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.floor(x) 对数进行下舍入, 向下取整, 不管小数位有没有值都舍去&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.01</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.99</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.round(x) 四舍五入</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(x) 四舍五入&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.4</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.5</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.random() 生成随机数</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.random() 随机生成0-1之间的数, 不包含0和1&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>())</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.random()*10 随机生成0-10之间的数.不包含0和10&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(Math.random()*10) 随机生成0-10之间的整数.包含0和10&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(Math.random()*(y-x) + x) 随机生成x-y之间的整数.包含x和y&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">8</span> + <span class="number">2</span>))</span><br><span class="line">  <span class="comment">// 2-10</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.max() 获取多个数中的最大值</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.max() 获取多个数中的最大值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.min() 获取多个数中的最小值</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.min() 获取多个数中的最小值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.pow(x,y) x的y次方</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.pow(x,y) x的y次方&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>Math.sqrt(x) 对x开平方, 即求x的平方根</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.sqrt(x) 对x开平方, 即求x的平方根&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(<span class="number">4</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(54)包装类</title>
     <url>/blog/javascript/54/</url>
     <content><![CDATA[<hr>
@@ -3705,6 +3645,66 @@ var perArr = [per1, per2, per3]
       </tags>
   </entry>
   <entry>
+    <title>(53)Math</title>
+    <url>/blog/javascript/53/</url>
+    <content><![CDATA[<hr>
+<h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><p>数学运算相关的属性和方法math对象和其他对象不同,它不是一个构造函数,它属于工具类,不用创建对象。它里面封装了数学运算相关的属性和方法。</p>
+<hr>
+<h3 id="Math对象属性"><a href="#Math对象属性" class="headerlink" title="Math对象属性"></a>Math对象属性</h3><p>Math.E | Math.LN2 | Math.LN10 | Math.LOG2E</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.E返回算术常量e,即自然对数的底数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN2返回2的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN10返回10的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG2E返回以2为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG2E</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.LOG10E | Math.PI | Math.SQRT1_2 | Math.SQRT2</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG10E返回以10为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG10E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.PI返回圆周率&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">PI</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.SQRT1_2返回2的平方根的倒数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">SQRT1_2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.SQRT2返回2的平方根&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">SQRT2</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="Math对象的方法"><a href="#Math对象的方法" class="headerlink" title="Math对象的方法"></a>Math对象的方法</h3><p>Math.abs(x) 返回数的绝对值</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.abs返回数的绝对值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="number">1</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(-<span class="number">1</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.ceil(x) 对数进行上舍入, 向上取整, 小数位只要有值就进位</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.ceil(x) 对数进行上舍入, 向上取整, 小数位只要有值就进位&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.01</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.99</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.floor(x) 对数进行下舍入, 向下取整, 不管小数位有没有值都舍去</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.floor(x) 对数进行下舍入, 向下取整, 不管小数位有没有值都舍去&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.01</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.99</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.round(x) 四舍五入</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(x) 四舍五入&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.4</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.5</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.random() 生成随机数</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.random() 随机生成0-1之间的数, 不包含0和1&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>())</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.random()*10 随机生成0-10之间的数.不包含0和10&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(Math.random()*10) 随机生成0-10之间的整数.包含0和10&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(Math.random()*(y-x) + x) 随机生成x-y之间的整数.包含x和y&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">8</span> + <span class="number">2</span>))</span><br><span class="line">  <span class="comment">// 2-10</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.max() 获取多个数中的最大值</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.max() 获取多个数中的最大值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.min() 获取多个数中的最小值</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.min() 获取多个数中的最小值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.pow(x,y) x的y次方</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.pow(x,y) x的y次方&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>Math.sqrt(x) 对x开平方, 即求x的平方根</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.sqrt(x) 对x开平方, 即求x的平方根&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(<span class="number">4</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(56)正则表达式简介</title>
     <url>/blog/javascript/56/</url>
     <content><![CDATA[<hr>
@@ -3777,61 +3777,6 @@ var perArr = [per1, per2, per3]
 
 
 
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(58)字符串和正则相关的方法</title>
-    <url>/blog/javascript/58/</url>
-    <content><![CDATA[<hr>
-<h3 id="字符串和正则相关的方法"><a href="#字符串和正则相关的方法" class="headerlink" title="字符串和正则相关的方法"></a>字符串和正则相关的方法</h3><blockquote>
-<p>split()：将一个字符串拆分为一个数组</p>
-</blockquote>
-<p>前面学习了使用split将字符串拆分成数组</p>
-<pre><code>var str = &quot;1a2b3c4d5f6g&quot;
-var res = str.split(&quot;c&quot;)
-console.log(res) // [&quot;1a2b3&quot;,&quot;4d5f6g&quot;]
-</code></pre>
-<p>但是如果我们想根据任意字母, 将这个字符串拆分成数组就不太灵活了。<strong>split()方法中, 可以传递一个正则表达式, 作为参数。这样split方法就可以根据正则表达式去拆分字符串。</strong></p>
-<p>**注意, **使用split即使不使用全局匹配, 它还是会全局拆分。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1a2b3c4d5f6g&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;不分区大小写, 按字母拆分&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> res = str.<span class="title function_">split</span>(<span class="regexp">/[A-z]/</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>search()：可以搜索字符串中是否含有指定内容, 类似indexOf()</p>
-</blockquote>
-<p>search()如果搜索到指定的内容, 则会返回该指定内容<strong>第一次出现的索引</strong>。如果<strong>没有搜索到指定内容, 则会返回-1 <strong>。</strong>到目前为止, search还是和indexOf是一样的效果</strong>。</p>
-<p><code>但是search()可以接收一个正则表达式作为参数</code>, 然后会根据正则表达式去检索字符串的内容。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;hello abc hello abc&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;找到abc的位置, a的索引为6, 第二个abc就直接略过了&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> res = str.<span class="title function_">search</span>(<span class="string">&quot;abc&quot;</span>) </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;搜索字符串是否含有abc aec afc, 这里第一个满足匹配规则的是abc, 所以直接就返回了6.其他的就不再检索&quot;</span>)</span><br><span class="line">  str = <span class="string">&quot;hello abc hello aec afc&quot;</span></span><br><span class="line">  res = str.<span class="title function_">search</span>(<span class="regexp">/a[bef]c/</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;search只会查找第一个, 不会全局匹配(即使指定了全局匹配也不行)&quot;</span>)</span><br><span class="line">  res = str.<span class="title function_">search</span>(<span class="regexp">/a[bef]c/g</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>match()</p>
-</blockquote>
-<p>可以根据正则表达式, 从一个字符串中, 将符合条件的内容提取出来。</p>
-<pre><code>var str = &quot;1a2b3c4d5f6g&quot;
-</code></pre>
-<p>需求：<strong>提取所有的字母</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1a2b3c4d5f6g&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;匹配字母, 忽略大小写&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[A-z]/</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;默认情况下, match只会找到第一个符合要求的内容, 到以后, 就会停止检索。所以需要加上修饰符g全局匹配规则&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[A-z]/g</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>match会将匹配到的内容封装到一个数组中返回, 那怕只匹配到一个</code>。</p>
-<blockquote>
-<p>replace()：可以将字符串中指定的内容, 替换为新的内容。</p>
-</blockquote>
-<p>replace()接收2个参数<br>replace(“指定的内容或者正则表达式”,”新的内容”)</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1a2a3a4d5f6gA&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;指定的内容a, 替换为@符&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;@&quot;</span>)) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;发现只替换了一个a, 相比指定的内容, 正则表表达式更灵活, /a/g可以设置全局替换&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="regexp">/a/g</span>,<span class="string">&quot;@&quot;</span>)) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;还可以添加多个修饰符, 比如i忽略大小写&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="regexp">/a/gi</span>,<span class="string">&quot;@&quot;</span>)) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>如果不想替换, <strong>仅仅是要删除</strong>, 那第二个参数, 可以<strong>设置为一个空字符串</strong>。</p>
-<pre><code>var str = &quot;1a2a3a4d5f6gA&quot;
-var res = str.replace(/[a-z]/gi,&quot;&quot;)
-console.log(res) // 123456
-</code></pre>
 <hr>
 ]]></content>
       <categories>
@@ -4056,6 +4001,61 @@ console.log(res) // 123456
 
 
 
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(58)字符串和正则相关的方法</title>
+    <url>/blog/javascript/58/</url>
+    <content><![CDATA[<hr>
+<h3 id="字符串和正则相关的方法"><a href="#字符串和正则相关的方法" class="headerlink" title="字符串和正则相关的方法"></a>字符串和正则相关的方法</h3><blockquote>
+<p>split()：将一个字符串拆分为一个数组</p>
+</blockquote>
+<p>前面学习了使用split将字符串拆分成数组</p>
+<pre><code>var str = &quot;1a2b3c4d5f6g&quot;
+var res = str.split(&quot;c&quot;)
+console.log(res) // [&quot;1a2b3&quot;,&quot;4d5f6g&quot;]
+</code></pre>
+<p>但是如果我们想根据任意字母, 将这个字符串拆分成数组就不太灵活了。<strong>split()方法中, 可以传递一个正则表达式, 作为参数。这样split方法就可以根据正则表达式去拆分字符串。</strong></p>
+<p>**注意, **使用split即使不使用全局匹配, 它还是会全局拆分。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1a2b3c4d5f6g&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;不分区大小写, 按字母拆分&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> res = str.<span class="title function_">split</span>(<span class="regexp">/[A-z]/</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>search()：可以搜索字符串中是否含有指定内容, 类似indexOf()</p>
+</blockquote>
+<p>search()如果搜索到指定的内容, 则会返回该指定内容<strong>第一次出现的索引</strong>。如果<strong>没有搜索到指定内容, 则会返回-1 <strong>。</strong>到目前为止, search还是和indexOf是一样的效果</strong>。</p>
+<p><code>但是search()可以接收一个正则表达式作为参数</code>, 然后会根据正则表达式去检索字符串的内容。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;hello abc hello abc&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;找到abc的位置, a的索引为6, 第二个abc就直接略过了&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> res = str.<span class="title function_">search</span>(<span class="string">&quot;abc&quot;</span>) </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;搜索字符串是否含有abc aec afc, 这里第一个满足匹配规则的是abc, 所以直接就返回了6.其他的就不再检索&quot;</span>)</span><br><span class="line">  str = <span class="string">&quot;hello abc hello aec afc&quot;</span></span><br><span class="line">  res = str.<span class="title function_">search</span>(<span class="regexp">/a[bef]c/</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;search只会查找第一个, 不会全局匹配(即使指定了全局匹配也不行)&quot;</span>)</span><br><span class="line">  res = str.<span class="title function_">search</span>(<span class="regexp">/a[bef]c/g</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>match()</p>
+</blockquote>
+<p>可以根据正则表达式, 从一个字符串中, 将符合条件的内容提取出来。</p>
+<pre><code>var str = &quot;1a2b3c4d5f6g&quot;
+</code></pre>
+<p>需求：<strong>提取所有的字母</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1a2b3c4d5f6g&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;匹配字母, 忽略大小写&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[A-z]/</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;默认情况下, match只会找到第一个符合要求的内容, 到以后, 就会停止检索。所以需要加上修饰符g全局匹配规则&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[A-z]/g</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>match会将匹配到的内容封装到一个数组中返回, 那怕只匹配到一个</code>。</p>
+<blockquote>
+<p>replace()：可以将字符串中指定的内容, 替换为新的内容。</p>
+</blockquote>
+<p>replace()接收2个参数<br>replace(“指定的内容或者正则表达式”,”新的内容”)</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">&quot;1a2a3a4d5f6gA&quot;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;指定的内容a, 替换为@符&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;@&quot;</span>)) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;发现只替换了一个a, 相比指定的内容, 正则表表达式更灵活, /a/g可以设置全局替换&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="regexp">/a/g</span>,<span class="string">&quot;@&quot;</span>)) </span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;还可以添加多个修饰符, 比如i忽略大小写&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="regexp">/a/gi</span>,<span class="string">&quot;@&quot;</span>)) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果不想替换, <strong>仅仅是要删除</strong>, 那第二个参数, 可以<strong>设置为一个空字符串</strong>。</p>
+<pre><code>var str = &quot;1a2a3a4d5f6gA&quot;
+var res = str.replace(/[a-z]/gi,&quot;&quot;)
+console.log(res) // 123456
+</code></pre>
 <hr>
 ]]></content>
       <categories>
