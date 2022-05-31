@@ -113,3 +113,9 @@ search:
   field: post
   format: html
   limit: 10000
+
+# aplayer播放器添加
+# npm install --save hexo-tag-aplayer
+aplayer:
+  meting: true
+  asset_inject: false # 不在每一个页面添加相关js和css，在页面的frontmatter中添加aplayer: true，在制定的页面添加。
