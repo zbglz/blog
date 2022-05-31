@@ -339,6 +339,139 @@
             <h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3>
             <p>数学运算相关的属性和方法math对象和其他对象不同,它不是一个构造函数,它属于工具类,不用创建对象。它里面封装了数学运算相关的属性和方法。</p>
             <hr>
+            <h3 id="Math对象属性"><a href="#Math对象属性" class="headerlink" title="Math对象属性"></a>Math对象属性</h3>
+            <p>Math.E | Math.LN2 | Math.LN10 | Math.LOG2E</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.E返回算术常量e,即自然对数的底数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN2返回2的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN10返回10的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG2E返回以2为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG2E</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.LOG10E | Math.PI | Math.SQRT1_2 | Math.SQRT2</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG10E返回以10为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG10E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.PI返回圆周率&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">PI</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.SQRT1_2返回2的平方根的倒数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">SQRT1_2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.SQRT2返回2的平方根&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">SQRT2</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <hr>
+            <h3 id="Math对象的方法"><a href="#Math对象的方法" class="headerlink" title="Math对象的方法"></a>Math对象的方法</h3>
+            <p>Math.abs(x) 返回数的绝对值</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.abs返回数的绝对值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="number">1</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(-<span class="number">1</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.ceil(x) 对数进行上舍入, 向上取整, 小数位只要有值就进位</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.ceil(x) 对数进行上舍入, 向上取整, 小数位只要有值就进位&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.01</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.99</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.floor(x) 对数进行下舍入, 向下取整, 不管小数位有没有值都舍去</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.floor(x) 对数进行下舍入, 向下取整, 不管小数位有没有值都舍去&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.01</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.99</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.round(x) 四舍五入</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(x) 四舍五入&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.4</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.5</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.random() 生成随机数</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.random() 随机生成0-1之间的数, 不包含0和1&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>())</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.random()*10 随机生成0-10之间的数.不包含0和10&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(Math.random()*10) 随机生成0-10之间的整数.包含0和10&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>))</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.round(Math.random()*(y-x) + x) 随机生成x-y之间的整数.包含x和y&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">8</span> + <span class="number">2</span>))</span><br><span class="line">  <span class="comment">// 2-10</span></span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.max() 获取多个数中的最大值</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.max() 获取多个数中的最大值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.min() 获取多个数中的最小值</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.min() 获取多个数中的最小值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
+            <p>Math.pow(x,y) x的y次方</p>
+            <figure class="highlight js">
+              <figcaption><span>js</span></figcaption>
+              <table>
+                <tr>
+                  <td class="code">
+                    <pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.pow(x,y) x的y次方&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre>
+                  </td>
+                </tr>
+              </table>
+            </figure>
+
+
 
 
 
