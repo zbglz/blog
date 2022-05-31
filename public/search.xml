@@ -175,72 +175,6 @@
       </tags>
   </entry>
   <entry>
-    <title>(12)迭代器介绍及工作原理</title>
-    <url>/blog/ecmascript/12/</url>
-    <content><![CDATA[<hr>
-<h3 id="迭代器介绍"><a href="#迭代器介绍" class="headerlink" title="迭代器介绍"></a>迭代器介绍</h3><p>迭代器(iterator)是一种接口, 为各种不同的数据结构提供统一的访问机制, 任何数据结构只要部署iterator接口, 就可以完成遍历操作。</p>
-<p><strong>1.ES6创造了一种新的遍历命令for…of循环, iterator接口主要提供for…of消费</strong><br><strong>2.原生具备iterator接口的数据(可用for…of遍历)</strong></p>
-<ol>
-<li>Array</li>
-<li>Arguments</li>
-<li>Set</li>
-<li>Map</li>
-<li>String</li>
-<li>TypeArray</li>
-<li>NodeList</li>
-</ol>
-<p>在JS中所说的iterator接口指的就是对象的一个属性。这个属性的名字叫Symbol.iterator。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// 声明一个数组</span></span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 使用for...of来遍历, 得到键值</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> xiyou)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">    <span class="comment">// --&gt; 唐僧</span></span><br><span class="line">    <span class="comment">// --&gt; 孙悟空</span></span><br><span class="line">    <span class="comment">// --&gt; 猪八戒</span></span><br><span class="line">    <span class="comment">// --&gt; 沙僧</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 它和for...in的区别就是, 得到索引</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> xiyou)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">    <span class="comment">// --&gt; 0</span></span><br><span class="line">    <span class="comment">// --&gt; 1</span></span><br><span class="line">    <span class="comment">// --&gt; 2</span></span><br><span class="line">    <span class="comment">// --&gt; 3</span></span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>a.<code>数组能够使用for...of遍历, 是只要这个对象(xiyou)里面有Symbol的iterator属性就可以使用for...of</code>。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(xiyou)</span><br><span class="line">  <span class="comment">// 在打印的数组中是没有Symbol的iterator属性的。</span></span><br><span class="line">  <span class="comment">// 要点开__proto__, 查看它的原型对象。</span></span><br><span class="line">  <span class="comment">// 可以看到Symbol(Symbol.iterator): f value()</span></span><br><span class="line">  <span class="comment">// 它对应的值是一个函数</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>那它为什么能够实现迭代？</p>
-<hr>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><blockquote>
-<p>创建一个指针对象, 指向当前数据结构的起始位置</p>
-</blockquote>
-<p>Symbol(Symbol.iterator)这个函数会创建并返回一个对象, 它会指向当前数据结构的最开始的位置。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 创建一个变量来接收, Symbol.iterator创建并返回的对象。</span></span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>第一次调用对象的next方法, 指针自动指向数据结构的第一个成员。</p>
-</blockquote>
-<p>第一次调用对象的next方法, 哪儿来的next方法呢,就是返回的对象身上有一个next方法。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator)</span><br><span class="line">  <span class="comment">// 展开打印的数据, 查看__proto__原型对象</span></span><br><span class="line">  <span class="comment">// 里面有一个next方法。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>当调用next方法时, 指针自动指向数据结构的第一个成员。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">  <span class="comment">// 调用返回的对象的next方法,指向数据结构的第一个成员</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>())</span><br><span class="line">  <span class="comment">// &#123;value: &quot;唐僧&quot;, done:false&#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>接下来不断调用next方法</p>
-</blockquote>
-<p>指针一直往后移动, 直到指向最后一个成员。</p>
-<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;唐僧&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;孙悟空&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;猪八戒&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;沙僧&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: undefined, done:true&#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>每调用next方法返回一个包含value和done属性的对象</p>
-</blockquote>
-<p>都得到了形如：{value: “唐僧”, done:false}的对象, 它的value值就是数据结构的成员, 而done状态表示, 当前遍历是否已经完成。</p>
-<p>注：需要自定义遍历数据的时候, 要想到迭代器。</p>
-<hr>
-<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=18">源：https://www.bilibili.com/video/BV1uK411H7on?p=18</a></p>
-]]></content>
-      <categories>
-        <category>ECMAScript</category>
-      </categories>
-      <tags>
-        <tag>ECMAScript</tag>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(11)Symbol的使用</title>
     <url>/blog/ecmascript/11/</url>
     <content><![CDATA[<hr>
@@ -326,6 +260,72 @@
 
 <hr>
 <p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=16">源：https://www.bilibili.com/video/BV1uK411H7on?p=16</a></p>
+]]></content>
+      <categories>
+        <category>ECMAScript</category>
+      </categories>
+      <tags>
+        <tag>ECMAScript</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(12)迭代器介绍及工作原理</title>
+    <url>/blog/ecmascript/12/</url>
+    <content><![CDATA[<hr>
+<h3 id="迭代器介绍"><a href="#迭代器介绍" class="headerlink" title="迭代器介绍"></a>迭代器介绍</h3><p>迭代器(iterator)是一种接口, 为各种不同的数据结构提供统一的访问机制, 任何数据结构只要部署iterator接口, 就可以完成遍历操作。</p>
+<p><strong>1.ES6创造了一种新的遍历命令for…of循环, iterator接口主要提供for…of消费</strong><br><strong>2.原生具备iterator接口的数据(可用for…of遍历)</strong></p>
+<ol>
+<li>Array</li>
+<li>Arguments</li>
+<li>Set</li>
+<li>Map</li>
+<li>String</li>
+<li>TypeArray</li>
+<li>NodeList</li>
+</ol>
+<p>在JS中所说的iterator接口指的就是对象的一个属性。这个属性的名字叫Symbol.iterator。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// 声明一个数组</span></span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 使用for...of来遍历, 得到键值</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> xiyou)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">    <span class="comment">// --&gt; 唐僧</span></span><br><span class="line">    <span class="comment">// --&gt; 孙悟空</span></span><br><span class="line">    <span class="comment">// --&gt; 猪八戒</span></span><br><span class="line">    <span class="comment">// --&gt; 沙僧</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 它和for...in的区别就是, 得到索引</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> xiyou)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">    <span class="comment">// --&gt; 0</span></span><br><span class="line">    <span class="comment">// --&gt; 1</span></span><br><span class="line">    <span class="comment">// --&gt; 2</span></span><br><span class="line">    <span class="comment">// --&gt; 3</span></span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>a.<code>数组能够使用for...of遍历, 是只要这个对象(xiyou)里面有Symbol的iterator属性就可以使用for...of</code>。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(xiyou)</span><br><span class="line">  <span class="comment">// 在打印的数组中是没有Symbol的iterator属性的。</span></span><br><span class="line">  <span class="comment">// 要点开__proto__, 查看它的原型对象。</span></span><br><span class="line">  <span class="comment">// 可以看到Symbol(Symbol.iterator): f value()</span></span><br><span class="line">  <span class="comment">// 它对应的值是一个函数</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>那它为什么能够实现迭代？</p>
+<hr>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><blockquote>
+<p>创建一个指针对象, 指向当前数据结构的起始位置</p>
+</blockquote>
+<p>Symbol(Symbol.iterator)这个函数会创建并返回一个对象, 它会指向当前数据结构的最开始的位置。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 创建一个变量来接收, Symbol.iterator创建并返回的对象。</span></span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>第一次调用对象的next方法, 指针自动指向数据结构的第一个成员。</p>
+</blockquote>
+<p>第一次调用对象的next方法, 哪儿来的next方法呢,就是返回的对象身上有一个next方法。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator)</span><br><span class="line">  <span class="comment">// 展开打印的数据, 查看__proto__原型对象</span></span><br><span class="line">  <span class="comment">// 里面有一个next方法。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>当调用next方法时, 指针自动指向数据结构的第一个成员。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">  <span class="comment">// 调用返回的对象的next方法,指向数据结构的第一个成员</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>())</span><br><span class="line">  <span class="comment">// &#123;value: &quot;唐僧&quot;, done:false&#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>接下来不断调用next方法</p>
+</blockquote>
+<p>指针一直往后移动, 直到指向最后一个成员。</p>
+<figure class="highlight js"><figcaption><span>es</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> xiyou = [<span class="string">&#x27;唐僧&#x27;</span>, <span class="string">&#x27;孙悟空&#x27;</span>, <span class="string">&#x27;猪八戒&#x27;</span>, <span class="string">&#x27;沙僧&#x27;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> iterator = xiyou[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;唐僧&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;孙悟空&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;猪八戒&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: &quot;沙僧&quot;, done:false&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(iterator.<span class="title function_">next</span>()) <span class="comment">// &#123;value: undefined, done:true&#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>每调用next方法返回一个包含value和done属性的对象</p>
+</blockquote>
+<p>都得到了形如：{value: “唐僧”, done:false}的对象, 它的value值就是数据结构的成员, 而done状态表示, 当前遍历是否已经完成。</p>
+<p>注：需要自定义遍历数据的时候, 要想到迭代器。</p>
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1uK411H7on?p=18">源：https://www.bilibili.com/video/BV1uK411H7on?p=18</a></p>
 ]]></content>
       <categories>
         <category>ECMAScript</category>
@@ -3512,9 +3512,9 @@ var perArr = [per1, per2, per3]
     <title>(53)数学运算相关的属性和方法</title>
     <url>/blog/javascript/53/</url>
     <content><![CDATA[<hr>
-<h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><p>Math和其他对象不同, 它不是一个构造函数。它属于工具类, 不用创建对象, 它里面封装了数学运算相关的属性和方法。</p>
+<h3 id="数学运算相关的属性和方法"><a href="#数学运算相关的属性和方法" class="headerlink" title="数学运算相关的属性和方法"></a>数学运算相关的属性和方法</h3><p>数学运算相关的属性和方法math对象和其他对象不同,它不是一个构造函数,它属于工具类,不用创建对象。它里面封装了数学运算相关的属性和方法。</p>
 <hr>
-<h3 id="Math对象属性"><a href="#Math对象属性" class="headerlink" title="Math对象属性"></a>Math对象属性</h3><p>Math.E | Math.LN2 | Math.LN10 | Math.LOG2E</p>
+<h3 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h3><p>Math.E | Math.LN2 | Math.LN10 | Math.LOG2E</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.E返回算术常量e,即自然对数的底数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">E</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN2返回2的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN2</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LN10返回10的自然对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LN10</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.LOG2E返回以2为底的e的对数&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="property">LOG2E</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -3523,7 +3523,7 @@ var perArr = [per1, per2, per3]
 
 
 <hr>
-<h3 id="Math对象的方法"><a href="#Math对象的方法" class="headerlink" title="Math对象的方法"></a>Math对象的方法</h3><p>Math.abs(x) 返回数的绝对值</p>
+<h3 id="对象的方法"><a href="#对象的方法" class="headerlink" title="对象的方法"></a>对象的方法</h3><p>Math.abs(x) 返回数的绝对值</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;Math.abs返回数的绝对值&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="number">1</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(-<span class="number">1</span>))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -9830,6 +9830,124 @@ export default store
       </tags>
   </entry>
   <entry>
+    <title>(68)状态修改和mutations</title>
+    <url>/blog/vue2/68/</url>
+    <content><![CDATA[<hr>
+<h3 id="状态修改和mutations"><a href="#状态修改和mutations" class="headerlink" title="状态修改和mutations"></a>状态修改和mutations</h3><p>Vuex的store状态的唯一更新方式就是提交Mutation。我们先来了解一下通过mutations对state进行同步修改。</p>
+<pre><code>import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+Vue.use(Vuex)
+const store = new Vuex.Store(&#123;
+  state: &#123;
+    counter: 0
+  &#125;,
+  mutations: &#123;
+    //自定义mutations方法, 这个方法默认有一个参数state
+    //这个stage对应的就是上面的state对象。
+    //第一个参数就是state, 写成aaa它也是state
+    increment(state)&#123;
+      state.counter++
+    &#125;,
+    decrement(state)&#123;
+      state.counter--
+    &#125;
+  &#125;
+&#125;)
+export default store
+
+//在组件中操作时, 最好在组件中定义一个方法, 在方法中, 去调用mutations中的事件。
+&lt;button @click=&quot;addition&quot;&gt;&lt;/button&gt;
+&lt;button @click=&quot;subtraction&quot;&gt;&lt;/button&gt;
+
+methods: &#123;
+  addition()&#123;
+    this.$store.commit(&quot;increment&quot;)
+  &#125;,
+  subtraction()&#123;
+    this.$store.commit(&quot;decrement&quot;)
+  &#125;
+&#125;
+
+//这样就可以通过mutations对状态进行修改了。
+</code></pre>
+<p>在Mutation中定义的方法, 可以将它看成两部分。</p>
+<pre><code>increment(state)&#123;
+  state.counter++
+&#125;
+/*----------------------------------------*/
+increment &lt;---这个是事件类型   
+          
+          (state)&#123;  &lt;---这一块是回调函数
+  state.counter++
+&#125;
+</code></pre>
+<hr>
+<h3 id="Mutation中接收页面参数"><a href="#Mutation中接收页面参数" class="headerlink" title="Mutation中接收页面参数"></a>Mutation中接收页面参数</h3><pre><code>import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+Vue.use(Vuex)
+const store = new Vuex.Store(&#123;
+  state: &#123;
+    counter: 0
+  &#125;,
+  mutations: &#123;
+    increment(state)&#123;
+      state.counter++
+    &#125;,
+    decrement(state)&#123;
+      state.counter--
+    &#125;,
+    //第二个参数, 可以是页面传递的参数。
+    incrementCount(state, num)&#123;
+      state.counter += num
+    &#125;
+  &#125;
+&#125;)
+export default store
+
+//在组件中使用
+&lt;button @click=&quot;addcount(10)&quot;&gt;&lt;/button&gt;
+
+methods: &#123;
+  addcount(num)&#123;
+    //这种提交事件, 还携带参数的方式, 参数被称为是提交事件的payload, 负载。
+    this.$store.commit(&quot;incrementCount&quot;, num)
+  &#125;
+&#125;
+</code></pre>
+<hr>
+<h3 id="Mutation提交风格"><a href="#Mutation提交风格" class="headerlink" title="Mutation提交风格"></a>Mutation提交风格</h3><pre><code>//前面在组件中提交Mutation修改状态
+this.$store.commit(&quot;incrementCount&quot;, num) //这种方式, 就是普通提交风格
+
+//Vue还提供了另外一种风格, 她是一个包含type属性的对象。
+this.$store.commit(&#123;
+  type: &quot;incrementCount&quot;
+  num: num
+&#125;)
+//注意！！：使用这种风格提交时, 在Mutation中的方法。
+incrementCount(state, num)&#123;
+  state.counter += num //这里就不能这么写了。
+&#125;
+//因为此时的num就不是再是前面调用时传的10了, 而是一个对象。
+其中包括：&#123;type: &#39;incrementCount&#39;, num: 10&#125;
+//所以在Mutation中的参数位置, 写成payload更合适, 表示一个负载对象
+incrementCount(state, payload)&#123;
+  state.counter += payload.num
+&#125;
+
+//这也是为什么。前面说的, 在Mutation中定义的方法, 可以将它看成两部分。
+//这个方法名, 被称为事件类型。在这种提交风格中, 它的type就是要提交的事件类型。
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>vuex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(69)Mutation的响应规则</title>
     <url>/blog/vue2/69/</url>
     <content><![CDATA[<hr>
@@ -9928,6 +10046,23 @@ this.$store.commit(UODATEINFO)
       <tags>
         <tag>vue2</tag>
         <tag>vuex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(7)课后作业-1</title>
+    <url>/blog/vue2/7/</url>
+    <content><![CDATA[<hr>
+<h3 id="课后作业-1"><a href="#课后作业-1" class="headerlink" title="课后作业-1"></a>课后作业-1</h3><p><strong>利用v-for绑定List数据</strong><br><strong>要求点击某个标签时, 改变当前文本颜色</strong>。</p>
+<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"><span class="selector-class">.colorBlue</span>&#123;<span class="attribute">color</span>: blue;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(shuju,suoyin) in List&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">:key</span>=<span class="string">&quot;suoyin&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">:class</span>=<span class="string">&quot;&#123;colorBlue:suoyin===thisIndex&#125;&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">click</span>=<span class="string">&quot;setThisIndex(suoyin)&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;&#123;suoyin&#125;&#125;-&#123;&#123;shuju&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">thisIndex</span>: <span class="number">0</span>, <span class="comment">// 默认索引为thisIndex的选项为选中状态</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title class_">List</span>:[<span class="string">&quot;星际穿越&quot;</span>,<span class="string">&quot;大话西游&quot;</span>,<span class="string">&quot;少年派&quot;</span>,<span class="string">&quot;盗梦空间&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">setThisIndex</span>:<span class="keyword">function</span>(<span class="params">index</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">thisIndex</span>=index <span class="comment">//点击时改变thisIndex记录的索引值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
       </tags>
   </entry>
   <entry>
@@ -10820,141 +10955,6 @@ export &#123;GetAllList, GetSubject, cancel&#125;
       </tags>
   </entry>
   <entry>
-    <title>(68)状态修改和mutations</title>
-    <url>/blog/vue2/68/</url>
-    <content><![CDATA[<hr>
-<h3 id="状态修改和mutations"><a href="#状态修改和mutations" class="headerlink" title="状态修改和mutations"></a>状态修改和mutations</h3><p>Vuex的store状态的唯一更新方式就是提交Mutation。我们先来了解一下通过mutations对state进行同步修改。</p>
-<pre><code>import Vue from &#39;vue&#39;
-import Vuex from &#39;vuex&#39;
-Vue.use(Vuex)
-const store = new Vuex.Store(&#123;
-  state: &#123;
-    counter: 0
-  &#125;,
-  mutations: &#123;
-    //自定义mutations方法, 这个方法默认有一个参数state
-    //这个stage对应的就是上面的state对象。
-    //第一个参数就是state, 写成aaa它也是state
-    increment(state)&#123;
-      state.counter++
-    &#125;,
-    decrement(state)&#123;
-      state.counter--
-    &#125;
-  &#125;
-&#125;)
-export default store
-
-//在组件中操作时, 最好在组件中定义一个方法, 在方法中, 去调用mutations中的事件。
-&lt;button @click=&quot;addition&quot;&gt;&lt;/button&gt;
-&lt;button @click=&quot;subtraction&quot;&gt;&lt;/button&gt;
-
-methods: &#123;
-  addition()&#123;
-    this.$store.commit(&quot;increment&quot;)
-  &#125;,
-  subtraction()&#123;
-    this.$store.commit(&quot;decrement&quot;)
-  &#125;
-&#125;
-
-//这样就可以通过mutations对状态进行修改了。
-</code></pre>
-<p>在Mutation中定义的方法, 可以将它看成两部分。</p>
-<pre><code>increment(state)&#123;
-  state.counter++
-&#125;
-/*----------------------------------------*/
-increment &lt;---这个是事件类型   
-          
-          (state)&#123;  &lt;---这一块是回调函数
-  state.counter++
-&#125;
-</code></pre>
-<hr>
-<h3 id="Mutation中接收页面参数"><a href="#Mutation中接收页面参数" class="headerlink" title="Mutation中接收页面参数"></a>Mutation中接收页面参数</h3><pre><code>import Vue from &#39;vue&#39;
-import Vuex from &#39;vuex&#39;
-Vue.use(Vuex)
-const store = new Vuex.Store(&#123;
-  state: &#123;
-    counter: 0
-  &#125;,
-  mutations: &#123;
-    increment(state)&#123;
-      state.counter++
-    &#125;,
-    decrement(state)&#123;
-      state.counter--
-    &#125;,
-    //第二个参数, 可以是页面传递的参数。
-    incrementCount(state, num)&#123;
-      state.counter += num
-    &#125;
-  &#125;
-&#125;)
-export default store
-
-//在组件中使用
-&lt;button @click=&quot;addcount(10)&quot;&gt;&lt;/button&gt;
-
-methods: &#123;
-  addcount(num)&#123;
-    //这种提交事件, 还携带参数的方式, 参数被称为是提交事件的payload, 负载。
-    this.$store.commit(&quot;incrementCount&quot;, num)
-  &#125;
-&#125;
-</code></pre>
-<hr>
-<h3 id="Mutation提交风格"><a href="#Mutation提交风格" class="headerlink" title="Mutation提交风格"></a>Mutation提交风格</h3><pre><code>//前面在组件中提交Mutation修改状态
-this.$store.commit(&quot;incrementCount&quot;, num) //这种方式, 就是普通提交风格
-
-//Vue还提供了另外一种风格, 她是一个包含type属性的对象。
-this.$store.commit(&#123;
-  type: &quot;incrementCount&quot;
-  num: num
-&#125;)
-//注意！！：使用这种风格提交时, 在Mutation中的方法。
-incrementCount(state, num)&#123;
-  state.counter += num //这里就不能这么写了。
-&#125;
-//因为此时的num就不是再是前面调用时传的10了, 而是一个对象。
-其中包括：&#123;type: &#39;incrementCount&#39;, num: 10&#125;
-//所以在Mutation中的参数位置, 写成payload更合适, 表示一个负载对象
-incrementCount(state, payload)&#123;
-  state.counter += payload.num
-&#125;
-
-//这也是为什么。前面说的, 在Mutation中定义的方法, 可以将它看成两部分。
-//这个方法名, 被称为事件类型。在这种提交风格中, 它的type就是要提交的事件类型。
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>vuex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(7)课后作业-1</title>
-    <url>/blog/vue2/7/</url>
-    <content><![CDATA[<hr>
-<h3 id="课后作业-1"><a href="#课后作业-1" class="headerlink" title="课后作业-1"></a>课后作业-1</h3><p><strong>利用v-for绑定List数据</strong><br><strong>要求点击某个标签时, 改变当前文本颜色</strong>。</p>
-<figure class="highlight js"><figcaption><span>vue2</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;link/vue.min.2.6.14.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"><span class="selector-class">.colorBlue</span>&#123;<span class="attribute">color</span>: blue;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(shuju,suoyin) in List&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">:key</span>=<span class="string">&quot;suoyin&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">:class</span>=<span class="string">&quot;&#123;colorBlue:suoyin===thisIndex&#125;&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">click</span>=<span class="string">&quot;setThisIndex(suoyin)&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;&#123;suoyin&#125;&#125;-&#123;&#123;shuju&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">thisIndex</span>: <span class="number">0</span>, <span class="comment">// 默认索引为thisIndex的选项为选中状态</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title class_">List</span>:[<span class="string">&quot;星际穿越&quot;</span>,<span class="string">&quot;大话西游&quot;</span>,<span class="string">&quot;少年派&quot;</span>,<span class="string">&quot;盗梦空间&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">setThisIndex</span>:<span class="keyword">function</span>(<span class="params">index</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">this</span>.<span class="property">thisIndex</span>=index <span class="comment">//点击时改变thisIndex记录的索引值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(79)项目划分目录结构</title>
     <url>/blog/vue2/79/</url>
     <content><![CDATA[<hr>
@@ -11335,10 +11335,10 @@ Vue.use(VueLazyLoad, &#123;
       </tags>
   </entry>
   <entry>
-    <title>(87)记录:记录:px转化为vw转化插件</title>
+    <title>(87)记录:px转化为vw转化插件</title>
     <url>/blog/vue2/87/</url>
     <content><![CDATA[<hr>
-<h3 id="记录-px转化为vw转化插件"><a href="#记录-px转化为vw转化插件" class="headerlink" title="记录:px转化为vw转化插件"></a>记录:px转化为vw转化插件</h3><p><strong>这类工具可能是一个插件或者loader,  这种工具不必纠结, 它是开发时依赖, 直接搜索可用的就可以了</strong>。</p>
+<h3 id="记录-px转化为vw转化插件"><a href="#记录-px转化为vw转化插件" class="headerlink" title="记录:px转化为vw转化插件"></a>记录:px转化为vw转化插件</h3><p>这类工具可能是一个插件或者loader,  这种工具不必纠结, 它是开发时依赖, 直接搜索可用的就可以了。</p>
 <pre><code>#插件：postcss-px-to-viewport
 npm install postcss-px-to-viewport --save-dev
 </code></pre>
