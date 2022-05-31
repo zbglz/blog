@@ -285,7 +285,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus
-  use: # Valine,Disqus
+  use: Twikoo # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -363,7 +363,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
+  envId: twikoo-1gaxuxwc5aa7080e
   region:
   visitor: false
   option:
@@ -425,7 +425,7 @@ footer:
   owner:
     enable: true
     since: 2022
-  custom_text: Hi, welcome to my <a href="/">blog</a>!
+  custom_text: Hi, welcome to my <a href="/blog">blog</a>!
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -657,7 +657,7 @@ aside:
       enable: true
       icon: # fab fa-github
       text: 回到首页
-      link: /
+      link: /blog
   card_announcement:  # 首页侧边栏，显示公告
     enable: true
     content: <div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src="../../../../../../blog/static/site/comment.gif"></div>
@@ -704,7 +704,7 @@ runtimeshow:
 
 # 侧边栏显示最新评论板块
 newest_comments:
-  enable: false
+  enable: true
   sort_order: # Don't modify the setting unless you know how it works
   limit: 6
   storage: 10 # unit: mins, save data to localStorage
