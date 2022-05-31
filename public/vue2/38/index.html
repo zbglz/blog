@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(38)webpack.config和package.json | LaoGao's Blog</title><meta name="keywords" content="vue2,webpack"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="webpack.config和package.json在webpack的基本使用中, 我们在打包时需要指定打包入口文件, 以及保存路径等。并不方便(webpack .&#x2F;src&#x2F;main.js .&#x2F;dist&#x2F;bundle.js 指令太长了)。如果我们想简单的告诉webpack我们要打包了, 让webpack自动的去打包以及保存。那么也有办法。 webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(38)webpack.config和package.json">
+<meta property="og:url" content="https://zbglz.gitee.io/blog/vue2/38/index.html">
+<meta property="og:site_name" content="LaoGao&#39;s Blog">
+<meta property="og:description" content="webpack.config和package.json在webpack的基本使用中, 我们在打包时需要指定打包入口文件, 以及保存路径等。并不方便(webpack .&#x2F;src&#x2F;main.js .&#x2F;dist&#x2F;bundle.js 指令太长了)。如果我们想简单的告诉webpack我们要打包了, 让webpack自动的去打包以及保存。那么也有办法。 webpack">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zbglz.gitee.io/blog/static/blog/md/vue2-15.png">
+<meta property="article:published_time" content="2022-05-24T01:53:55.373Z">
+<meta property="article:modified_time" content="2022-05-31T00:36:31.641Z">
+<meta property="article:author" content="LaoGao">
+<meta property="article:tag" content="vue2">
+<meta property="article:tag" content="webpack">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zbglz.gitee.io/blog/static/blog/md/vue2-15.png"><link rel="shortcut icon" href="/blog/static/site/favicon.png"><link rel="canonical" href="https://zbglz.gitee.io/blog/vue2/38/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="/blog/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaoGao","link":"链接: ","source":"来源: LaoGao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '(38)webpack.config和package.json',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-05-31 08:36:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(38)webpack.config和package.json</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T01:53:55.373Z" title="发表于 2022-05-24 09:53:55">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-31T00:36:31.641Z" title="更新于 2022-05-31 08:36:31">2022-05-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/vue2/">vue2</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="webpack-config和package-json"><a href="#webpack-config和package-json" class="headerlink" title="webpack.config和package.json"></a>webpack.config和package.json</h3><p>在webpack的基本使用中, 我们在打包时需要指定打包入口文件, 以及保存路径等。并不方便(webpack .&#x2F;src&#x2F;main.js .&#x2F;dist&#x2F;bundle.js 指令太长了)。如果我们想简单的告诉webpack我们要打包了, 让webpack自动的去打包以及保存。那么也有办法。</p>
+<p>webpack.config.js</p>
+<pre><code>//在项目文件夹下创建一个webpack.config.js
+//这是一个固定的名字, 让webpack能找到这个文件。
+
+//那这个js文件要怎么告诉webpack哪些是入口哪些是出口呢。
+//我们需要用CommonJS的规范导出一个对象, 并在其中声明入口和出口。
+module.exports = &#123;
+  entry:&quot;./src/main.js&quot;,
+  output:&quot;&quot;
+&#125;
+
+//出口的设置与入口的设置不同。要求设置一个对象。
+module.exports = &#123;
+  entry:&quot;./src/main.js&quot;,
+  output:&#123;
+    path:&quot;&quot;,
+    filename:&quot;&quot;
+  &#125;
+&#125;
+
+//这个path需要获取绝对路径。
+//就需要使用一个node中的一个包path。
+const path = require(&quot;path&quot;)
+module.exports = &#123;
+  entry:&quot;./src/main.js&quot;,
+  output:&#123;
+    path:&quot;&quot;,
+    filename:&quot;&quot;
+  &#125;
+&#125;
+</code></pre>
+<p><strong>但是！！！目前我们的项目中是没有包的。</strong></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-15.png" alt="vue2-15"></p>
+<p>我们想要用path, 必须要有这个包。所以当前这个项目我们要装一些包。怎么装？</p>
+<pre><code>#打开终端, 进入项目文件夹。
+#执行npm init 初始化的意思。一旦当前项目准备使用node相关的东西, 就需要初始化一下。
+
+F:\learnwebpack\webpack-start&gt; npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install ` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (webpack-start) #这里要求输入一个包的名字, 我们直接回车, 它会直接将项目文件夹的名字作为包名。
+version: (1.0.0) #这里是我们当前项目的版本号, 直接回车。
+description: #这里是描述, 也不写了, 直接回车。
+entry point: (webpack.config.js) #这个入口, 就随便写一个(如：index.js), 这是随便写的。暂时用不上它。
+test command: #直接回车, 暂时不写。
+git repository: #直接回车, 暂时不写。
+keywords: #直接回车, 暂时不写。
+author: #直接回车, 暂时不写。
+license: (ISC) #直接回车, 暂时不写。
+About to write to F:\learnwebpack\webpack-start\package.json:
+
+&#123;
+  &quot;name&quot;: &quot;webpack-start&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: &#123;
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;    
+  &#125;,
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;
+&#125;
+</code></pre>
+<p>​<br>    Is this OK? (yes)  #问你直接生成, 上面的配置文件好不？那么直接回车, 表示可以OK。</p>
+<p><strong>这个时候, 在项目文件加下, 就会生成一个新的文件, package.json</strong></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-16.png" alt="vue2-16"></p>
+<p>任何一个项目, 如果你想单独依赖一些node环境的话, 就需要一个package.json文件, 如果package.json里面依赖一些包, 但本地也没有的话, 可以执行npm install安装。</p>
+<pre><code>#打开终端, 进入项目文件夹。
+#使用npm install, 就会自动安装package.json中依赖的东西。
+
+F:\learnwebpack\webpack-start&gt; npm install
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN webpack-start@1.0.0 No description
+npm WARN webpack-start@1.0.0 No repository field.
+
+up to date in 0.99s
+found 0 vulnerabilities
+
+#当然, 当前这个项目, 还没有什么依赖。所以安装也没什么效果。
+#再回到webpack.config.js文件。设置output
+</code></pre>
+<p>path(包), 其实是一个模块。这个模块有一个函数, 叫<strong>resolve()</strong>,它可以对两个路径进行拼接。其中__dirname 就是一个全局变量, 这是node里面的, 注意：dirname前面是两个下划线！！保存的就是我们当前项目webpack.config.js文件所在的路径。</p>
+<p>webpack.config.js</p>
+<pre><code>const path = require(&quot;path&quot;)
+
+module.exports = &#123;
+  entry: &quot;./src/main.js&quot;,
+  output: &#123;
+    path: path.resolve(__dirname, &quot;dist&quot;),
+    filename:&quot;bundle.js&quot;
+  &#125;
+&#125;
+</code></pre>
+<p>设置完成以后, 回到终端, cd到项目文件夹, 直接输入webpack运行。</p>
+<pre><code>F:\learnwebpack\webpack-start&gt; webpack
+Hash: 83ad107e28d40589a0bd
+Version: webpack 3.6.0
+Time: 50ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  2.92 kB       0  [emitted]  main       
+   [0] ./src/main.js 104 bytes &#123;0&#125; [built]        
+   [1] ./src/developerA.js 271 bytes &#123;0&#125; [built]  
+</code></pre>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-17.png" alt="vue2-17"></p>
+<p>这样, 每次在编译打包的时候, 就不需要单独去指定入口文件, 输出文件等信息了, 直接在终端输入webpack运行即可, 很方便吧！！！<br><strong>但是！！在开发里面我们一般不会这么做。如果我们确实需要打包, 一般使用的是另一个命令：npm run build。为了避免npm命令与webpack命令混淆使用, 一般我们都是通过npm对我们的项目进行管理。包括依赖包的安装卸载、以及项目的打包编译。那要怎么让刚才的webpack命令和npm run build对应起来呢。</strong><br>虽然现在看起来webpack比npm run build简单, 但是后期使用其他功能的时候就很长了, 比如webpack-dev-server。或者在一些项目中, webpack.config.js文件不叫这个名字, 也许叫production.config.js, 那么在使用webpack时还需要指定文件名, 甚至存在多个配置文件, webpack production.config…..又变得很麻烦了。<br>我们可以使用npm run将其映射到某一个口令, 使其变得更易于理解和使用。关于映射, 我们需要打开package.json, 里面有个scripts脚本, 表示可以在面设置脚本名, 对应相应的口令, 运行脚本名时就会去执行对应的命令。</p>
+<p>package.json</p>
+<pre><code>&#123;
+  &quot;name&quot;: &quot;webpack-start&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: &#123;
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+    &quot;build&quot;: &quot;webpack&quot;
+  &#125;,
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;
+&#125;    
+</code></pre>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-18.png" alt="vue2-18"></p>
+<p>当我们在终端执行, npm run build的时候, 它就会去到package.json找映射, 其中build对应的是webpack, 从而执行webpack命令进行打包。<br><strong>注意, 此时！！通过映射运行npm run build的时候, 与直接运行webpack有些不一样。之前我们直接运行webpack时, 使用的是一个全局的webpack(前面我们全局安装的webpack)。而运行npm run build的时候, 它会优先在本地(当前项目中)找webpack。但当前我们的项目并没有安装webpack, 所以它用的还是全局的webpack。但是在实际项目中, 任何一个项目都有一个本地的webpack包, 因为项目中依赖的webpack包, 很有可能与全局的webpack版本是不一样的。我们全局安装的可能是更新的一个版本, 而一些项目中为了使用webpack功能, 可能使用的是一些低版本的webpack包。那么使用全局的webpack打包项目, 就很有可能出错了。所以！！, 我们的项目有必要安装一个本地的webpack包。</strong></p>
+<pre><code>#这里涉及到两个知识点：开发时依赖(只有开发阶段使用)、运行时依赖(项目运行时仍然需要)
+#在安装依赖包的时候略有不同。
+#webpack只有开发时编译打包时有用, 在项目正式运行时是不需要的。
+#项目中安装webpack只需要按照开发时依赖安装。
+#打开终端, cd到项目文件夹, 输入下面的命令。
+
+F:\learnwebpack\webpack-start&gt; npm install webpack@3.6.0 --save-dev
+#这个 --save-dev 就是安装开发时依赖包。
+
+#说明：为什么安装3.6.0的webpack, 因为Vue cli3中已经升级到webpack4
+#但是它将配置文件隐藏起来了, 所以查看起来不是很方便
+#在学习期间, 我们需要清晰的认识这些文件的作用, 所以这里安装webpack@3.6.0即可。  
+</code></pre>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-19.png" alt="vue2-19"></p>
+<p>再次重申：package.json在执行脚本时(npm run 脚本名), 会优先在本地找对应位置的命令, 如果找不到, 才会在全局找。</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog">LaoGao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog/vue2/38/">https://zbglz.gitee.io/blog/vue2/38/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zbglz.gitee.io/blog" target="_blank">LaoGao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/vue2/">vue2</a><a class="post-meta__tags" href="/blog/tags/webpack/">webpack</a></div><div class="post_share"><div class="social-share" data-image="/blog/../../../../../../../../../../blog/static/blog/md/vue2-15.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/blog/pluginsSrc/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/blog/pluginsSrc/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/vue2/37/"><img class="prev-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-14.png" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">(37)webpack的基本使用过程</div></div></a></div><div class="next-post pull-right"><a href="/blog/vue2/39/"><img class="next-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-20.png" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(39)css-loader</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/vue2/36/" title="(36)webpack的介绍和安装"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(36)webpack的介绍和安装</div></div></a></div><div><a href="/blog/vue2/37/" title="(37)webpack的基本使用过程"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-14.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(37)webpack的基本使用过程</div></div></a></div><div><a href="/blog/vue2/39/" title="(39)css-loader"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-20.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(39)css-loader</div></div></a></div><div><a href="/blog/vue2/40/" title="(40)less-loader"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-32.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(40)less-loader</div></div></a></div><div><a href="/blog/vue2/41/" title="(41)url-loader"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-40.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(41)url-loader</div></div></a></div><div><a href="/blog/vue2/42/" title="(42)ES6转ES5(babel)"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-50.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-24</div><div class="title">(42)ES6转ES5(babel)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="avatar"/></div><div class="author-info__name">LaoGao</div><div class="author-info__description">学习笔记</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" href="/"><i></i><span>回到首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/blog/about/" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src= "/blog/static/site/loadding.gif" data-lazy-src="../../../../../../blog/static/site/comment.gif"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-config%E5%92%8Cpackage-json"><span class="toc-text">webpack.config和package.json</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/86/" title="(86)记录:图片lazy-load"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(86)记录:图片lazy-load"/></a><div class="content"><a class="title" href="/blog/vue2/86/" title="(86)记录:图片lazy-load">(86)记录:图片lazy-load</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/87/" title="(87)记录:px转化为vw转化插件"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(87)记录:px转化为vw转化插件"/></a><div class="content"><a class="title" href="/blog/vue2/87/" title="(87)记录:px转化为vw转化插件">(87)记录:px转化为vw转化插件</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/88/" title="(88)记录:服务器配置问题"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(88)记录:服务器配置问题"/></a><div class="content"><a class="title" href="/blog/vue2/88/" title="(88)记录:服务器配置问题">(88)记录:服务器配置问题</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By LaoGao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/blog/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="../../../../../../blog/static/butterfly/custom.js"></script><script defer="defer" id="ribbon" src="/blog/pluginsSrc/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script></div></body></html>
