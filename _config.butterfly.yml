@@ -285,7 +285,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus
-  use: Twikoo # Valine,Disqus
+  use:  # Twikoo # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -363,7 +363,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: twikoo-1gaxuxwc5aa7080e
+  envId:  # twikoo-1gaxuxwc5aa7080e
   region:
   visitor: false
   option:
@@ -704,7 +704,7 @@ runtimeshow:
 
 # 侧边栏显示最新评论板块
 newest_comments:
-  enable: true
+  enable: false
   sort_order: # Don't modify the setting unless you know how it works
   limit: 6
   storage: 10 # unit: mins, save data to localStorage
