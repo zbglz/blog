@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(1)nodejs简介 | LaoGao's Blog</title><meta name="keywords" content="nodejs"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Node.js是一个能够在服务器端运行JavaScript的开放源代码, 跨平台JavaScript运行环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(1)nodejs简介">
+<meta property="og:url" content="https://zbglz.gitee.io/blog/nodejs/1/index.html">
+<meta property="og:site_name" content="LaoGao&#39;s Blog">
+<meta property="og:description" content="Node.js是一个能够在服务器端运行JavaScript的开放源代码, 跨平台JavaScript运行环境。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zbglz.gitee.io/blog/static/blog/md/nodejs.svg">
+<meta property="article:published_time" content="2022-05-18T02:16:14.973Z">
+<meta property="article:modified_time" content="2022-05-31T00:36:30.766Z">
+<meta property="article:author" content="LaoGao">
+<meta property="article:tag" content="nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zbglz.gitee.io/blog/static/blog/md/nodejs.svg"><link rel="shortcut icon" href="/blog/static/site/favicon.png"><link rel="canonical" href="https://zbglz.gitee.io/blog/nodejs/1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="/blog/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaoGao","link":"链接: ","source":"来源: LaoGao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '(1)nodejs简介',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-05-31 08:36:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/blog/../../../../../../../../../../blog/static/blog/md/nodejs.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(1)nodejs简介</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-18T02:16:14.973Z" title="发表于 2022-05-18 10:16:14">2022-05-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-31T00:36:30.766Z" title="更新于 2022-05-31 08:36:30">2022-05-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/nodejs/">nodejs</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="nodejs简介"><a href="#nodejs简介" class="headerlink" title="nodejs简介"></a>nodejs简介</h2><p><strong>Node.js是一个能够在服务器端运行JavaScript的开放源代码, 跨平台<code>JavaScript运行环境</code></strong></p>
+<p><strong>Node采用Google开发的V8引擎运行js代码, 使用<code>事件驱动</code>、<code>非阻塞</code>、<code>异步I/O模型</code>等技术来提高性能, 可优化应用程序的传输量和规模。</strong></p>
+<p><strong>Node大部分基本模块都用JavaScript编写。在Node出现之前, js常作为客户端程序设计语言使用, 以js写出的程序常在用户的浏览器上运行。</strong></p>
+<p><strong>目前, Node已被IBM、Microsoft、Yahoo!、Walmart、Groupon、SAP、LinkedIn、Rakuten、PayPal、Voxer和GoDaddy等企业采用。</strong></p>
+<hr>
+<h2 id="nodejs由来"><a href="#nodejs由来" class="headerlink" title="nodejs由来"></a>nodejs由来</h2><p>Nodejs之父, <code>瑞安·达尔(Ryan Dahl)</code>。他并非科班出身的开发者, 在2004年的时候还在纽约的罗彻斯特大学数学系读博士。2006年厌倦了读博的无聊, 做出了退学的决定, 一个人来到了智利的Valparaiso小镇。从那时起瑞安·达尔走上了码农的道路。那时候<code>Ruby on Rails</code>很火, 他也不例外的学习了它。瑞安·达尔的生活方式就是接项目, 然后去客户的地方工作, 在他严重, 上班其实就是去旅行。这样两年的时间瑞安·达尔就成为了<code>高性能Web服务器的专家</code>, 从接开发应用, 到变成专门<code>帮客户解决性能问题</code>的专家。</p>
+<p>Web服务器有什么性能问题需要解决？这就要讲到web服务了。事实上, 开发一个网站并没有多难, 彼时一个网站的性能才是最迫切需要解决的问题。</p>
+<p><strong>普遍认知中, 用户在浏览器中输入一个网址, 打开一个网页, 速度越快, 那么这个网页的性能越好。</strong></p>
+<p><strong>但是打开网页的速度, 是由多种因素造成的。</strong></p>
+<ol>
+<li>用户输入网址请求数据(<strong>不可控</strong>, 与用户网速、设备性能相关)</li>
+<li>用户请求后, 服务器响应速度。包括…<ul>
+<li>服务器向数据库请求数据, 数据库返回数据, (I&#x2F;O)操作。(<strong>不可控</strong>, 当大量用户访问, 磁盘读写速度达到极限, 服务器无法及时返回数据给用户。)</li>
+<li>服务器根据数据库返回的数据渲染网页代码, 并返回给用户。(<strong>可控</strong>, 与服务器网速、设备性能相关, 但会增加运营成本)</li>
+</ul>
+</li>
+</ol>
+<p>所以, 在无法控制用户网速或设备的情况下, 又不能给企业带来太大的运营成本压力, 要优化网页的性能(当然网页本身的资源也要优化, 代码严谨), <strong>就只能从I&#x2F;O操作入手了。</strong></p>
+<p><strong>传统的服务器都是多线程的。</strong>服务器每收到一个用户请求, 就会创建一个线程去处理用户请求。用户量大时, 就会产生大量的线程, 他们都向数据库请求数据, 但数据库读写也到极限了, 只能满足一部分线程的请求, 其他线程就会一直等着数据库返回数据, 服务器无法及时返回数据给用户, 还造成了服务器资源浪费(服务器能够产生的线程数与服务器配置有关, 极大的增加的成本)。</p>
+<p>打个比方, 就像去餐馆吃饭, 去一桌客人有一个服务员去处理客户点菜, 去100桌客人, 有100个服务员(线程)去处理客户点菜, 但是其实点菜是很快的, 上菜也很快。慢的是厨房, 可能厨房同一时间只能炒两个菜, 那其他服务员只能等着, 对服务器来说这些线程既占用内存, 又没有发挥作用, 这就造成了资源浪费了。</p>
+<p>事实上, 我们并不需要那么多服务员(线程), 我们知道点菜其实很快, 当这个服务员处理完一桌的请求后, 在等待做菜期间, 可以继续为其他桌的客人继续服务。服务器也是同样的原理。</p>
+<p>除非升级硬件配置, 否则, I&#x2F;O的问题我们也无法处理了, 即便如此硬件也不可能无限升级。这需要大量的成本, 那么就只能从线程入手去解决问题了。</p>
+<p><code>瑞安·达尔(Ryan Dahl)</code>, 为了解决服务器的高并发性能问题, 尝试了很多种语言, 但是最终都失败了。最后, <code>瑞安·达尔(Ryan Dahl)</code>利用Google发布的V8引擎, 在2009年2月开始Nodejs的编写。一开始Nodejs不叫这个名, 它叫web.js, 就想着解决web服务的问题, 最后越写越大, 除了解决服务器问题以外, 还有其他很多的功能, 形成了一个庞大的生态。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2009年</td>
+<td>Ryan Dahl在Github上发布node的最初版本</td>
+</tr>
+<tr>
+<td>20010年1月</td>
+<td>Node的包管理器npm诞生</td>
+</tr>
+<tr>
+<td>20010年底</td>
+<td>joyent公司赞助Node的开发, Ryan Dahl加入旗下, 全职负责Node</td>
+</tr>
+<tr>
+<td>20011年7月</td>
+<td>Node在微软的帮助下发布了windows版本</td>
+</tr>
+<tr>
+<td>20011年11月</td>
+<td>Node超越Ruby on Rails, 成为Github上关注最高的项目</td>
+</tr>
+<tr>
+<td>20012年1月</td>
+<td>Ryan Dahl离开Node项目</td>
+</tr>
+<tr>
+<td>20014年12月</td>
+<td>Fedor indutny制作了分支版本io.js</td>
+</tr>
+<tr>
+<td>20015年初</td>
+<td>Node.js基金会成立(IBM、Intel、微软、Joyent)</td>
+</tr>
+<tr>
+<td>20015年9月</td>
+<td>Node.js和io.js合并, Node4.0发布</td>
+</tr>
+<tr>
+<td>20016年</td>
+<td>Node6.0发布</td>
+</tr>
+<tr>
+<td>20017年</td>
+<td>Node8.0发布</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody></table>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog">LaoGao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog/nodejs/1/">https://zbglz.gitee.io/blog/nodejs/1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zbglz.gitee.io/blog" target="_blank">LaoGao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/nodejs/">nodejs</a></div><div class="post_share"><div class="social-share" data-image="/blog/../../../../../../../../../../blog/static/blog/md/nodejs.svg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/blog/pluginsSrc/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/blog/pluginsSrc/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/markdown/1/"><img class="prev-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">(1)markdown</div></div></a></div><div class="next-post pull-right"><a href="/blog/nodejs/2/"><img class="next-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/nodejs.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(2)nodejs的安装</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/nodejs/2/" title="(2)nodejs的安装"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/nodejs.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(2)nodejs的安装</div></div></a></div><div><a href="/blog/nodejs/3/" title="(3)模块化详解"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/nodejs.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(3)模块化详解</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="avatar"/></div><div class="author-info__name">LaoGao</div><div class="author-info__description">学习笔记</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">203</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" href="/blog"><i></i><span>回到首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/blog/about/" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src= "/blog/static/site/loadding.gif" data-lazy-src="../../../../../../blog/static/site/comment.gif"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs%E7%AE%80%E4%BB%8B"><span class="toc-text">nodejs简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs%E7%94%B1%E6%9D%A5"><span class="toc-text">nodejs由来</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/86/" title="(86)记录:图片lazy-load"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(86)记录:图片lazy-load"/></a><div class="content"><a class="title" href="/blog/vue2/86/" title="(86)记录:图片lazy-load">(86)记录:图片lazy-load</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/87/" title="(87)记录:px转化为vw转化插件"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(87)记录:px转化为vw转化插件"/></a><div class="content"><a class="title" href="/blog/vue2/87/" title="(87)记录:px转化为vw转化插件">(87)记录:px转化为vw转化插件</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/vue2/88/" title="(88)记录:服务器配置问题"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="(88)记录:服务器配置问题"/></a><div class="content"><a class="title" href="/blog/vue2/88/" title="(88)记录:服务器配置问题">(88)记录:服务器配置问题</a><time datetime="2022-05-25T01:00:15.350Z" title="发表于 2022-05-25 09:00:15">2022-05-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By LaoGao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="/blog">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/blog/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="../../../../../../blog/static/butterfly/custom.js"></script><script defer="defer" id="ribbon" src="/blog/pluginsSrc/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script></div></body></html>
