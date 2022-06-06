@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(2)git初始化与提交 | LaoGao's Blog</title><meta name="keywords" content="git"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="git初始化与提交前置：熟悉一些命令行工具的口令，如切换当前工作目录，新建及删除文件。默认已经安装了git。 创建一个文件夹。 mkdir 仓库名(项目名) &#x2F;&#x2F;例：mkdir learnGit  切换工作目录到该文件夹下。 cd learnGit  初始化一个仓库。 git init &#x2F;&#x2F;在该文件夹初始化一个仓库。然后里面就多了个.git的文件夹，不要手动修改这里面的任何文件。  提交文件到仓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(2)git初始化与提交">
+<meta property="og:url" content="https://zbglz.gitee.io/blog/git/2/index.html">
+<meta property="og:site_name" content="LaoGao&#39;s Blog">
+<meta property="og:description" content="git初始化与提交前置：熟悉一些命令行工具的口令，如切换当前工作目录，新建及删除文件。默认已经安装了git。 创建一个文件夹。 mkdir 仓库名(项目名) &#x2F;&#x2F;例：mkdir learnGit  切换工作目录到该文件夹下。 cd learnGit  初始化一个仓库。 git init &#x2F;&#x2F;在该文件夹初始化一个仓库。然后里面就多了个.git的文件夹，不要手动修改这里面的任何文件。  提交文件到仓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zbglz.gitee.io/blog/static/blog/md/git.svg">
+<meta property="article:published_time" content="2022-06-02T07:03:07.773Z">
+<meta property="article:modified_time" content="2022-06-02T07:10:20.373Z">
+<meta property="article:author" content="LaoGao">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zbglz.gitee.io/blog/static/blog/md/git.svg"><link rel="shortcut icon" href="/blog/static/site/favicon.png"><link rel="canonical" href="https://zbglz.gitee.io/blog/git/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="/blog/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaoGao","link":"链接: ","source":"来源: LaoGao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '(2)git初始化与提交',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-06-02 15:10:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">219</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/blog/../../../../../../../../../../blog/static/blog/md/git.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(2)git初始化与提交</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-02T07:03:07.773Z" title="发表于 2022-06-02 15:03:07">2022-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-02T07:10:20.373Z" title="更新于 2022-06-02 15:10:20">2022-06-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/git/">git</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="git初始化与提交"><a href="#git初始化与提交" class="headerlink" title="git初始化与提交"></a>git初始化与提交</h3><p>前置：熟悉一些命令行工具的口令，如切换当前工作目录，新建及删除文件。默认已经安装了git。</p>
+<p><strong>创建一个文件夹</strong>。</p>
+<pre><code>mkdir 仓库名(项目名)
+//例：mkdir learnGit
+</code></pre>
+<p><strong>切换工作目录到该文件夹下</strong>。</p>
+<pre><code>cd learnGit
+</code></pre>
+<p><strong>初始化一个仓库</strong>。</p>
+<pre><code>git init
+//在该文件夹初始化一个仓库。然后里面就多了个.git的文件夹，不要手动修改这里面的任何文件。
+</code></pre>
+<p><strong>提交文件到仓库</strong>。</p>
+<pre><code>git commit -m &quot;添加了一个readme文档&quot;
+
+1 file changed, 2 insertions(+)   //1个文件被改动（文件中插入了两行内容）
+create mode 100644 readme.txt  
+
+//把文件添加进版本控制系统后，就可以用git commit告诉git，把这个文件提交到仓库。
+</code></pre>
+<p><strong>掌握仓库文件当前的状态</strong>。</p>
+<pre><code>git status
+
+On branch master
+Changes not staged for commit:
+  (use &quot;git add ...&quot; to update what will be committed)
+  (use &quot;git checkout -- ...&quot; to discard changes in working directory)
+    modified:   readme.txt
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+//输入git status命令。git status命令可以让我们时刻掌握仓库文件当前的状态
+//这时会看到。下面的命令输出告诉我们，readme.txt被修改过了，但还没有提交修改
+//（提交修改，与添加文件至版本控制系统是一样的操作，下方有讲git add）。
+</code></pre>
+<p><strong>查看文件具体修改的内容</strong>。</p>
+<pre><code>git diff readme.txt
+
+diff --git a/readme.txt b/readme.txt
+index 46d49bf..9247db6 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+-Git is a version control system.  //修改前的内容
++Git is a distributed version control system.  //修改后的内容。
+ Git is free software.   //未更改的部分
+ 
+ //虽然Git告诉我们readme.txt被修改了，但如果能查看文件具体修改的内容，自然是很好的。
+ //比如你休假两周从国外回来，第一天上班时，已经记不清上次怎么修改的readme.txt
+ //所以，需要用git diff这个命令看看
+</code></pre>
+<p>看来git确实已经记录了，我们对文件的修改。这个时候我们就可以，重新提交修改的文件到仓库了。</p>
+<p><strong>提交修改的内容</strong>。</p>
+<pre><code>git add readme.txt
+//没错，提交修改，和添加文件到版本控制系统中，是一样的操作。
+//并且提交后，啥反应都没有。
+
+git status
+//提交修改后。在conmit之前，我们输入git status再看看文件的状态。
+On branch master
+Changes to be committed: 
+  (use &quot;git reset HEAD ...&quot; to unstage)
+    modified:   readme.txt  //git告诉我们，将要被提交修改的文件包括readme.txt
+</code></pre>
+<p><strong>提交修改的文件到仓库</strong>。</p>
+<pre><code>git commit -m “可以输入本次修改的内容和原因”
+//将修改后的文件，提交到仓库。
+$ git commit -m &quot;增加了一个单词distributed&quot;
+[master 12a1115] 增加了一个单词distributed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+ git status
+ // 再次输入git status看看文件的状态。
+ On branch master
+ nothing to commit, working tree clean //没有需要提交的修改，工作目录是干净的。
+</code></pre>
+<p>这样从修改文件，到提交修改，到提交文件到仓库的过程。就完成了对文件的版本控制。像极了玩游戏时游戏的存档。你可以读取前一关的数据，也可以回到最近的存档重新开始。这个存档就是git中的commit操作了。当然在实际工作中，我们会进行无数次的commoit操作。是记不住哪一次修改过什么的。我们可以使用git log查看。</p>
+<p><strong>查看修改记录</strong>。</p>
+<pre><code>git log
+
+//git会返回由近到远的全部commit操作
+//这个时候，之前的commit -m “修改注释”，就显得非常重要了
+//每次提交时，添加的修改注释，具有意义，才能快速的读懂文件的修改记录。
+commit 12a1115b08fc2d981ce70e44ebdf4bd7984db54c (HEAD -&gt; master)
+Author: XXXX &lt;00000@qq.com&gt;
+Date:   Thu Aug 26 10:23:32 2021 +0800
+    增加了一个单词distributed
+commit dd8a136a262cce36f81e0f38f321339ed5bc14c3
+Author: XXXX &lt;00000@qq.com&gt;
+Date:   Thu Aug 26 09:26:20 2021 +0800
+添加readme文本
+
+//如果嫌返回的内容眼花缭乱，可以在git log后面添加参数 --pretty=oneline
+//让每条commit记录都在一行内显示。
+git log --pretty=oneline
+
+12a1115b08fc2d981ce70e44ebdf4bd7984db54c (HEAD -&gt; master) 增加了一个单词distributed
+dd8a136a262cce36f81e0f38f321339ed5bc14c3 添加readme文本
+
+//与前面一样，前面一大串字符串就是各个版本的版本号Commit id
+//如果用可视化工具查看git历史，就能清楚的看到
+//从文件的创建到无数次的修改，形成一条时间线
+//其中存在每次修改commit后的时间节点。
+</code></pre>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog">LaoGao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog/git/2/">https://zbglz.gitee.io/blog/git/2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zbglz.gitee.io/blog" target="_blank">LaoGao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/git/">git</a></div><div class="post_share"><div class="social-share" data-image="/blog/../../../../../../../../../../blog/static/blog/md/git.svg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/blog/pluginsSrc/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/blog/pluginsSrc/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/vue2/86/"><img class="prev-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/vue2.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">(86)记录:图片lazy-load</div></div></a></div><div class="next-post pull-right"><a href="/blog/git/3/"><img class="next-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/git.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(3)git版本回退</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/git/1/" title="(1)git安装"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/git.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">(1)git安装</div></div></a></div><div><a href="/blog/git/3/" title="(3)git版本回退"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/git.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-02</div><div class="title">(3)git版本回退</div></div></a></div><div><a href="/blog/git/4/" title="(4)工作区和暂存区"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/git.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-02</div><div class="title">(4)工作区和暂存区</div></div></a></div><div><a href="/blog/git/5/" title="(5)git add管理"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/git.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-02</div><div class="title">(5)git add管理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="avatar"/></div><div class="author-info__name">LaoGao</div><div class="author-info__description">学习笔记</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">219</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" href="/blog"><i></i><span>回到首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/blog/about/" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src= "/blog/static/site/loadding.gif" data-lazy-src="../../../../../../blog/static/site/comment.gif"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%8F%90%E4%BA%A4"><span class="toc-text">git初始化与提交</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/ios/2/" title="App Store发布应用"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="App Store发布应用"/></a><div class="content"><a class="title" href="/blog/ios/2/" title="App Store发布应用">App Store发布应用</a><time datetime="2022-06-06T06:54:03.670Z" title="发表于 2022-06-06 14:54:03">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/ios/1/" title="ios证书和描述文件"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="ios证书和描述文件"/></a><div class="content"><a class="title" href="/blog/ios/1/" title="ios证书和描述文件">ios证书和描述文件</a><time datetime="2022-06-06T01:35:02.422Z" title="发表于 2022-06-06 09:35:02">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/android/2/" title="腾讯应用宝发布应用"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/android.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="腾讯应用宝发布应用"/></a><div class="content"><a class="title" href="/blog/android/2/" title="腾讯应用宝发布应用">腾讯应用宝发布应用</a><time datetime="2022-06-06T01:27:25.336Z" title="发表于 2022-06-06 09:27:25">2022-06-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By LaoGao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="/blog">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/blog/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="../../../../../../blog/static/butterfly/custom.js"></script></div></body></html>

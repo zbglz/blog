@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ios证书和描述文件 | LaoGao's Blog</title><meta name="keywords" content="ios,苹果证书"><meta name="author" content="LaoGao"><meta name="copyright" content="LaoGao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="ios应用打包ios应用打包，生成安装包(*.ipa)文件，需要证书(*.p12)和描述文件(*.mobileprovision)才能打包生成。应用打包分为两种情况，即开发版和发布版。 应用还在开发测试阶段，是不能将应用发布到苹果的应用商店提供下载的，但是我们需要在开发阶段将应用打包用以测试，这就是开发版。顾名思义发布版，就是应用已经开发完成，可以将应用提交到苹果应用商店，供别人下载使用的版本。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios证书和描述文件">
+<meta property="og:url" content="https://zbglz.gitee.io/blog/ios/1/index.html">
+<meta property="og:site_name" content="LaoGao&#39;s Blog">
+<meta property="og:description" content="ios应用打包ios应用打包，生成安装包(*.ipa)文件，需要证书(*.p12)和描述文件(*.mobileprovision)才能打包生成。应用打包分为两种情况，即开发版和发布版。 应用还在开发测试阶段，是不能将应用发布到苹果的应用商店提供下载的，但是我们需要在开发阶段将应用打包用以测试，这就是开发版。顾名思义发布版，就是应用已经开发完成，可以将应用提交到苹果应用商店，供别人下载使用的版本。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zbglz.gitee.io/blog/static/blog/md/ios.svg">
+<meta property="article:published_time" content="2022-06-06T01:35:02.422Z">
+<meta property="article:modified_time" content="2022-06-06T07:28:09.916Z">
+<meta property="article:author" content="LaoGao">
+<meta property="article:tag" content="ios">
+<meta property="article:tag" content="苹果证书">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zbglz.gitee.io/blog/static/blog/md/ios.svg"><link rel="shortcut icon" href="/blog/static/site/favicon.png"><link rel="canonical" href="https://zbglz.gitee.io/blog/ios/1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="/blog/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaoGao","link":"链接: ","source":"来源: LaoGao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/blog/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ios证书和描述文件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-06-06 15:28:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="../../../../../../blog/static/butterfly/jquery3.6.0.min.js"></script><link rel="stylesheet" href="../../../../../../blog/static/butterfly/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="onerror=null;src='/static/site/img_404.svg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">219</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/blog/../../../../../../../../../../blog/static/blog/md/ios.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">LaoGao's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ios证书和描述文件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-06T01:35:02.422Z" title="发表于 2022-06-06 09:35:02">2022-06-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-06T07:28:09.916Z" title="更新于 2022-06-06 15:28:09">2022-06-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/ios/">ios</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h3 id="ios应用打包"><a href="#ios应用打包" class="headerlink" title="ios应用打包"></a>ios应用打包</h3><p>ios应用打包，生成安装包(*.ipa)文件，需要证书(*.p12)和描述文件(*.mobileprovision)才能打包生成。应用打包分为两种情况，即开发版和发布版。</p>
+<p>应用还在开发测试阶段，是不能将应用发布到苹果的应用商店提供下载的，但是我们需要在开发阶段将应用打包用以测试，这就是开发版。顾名思义发布版，就是应用已经开发完成，可以将应用提交到苹果应用商店，供别人下载使用的版本。</p>
+<p>无论是开发版还是发布版打包，都需要证书和描述文件，但他们的证书和描述文件略有不同。</p>
+<table>
+<thead>
+<tr>
+<th>证书和描述文件</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>开发(Development)版证书、开发版描述文件</td>
+<td>用于开发测试</td>
+</tr>
+<tr>
+<td>发布(Distribution)版证书、发布版描述文件</td>
+<td>提交 AppStore，供用户下载使用</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="开发版证书"><a href="#开发版证书" class="headerlink" title="开发版证书"></a>开发版证书</h3><p>不管是创建<code>开发版</code>(Development)证书还是<code>发布版</code>(Distribution)证书，<code>都涉及一个证书请求文件</code>.certSigningRequest，证书请求文件需在<code>Mac OS</code>上使用<code>钥匙串工具生成</code>。<strong>注意</strong>：开发版和发布版都是使用同一个证书请求文件，所以<code>只需要生成一个</code>。</p>
+<blockquote>
+<p>证书请求文件.certSigningRequest的生成</p>
+</blockquote>
+<p>首先你需要有一个MAC笔记本电脑。打开钥匙串。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/5fd57680243a620ae41f02f9a38d8dbf_i9.jpg" alt="5fd57680243a620ae41f02f9a38d8dbf_i9"></p>
+<p>在登录-&gt;证书，可查看本机已安装的证书。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/6065dc00f8845984780a5ca2d852c9c9_i10.jpg" alt="6065dc00f8845984780a5ca2d852c9c9_i10"></p>
+<p>点击钥匙串访问-&gt;证书助理-&gt;选择：从证书颁发机构请求证书…</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/1c968c124226ead00d8bbaf99bc57b51_i11.png" alt="1c968c124226ead00d8bbaf99bc57b51_i11"></p>
+<p>填写电子邮件，常用名称，等信息，选择储存到磁盘选项，点击继续。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/561fef42e017789cbcf328ce2d8a8dc5_i12.png" alt="561fef42e017789cbcf328ce2d8a8dc5_i12"></p>
+<p>选择保存目录，点击储存。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/45d07383baad54901beb7c6666f91627_i13.png" alt="45d07383baad54901beb7c6666f91627_i13"></p>
+<p>点击完成</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/c7d39bfc1f93ad0f1f7cd8b02b89265f_i14.png" alt="c7d39bfc1f93ad0f1f7cd8b02b89265f_i14"></p>
+<p>这时，即可在储存目录看到生成的证书请求文件 .certSigningRequest。<code>无论是申请开发者证书，还是发布证书，都需要用到此证书请求文件</code>。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/c529aac519b0f56ce395d1b54035473a_i15.png" alt="c529aac519b0f56ce395d1b54035473a_i15"></p>
+<blockquote>
+<p>创建开发版证书</p>
+</blockquote>
+<p>有了证书请求文件.certSigningRequest，就可以创建开发版证书了。首先已经默认你已经拥有了一个苹果开发者账号，并登录<a target="_blank" rel="noopener" href="https://developer.apple.com/">https://developer.apple.com/</a>。选择Account，进入登录页，使用开发者账号进行登录。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/3016f8e8e17eb0074a2c3334666e1c6e_i1.jpg" alt="3016f8e8e17eb0074a2c3334666e1c6e_i1"></p>
+<p>登录后：选择Certificates,Identifiers &amp; Profiles</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ce6d75b2997f0afd645f70a1bf8f7478_i2.jpg" alt="ce6d75b2997f0afd645f70a1bf8f7478_i2"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/44723c879dd6322dbd0eced1c687c36d_i3.jpg" alt="44723c879dd6322dbd0eced1c687c36d_i3"></p>
+<p>选择左侧的Certificates，点击加号。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/8e24a9e2e9009a730f3b62d03e0dcc3a_i16.png" alt="8e24a9e2e9009a730f3b62d03e0dcc3a_i16"></p>
+<p>选择IOS App Development开发版证书申请，点击continue继续。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/b9d98fa6ca5d512a842eedec3bdc7dfa_i17.png" alt="b9d98fa6ca5d512a842eedec3bdc7dfa_i17"></p>
+<p>此时就需要前面生成的证书请求文件.certSigningRequest了，点击Choose File，选择证书请求文件进行上传。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/f3b67cbae175824f6a106d256e438ae7_i18.png" alt="f3b67cbae175824f6a106d256e438ae7_i18"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/978fde27809e39ec2442c65d87caf814_i19.png" alt="978fde27809e39ec2442c65d87caf814_i19"></p>
+<p>再点击continue继续，即可完成开发版证书的创建。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/2cd2c835e83030d1bd9a6eafb3682583_i20.png" alt="2cd2c835e83030d1bd9a6eafb3682583_i20"></p>
+<p>完成创建后，右上点击Download，下载该文件。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/6cf3db875a704dc82d5a574fdd678a49_i21.png" alt="6cf3db875a704dc82d5a574fdd678a49_i21"></p>
+<p>下载到本地后，打开证书文件，会自动将证书导入到钥匙串工具中。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/844b61d7a5fd08df08fc84b0b8853c96_i22.png" alt="844b61d7a5fd08df08fc84b0b8853c96_i22"></p>
+<p>打开钥匙串工具，可看到导入的证书。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/d5ef07278ecf985f7abdf779ca429d55_i23.png" alt="d5ef07278ecf985f7abdf779ca429d55_i23"></p>
+<p>在钥匙串工具中，选择该证书，右键选择导出iphone developer……，导出.p12证书文件，在弹出的窗口输入文件名，如DevProjectName，点击存储。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/34636b4dbbc76477f5905456a79948f7_i25.png" alt="34636b4dbbc76477f5905456a79948f7_i25"></p>
+<p>在弹出的密码输入框处，输入密码（重要！打包工具在打包开发版应用时，会要求输入此密码，请确保自己能记住此密码或做好记录。）</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/69810492fcc57a3a940f0f73c49ee204_i26.jpg" alt="69810492fcc57a3a940f0f73c49ee204_i26"></p>
+<p>至此，开发版的证书.p12就创建完成了。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/7286926832b2eb5c03727b4ccbf54faa_i27.png" alt="7286926832b2eb5c03727b4ccbf54faa_i27"></p>
+<hr>
+<h3 id="开发版描述文件"><a href="#开发版描述文件" class="headerlink" title="开发版描述文件"></a>开发版描述文件</h3><p>创建开发板描述文件.mobileprovision，与发布版创建描述文件不同，既然是用于测试的开发版本，我们就需要设备对其进行测试，具体的测试设备就需要添加到描述文件中，才能在打包生成后，正常的安装的测试设备中。所以在创建开发板描述文件之前，我们还需要添加测试设备。</p>
+<blockquote>
+<p>添加测试设备</p>
+</blockquote>
+<p>仍然在登录的<a target="_blank" rel="noopener" href="https://developer.apple.com/">https://developer.apple.com/</a>页面中进行操作，选择左侧的Devices。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ec1da1b9183b8ae1ec00ba7991ee945d_i28.png" alt="ec1da1b9183b8ae1ec00ba7991ee945d_i28"></p>
+<p>然后选择平台，填写设备(手机)名称，以及设备的UDID。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/803ea5e5b40672354c4cf7b8d00eb1e5_i29.png" alt="803ea5e5b40672354c4cf7b8d00eb1e5_i29"></p>
+<p>点击continue添加，可以看到设备就添加到Devices中了。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/9c7216bd7e902c77d3447342576957cb_i30.png" alt="9c7216bd7e902c77d3447342576957cb_i30"></p>
+<blockquote>
+<p>创建应用标识identifier</p>
+</blockquote>
+<p>identifier是应用的标识，包括对应用需要使用的服务权限、bundleID等的设置，应用标识具体体现在对bundleID的设置，bundle ID可以叫包ID、APP ID或者应用ID，一个应用对应一个bundleID，它是每一个IOS应用的全球唯一标识，无论代码怎么改，应用名称和图标怎么换，只要bundleID没变，ios系统就认为这是同一个应用。每开发一个新的应用，都需要到member center–identifier–APP IDS去创建一个bundleID。bundleID分为两种。</p>
+<p>1.Explicit App ID(明确的APP ID)，一般格式是com.domainname.appname。这种id只能用在一个app上，每一个新应用都要创建一个。<br>2.Wildcard App ID(通配符APP ID)，一般格式是con.domainname.*。这种id可以用在多个应用上，虽然方便，但是这种id的应用不能使用通知功能，所以不常用。</p>
+<p>在登录的<a target="_blank" rel="noopener" href="https://developer.apple.com/">https://developer.apple.com/</a>页面中进行操作，选择identifiers，点击加号。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/15b03e8ea924cc3ff583fe01af729863_i4.jpg" alt="15b03e8ea924cc3ff583fe01af729863_i4"></p>
+<p>然后选择APP，点击continue下一班。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/94231f4d4fe5c9862a6e86ba9e723f82_i5.jpg" alt="94231f4d4fe5c9862a6e86ba9e723f82_i5"></p>
+<p>填写应用描述和Bundle ID</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/c1984dc883786d73d69a4a755c642166_i6.jpg" alt="c1984dc883786d73d69a4a755c642166_i6"></p>
+<p>选择应用需要用到的服务</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/3885db6752c2f2070d1c24a29af110a0_i7.jpg" alt="3885db6752c2f2070d1c24a29af110a0_i7"></p>
+<p>填写完成后，点击register注册应用标识即可。注册完成后，可在此页查看已申请的应用标识。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/cd4522977577f754d9469d72c8516115_i8.jpg" alt="cd4522977577f754d9469d72c8516115_i8"></p>
+<p>有几个应用（不同的APP）就需要申请几个应用标识(不同的应用Bundle ID也不同)。</p>
+<blockquote>
+<p>创建开发版描述文件</p>
+</blockquote>
+<p>添加了测试设备和应用标识，就可以创建开发版描述文件了。选择左侧的Profiles，点击加号。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ee8263269079bf26eeade6ed4c29bebf_i31.png" alt="ee8263269079bf26eeade6ed4c29bebf_i31"></p>
+<p>选择IOS App Development(开发版)，点击continue，下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/04dc91f3d8f2b6a1e22d8ed1540519a3_i32.png" alt="04dc91f3d8f2b6a1e22d8ed1540519a3_i32"></p>
+<p>然后就可以选择，前面创建好的应用标识identifier了，我们知道一个应用就有一个应用标识，所以有多个时，不要选择错了。点击continue，下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/598de7225eaa6fb57c8f97b35fd8d672_i33.png" alt="598de7225eaa6fb57c8f97b35fd8d672_i33"></p>
+<p>前面我们也创建了开发版证书，此处也需要与其关联。选择前面创建的证书。点击continue，下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/a78744fc9af4eabc0d92f0784cfae0d5_i34.png" alt="a78744fc9af4eabc0d92f0784cfae0d5_i34"></p>
+<p>然后就是关联测试设备了，输入描述文件的名字，根据添加的设备，选择要测试的设备。点击continue，下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/668ecff467b5e204f883f6ca71129b3a_i36.png" alt="668ecff467b5e204f883f6ca71129b3a_i36"></p>
+<p>最后点击download就是下载了。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/0250ffc2b0959e53ff73d6bf5cd3990e_i37.png" alt="0250ffc2b0959e53ff73d6bf5cd3990e_i37"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/90cb7a8633a4d71f1bca073a01a8af94_i38.png" alt="90cb7a8633a4d71f1bca073a01a8af94_i38"></p>
+<p>至此，开发版应用打包，所需的证书和描述文件都已经创建完成了。可以使用打包工具打包，在测试设备上进行测试了。</p>
+<hr>
+<h3 id="发布版证书"><a href="#发布版证书" class="headerlink" title="发布版证书"></a>发布版证书</h3><p>应用开发完成，需要打包成发布版时，需要正式的发布版证书。在登录的<a target="_blank" rel="noopener" href="https://developer.apple.com/">https://developer.apple.com/</a>上操作，选择左侧的Certificates，点击加号。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/6ee0ba37cf89587daa435539558d8d0a_i39.png" alt="6ee0ba37cf89587daa435539558d8d0a_i39"></p>
+<p>接着选择IOS Distribution (App Store and Ad Hoc)，点击continue下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/dc1135d675bbeb1683a2924fbcc32273_i40.png" alt="dc1135d675bbeb1683a2924fbcc32273_i40"></p>
+<p>这里也需要上传证书请求文件.certSigningRequest，记得前面在创建开发板前，在钥匙串中申请的证书请求文件嘛，就是那个文件了。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/aef5cd8805ea76df2a08106216270215_i41.png" alt="aef5cd8805ea76df2a08106216270215_i41"></p>
+<p>就是这个文件。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/c529aac519b0f56ce395d1b54035473a_i15.png" alt="c529aac519b0f56ce395d1b54035473a_i15"></p>
+<p>上传完成后，点击continue下一步。就可以下载发布版的证书了。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/b35369ebe686356f40fd995526a2c1e2_i42.png" alt="b35369ebe686356f40fd995526a2c1e2_i42"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/626c96931e2af5613966c6f630168fd8_i43.png" alt="626c96931e2af5613966c6f630168fd8_i43"></p>
+<p>下载完成后，运行下载的cer文件，将其导入到钥匙串。即可在钥匙串中查看该证书。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/15fa0bba19df841cafd5bc3e8e468935_i44.png" alt="15fa0bba19df841cafd5bc3e8e468935_i44"></p>
+<p>在钥匙串工具中，选择该发布版证书，右键选择导出iphone Distribution……，导出.p12证书文件，在弹出的窗口输入文件名，如DisProjectName，点击存储。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/4c44e35339f6230fbc4c87d597a2a2cf_i45.png" alt="4c44e35339f6230fbc4c87d597a2a2cf_i45"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/862ead09d0db3543a7895c060e2b2391_i46.png" alt="862ead09d0db3543a7895c060e2b2391_i46"></p>
+<p>然后在弹出的密码输入框处，输入密码（重要！打包工具在打包发布版应用时，会要求输入此密码，请确保自己能记住此密码或做好记录。）</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/RUZSLKA1YMZ177.png" alt="RUZSLKA1YMZ177"></p>
+<p>至此，发布版的证书就创建完毕了，下面继续创建发布版的描述文件。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/cdff8c042fc5552dccbe126d760ca86d_i48.png" alt="cdff8c042fc5552dccbe126d760ca86d_i48"></p>
+<hr>
+<h3 id="发布版描述文件"><a href="#发布版描述文件" class="headerlink" title="发布版描述文件"></a>发布版描述文件</h3><p>发布版描述文件与开发版的描述文件不同，因为发布版不再需要添加测试设备了。继续在登录的<a target="_blank" rel="noopener" href="https://developer.apple.com/">https://developer.apple.com/</a>上操作，选择左侧的Profiles。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/60427b6e264525572b30afa1ace1426d_i49.png" alt="60427b6e264525572b30afa1ace1426d_i49"></p>
+<p>然后选择Distribution下面的App Store，点击continue下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/88a939c5f6f7bc5f35831e6d99e2355c_i50.png" alt="88a939c5f6f7bc5f35831e6d99e2355c_i50"></p>
+<p>选择之前创建的应用标识identifier，注意应用标识的对应（多个应用就有多个标识，别搞混了）。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ab1dba312b0c2d441a13a31c9454a8be_i51.png" alt="ab1dba312b0c2d441a13a31c9454a8be_i51"></p>
+<p>然后选择，刚刚创建的发布版证书，点击continue下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/266eb1b49aad06a0a6e7771e06b6d8d7_i52.png" alt="266eb1b49aad06a0a6e7771e06b6d8d7_i52"></p>
+<p>这一步，输入发布版描述文件的名字。点击continue下一步。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/f8671c754880cadbb747dc3f6f85e473_i53.png" alt="f8671c754880cadbb747dc3f6f85e473_i53"></p>
+<p>这时，发布版的描述文件就创建完毕了，可以点击download下载。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/f0954defd45a83ca9ee9a0f41ce9c21c_i54.png" alt="f0954defd45a83ca9ee9a0f41ce9c21c_i54"></p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/b2b10d9c25c3d236fbf5f16a148c160b_i55.png" alt="b2b10d9c25c3d236fbf5f16a148c160b_i55"></p>
+<p>这时，发布版的证书和描述文件就创建完毕了，可以使用打包工具，对应用进行打包，并上传审核发布。</p>
+<p><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/93f0fb41d0d401e240063f9292b0555f_i56.png" alt="93f0fb41d0d401e240063f9292b0555f_i56"></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog">LaoGao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zbglz.gitee.io/blog/ios/1/">https://zbglz.gitee.io/blog/ios/1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zbglz.gitee.io/blog" target="_blank">LaoGao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ios/">ios</a><a class="post-meta__tags" href="/blog/tags/%E8%8B%B9%E6%9E%9C%E8%AF%81%E4%B9%A6/">苹果证书</a></div><div class="post_share"><div class="social-share" data-image="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/blog/pluginsSrc/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/blog/pluginsSrc/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/blog/static/site/avatar.svg" target="_blank"><img class="post-qr-code-img" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/android/2/"><img class="prev-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/android.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">腾讯应用宝发布应用</div></div></a></div><div class="next-post pull-right"><a href="/blog/ios/2/"><img class="next-cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" onerror="onerror=null;src='/blog/static/site/img_404.svg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">App Store发布应用</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/ios/2/" title="App Store发布应用"><img class="cover" src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">App Store发布应用</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/static/site/avatar.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="avatar"/></div><div class="author-info__name">LaoGao</div><div class="author-info__description">学习笔记</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">219</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" href="/blog"><i></i><span>回到首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/blog/about/" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/blog/about/" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎来到LaoGao's Bolg</div><div style='text-align:center'><img width:'100px' height='100px' src= "/blog/static/site/loadding.gif" data-lazy-src="../../../../../../blog/static/site/comment.gif"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ios%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85"><span class="toc-text">ios应用打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%89%88%E8%AF%81%E4%B9%A6"><span class="toc-text">开发版证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%89%88%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6"><span class="toc-text">开发版描述文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E7%89%88%E8%AF%81%E4%B9%A6"><span class="toc-text">发布版证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E7%89%88%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6"><span class="toc-text">发布版描述文件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/ios/2/" title="App Store发布应用"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="App Store发布应用"/></a><div class="content"><a class="title" href="/blog/ios/2/" title="App Store发布应用">App Store发布应用</a><time datetime="2022-06-06T06:54:03.670Z" title="发表于 2022-06-06 14:54:03">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/ios/1/" title="ios证书和描述文件"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/ios.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="ios证书和描述文件"/></a><div class="content"><a class="title" href="/blog/ios/1/" title="ios证书和描述文件">ios证书和描述文件</a><time datetime="2022-06-06T01:35:02.422Z" title="发表于 2022-06-06 09:35:02">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/android/2/" title="腾讯应用宝发布应用"><img src= "/blog/static/site/loadding.gif" data-lazy-src="/blog/../../../../../../../../../../blog/static/blog/md/android.svg" onerror="this.onerror=null;this.src='/blog/static/site/img_404.svg'" alt="腾讯应用宝发布应用"/></a><div class="content"><a class="title" href="/blog/android/2/" title="腾讯应用宝发布应用">腾讯应用宝发布应用</a><time datetime="2022-06-06T01:27:25.336Z" title="发表于 2022-06-06 09:27:25">2022-06-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By LaoGao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="/blog">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="/blog/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/blog/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/blog/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="../../../../../../blog/static/butterfly/custom.js"></script></div></body></html>
