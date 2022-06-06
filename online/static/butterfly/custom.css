@@ -74,6 +74,10 @@
 
 /*-----------------------●文章页●----------------------------*/
 /*文章区域-loading图片高度设置*/
+#article-container p a img.loaded{
+  border: #e7e7e7 solid 3px;;
+}
+/*文章区域-loading图片高度设置*/
 #article-container p a img.loading{
   height: 240px;
 }
