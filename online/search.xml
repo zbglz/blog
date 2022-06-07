@@ -2504,23 +2504,6 @@ title: 音乐
       </tags>
   </entry>
   <entry>
-    <title>(19)Unicode编码</title>
-    <url>/blog/javascript/19/</url>
-    <content><![CDATA[<hr>
-<h3 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h3><p><strong>在字符串中使用转义字符输出Unicode编码</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// \u编码(16进制)</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;\u0031&quot;</span>)</span><br><span class="line">  <span class="comment">//当然1这种常用字符, 我们都可以用键盘直接输入就可以了。</span></span><br><span class="line">  <span class="comment">//这种一般只用于一些不常用的特殊字符输出。</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//这是在js中输出Unicode编码的方式。</span></span><br><span class="line">  <span class="comment">//那很多时候我们也需要在网页中显示这些特殊编码。</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// &amp;#编码(10进制);  注意！！这里的编码要求是10进制编码</span></span><br><span class="line">  <span class="comment">// 需要将16进制的Unicode转换为10进制编码。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(18)关系运算符</title>
     <url>/blog/javascript/18/</url>
     <content><![CDATA[<hr>
@@ -2583,6 +2566,23 @@ title: 音乐
       </tags>
   </entry>
   <entry>
+    <title>(19)Unicode编码</title>
+    <url>/blog/javascript/19/</url>
+    <content><![CDATA[<hr>
+<h3 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h3><p><strong>在字符串中使用转义字符输出Unicode编码</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// \u编码(16进制)</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;\u0031&quot;</span>)</span><br><span class="line">  <span class="comment">//当然1这种常用字符, 我们都可以用键盘直接输入就可以了。</span></span><br><span class="line">  <span class="comment">//这种一般只用于一些不常用的特殊字符输出。</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//这是在js中输出Unicode编码的方式。</span></span><br><span class="line">  <span class="comment">//那很多时候我们也需要在网页中显示这些特殊编码。</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// &amp;#编码(10进制);  注意！！这里的编码要求是10进制编码</span></span><br><span class="line">  <span class="comment">// 需要将16进制的Unicode转换为10进制编码。</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(2)标识符</title>
     <url>/blog/javascript/2/</url>
     <content><![CDATA[<hr>
@@ -2627,6 +2627,23 @@ title: 音乐
       </tags>
   </entry>
   <entry>
+    <title>(20)条件运算符</title>
+    <url>/blog/javascript/20/</url>
+    <content><![CDATA[<hr>
+<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><p><strong>条件运算符也叫三元运算符：条件?语句1:语句2</strong><br><strong>运算时, 先对条件进行运算, 如果条件为true, 执行语句1, 如果为false, 执行语句2</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="literal">true</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  <span class="literal">false</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;获取最大值&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> max = a &gt; b? <span class="attr">a</span>: b</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;max = &quot;</span> + max)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;var max = a &gt; b? (还可以嵌套三元运算): (还可以嵌套三元运算),但不推荐这么写,不利于阅读。&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(21)运算符的优先级</title>
     <url>/blog/javascript/21/</url>
     <content><![CDATA[<hr>
@@ -2641,23 +2658,6 @@ title: 音乐
 <p><img src="/blog/../../../../../../../../../../blog/static/blog/md/js1.png" alt="js1"></p>
 <p><strong>在这张表中, 越靠前, 优先级越高, 优先级一样, 则从左往右计算</strong>。</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;一般不需要记忆这张表, 确实是拿不准的, 可以使用()括号来改变优先级。&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;(1 || 2) &amp;&amp; 3 先算||结果：&quot;</span> + ((<span class="number">1</span> || <span class="number">2</span>) &amp;&amp; <span class="number">3</span>))</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;1 || (2 &amp;&amp; 3) 先算&amp;&amp;结果：&quot;</span> + (<span class="number">1</span> || (<span class="number">2</span> &amp;&amp; <span class="number">3</span>)))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(20)条件运算符</title>
-    <url>/blog/javascript/20/</url>
-    <content><![CDATA[<hr>
-<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><p><strong>条件运算符也叫三元运算符：条件?语句1:语句2</strong><br><strong>运算时, 先对条件进行运算, 如果条件为true, 执行语句1, 如果为false, 执行语句2</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="literal">true</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  <span class="literal">false</span>?<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句1&#x27;</span>):<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;语句2&#x27;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;获取最大值&quot;</span>)</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> max = a &gt; b? <span class="attr">a</span>: b</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;max = &quot;</span> + max)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;var max = a &gt; b? (还可以嵌套三元运算): (还可以嵌套三元运算),但不推荐这么写,不利于阅读。&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -3883,6 +3883,45 @@ obj = null
       </tags>
   </entry>
   <entry>
+    <title>(49)call()和apply()</title>
+    <url>/blog/javascript/49/</url>
+    <content><![CDATA[<hr>
+<h3 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h3><p>一般我们定义一个函数, 都是直接调用函数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是函数还隐含了两个方法。</p>
+<p><code>call()</code>。<br><code>apply()</code>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>()</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>函数对象调用这两个方法, <strong>都会执行函数</strong>, 这与func()效果一样。那他们有什么区别？调用call()和apply()可以将一个对象指定为第一个参数<br>我们稍微修改以下这个函数。</p>
+<pre><code>function func()&#123;
+  console.log(this)
+&#125;
+</code></pre>
+<p>看看他们的this有什么不同。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;直接调用func()&quot;</span>)</span><br><span class="line">  <span class="title function_">func</span>() <span class="comment">// window</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>直接调用函数时, 函数中的this就是window。</p>
+<p>call()和apply()传入一个对象作为参数, 而函数运行时的this, 就变成了这个对象。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj1&quot;</span>&#125;</span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj2&quot;</span>&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj1对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj2对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj2&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  obj1.<span class="title function_">sayName</span>() <span class="comment">// obj1</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">call</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">apply</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>所以call和apply方法可以指定函数执行时的this</strong>, 那call和apply的区别又是什么呢？。我们知道函数可以传递参数, call和apply的区别就是<strong>传递参数的方式不同</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a + b = &#x27;</span> + (a+b))</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call方法在传递的对象后面, 依次传递函数的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;而apply方法是在传递的对象后面, 传递一个数组, 数组中包含传递的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj1, [<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(48)数组的遍历</title>
     <url>/blog/javascript/48/</url>
     <content><![CDATA[<hr>
@@ -3917,45 +3956,6 @@ var perArr = [per1, per2, per3]
 </code></pre>
 <p>需求：去除重复元素</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.<span class="property">length</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>; j&lt;arr.<span class="property">length</span>; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[i] == arr[j])&#123;</span><br><span class="line">        arr.<span class="title function_">splice</span>(j,<span class="number">1</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;发现如果有连续相同的元素时, 不能正确删除重复数据。这是因为arr.splice(j,1)在删除重复数据时, 后面的元素会占据删除元素的位置, 如果如果占位的元素还和删除的元素重复, 就会被j++跳过。所以我们可以回到原来的位置再判断一次(j--)。&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.<span class="property">length</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>; j&lt;arr.<span class="property">length</span>; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[i] == arr[j])&#123;</span><br><span class="line">        arr.<span class="title function_">splice</span>(j,<span class="number">1</span>)</span><br><span class="line">        j--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(49)call()和apply()</title>
-    <url>/blog/javascript/49/</url>
-    <content><![CDATA[<hr>
-<h3 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h3><p>一般我们定义一个函数, 都是直接调用函数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>但是函数还隐含了两个方法。</p>
-<p><code>call()</code>。<br><code>apply()</code>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>()</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>函数对象调用这两个方法, <strong>都会执行函数</strong>, 这与func()效果一样。那他们有什么区别？调用call()和apply()可以将一个对象指定为第一个参数<br>我们稍微修改以下这个函数。</p>
-<pre><code>function func()&#123;
-  console.log(this)
-&#125;
-</code></pre>
-<p>看看他们的this有什么不同。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;直接调用func()&quot;</span>)</span><br><span class="line">  <span class="title function_">func</span>() <span class="comment">// window</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>直接调用函数时, 函数中的this就是window。</p>
-<p>call()和apply()传入一个对象作为参数, 而函数运行时的this, 就变成了这个对象。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj1&quot;</span>&#125;</span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj2&quot;</span>&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj1对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj2对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>例：</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj2&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  obj1.<span class="title function_">sayName</span>() <span class="comment">// obj1</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">call</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">apply</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>所以call和apply方法可以指定函数执行时的this</strong>, 那call和apply的区别又是什么呢？。我们知道函数可以传递参数, call和apply的区别就是<strong>传递参数的方式不同</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a + b = &#x27;</span> + (a+b))</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call方法在传递的对象后面, 依次传递函数的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;而apply方法是在传递的对象后面, 传递一个数组, 数组中包含传递的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj1, [<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -4786,23 +4786,6 @@ console.log(res) // 123456
       </tags>
   </entry>
   <entry>
-    <title>(65)DOM查询</title>
-    <url>/blog/javascript/65/</url>
-    <content><![CDATA[<hr>
-<h3 id="DOM查询"><a href="#DOM查询" class="headerlink" title="DOM查询"></a>DOM查询</h3><p>练习：DOM查询</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  button&#123;margin-<span class="attr">bottom</span>:5px&#125;</span><br><span class="line">  li&#123;<span class="attr">display</span>:inline-block;background-<span class="attr">color</span>:lightBlue&#125;</span><br><span class="line">  hr&#123;<span class="attr">border</span>: 1px solid red;&#125;</span><br><span class="line">  input[type=<span class="string">&quot;text&quot;</span>]&#123;<span class="attr">width</span>:60px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你喜欢哪个城市？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;city&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;bj&quot;</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>广州<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你喜欢哪个单机游戏？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;game&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;rl&quot;</span>&gt;</span>红警<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>实况<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>极品飞车<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>魔兽<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你手机的操作系统是？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;phone&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>IOS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;android&quot;</span>&gt;</span>Android<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>windows phone<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">男 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;hello&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">女 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;hello&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">名字 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abcd&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>查找#bj节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>查找所有li节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn03&quot;</span>&gt;</span>查找name=gender的所有节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">clear</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;通过document获取指定的id节点, 返回一个节点对象, document.getElementById(&#x27;bj&#x27;)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bj&quot;</span>))</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;获取节点内的html, document.getElementById(&#x27;bj&#x27;).innerHTML&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bj&quot;</span>).<span class="property">innerHTML</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn02.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">clear</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> obj = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;li&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;document.getElementsByTagName返回的是一个类数组对象, document.getElementsByTagName(&#x27;li&#x27;)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title class_">Object</span>.<span class="title function_">keys</span>(obj).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(obj[key])</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn03 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn03&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn03.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">clear</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> obj = <span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&quot;gender&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;document.getElementsByName返回一个类数组对象, document.getElementsByName(&#x27;gender&#x27;)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title class_">Object</span>.<span class="title function_">keys</span>(obj).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// 读取节点属性, 直接使用。  元素.属性</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// 但唯独class属性不能用这种方法。元素.className</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(obj[key], obj[key].<span class="property">value</span>, obj[key].<span class="property">className</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(64)文档的加载</title>
     <url>/blog/javascript/64/</url>
     <content><![CDATA[<hr>
@@ -4816,6 +4799,23 @@ console.log(res) // 123456
 
 <p>如果非要将js代码放到head中, 也不是完全没办法, 事实上, 我们希望在head中的js代码, 在页面加载完成后再运行。而页面加载完成也是一个事件, 我们可以获取到文档加载完成的事件。<br>window.onload, 这样就不会出现dom获取不到的情况了。</p>
 <figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  button&#123;margin-<span class="attr">bottom</span>:5px&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">alert</span>(<span class="string">&quot;发生点击事件&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(65)DOM查询</title>
+    <url>/blog/javascript/65/</url>
+    <content><![CDATA[<hr>
+<h3 id="DOM查询"><a href="#DOM查询" class="headerlink" title="DOM查询"></a>DOM查询</h3><p>练习：DOM查询</p>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  button&#123;margin-<span class="attr">bottom</span>:5px&#125;</span><br><span class="line">  li&#123;<span class="attr">display</span>:inline-block;background-<span class="attr">color</span>:lightBlue&#125;</span><br><span class="line">  hr&#123;<span class="attr">border</span>: 1px solid red;&#125;</span><br><span class="line">  input[type=<span class="string">&quot;text&quot;</span>]&#123;<span class="attr">width</span>:60px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你喜欢哪个城市？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;city&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;bj&quot;</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>广州<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你喜欢哪个单机游戏？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;game&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;rl&quot;</span>&gt;</span>红警<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>实况<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>极品飞车<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>魔兽<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你手机的操作系统是？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;phone&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>IOS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;android&quot;</span>&gt;</span>Android<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>windows phone<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">男 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;hello&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">女 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;hello&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">名字 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abcd&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn01&quot;</span>&gt;</span>查找#bj节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn02&quot;</span>&gt;</span>查找所有li节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn03&quot;</span>&gt;</span>查找name=gender的所有节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn01 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn01&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn01.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">clear</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;通过document获取指定的id节点, 返回一个节点对象, document.getElementById(&#x27;bj&#x27;)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bj&quot;</span>))</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;获取节点内的html, document.getElementById(&#x27;bj&#x27;).innerHTML&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bj&quot;</span>).<span class="property">innerHTML</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn02 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn02&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn02.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">clear</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> obj = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;li&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;document.getElementsByTagName返回的是一个类数组对象, document.getElementsByTagName(&#x27;li&#x27;)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title class_">Object</span>.<span class="title function_">keys</span>(obj).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(obj[key])</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> btn03 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn03&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  btn03.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">clear</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> obj = <span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&quot;gender&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;document.getElementsByName返回一个类数组对象, document.getElementsByName(&#x27;gender&#x27;)&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(obj)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title class_">Object</span>.<span class="title function_">keys</span>(obj).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// 读取节点属性, 直接使用。  元素.属性</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// 但唯独class属性不能用这种方法。元素.className</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(obj[key], obj[key].<span class="property">value</span>, obj[key].<span class="property">className</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -6171,21 +6171,6 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
-    <title>(1)vue的MVVM</title>
-    <url>/blog/vue2/1/</url>
-    <content><![CDATA[<hr>
-<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-1.png" alt="vue2-1"></p>
-<p>Model View ViewModel, Model是行为层(js), View是视图层(html), js不再直接控制html的DOM进行监听和数据绑定, 而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听), 个人理解。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(10)computed的setter和getter</title>
     <url>/blog/vue2/10/</url>
     <content><![CDATA[<hr>
@@ -6198,6 +6183,21 @@ nvm alias default [node版本号] ##设置默认版本
 
 
 <p>在实际项目中, 事实上我们并不希望用户随便对我们的数据设置值。大部分情况下我们都不需要实现set方法。而作为一个只读属性。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(1)vue的MVVM</title>
+    <url>/blog/vue2/1/</url>
+    <content><![CDATA[<hr>
+<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-1.png" alt="vue2-1"></p>
+<p>Model View ViewModel, Model是行为层(js), View是视图层(html), js不再直接控制html的DOM进行监听和数据绑定, 而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听), 个人理解。</p>
 <hr>
 ]]></content>
       <categories>
@@ -6963,76 +6963,6 @@ Vue.set(要修改的对象,索引值,修改后的值)
       </tags>
   </entry>
   <entry>
-    <title>(34)前端模块化思维</title>
-    <url>/blog/vue2/34/</url>
-    <content><![CDATA[<hr>
-<h3 id="前端模块化思维"><a href="#前端模块化思维" class="headerlink" title="前端模块化思维"></a>前端模块化思维</h3><p>如果只简单接触过JavaScript或jQuery的使用的话, 可能很难理解什么是模块化。如果不接触node, 前端其实是很难接触到模块化的。在此之前前端就没有模块化的概念。现在前端发展到三大框架的阶段, 而这三大框架的开发, 基本上都用到了模块化的概念。所以现在模块化对前端也非常重要, 现在的前端开发, 基本上都是用模块化开发的。要理解模块化开发, 可能我们要从最基本的开始讲起。</p>
-<blockquote>
-<p>JavaScript的原始功能</p>
-</blockquote>
-<p>JavaScript最初只是为了执行一些最简单的脚本, 比如表单验证。这在拨号上网, 网速慢如蜗牛的年代, 非常有用, 主要为了防止用户提交的信息失误、或不符合规范, 等了半天却只得到一个错误提示。页面在最初就只有html和css, 而JavaScript最多也只是在script标签中书写。所以在早期的时候JavaScript非常简单。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;button&quot;</span>)[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;按钮发生了点击&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>随着ajax异步请求的出现, 慢慢形成了前后端分离</p>
-</blockquote>
-<p>客户端要完成的事情, 越来越多, 代码量与日俱增。为了应对代码量的剧增, 我们就不会再将代码简单的写在script标签里了, 通常我们会将代码创建在多个js文件中, 进行维护。即便如此, 依然不能避免一些灾难性的问题。<strong>尤其在大型项目中, 往往不是一个人在进行开发, 而是多人开发</strong>。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;!-- 项目组长做一些项目的初始化构建 --&gt;
-    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
-    &lt;!-- 开发者A --&gt;
-    &lt;script src=&quot;a1.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;a2.js&quot;&gt;&lt;/script&gt;
-    &lt;!-- 开发者B --&gt;
-    &lt;script src=&quot;b1.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;b2.js&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-&lt;!-- 这种方式对js文件的依赖顺序几乎是强制性的, 甚至js的加载顺序都有强制性要求 --&gt;
-</code></pre>
-<p>当开发者A在a1.js中定义了一个变量name, 在自己创建的a2.js中使用, 在个人开发期间可能不会出什么问题。那如果开发者B也定义了一个与开发者A定义的同名变量name, 这个时候就可能造成不可预期的错误。</p>
-<p>当然开发者A可以在a1.js中通过匿名函数解决, 但是, a1中定义的变量或方法, 就无法在a2中使用了, 自己的定义的变量和方法, 连自己的难以访问, 代码的复用性就降低了很多。</p>
-<p><strong>但是如果知道模块化的话, 我们可以使用另一种方式实现</strong></p>
-<p>开发者A：a1.js</p>
-<pre><code>var moduleA = (function()&#123;
-  var flag = true
-  function sum(num1,num2)&#123;
-    return num1 + num2
-  &#125;
-  //定义一个导出的对象
-  var obj = &#123;&#125;
-  obj.flag = flag
-  obj.sum = sum
-  
-  //将obj  return出去
-  return obj
-&#125;)()
-</code></pre>
-<p>开发者A：a2.js</p>
-<pre><code>;(function()&#123;
-  if(moduleA.flag)&#123;
-    console.log(moduleA.num(10,20)); //访问a1中的方法
-  &#125;  
-&#125;)
-</code></pre>
-<p>这样不同的开发者, 只需要避免moduleA这个变量不会重复就可以了, 而里面的其他变量或方法, 就不需要去关心是否重复。这就是模块化最基础的封装, 事实上, 模块化还有很多高级的话题。幸运的是, 前端模块化, <strong>已经有了很多既有的规范</strong>, 以及对应的实现方案。所以<strong>我们现在已经不需要自己去实现了</strong>, 只需要遵循即可。前端的模块化方案包括：<strong>CommonJS、AMD、CMD, 也有ES6的Modules</strong>。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(35)模块化的核心</title>
     <url>/blog/vue2/35/</url>
     <content><![CDATA[<hr>
@@ -7172,6 +7102,76 @@ import * as aaa from &quot;路径.js&quot;
 console.log(aaa.flag)
 console.log(aaa.name)
 </code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(34)前端模块化思维</title>
+    <url>/blog/vue2/34/</url>
+    <content><![CDATA[<hr>
+<h3 id="前端模块化思维"><a href="#前端模块化思维" class="headerlink" title="前端模块化思维"></a>前端模块化思维</h3><p>如果只简单接触过JavaScript或jQuery的使用的话, 可能很难理解什么是模块化。如果不接触node, 前端其实是很难接触到模块化的。在此之前前端就没有模块化的概念。现在前端发展到三大框架的阶段, 而这三大框架的开发, 基本上都用到了模块化的概念。所以现在模块化对前端也非常重要, 现在的前端开发, 基本上都是用模块化开发的。要理解模块化开发, 可能我们要从最基本的开始讲起。</p>
+<blockquote>
+<p>JavaScript的原始功能</p>
+</blockquote>
+<p>JavaScript最初只是为了执行一些最简单的脚本, 比如表单验证。这在拨号上网, 网速慢如蜗牛的年代, 非常有用, 主要为了防止用户提交的信息失误、或不符合规范, 等了半天却只得到一个错误提示。页面在最初就只有html和css, 而JavaScript最多也只是在script标签中书写。所以在早期的时候JavaScript非常简单。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;button&quot;</span>)[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;按钮发生了点击&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>随着ajax异步请求的出现, 慢慢形成了前后端分离</p>
+</blockquote>
+<p>客户端要完成的事情, 越来越多, 代码量与日俱增。为了应对代码量的剧增, 我们就不会再将代码简单的写在script标签里了, 通常我们会将代码创建在多个js文件中, 进行维护。即便如此, 依然不能避免一些灾难性的问题。<strong>尤其在大型项目中, 往往不是一个人在进行开发, 而是多人开发</strong>。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- 项目组长做一些项目的初始化构建 --&gt;
+    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 开发者A --&gt;
+    &lt;script src=&quot;a1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;a2.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 开发者B --&gt;
+    &lt;script src=&quot;b1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;b2.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+&lt;!-- 这种方式对js文件的依赖顺序几乎是强制性的, 甚至js的加载顺序都有强制性要求 --&gt;
+</code></pre>
+<p>当开发者A在a1.js中定义了一个变量name, 在自己创建的a2.js中使用, 在个人开发期间可能不会出什么问题。那如果开发者B也定义了一个与开发者A定义的同名变量name, 这个时候就可能造成不可预期的错误。</p>
+<p>当然开发者A可以在a1.js中通过匿名函数解决, 但是, a1中定义的变量或方法, 就无法在a2中使用了, 自己的定义的变量和方法, 连自己的难以访问, 代码的复用性就降低了很多。</p>
+<p><strong>但是如果知道模块化的话, 我们可以使用另一种方式实现</strong></p>
+<p>开发者A：a1.js</p>
+<pre><code>var moduleA = (function()&#123;
+  var flag = true
+  function sum(num1,num2)&#123;
+    return num1 + num2
+  &#125;
+  //定义一个导出的对象
+  var obj = &#123;&#125;
+  obj.flag = flag
+  obj.sum = sum
+  
+  //将obj  return出去
+  return obj
+&#125;)()
+</code></pre>
+<p>开发者A：a2.js</p>
+<pre><code>;(function()&#123;
+  if(moduleA.flag)&#123;
+    console.log(moduleA.num(10,20)); //访问a1中的方法
+  &#125;  
+&#125;)
+</code></pre>
+<p>这样不同的开发者, 只需要避免moduleA这个变量不会重复就可以了, 而里面的其他变量或方法, 就不需要去关心是否重复。这就是模块化最基础的封装, 事实上, 模块化还有很多高级的话题。幸运的是, 前端模块化, <strong>已经有了很多既有的规范</strong>, 以及对应的实现方案。所以<strong>我们现在已经不需要自己去实现了</strong>, 只需要遵循即可。前端的模块化方案包括：<strong>CommonJS、AMD、CMD, 也有ES6的Modules</strong>。</p>
 <hr>
 ]]></content>
       <categories>
@@ -9011,6 +9011,74 @@ are ONLY allowed in .vue files - render functions are required elsewhere
       </tags>
   </entry>
   <entry>
+    <title>(52)runtime-only和runtime-compiler的区别</title>
+    <url>/blog/vue2/52/</url>
+    <content><![CDATA[<hr>
+<h3 id="runtime-only和runtime-compiler的区别"><a href="#runtime-only和runtime-compiler的区别" class="headerlink" title="runtime-only和runtime-compiler的区别"></a>runtime-only和runtime-compiler的区别</h3><p>简单理解, <strong>runtime-only和runtime-compiler的区别, 只在main.js里面</strong>。</p>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-70.png" alt="vue2-70"></p>
+<blockquote>
+<p>runtime-compiler</p>
+</blockquote>
+<p>1.导入组件。<br>2.在components里面注册。<br>3.在template里面使用。</p>
+<pre><code>template(模板)--&gt;ast(抽象语法树)--&gt;render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
+</code></pre>
+<blockquote>
+<p>runtime-only</p>
+</blockquote>
+<p>1.导入组件。<br>2.将createElement函数传入render函数, 在render函数中。<br>3.直接返回createElement处理完毕的组件模板。</p>
+<pre><code>render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
+//相比于runtime-compiler, runtime-only更有优势。
+//1、更高的性能。
+//2、代码量更少, 最终打包的体积更小。
+</code></pre>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-69.png" alt="vue2-69"></p>
+<hr>
+<h3 id="render函数"><a href="#render函数" class="headerlink" title="render函数"></a>render函数</h3><p>runtime-only中的render函数</p>
+<pre><code>//这是ES6的箭头函数写法
+render: h =&gt; h(App)
+
+//可以写成
+render: function(h)&#123;
+  return h(App)
+&#125;
+</code></pre>
+<p>这个h其实是vue内部一个叫createElement的函数, 它有好几种用法。</p>
+<blockquote>
+<p>1、createElement(“标签”, {标签属性}, [‘标签内容’])</p>
+</blockquote>
+<p>例如：createElement(“h2”, {class:”box”}, [‘我是h2的内容’])</p>
+<pre><code>render: function(createElement)&#123;
+  return createElement(&quot;h2&quot;, &#123;class:&quot;box&quot;&#125;, [&#39;我是h2的内容&#39;])
+&#125;
+//或者：
+render: function(createElement)&#123;
+  return createElement(&quot;h2&quot;,
+  &#123;class:&quot;box&quot;&#125;, 
+  [&#39;我是h2的内容&#39;,createElement(&#39;button&#39;, [&#39;按钮&#39;])])
+&#125;
+//如果这里这么写的话, 它会用创建的标签替换vue实例挂载的app
+</code></pre>
+<blockquote>
+<p>2、直接传入一个组件</p>
+</blockquote>
+<p>直接给createElement传入一个组件</p>
+<pre><code>render: function(createElement)&#123;
+  return createElement(App)
+&#125;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>vue-cli</tag>
+        <tag>runtime-only</tag>
+        <tag>runtime-compiler</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(53)Vue-CLI3创建项目</title>
     <url>/blog/vue2/53/</url>
     <content><![CDATA[<hr>
@@ -9125,74 +9193,6 @@ new Vue(&#123;
       <tags>
         <tag>vue2</tag>
         <tag>vue-cli</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(52)runtime-only和runtime-compiler的区别</title>
-    <url>/blog/vue2/52/</url>
-    <content><![CDATA[<hr>
-<h3 id="runtime-only和runtime-compiler的区别"><a href="#runtime-only和runtime-compiler的区别" class="headerlink" title="runtime-only和runtime-compiler的区别"></a>runtime-only和runtime-compiler的区别</h3><p>简单理解, <strong>runtime-only和runtime-compiler的区别, 只在main.js里面</strong>。</p>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-70.png" alt="vue2-70"></p>
-<blockquote>
-<p>runtime-compiler</p>
-</blockquote>
-<p>1.导入组件。<br>2.在components里面注册。<br>3.在template里面使用。</p>
-<pre><code>template(模板)--&gt;ast(抽象语法树)--&gt;render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
-</code></pre>
-<blockquote>
-<p>runtime-only</p>
-</blockquote>
-<p>1.导入组件。<br>2.将createElement函数传入render函数, 在render函数中。<br>3.直接返回createElement处理完毕的组件模板。</p>
-<pre><code>render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
-//相比于runtime-compiler, runtime-only更有优势。
-//1、更高的性能。
-//2、代码量更少, 最终打包的体积更小。
-</code></pre>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-69.png" alt="vue2-69"></p>
-<hr>
-<h3 id="render函数"><a href="#render函数" class="headerlink" title="render函数"></a>render函数</h3><p>runtime-only中的render函数</p>
-<pre><code>//这是ES6的箭头函数写法
-render: h =&gt; h(App)
-
-//可以写成
-render: function(h)&#123;
-  return h(App)
-&#125;
-</code></pre>
-<p>这个h其实是vue内部一个叫createElement的函数, 它有好几种用法。</p>
-<blockquote>
-<p>1、createElement(“标签”, {标签属性}, [‘标签内容’])</p>
-</blockquote>
-<p>例如：createElement(“h2”, {class:”box”}, [‘我是h2的内容’])</p>
-<pre><code>render: function(createElement)&#123;
-  return createElement(&quot;h2&quot;, &#123;class:&quot;box&quot;&#125;, [&#39;我是h2的内容&#39;])
-&#125;
-//或者：
-render: function(createElement)&#123;
-  return createElement(&quot;h2&quot;,
-  &#123;class:&quot;box&quot;&#125;, 
-  [&#39;我是h2的内容&#39;,createElement(&#39;button&#39;, [&#39;按钮&#39;])])
-&#125;
-//如果这里这么写的话, 它会用创建的标签替换vue实例挂载的app
-</code></pre>
-<blockquote>
-<p>2、直接传入一个组件</p>
-</blockquote>
-<p>直接给createElement传入一个组件</p>
-<pre><code>render: function(createElement)&#123;
-  return createElement(App)
-&#125;
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>vue-cli</tag>
-        <tag>runtime-only</tag>
-        <tag>runtime-compiler</tag>
       </tags>
   </entry>
   <entry>
@@ -9882,6 +9882,98 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>(61)路由的懒加载</title>
+    <url>/blog/vue2/61/</url>
+    <content><![CDATA[<hr>
+<h3 id="路由的懒加载"><a href="#路由的懒加载" class="headerlink" title="路由的懒加载"></a>路由的懒加载</h3><p>当我们打包应用程序的时候, JavaScript包会变得非常大(那个bundle.js), 影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块, 然后当路由被访问的时候才加载对应的组件, 这样就更加高效了。</p>
+<p>那我们先来看一下我们创建的vuerouterpro项目中js是怎么打包的。</p>
+<pre><code>F:\learn\vuerouterpro&gt; npm run build
+</code></pre>
+<p>可以看到打包后, 多了一个dist文件夹。里面有一个index.html和static文件夹, css和js及其他资源都在这里。</p>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-107.png" alt="vue2-107"></p>
+<p>是否发现每个css文件和js文件都对应了一个同名的.map文件。是因为项目在打包后, 代码都是经过压缩丑化的。如果运行时报错, 输出的错误信息无法准确得知是哪里的代码报错。那么这个.map文件, 就可以让这些压缩丑化的文件, 能准确输出是哪一行哪一列有错。</p>
+<p>如果不想打包时生成.map文件。可以在config&#x2F;index.js文件中, 找到productionSourceMap: true<br>将其改为false就可以了。</p>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-108.png" alt="vue2-108"></p>
+<p>回到前面说的打包的js会越来越大。指的就是开发项目的业务代码(打包后app开头的那个js文件)。因为随着业务的增多, 开发的代码量会越来越大。</p>
+<p>其实在开发里面, 我们最常见的做法就是, 一个路由打包一个js文件。这个js文件是不会跟着整个项目一起被请求过来的,  只有在进入这个路由以后, 才会请求这个js文件。这种用到时才加载的方式就叫做<code>懒加载</code>。</p>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-109.png" alt="vue2-109"></p>
+<p>很明显, 之前的路由配置方法不是懒加载, 它会将所有页面的业务代码都打包到一个js文件中去。</p>
+<pre><code>import Vue from &#39;vue&#39;
+import Router from &#39;vue-router&#39;
+import Home from &quot;../components/home.vue&quot;
+import About from &quot;../components/about.vue&quot;
+import User from &quot;../components/user.vue&quot;
+Vue.use(Router)
+export default new Router(&#123;
+  routes: [
+    &#123;
+      path: &quot;&quot;,
+      redirect: &quot;/home&quot;
+    &#125;,
+    &#123;
+      path: &quot;/home&quot;,
+      component: Home
+    &#125;,
+    &#123;
+      path: &quot;/about&quot;,
+      component: About
+    &#125;,
+    &#123;
+      path: &quot;/user/:userid&quot;,
+      component: User
+    &#125;
+  ],
+  mode: &quot;history&quot;,
+  linkActiveClass: &quot;active&quot;
+&#125;)
+</code></pre>
+<blockquote>
+<p>懒加载配置</p>
+</blockquote>
+<p>在router&#x2F;index.js中, 修改导入组件的方式。</p>
+<pre><code>import Vue from &#39;vue&#39;
+import Router from &#39;vue-router&#39;
+const Home = () =&gt; import(&#39;../components/home.vue&#39;)
+const About = () =&gt; import(&#39;../components/about.vue&#39;)
+const User = () =&gt; import(&#39;../components/user.vue&#39;)
+Vue.use(Router)
+export default new Router(&#123;
+  routes: [
+    &#123;
+      path: &quot;&quot;,
+      redirect: &quot;/home&quot;
+    &#125;,
+    &#123;
+      path: &quot;/home&quot;,
+      component: Home
+    &#125;,
+    &#123;
+      path: &quot;/about&quot;,
+      component: About
+    &#125;,
+    &#123;
+      path: &quot;/user/:userid&quot;,
+      component: User
+    &#125;
+  ],
+  mode: &quot;history&quot;,
+  linkActiveClass: &quot;active&quot;
+&#125;)
+//再导出项目看看。
+</code></pre>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-110.png" alt="vue2-110"></p>
+<p>这个时候打包后的js文件就多了几个。一个路由对应一个js文件。只有在路边变化了以后, 才会去服务器请求相关的js文件。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>vue-router</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(62)路由的嵌套</title>
     <url>/blog/vue2/62/</url>
     <content><![CDATA[<hr>
@@ -10006,98 +10098,6 @@ export default new Router(&#123;
 &#125;)
 </code></pre>
 <p>首页的时候做过重定向到&#x2F;home路径, 在&#x2F;home中, 又做了重定向到&#x2F;home&#x2F;news路径, 所以在打开home页面时, 路径会显示到host&#x2F;home&#x2F;news的位置。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>vue-router</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(61)路由的懒加载</title>
-    <url>/blog/vue2/61/</url>
-    <content><![CDATA[<hr>
-<h3 id="路由的懒加载"><a href="#路由的懒加载" class="headerlink" title="路由的懒加载"></a>路由的懒加载</h3><p>当我们打包应用程序的时候, JavaScript包会变得非常大(那个bundle.js), 影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块, 然后当路由被访问的时候才加载对应的组件, 这样就更加高效了。</p>
-<p>那我们先来看一下我们创建的vuerouterpro项目中js是怎么打包的。</p>
-<pre><code>F:\learn\vuerouterpro&gt; npm run build
-</code></pre>
-<p>可以看到打包后, 多了一个dist文件夹。里面有一个index.html和static文件夹, css和js及其他资源都在这里。</p>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-107.png" alt="vue2-107"></p>
-<p>是否发现每个css文件和js文件都对应了一个同名的.map文件。是因为项目在打包后, 代码都是经过压缩丑化的。如果运行时报错, 输出的错误信息无法准确得知是哪里的代码报错。那么这个.map文件, 就可以让这些压缩丑化的文件, 能准确输出是哪一行哪一列有错。</p>
-<p>如果不想打包时生成.map文件。可以在config&#x2F;index.js文件中, 找到productionSourceMap: true<br>将其改为false就可以了。</p>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-108.png" alt="vue2-108"></p>
-<p>回到前面说的打包的js会越来越大。指的就是开发项目的业务代码(打包后app开头的那个js文件)。因为随着业务的增多, 开发的代码量会越来越大。</p>
-<p>其实在开发里面, 我们最常见的做法就是, 一个路由打包一个js文件。这个js文件是不会跟着整个项目一起被请求过来的,  只有在进入这个路由以后, 才会请求这个js文件。这种用到时才加载的方式就叫做<code>懒加载</code>。</p>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-109.png" alt="vue2-109"></p>
-<p>很明显, 之前的路由配置方法不是懒加载, 它会将所有页面的业务代码都打包到一个js文件中去。</p>
-<pre><code>import Vue from &#39;vue&#39;
-import Router from &#39;vue-router&#39;
-import Home from &quot;../components/home.vue&quot;
-import About from &quot;../components/about.vue&quot;
-import User from &quot;../components/user.vue&quot;
-Vue.use(Router)
-export default new Router(&#123;
-  routes: [
-    &#123;
-      path: &quot;&quot;,
-      redirect: &quot;/home&quot;
-    &#125;,
-    &#123;
-      path: &quot;/home&quot;,
-      component: Home
-    &#125;,
-    &#123;
-      path: &quot;/about&quot;,
-      component: About
-    &#125;,
-    &#123;
-      path: &quot;/user/:userid&quot;,
-      component: User
-    &#125;
-  ],
-  mode: &quot;history&quot;,
-  linkActiveClass: &quot;active&quot;
-&#125;)
-</code></pre>
-<blockquote>
-<p>懒加载配置</p>
-</blockquote>
-<p>在router&#x2F;index.js中, 修改导入组件的方式。</p>
-<pre><code>import Vue from &#39;vue&#39;
-import Router from &#39;vue-router&#39;
-const Home = () =&gt; import(&#39;../components/home.vue&#39;)
-const About = () =&gt; import(&#39;../components/about.vue&#39;)
-const User = () =&gt; import(&#39;../components/user.vue&#39;)
-Vue.use(Router)
-export default new Router(&#123;
-  routes: [
-    &#123;
-      path: &quot;&quot;,
-      redirect: &quot;/home&quot;
-    &#125;,
-    &#123;
-      path: &quot;/home&quot;,
-      component: Home
-    &#125;,
-    &#123;
-      path: &quot;/about&quot;,
-      component: About
-    &#125;,
-    &#123;
-      path: &quot;/user/:userid&quot;,
-      component: User
-    &#125;
-  ],
-  mode: &quot;history&quot;,
-  linkActiveClass: &quot;active&quot;
-&#125;)
-//再导出项目看看。
-</code></pre>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-110.png" alt="vue2-110"></p>
-<p>这个时候打包后的js文件就多了几个。一个路由对应一个js文件。只有在路边变化了以后, 才会去服务器请求相关的js文件。</p>
 <hr>
 ]]></content>
       <categories>
@@ -11383,6 +11383,39 @@ export default store
       </tags>
   </entry>
   <entry>
+    <title>(74)axios网络请求</title>
+    <url>/blog/vue2/74/</url>
+    <content><![CDATA[<hr>
+<h3 id="axios网络请求基本用法"><a href="#axios网络请求基本用法" class="headerlink" title="axios网络请求基本用法"></a>axios网络请求基本用法</h3><p>axios(config)默认是get请求方式。支持ES6的promise, 所以只需要在then后面拿返回结果。</p>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>.<span class="property">origin</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>也可以指定请求方式</p>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">method</span>:<span class="string">&quot;get&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>.<span class="property">origin</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>携带参数1</p>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip?pname=自定义数据1&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">method</span>:<span class="string">&quot;get&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">config</span>.<span class="property">url</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>携带参数2</p>
+<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">method</span>:<span class="string">&quot;get&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">params</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">pname</span>:<span class="string">&quot;自定义数据2&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(res.<span class="property">config</span>.<span class="property">params</span>.<span class="property">pname</span>));</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="axios-request-config"><a href="#axios-request-config" class="headerlink" title="axios.request(config)"></a>axios.request(config)</h3><hr>
+<h3 id="axios-get-url-config"><a href="#axios-get-url-config" class="headerlink" title="axios.get(url[,config])"></a>axios.get(url[,config])</h3><hr>
+<h3 id="axios-delete-url-config"><a href="#axios-delete-url-config" class="headerlink" title="axios.delete(url[,config])"></a>axios.delete(url[,config])</h3><hr>
+<h3 id="axios-head-url-config"><a href="#axios-head-url-config" class="headerlink" title="axios.head(url[,config])"></a>axios.head(url[,config])</h3><hr>
+<h3 id="axios-post-url-data-config"><a href="#axios-post-url-data-config" class="headerlink" title="axios.post(url[,data,[,config]])"></a>axios.post(url[,data,[,config]])</h3><hr>
+<h3 id="axios-put-url-config"><a href="#axios-put-url-config" class="headerlink" title="axios.put(url[,config])"></a>axios.put(url[,config])</h3><hr>
+<h3 id="axios-patch-url-config"><a href="#axios-patch-url-config" class="headerlink" title="axios.patch(url[,config])"></a>axios.patch(url[,config])</h3><hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>axios</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(75)axios并发请求</title>
     <url>/blog/vue2/75/</url>
     <content><![CDATA[<hr>
@@ -12537,39 +12570,6 @@ const vm= app.mount(&#39;#app&#39;)
       </categories>
       <tags>
         <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(74)axios网络请求</title>
-    <url>/blog/vue2/74/</url>
-    <content><![CDATA[<hr>
-<h3 id="axios网络请求基本用法"><a href="#axios网络请求基本用法" class="headerlink" title="axios网络请求基本用法"></a>axios网络请求基本用法</h3><p>axios(config)默认是get请求方式。支持ES6的promise, 所以只需要在then后面拿返回结果。</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>.<span class="property">origin</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>也可以指定请求方式</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">method</span>:<span class="string">&quot;get&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>.<span class="property">origin</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>携带参数1</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip?pname=自定义数据1&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">method</span>:<span class="string">&quot;get&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">config</span>.<span class="property">url</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>携带参数2</p>
-<figure class="highlight js"><figcaption><span>html</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">axios</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">url</span>:<span class="string">&quot;https://httpbin.org/ip&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">method</span>:<span class="string">&quot;get&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">params</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">pname</span>:<span class="string">&quot;自定义数据2&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(res.<span class="property">config</span>.<span class="property">params</span>.<span class="property">pname</span>));</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="axios-request-config"><a href="#axios-request-config" class="headerlink" title="axios.request(config)"></a>axios.request(config)</h3><hr>
-<h3 id="axios-get-url-config"><a href="#axios-get-url-config" class="headerlink" title="axios.get(url[,config])"></a>axios.get(url[,config])</h3><hr>
-<h3 id="axios-delete-url-config"><a href="#axios-delete-url-config" class="headerlink" title="axios.delete(url[,config])"></a>axios.delete(url[,config])</h3><hr>
-<h3 id="axios-head-url-config"><a href="#axios-head-url-config" class="headerlink" title="axios.head(url[,config])"></a>axios.head(url[,config])</h3><hr>
-<h3 id="axios-post-url-data-config"><a href="#axios-post-url-data-config" class="headerlink" title="axios.post(url[,data,[,config]])"></a>axios.post(url[,data,[,config]])</h3><hr>
-<h3 id="axios-put-url-config"><a href="#axios-put-url-config" class="headerlink" title="axios.put(url[,config])"></a>axios.put(url[,config])</h3><hr>
-<h3 id="axios-patch-url-config"><a href="#axios-patch-url-config" class="headerlink" title="axios.patch(url[,config])"></a>axios.patch(url[,config])</h3><hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>axios</tag>
       </tags>
   </entry>
 </search>
