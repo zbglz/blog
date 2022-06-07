@@ -3883,45 +3883,6 @@ obj = null
       </tags>
   </entry>
   <entry>
-    <title>(49)call()和apply()</title>
-    <url>/blog/javascript/49/</url>
-    <content><![CDATA[<hr>
-<h3 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h3><p>一般我们定义一个函数, 都是直接调用函数。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>但是函数还隐含了两个方法。</p>
-<p><code>call()</code>。<br><code>apply()</code>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>()</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>函数对象调用这两个方法, <strong>都会执行函数</strong>, 这与func()效果一样。那他们有什么区别？调用call()和apply()可以将一个对象指定为第一个参数<br>我们稍微修改以下这个函数。</p>
-<pre><code>function func()&#123;
-  console.log(this)
-&#125;
-</code></pre>
-<p>看看他们的this有什么不同。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;直接调用func()&quot;</span>)</span><br><span class="line">  <span class="title function_">func</span>() <span class="comment">// window</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>直接调用函数时, 函数中的this就是window。</p>
-<p>call()和apply()传入一个对象作为参数, 而函数运行时的this, 就变成了这个对象。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj1&quot;</span>&#125;</span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj2&quot;</span>&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj1对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj2对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>例：</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj2&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  obj1.<span class="title function_">sayName</span>() <span class="comment">// obj1</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">call</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">apply</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>所以call和apply方法可以指定函数执行时的this</strong>, 那call和apply的区别又是什么呢？。我们知道函数可以传递参数, call和apply的区别就是<strong>传递参数的方式不同</strong>。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a + b = &#x27;</span> + (a+b))</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call方法在传递的对象后面, 依次传递函数的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;而apply方法是在传递的对象后面, 传递一个数组, 数组中包含传递的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj1, [<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(48)数组的遍历</title>
     <url>/blog/javascript/48/</url>
     <content><![CDATA[<hr>
@@ -3956,6 +3917,45 @@ var perArr = [per1, per2, per3]
 </code></pre>
 <p>需求：去除重复元素</p>
 <figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.<span class="property">length</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>; j&lt;arr.<span class="property">length</span>; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[i] == arr[j])&#123;</span><br><span class="line">        arr.<span class="title function_">splice</span>(j,<span class="number">1</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;发现如果有连续相同的元素时, 不能正确删除重复数据。这是因为arr.splice(j,1)在删除重复数据时, 后面的元素会占据删除元素的位置, 如果如果占位的元素还和删除的元素重复, 就会被j++跳过。所以我们可以回到原来的位置再判断一次(j--)。&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.<span class="property">length</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>; j&lt;arr.<span class="property">length</span>; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[i] == arr[j])&#123;</span><br><span class="line">        arr.<span class="title function_">splice</span>(j,<span class="number">1</span>)</span><br><span class="line">        j--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(49)call()和apply()</title>
+    <url>/blog/javascript/49/</url>
+    <content><![CDATA[<hr>
+<h3 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h3><p>一般我们定义一个函数, 都是直接调用函数。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是函数还隐含了两个方法。</p>
+<p><code>call()</code>。<br><code>apply()</code>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是func函数&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>()</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply()方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>函数对象调用这两个方法, <strong>都会执行函数</strong>, 这与func()效果一样。那他们有什么区别？调用call()和apply()可以将一个对象指定为第一个参数<br>我们稍微修改以下这个函数。</p>
+<pre><code>function func()&#123;
+  console.log(this)
+&#125;
+</code></pre>
+<p>看看他们的this有什么不同。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;直接调用func()&quot;</span>)</span><br><span class="line">  <span class="title function_">func</span>() <span class="comment">// window</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;apply(obj)方法&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj) <span class="comment">// Object&#123; &#125;</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>直接调用函数时, 函数中的this就是window。</p>
+<p>call()和apply()传入一个对象作为参数, 而函数运行时的this, 就变成了这个对象。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj1&quot;</span>&#125;</span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;<span class="attr">name</span>: <span class="string">&quot;我是obj2&quot;</span>&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj1对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj1) <span class="comment">// 我是obj1</span></span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;传入obj2对象&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">  func.<span class="title function_">apply</span>(obj2) <span class="comment">// 我是obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj1&quot;</span>,</span><br><span class="line">    <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;obj2&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  obj1.<span class="title function_">sayName</span>() <span class="comment">// obj1</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">call</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">  obj1.<span class="property">sayName</span>.<span class="title function_">apply</span>(obj2) <span class="comment">// obj2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>所以call和apply方法可以指定函数执行时的this</strong>, 那call和apply的区别又是什么呢？。我们知道函数可以传递参数, call和apply的区别就是<strong>传递参数的方式不同</strong>。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a + b = &#x27;</span> + (a+b))</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;call方法在传递的对象后面, 依次传递函数的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">call</span>(obj1, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;而apply方法是在传递的对象后面, 传递一个数组, 数组中包含传递的实参&quot;</span>)</span><br><span class="line">  func.<span class="title function_">apply</span>(obj1, [<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -6171,6 +6171,21 @@ nvm alias default [node版本号] ##设置默认版本
       </tags>
   </entry>
   <entry>
+    <title>(1)vue的MVVM</title>
+    <url>/blog/vue2/1/</url>
+    <content><![CDATA[<hr>
+<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-1.png" alt="vue2-1"></p>
+<p>Model View ViewModel, Model是行为层(js), View是视图层(html), js不再直接控制html的DOM进行监听和数据绑定, 而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听), 个人理解。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(10)computed的setter和getter</title>
     <url>/blog/vue2/10/</url>
     <content><![CDATA[<hr>
@@ -6183,21 +6198,6 @@ nvm alias default [node版本号] ##设置默认版本
 
 
 <p>在实际项目中, 事实上我们并不希望用户随便对我们的数据设置值。大部分情况下我们都不需要实现set方法。而作为一个只读属性。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(1)vue的MVVM</title>
-    <url>/blog/vue2/1/</url>
-    <content><![CDATA[<hr>
-<h3 id="vue的MVVM"><a href="#vue的MVVM" class="headerlink" title="vue的MVVM"></a>vue的MVVM</h3><p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-1.png" alt="vue2-1"></p>
-<p>Model View ViewModel, Model是行为层(js), View是视图层(html), js不再直接控制html的DOM进行监听和数据绑定, 而是通过ViewModel(Vue实例)进行Data Bindings(数据绑定)以及DOM Listeners(DOM监听), 个人理解。</p>
 <hr>
 ]]></content>
       <categories>
@@ -6963,6 +6963,76 @@ Vue.set(要修改的对象,索引值,修改后的值)
       </tags>
   </entry>
   <entry>
+    <title>(34)前端模块化思维</title>
+    <url>/blog/vue2/34/</url>
+    <content><![CDATA[<hr>
+<h3 id="前端模块化思维"><a href="#前端模块化思维" class="headerlink" title="前端模块化思维"></a>前端模块化思维</h3><p>如果只简单接触过JavaScript或jQuery的使用的话, 可能很难理解什么是模块化。如果不接触node, 前端其实是很难接触到模块化的。在此之前前端就没有模块化的概念。现在前端发展到三大框架的阶段, 而这三大框架的开发, 基本上都用到了模块化的概念。所以现在模块化对前端也非常重要, 现在的前端开发, 基本上都是用模块化开发的。要理解模块化开发, 可能我们要从最基本的开始讲起。</p>
+<blockquote>
+<p>JavaScript的原始功能</p>
+</blockquote>
+<p>JavaScript最初只是为了执行一些最简单的脚本, 比如表单验证。这在拨号上网, 网速慢如蜗牛的年代, 非常有用, 主要为了防止用户提交的信息失误、或不符合规范, 等了半天却只得到一个错误提示。页面在最初就只有html和css, 而JavaScript最多也只是在script标签中书写。所以在早期的时候JavaScript非常简单。</p>
+<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;button&quot;</span>)[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;按钮发生了点击&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>随着ajax异步请求的出现, 慢慢形成了前后端分离</p>
+</blockquote>
+<p>客户端要完成的事情, 越来越多, 代码量与日俱增。为了应对代码量的剧增, 我们就不会再将代码简单的写在script标签里了, 通常我们会将代码创建在多个js文件中, 进行维护。即便如此, 依然不能避免一些灾难性的问题。<strong>尤其在大型项目中, 往往不是一个人在进行开发, 而是多人开发</strong>。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- 项目组长做一些项目的初始化构建 --&gt;
+    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 开发者A --&gt;
+    &lt;script src=&quot;a1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;a2.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 开发者B --&gt;
+    &lt;script src=&quot;b1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;b2.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+&lt;!-- 这种方式对js文件的依赖顺序几乎是强制性的, 甚至js的加载顺序都有强制性要求 --&gt;
+</code></pre>
+<p>当开发者A在a1.js中定义了一个变量name, 在自己创建的a2.js中使用, 在个人开发期间可能不会出什么问题。那如果开发者B也定义了一个与开发者A定义的同名变量name, 这个时候就可能造成不可预期的错误。</p>
+<p>当然开发者A可以在a1.js中通过匿名函数解决, 但是, a1中定义的变量或方法, 就无法在a2中使用了, 自己的定义的变量和方法, 连自己的难以访问, 代码的复用性就降低了很多。</p>
+<p><strong>但是如果知道模块化的话, 我们可以使用另一种方式实现</strong></p>
+<p>开发者A：a1.js</p>
+<pre><code>var moduleA = (function()&#123;
+  var flag = true
+  function sum(num1,num2)&#123;
+    return num1 + num2
+  &#125;
+  //定义一个导出的对象
+  var obj = &#123;&#125;
+  obj.flag = flag
+  obj.sum = sum
+  
+  //将obj  return出去
+  return obj
+&#125;)()
+</code></pre>
+<p>开发者A：a2.js</p>
+<pre><code>;(function()&#123;
+  if(moduleA.flag)&#123;
+    console.log(moduleA.num(10,20)); //访问a1中的方法
+  &#125;  
+&#125;)
+</code></pre>
+<p>这样不同的开发者, 只需要避免moduleA这个变量不会重复就可以了, 而里面的其他变量或方法, 就不需要去关心是否重复。这就是模块化最基础的封装, 事实上, 模块化还有很多高级的话题。幸运的是, 前端模块化, <strong>已经有了很多既有的规范</strong>, 以及对应的实现方案。所以<strong>我们现在已经不需要自己去实现了</strong>, 只需要遵循即可。前端的模块化方案包括：<strong>CommonJS、AMD、CMD, 也有ES6的Modules</strong>。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>(35)模块化的核心</title>
     <url>/blog/vue2/35/</url>
     <content><![CDATA[<hr>
@@ -7102,76 +7172,6 @@ import * as aaa from &quot;路径.js&quot;
 console.log(aaa.flag)
 console.log(aaa.name)
 </code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(34)前端模块化思维</title>
-    <url>/blog/vue2/34/</url>
-    <content><![CDATA[<hr>
-<h3 id="前端模块化思维"><a href="#前端模块化思维" class="headerlink" title="前端模块化思维"></a>前端模块化思维</h3><p>如果只简单接触过JavaScript或jQuery的使用的话, 可能很难理解什么是模块化。如果不接触node, 前端其实是很难接触到模块化的。在此之前前端就没有模块化的概念。现在前端发展到三大框架的阶段, 而这三大框架的开发, 基本上都用到了模块化的概念。所以现在模块化对前端也非常重要, 现在的前端开发, 基本上都是用模块化开发的。要理解模块化开发, 可能我们要从最基本的开始讲起。</p>
-<blockquote>
-<p>JavaScript的原始功能</p>
-</blockquote>
-<p>JavaScript最初只是为了执行一些最简单的脚本, 比如表单验证。这在拨号上网, 网速慢如蜗牛的年代, 非常有用, 主要为了防止用户提交的信息失误、或不符合规范, 等了半天却只得到一个错误提示。页面在最初就只有html和css, 而JavaScript最多也只是在script标签中书写。所以在早期的时候JavaScript非常简单。</p>
-<figure class="highlight js"><figcaption><span>js</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;button&quot;</span>)[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;按钮发生了点击&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>随着ajax异步请求的出现, 慢慢形成了前后端分离</p>
-</blockquote>
-<p>客户端要完成的事情, 越来越多, 代码量与日俱增。为了应对代码量的剧增, 我们就不会再将代码简单的写在script标签里了, 通常我们会将代码创建在多个js文件中, 进行维护。即便如此, 依然不能避免一些灾难性的问题。<strong>尤其在大型项目中, 往往不是一个人在进行开发, 而是多人开发</strong>。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;!-- 项目组长做一些项目的初始化构建 --&gt;
-    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
-    &lt;!-- 开发者A --&gt;
-    &lt;script src=&quot;a1.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;a2.js&quot;&gt;&lt;/script&gt;
-    &lt;!-- 开发者B --&gt;
-    &lt;script src=&quot;b1.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;b2.js&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-&lt;!-- 这种方式对js文件的依赖顺序几乎是强制性的, 甚至js的加载顺序都有强制性要求 --&gt;
-</code></pre>
-<p>当开发者A在a1.js中定义了一个变量name, 在自己创建的a2.js中使用, 在个人开发期间可能不会出什么问题。那如果开发者B也定义了一个与开发者A定义的同名变量name, 这个时候就可能造成不可预期的错误。</p>
-<p>当然开发者A可以在a1.js中通过匿名函数解决, 但是, a1中定义的变量或方法, 就无法在a2中使用了, 自己的定义的变量和方法, 连自己的难以访问, 代码的复用性就降低了很多。</p>
-<p><strong>但是如果知道模块化的话, 我们可以使用另一种方式实现</strong></p>
-<p>开发者A：a1.js</p>
-<pre><code>var moduleA = (function()&#123;
-  var flag = true
-  function sum(num1,num2)&#123;
-    return num1 + num2
-  &#125;
-  //定义一个导出的对象
-  var obj = &#123;&#125;
-  obj.flag = flag
-  obj.sum = sum
-  
-  //将obj  return出去
-  return obj
-&#125;)()
-</code></pre>
-<p>开发者A：a2.js</p>
-<pre><code>;(function()&#123;
-  if(moduleA.flag)&#123;
-    console.log(moduleA.num(10,20)); //访问a1中的方法
-  &#125;  
-&#125;)
-</code></pre>
-<p>这样不同的开发者, 只需要避免moduleA这个变量不会重复就可以了, 而里面的其他变量或方法, 就不需要去关心是否重复。这就是模块化最基础的封装, 事实上, 模块化还有很多高级的话题。幸运的是, 前端模块化, <strong>已经有了很多既有的规范</strong>, 以及对应的实现方案。所以<strong>我们现在已经不需要自己去实现了</strong>, 只需要遵循即可。前端的模块化方案包括：<strong>CommonJS、AMD、CMD, 也有ES6的Modules</strong>。</p>
 <hr>
 ]]></content>
       <categories>
@@ -9011,74 +9011,6 @@ are ONLY allowed in .vue files - render functions are required elsewhere
       </tags>
   </entry>
   <entry>
-    <title>(52)runtime-only和runtime-compiler的区别</title>
-    <url>/blog/vue2/52/</url>
-    <content><![CDATA[<hr>
-<h3 id="runtime-only和runtime-compiler的区别"><a href="#runtime-only和runtime-compiler的区别" class="headerlink" title="runtime-only和runtime-compiler的区别"></a>runtime-only和runtime-compiler的区别</h3><p>简单理解, <strong>runtime-only和runtime-compiler的区别, 只在main.js里面</strong>。</p>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-70.png" alt="vue2-70"></p>
-<blockquote>
-<p>runtime-compiler</p>
-</blockquote>
-<p>1.导入组件。<br>2.在components里面注册。<br>3.在template里面使用。</p>
-<pre><code>template(模板)--&gt;ast(抽象语法树)--&gt;render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
-</code></pre>
-<blockquote>
-<p>runtime-only</p>
-</blockquote>
-<p>1.导入组件。<br>2.将createElement函数传入render函数, 在render函数中。<br>3.直接返回createElement处理完毕的组件模板。</p>
-<pre><code>render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
-//相比于runtime-compiler, runtime-only更有优势。
-//1、更高的性能。
-//2、代码量更少, 最终打包的体积更小。
-</code></pre>
-<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-69.png" alt="vue2-69"></p>
-<hr>
-<h3 id="render函数"><a href="#render函数" class="headerlink" title="render函数"></a>render函数</h3><p>runtime-only中的render函数</p>
-<pre><code>//这是ES6的箭头函数写法
-render: h =&gt; h(App)
-
-//可以写成
-render: function(h)&#123;
-  return h(App)
-&#125;
-</code></pre>
-<p>这个h其实是vue内部一个叫createElement的函数, 它有好几种用法。</p>
-<blockquote>
-<p>1、createElement(“标签”, {标签属性}, [‘标签内容’])</p>
-</blockquote>
-<p>例如：createElement(“h2”, {class:”box”}, [‘我是h2的内容’])</p>
-<pre><code>render: function(createElement)&#123;
-  return createElement(&quot;h2&quot;, &#123;class:&quot;box&quot;&#125;, [&#39;我是h2的内容&#39;])
-&#125;
-//或者：
-render: function(createElement)&#123;
-  return createElement(&quot;h2&quot;,
-  &#123;class:&quot;box&quot;&#125;, 
-  [&#39;我是h2的内容&#39;,createElement(&#39;button&#39;, [&#39;按钮&#39;])])
-&#125;
-//如果这里这么写的话, 它会用创建的标签替换vue实例挂载的app
-</code></pre>
-<blockquote>
-<p>2、直接传入一个组件</p>
-</blockquote>
-<p>直接给createElement传入一个组件</p>
-<pre><code>render: function(createElement)&#123;
-  return createElement(App)
-&#125;
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>vue-cli</tag>
-        <tag>runtime-only</tag>
-        <tag>runtime-compiler</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(53)Vue-CLI3创建项目</title>
     <url>/blog/vue2/53/</url>
     <content><![CDATA[<hr>
@@ -9193,6 +9125,74 @@ new Vue(&#123;
       <tags>
         <tag>vue2</tag>
         <tag>vue-cli</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(52)runtime-only和runtime-compiler的区别</title>
+    <url>/blog/vue2/52/</url>
+    <content><![CDATA[<hr>
+<h3 id="runtime-only和runtime-compiler的区别"><a href="#runtime-only和runtime-compiler的区别" class="headerlink" title="runtime-only和runtime-compiler的区别"></a>runtime-only和runtime-compiler的区别</h3><p>简单理解, <strong>runtime-only和runtime-compiler的区别, 只在main.js里面</strong>。</p>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-70.png" alt="vue2-70"></p>
+<blockquote>
+<p>runtime-compiler</p>
+</blockquote>
+<p>1.导入组件。<br>2.在components里面注册。<br>3.在template里面使用。</p>
+<pre><code>template(模板)--&gt;ast(抽象语法树)--&gt;render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
+</code></pre>
+<blockquote>
+<p>runtime-only</p>
+</blockquote>
+<p>1.导入组件。<br>2.将createElement函数传入render函数, 在render函数中。<br>3.直接返回createElement处理完毕的组件模板。</p>
+<pre><code>render(函数)--&gt;virtual dom(虚拟DOM)--&gt;UI(真实DOM)
+//相比于runtime-compiler, runtime-only更有优势。
+//1、更高的性能。
+//2、代码量更少, 最终打包的体积更小。
+</code></pre>
+<p><img src="/blog/../../../../../../../../../../blog/static/blog/md/vue2-69.png" alt="vue2-69"></p>
+<hr>
+<h3 id="render函数"><a href="#render函数" class="headerlink" title="render函数"></a>render函数</h3><p>runtime-only中的render函数</p>
+<pre><code>//这是ES6的箭头函数写法
+render: h =&gt; h(App)
+
+//可以写成
+render: function(h)&#123;
+  return h(App)
+&#125;
+</code></pre>
+<p>这个h其实是vue内部一个叫createElement的函数, 它有好几种用法。</p>
+<blockquote>
+<p>1、createElement(“标签”, {标签属性}, [‘标签内容’])</p>
+</blockquote>
+<p>例如：createElement(“h2”, {class:”box”}, [‘我是h2的内容’])</p>
+<pre><code>render: function(createElement)&#123;
+  return createElement(&quot;h2&quot;, &#123;class:&quot;box&quot;&#125;, [&#39;我是h2的内容&#39;])
+&#125;
+//或者：
+render: function(createElement)&#123;
+  return createElement(&quot;h2&quot;,
+  &#123;class:&quot;box&quot;&#125;, 
+  [&#39;我是h2的内容&#39;,createElement(&#39;button&#39;, [&#39;按钮&#39;])])
+&#125;
+//如果这里这么写的话, 它会用创建的标签替换vue实例挂载的app
+</code></pre>
+<blockquote>
+<p>2、直接传入一个组件</p>
+</blockquote>
+<p>直接给createElement传入一个组件</p>
+<pre><code>render: function(createElement)&#123;
+  return createElement(App)
+&#125;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>vue-cli</tag>
+        <tag>runtime-only</tag>
+        <tag>runtime-compiler</tag>
       </tags>
   </entry>
   <entry>

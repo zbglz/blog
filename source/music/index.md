@@ -24,25 +24,29 @@ aplayer: true
     width:100%!important;
     z-index: 99;
     margin:0!important;
-    padding:0!important;
     height:auto!important;
     display:none;
+    padding-top:5px;
+    background:rgba(0,0,0,0.8);
   }
   .musicList .aplayer-info .aplayer-controller{
     padding-top:10px;
-    background:rgba(0,0,0,0.8);
   }
   .musicList .aplayer-info .aplayer-lrc .aplayer-lrc-contents p{
     font-size:14px;
-    text-shadow:-1px 0 #3f9cd5,0 1px #3f9cd5,1px 0 #3f9cd5,0 -1px #3f9cd5;
     color:#FFF;
-    font-weight: bold;
     letter-spacing: 1px;
+    opacity: 1;
+  }
+  .musicList .aplayer-info .aplayer-lrc .aplayer-lrc-contents p.aplayer-lrc-current{
+    text-shadow:-1px 0 #3f9cd5,0 1px #3f9cd5,1px 0 #3f9cd5,0 -1px #3f9cd5;
+    font-weight: bold;
   }
   .musicList .aplayer-info .aplayer-lrc{
     margin:0;
-    padding-top:5px;
-    background:rgba(0,0,0,0.8);
+  }
+  .musicList .aplayer-info .aplayer-lrc:before{
+    height:0;
   }
   .musicList .aplayer-info .aplayer-lrc:before,
   .musicList .aplayer-info .aplayer-lrc:after{
@@ -72,6 +76,12 @@ aplayer: true
   }
   .musicList .aplayer-list ol li{
     background: none!important;
+  }
+  .aplayer .aplayer-info .aplayer-controller .aplayer-time{
+    color:#FFF!important;
+  }
+  .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{
+    fill:#FFF!important;
   }
 </style>
 
