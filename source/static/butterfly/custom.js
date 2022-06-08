@@ -3,7 +3,7 @@ $(function(){
    * get all figcaption 代码块
    */ 
   let figcaptions = $("figcaption")
-  let clickArr = ["vue2","vue3","es","es6","es7","es8","es9","es10","es11","js","JavaScript","ts","html"]
+  let clickArr = ["vue2","vue3","es","es5","es6","es7","es8","es9","es10","es11","js","JavaScript","ts","html"]
   let coderunurl = "https://zbglz.gitee.io/coderun/"
   if(figcaptions.length > 0){
     for(let f of figcaptions){
