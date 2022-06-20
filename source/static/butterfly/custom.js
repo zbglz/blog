@@ -4,7 +4,8 @@ $(function(){
    */ 
   let figcaptions = $("figcaption")
   let clickArr = ["vue2","vue3","es","es5","es6","es7","es8","es9","es10","es11","js","JavaScript","ts","html"]
-  let coderunurl = "https://zbglz.gitee.io/coderun/"
+  //let coderunurl = "https://zbglz.gitee.io/coderun/"
+  let coderunurl = "http://127.0.0.1:8080/coderun/page.html"
   if(figcaptions.length > 0){
     for(let f of figcaptions){
       let fName = $(f).text().toUpperCase()
