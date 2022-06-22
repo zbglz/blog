@@ -11,7 +11,6 @@ $(function(){
       let fName = $(f).text().toUpperCase()
       f.previousSibling.firstChild.innerHTML = fName
       f.style.display = "none"
-      //f.remove()
       let fHead = $(f.previousSibling.firstChild).prop("outerHTML");
       for(name of clickArr){
         if(fName === name.toUpperCase()){
@@ -41,7 +40,7 @@ $(function(){
     
     let dtype = $(codeName).text()
     
-    let encodeStr = coderunurl + "?con=" + con + "&dtype=" + dtype
+    let encodeStr = coderunurl + "?content=" + con + "&type=" + dtype
     
     if(encodeStr.length > 8179){ //8179
       snackbarShow("代码过长, 请复制代码, 新开空窗口 <i class='fa fa-cog'></i> 粘贴运行")
